@@ -1,0 +1,10 @@
+product_h/region_comm/oversea/app/HnHealthApp/HnHealthApp.apk filter=lfs diff=lfs merge=lfs -text
+bootRE/boot.elf filter=lfs diff=lfs merge=lfs -text
+system/system/priv-app/Settings/SettingsOversea.apk filter=lfs diff=lfs merge=lfs -text
+system/system/priv-app/HnVideoEditor/HnVideoEditor.apk filter=lfs diff=lfs merge=lfs -text
+preas/priv-app/GmsCore/GmsCore.apk filter=lfs diff=lfs merge=lfs -text
+preas/priv-app/Messages/Messages.apk filter=lfs diff=lfs merge=lfs -text
+preas/priv-app/Velvet/Velvet.apk filter=lfs diff=lfs merge=lfs -text
+preas/app/Photos/Photos.apk filter=lfs diff=lfs merge=lfs -text
+preas/app/WebViewGoogle/WebViewGoogle.apk filter=lfs diff=lfs merge=lfs -text
+preas/app/Gmail2/Gmail2.apk filter=lfs diff=lfs merge=lfs -text
