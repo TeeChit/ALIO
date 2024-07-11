@@ -1,0 +1,42 @@
+#factory mode need can be rewrite this file for smartpa calib
+on property:ro.runmode=factory && property:sys.boot_completed=1
+    chown media audio /persist/audio/speaker_calibdata.bin
+
+on early-init
+    export ADSP_LIBRARY_PATH ;/system/lib/rfsa/adsp2;/system/lib/rfsa/adsp;/system/vendor/lib/rfsa;/odm/firmware
+
+on post-fs-data
+    mkdir /data/log/audio_logs 0771 audioserver audioserver
+    mkdir /data/vendor/audio/audio_dump 0770 audio audio
+    mkdir /data/vendor/audio/st_dump 0770 audio audio
+    mkdir /data/vendor/audio/freewakeup 0770 audio audio
+    chmod 0644 /dev/smartpakit
+    chown audioserver audioserver /dev/smartpakit
+    chmod 0644 /dev/adsp_misc
+    chown audioserver audioserver /dev/adsp_misc
+    chmod 0640 /dev/adsp_chr
+    chown system audio /dev/adsp_chr
+    chmod 0644 /dev/msm_cirrus_playback
+    chown audioserver audioserver /dev/msm_cirrus_playback
+    chmod 0644 /dev/aw882xx_smartpa
+    chown audioserver audioserver /dev/aw882xx_smartpa
+    chmod 0660 /sys/class/dp/source/source_mode
+    chown system system /sys/class/dp/source/source_mode
+    setprop vendor.audio.gsl.panic_trigger_disable true
+
+on property:sys.boot_completed=1
+    chmod 0644 /dev/tas256x
+    chown audioserver audioserver /dev/tas256x
+    chmod 0644 /dev/tas_calib
+    chown audioserver audioserver /dev/tas_calib
+    chmod 0644 /dev/tfa98xx
+    chown audioserver audioserver /dev/tfa98xx
+
+    chmod 0640 /data/vendor/audio/dts/current_bluetooth44k
+    chmod 0640 /data/vendor/audio/dts/current_bluetooth48k
+    chmod 0640 /data/vendor/audio/dts/current_lineout48k
+    chmod 0640 /data/vendor/audio/dts/current_speaker48k
+    chmod 0640 /data/vendor/audio/dts/current_usb44k
+    chmod 0640 /data/vendor/audio/dts/current_usb48k
+    chmod 0640 /data/vendor/audio/dts/custom_speaker48
+    chmod 0640 /data/vendor/audio/dts/dts_audio_settings

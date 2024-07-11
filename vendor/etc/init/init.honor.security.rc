@@ -1,0 +1,8 @@
+#used for security field
+
+# pki config
+on post-fs-data
+    mkdir /data/misc/hwpki
+    chmod 770 /data/misc/hwpki
+    chown system system /data/misc/hwpki
+    restorecon_recursive /data/misc/hwpki

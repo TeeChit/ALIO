@@ -1,0 +1,63 @@
+on boot
+    # assign chipset platform type, 0:unknown platform, 1:qcom, 2:mtk, 3:sprd
+    setprop persist.sys.chr.chipsettype 1
+
+# modem log desensitized product
+on property:ro.product.device=HNVES
+    setprop persist.sys.config.desensitized 1
+
+on property:ro.product.device=HNREA
+    setprop persist.sys.config.desensitized 1
+
+on property:ro.product.device=HNREP
+    setprop persist.sys.config.desensitized 1
+
+on property:ro.product.device=HNALI-Q
+    setprop persist.sys.config.desensitized 1
+
+# only oversea commercial products which modem log has been desensitized support remotedebug
+on property:persist.sys.config.desensitized=1 && property:ro.logsystem.usertype=6
+    setprop persist.sys.config.remotedebug 1
+
+# support user feedback catch modem log
+on property:ro.product.device=HNVES
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNFRI
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNREA
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNREP
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNALI-Q
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNALP-Q
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNLGE
+    setprop persist.sys.config.userfeedback 1
+
+# support kernel report modem crash to chr
+on property:ro.product.device=HNHEY2-Q
+    # support adpl
+    setprop persist.sys.chr.adpl.enabled 1
+
+on property:ro.product.device=HNANB
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNANP
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNAGT
+    setprop persist.sys.config.userfeedback 1
+
+on property:ro.product.device=HNMGI
+    setprop persist.sys.config.userfeedback 1
+
+# only china commercial products support modem minidump
+on property:ro.product.device=HNALI-Q && property:ro.logsystem.usertype=1
+    setprop persist.sys.chr.minidump.enabled 1

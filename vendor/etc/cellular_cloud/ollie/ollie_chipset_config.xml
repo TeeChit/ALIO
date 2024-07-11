@@ -1,0 +1,15 @@
+<ollie>
+    <networkQoe
+        advancedQoeAlgorithmSwitch="1">
+    </networkQoe>
+    <dataAcceleration
+        interfaceVersion="1">
+    </dataAcceleration>
+    <lowLatencyMode
+        llmInterfaceVersion="2">
+    </lowLatencyMode>
+    <nrPduOnConfig
+        enable = "1"
+        version = "1">
+    </nrPduOnConfig>
+</ollie>

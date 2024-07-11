@@ -1,0 +1,196 @@
+{
+    "config":
+    {
+        "hw_platform": ["QRD", "MTP", "Surf", "RCM", "IDP", "HDK"],
+        "soc_id": ["417", "444", "518", "537", "583"],
+        "platform_subtype": ["hey2"]
+    },
+    "stk8xxx_0":{
+    "owner": "sns_stk8xxx",
+      ".accel":{
+        "owner": "sns_stk8xxx",
+        ".config":{
+          "owner": "sns_stk8xxx",
+          "is_dri":{ "type": "int", "ver": "0",
+            "data": "1"
+          },
+          "hw_id":{ "type": "int", "ver": "0",
+            "data": "0"
+          },
+          "res_idx":{ "type": "int", "ver": "0",
+            "data": "2"
+          },
+          "sync_stream":{ "type": "int", "ver": "0",
+            "data": "0"
+          }
+        }
+      },
+	  ".md":{
+        "owner": "sns_stk8xxx",
+        ".config":{
+          "owner": "sns_stk8xxx",
+          "is_dri":{ "type": "int", "ver": "0",
+            "data": "1"
+          },
+          "hw_id":{ "type": "int", "ver": "0",
+            "data": "0"
+          },
+          "res_idx":{ "type": "int", "ver": "0",
+            "data": "0"
+          },
+          "sync_stream":{ "type": "int", "ver": "0",
+            "data": "0"
+          }
+        }
+      },	
+	  ".hd":{
+	    "owner": "sns_stk8xxx",
+	    ".config":{
+	    	"owner": "sns_stk8xxx",
+	    	"is_dri":{ "type": "int","ver": "0",
+	    	  "data": "0"
+	    	},
+	    	"hw_id":{ "type": "int","ver": "0",
+	    	  "data": "0"
+	    	},
+	    	"res_idx":{ "type": "int","ver": "0",
+	    	  "data": "0"
+	    	},
+	    	"sync_stream":{ "type": "int","ver": "0",
+	    	  "data": "0"
+	    	}
+	    }
+	  }
+    },   
+    "stk8xxx_0_platform": {
+        "owner": "sns_stk8xxx",
+        ".config": {
+            "owner": "sns_stk8xxx",
+            "bus_type": { "type": "int", "ver": "0",
+                "data": "1"
+            },
+            "bus_instance": { "type": "int", "ver": "0",
+                "data": "2"
+            },
+            "slave_config": { "type": "int", "ver": "0",
+                "data": "0"
+            },
+            "min_bus_speed_khz": { "type": "int", "ver": "0",
+                "data": "0"
+            },
+            "max_bus_speed_khz": { "type": "int", "ver": "0",
+                "data": "9600"
+            },
+            "reg_addr_type": { "type": "int", "ver": "0",
+                "data": "0"
+            },
+            "dri_irq_num": { "type": "int", "ver": "0",
+                "data": "66"
+            },
+            "irq_pull_type": { "type": "int", "ver": "0",
+                "data": "2"
+            },
+            "irq_is_chip_pin": { "type": "int", "ver": "0",
+                "data": "1"
+            },
+            "irq_drive_strength": { "type": "int", "ver": "0",
+                "data": "0"
+            },
+            "irq_trigger_type": { "type": "int", "ver": "0",
+                "data": "0"
+            },
+            "num_rail": { "type": "int", "ver": "0",
+                "data": "1"
+            },
+            "rail_on_state": { "type": "int", "ver": "0",
+                "data": "2"
+            },
+            "vddio_rail": { "type": "str", "ver": "0",
+                "data": "/pmic/client/sensor_vddio"
+            },
+            "rigid_body_type": { "type": "int", "ver": "0",
+                "data": "0"
+            }
+        },
+        ".acc": {
+            "owner": "sns_stk8xxx",
+            ".fac_cal": {
+                "owner": "sns_stk8xxx",
+                "x": { "type": "flt", "ver": "0",
+                    "data": "0.0"
+                },
+                "y": { "type": "flt", "ver": "0",
+                    "data": "0.0"
+                },
+                "z": { "type": "flt", "ver": "0",
+                    "data": "0.0"
+                }
+            },
+            ".orient": {
+                "owner": "sns_stk8xxx",
+                "x": { "type": "str", "ver": "0",
+                    "data": "+x"
+                },
+                "y": { "type": "str", "ver": "0",
+                    "data": "+y"
+                },
+                "z": { "type": "str", "ver": "0",
+                    "data": "+z"
+                }
+            }
+        },
+        ".md": {
+            "owner": "sns_stk8xxx",
+            ".config": {
+                "owner": "sns_stk8xxx",
+                "thresh": { "type": "flt", "ver": "0",
+                    "data": "0.6132"
+                },
+                "disable": { "type": "int", "ver": "0",
+                    "data": "0"
+                },
+                "win": { "type": "flt", "ver": "0",
+                    "data": "0.0"
+                }
+            },
+	    ".placement":{
+      "owner": "sns_stk8xxx",
+      "0":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "1":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "2":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "3":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "4":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "5":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "6":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "7":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "8":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "9":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "10":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      },
+      "11":{ "type": "flt", "ver": "0",
+        "data": "0.0"
+      }
+        }
+    }
+}

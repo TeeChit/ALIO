@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- config value
+ * Copyright (C) 2018 Honor Device.
+ *
+-->
+<gamesched_config version="1.0">
+    <featureCfg>
+        <mGpuAIEnable>0</mGpuAIEnable>
+        <mGpuAITopEnable>0</mGpuAITopEnable>
+        <mSupportHotplug>0</mSupportHotplug>
+        <mSupportGpuHotplug>0</mSupportGpuHotplug>
+        <mSuppTrackThreadBind>0</mSuppTrackThreadBind>
+        <mSupportCpuFreqLock>0</mSupportCpuFreqLock>
+        <mSupportGpuMargin>0</mSupportGpuMargin>
+        <mSupportOnlineLearning>1</mSupportOnlineLearning>
+        <mUseChangeDdrInterval>0</mUseChangeDdrInterval>
+        <mSupportScAdaptQuota>0</mSupportScAdaptQuota>
+        <mUseYieldThreadDetect>0</mUseYieldThreadDetect>
+        <mSupportL3Profiler>0</mSupportL3Profiler>
+        <mSupportRealTime>0</mSupportRealTime>
+        <mSuppCpuBoundDetect>1</mSuppCpuBoundDetect>
+        <mUseRtg>0</mUseRtg>
+        <mSupportAbnFrameDetect>1</mSupportAbnFrameDetect>
+        <mSupportVipThread>1</mSupportVipThread>
+        <mFavorLittleEnable>1</mFavorLittleEnable>
+    </featureCfg>
+
+    <globalCfg>
+        <mDefaultCpuDomain>1</mDefaultCpuDomain>
+        <mNumCpuCores>8</mNumCpuCores>
+        <mGpuTargetLoad>90</mGpuTargetLoad>
+        <mGpuRunLoadRate>96</mGpuRunLoadRate>
+        <mGpuFullLoad>100</mGpuFullLoad>
+        <mGpuWindowSize>6</mGpuWindowSize>
+        <mGpuCoreNum>9</mGpuCoreNum>
+        <mClusterPowerThres>5</mClusterPowerThres>
+        <mClusterProfileThres>12</mClusterProfileThres>
+        <mSgdProfileThres>35</mSgdProfileThres>
+        <mDefultMaxBindcoreNum>6</mDefultMaxBindcoreNum>
+        <mBoostGpuFreqMargin>70</mBoostGpuFreqMargin>
+    </globalCfg>
+
+    <stringCfg>
+        <mGpuCurFreqPath>/proc/gpufreq/gpufreq_current_freq</mGpuCurFreqPath>
+        <mGpuUserFreqPath>/proc/gpufreq/gpufreq_user_set_freq</mGpuUserFreqPath>
+        <mDdrCurFreqPath>/sys/kernel/debug/clk/measure_only_mccc_clk/clk_measure</mDdrCurFreqPath>
+        <mPerfCtlPath>/dev/hn_perf_ctrl</mPerfCtlPath>
+        <mGpuDevPath>/dev/mali0</mGpuDevPath>
+        <mDdrUpthreshMinPath></mDdrUpthreshMinPath>
+        <mDdrUpthreshMaxPath></mDdrUpthreshMaxPath>
+        <mDdrMaxFreqPath>/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/max_freq</mDdrMaxFreqPath>
+        <mDdrMinFreqPath>/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq</mDdrMinFreqPath>
+        <mDdrLatencyMinPath></mDdrLatencyMinPath>
+        <mDdrLatencyMaxPath></mDdrLatencyMaxPath>
+        <mDdrGetGpuFluxPath>/sys/class/devfreq/kgsl-busmon/cur_ab</mDdrGetGpuFluxPath>
+        <mDdrGetCpuFluxPath>/sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/bw_hwmon/mbps</mDdrGetCpuFluxPath>
+        <mCpuCtlUclampMin>/dev/cpuctl/game/cpu.uclamp.min</mCpuCtlUclampMin>
+        <mCpuCtlUclampMax>/dev/cpuctl/game/cpu.uclamp.max</mCpuCtlUclampMax>
+        <mCpuCtlTasks>/dev/cpuctl/game/tasks</mCpuCtlTasks>
+        <mCpuSetTasks>/dev/cpuset/game/tasks</mCpuSetTasks>
+        <mCpuSetCpus>/dev/cpuset/game/cpus</mCpuSetCpus>
+        <mCpuSetCgroupProcs>/dev/cpuset/game/cgroup.procs</mCpuSetCgroupProcs>
+        <mCpuResetCgroupProcs>/dev/cpuset/cgroup.procs</mCpuResetCgroupProcs>
+    </stringCfg>
+
+    <listCfg>
+        <mGpuFreqs>350 370 390 410 431 451 471 492 512 532 553 573 593 614 634 654 675 685 695 705 715 725 735 745 755 765 775 785 795 805 815 825 836</mGpuFreqs>
+    </listCfg>
+</gamesched_config>

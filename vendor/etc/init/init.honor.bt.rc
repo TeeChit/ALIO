@@ -1,0 +1,7 @@
+# for bluetooth
+on property:bluetooth.log.file.create=true
+    mkdir /data/log/bt
+    chown bluetooth bluetooth /data/log/bt
+    chmod 775 /data/log/bt
+    setprop bluetooth.log.file.create false
+

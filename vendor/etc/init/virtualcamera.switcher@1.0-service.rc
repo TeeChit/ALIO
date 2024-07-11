@@ -1,0 +1,11 @@
+service virtualcameraswitcher-hal-service /vendor/bin/hw/virtualcamera.switcher@1.0-service
+    interface vendor.honor.hardware.camera.vircamera@1.0::IVirCameraChannel virtualcamera.streamchange
+    interface vendor.honor.hardware.camera.vircamera@1.0::IVirCameraTranslator virtualcamera.translator
+    disabled
+    oneshot
+    class hal
+    user system
+    group camera system
+    ioprio rt 4
+    capabilities SYS_NICE
+    writepid /dev/stune/top-app/tasks

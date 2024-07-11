@@ -1,0 +1,106 @@
+on early-init
+
+on init
+    #write /sys/module/hw_nve/parameters/nve /dev/block/by-name/nvme
+    ##change nve device visit permission
+    #wait /dev/nve0
+    #chmod 0770 /dev/nve0
+    #chown root system /dev/nve0
+
+on early-fs
+    wait /dev/block/by-name/oeminfo
+    start oeminfo_nvm
+
+on fs
+
+on post-fs
+
+on post-fs-data
+
+on early-boot
+
+on boot
+
+service hw_diag_server /vendor/bin/hw_diag_server
+    class main
+    user root
+    group system drmrpc camera nfc vendor_hdb
+    disabled
+    seclabel u:r:test_diag:s0
+
+service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
+    class core
+    group system readproc root
+    critical
+    ioprio rt 4
+    seclabel u:r:oeminfo_nvm:s0
+
+service fcs /vendor/bin/fcs
+    class main
+    disabled
+
+service fmd /vendor/bin/fmd
+    class main
+    user root
+    group system log
+    seclabel u:r:fmdserver:s0
+
+service multichannel /vendor/bin/multichannel
+    class main
+    group root system radio graphics
+    disabled
+
+service data_cleanner /system/bin/data_cleaner
+    class core
+    oneshot
+
+service rf_test_srv /vendor/bin/rf_test_srv
+    class core
+    user root
+    disabled
+
+on property:sys.boot_completed=1
+    setprop ro.odm.boot_completed 1
+
+on property:sys.usb.config=none && property:sys.usb.configfs=1
+   stop diagserver
+
+on property:persist.sys.RepairMode=true
+   start hw_diag_server
+
+on property:vendor.Repair.UdAls.Cali=true
+   start hw_diag_server
+
+on property:sys.usb.config=manufacture,adb && property:sys.usb.configfs=1
+   start diagserver
+   start hw_diag_server
+
+on property:odm.diag.erase.modemst12=true
+    exec u:r:cust:s0 root root -- /system/bin/dd if=/dev/zero of=/dev/block/bootdevice/by-name/modemst1
+    exec u:r:cust:s0 root root -- /system/bin/dd if=/dev/zero of=/dev/block/bootdevice/by-name/modemst2
+    setprop odm.diag.erase.modemst12 false
+
+on property:diag.format.log=true
+    exec u:r:cust:s0 root root -- /system/bin/newfs_msdos -F 32 -c 1 /dev/block/bootdevice/by-name/log
+    setprop diag.format.log false
+
+on property:vendor.atformatlog=true
+    stop hiview
+    umount /log
+    exec u:r:cust:s0 root root -- /system/bin/mkfs.ext4 -F /dev/block/by-name/log
+    mount ext4 /dev/block/by-name/log /log wait rw seclabel nosuid nodev noatime nodelalloc,noauto_da_alloc,commit=1
+    start hiview
+    setprop vendor.atformatlog false
+
+on property:sys.wifitest.service=start
+    stop commu_server
+    start fcs
+
+on property:ro.runmode=factory
+    start fcs
+    start hw_diag_server
+    start fmd
+    start multichannel
+    start rf_test_srv
+    write /d/clk/debug_suspend 1
+    write /d/regulator/debug_suspend 1

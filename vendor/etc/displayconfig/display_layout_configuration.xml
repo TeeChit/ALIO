@@ -1,0 +1,39 @@
+<layouts>
+    <layout>
+        <state>0</state>
+        <display
+            enabled="false">
+            <address>4630946324137792643</address>
+        </display>
+
+        <display
+            enabled="true"
+            defaultDisplay="true">
+            <address>4630946846403687042</address>
+        </display>
+    </layout>
+    <layout>
+        <state>1</state>
+        <display
+            enabled="false">
+            <address>4630946324137792643</address>
+        </display>
+        <display
+            enabled="true"
+            defaultDisplay="true">
+            <address>4630946846403687042</address>
+        </display>
+    </layout>
+    <layout>
+        <state>2</state>
+        <display
+            enabled="false">
+            <address>4630946846403687042</address>
+        </display>
+        <display
+            enabled="true"
+            defaultDisplay="true">
+            <address>4630946324137792643</address>
+        </display>
+    </layout>
+</layouts>

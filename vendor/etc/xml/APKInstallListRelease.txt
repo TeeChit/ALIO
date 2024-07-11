@@ -1,0 +1,12 @@
+/vendor/app/ims/ims.apk
+/vendor/app/imssettings/imssettings.apk
+/vendor/app/com.qualcomm.location/com.qualcomm.location.apk,priv
+/vendor/app/qcrilmsgtunnel/qcrilmsgtunnel.apk,priv
+/vendor/app/dpmserviceapp/dpmserviceapp.apk,priv
+/vendor/app/CNEService/CNEService.apk,priv
+/vendor/app/QtiTetherService/QtiTetherService.apk,priv
+/vendor/app/atfwd/atfwd.apk,priv
+/vendor/app/TimeService/TimeService.apk
+/vendor/app/IWlanService/IWlanService.apk
+/vendor/app/CneApp/CneApp.apk
+/vendor/app/CACertService/CACertService.apk

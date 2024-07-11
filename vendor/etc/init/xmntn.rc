@@ -1,0 +1,40 @@
+service xmntn_himntn /vendor/bin/xmntn -h 1
+    class late_start
+    user root
+    group system root
+    disabled
+    oneshot
+    seclabel u:r:xmntn:s0
+
+service xmntn_rainbow /vendor/bin/xmntn -r 1
+    class late_start
+    user root
+    group system root
+    disabled
+    oneshot
+    seclabel u:r:xmntn:s0
+
+service xmntn_rainbow_minidump /vendor/bin/xmntn -r minidump
+    class late_start
+    user root
+    group system root
+    disabled
+    oneshot
+    seclabel u:r:xmntn:s0
+
+on post-fs-data
+    mkdir /data/vendor/log/reliability/dumplog
+    chmod 0775 /data/vendor/log/reliability/dumplog
+    chown root system /data/vendor/log/reliability/dumplog
+    restorecon_recursive /data/vendor/log/reliability/dumplog
+    mkdir /data/vendor/log/reliability/fulldumplog
+    chmod 0775 /data/vendor/log/reliability/fulldumplog
+    chown root system /data/vendor/log/reliability/fulldumplog
+    restorecon_recursive /data/vendor/log/reliability/fulldumplog
+
+on post-fs-data
+    start xmntn_himntn
+    start xmntn_rainbow
+
+on property:persist.log.remotedebug=true && property:sys.boot_completed=1 && property:init.svc.xmntn_rainbow=stopped
+    start xmntn_rainbow_minidump

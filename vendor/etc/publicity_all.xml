@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packageList>
+    <packageInfo package="vendor.qti.iwlan" label="vendor.qti.iwlan" feature="高通VoWiFi业务。"  author="高通">
+    </packageInfo>
+    <packageInfo package="vendor.qti.hardware.cacert.server" label="CACertApp" feature="高通CA服务" author="高通">
+    </packageInfo>
+    <packageInfo package="com.qualcomm.qti.cne" label="CneApp" feature="高通VoLTE服务" author="高通">
+    </packageInfo>
+    <packageInfo package="com.qualcomm.timeservice" label="com.qualcomm.timeservice" feature="高通时间服务" author="高通">
+    </packageInfo>
+</packageList>

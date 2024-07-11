@@ -1,0 +1,156 @@
+#line 1 "device/qcom/sepolicy_vndr/generic/vendor/common/service_contexts"
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# # Changes from Qualcomm Innovation Center are provided under the following license:
+# #
+# # Copyright (c) 2021 Qualcomm Innovation Center, Inc. All rights reserved.
+# #
+# # Redistribution and use in source and binary forms, with or without
+# # modification, are permitted (subject to the limitations in the
+# # disclaimer below) provided that the following conditions are met:
+# #
+# #     * Redistributions of source code must retain the above copyright
+# #       notice, this list of conditions and the following disclaimer.
+# #
+# #     * Redistributions in binary form must reproduce the above
+# #       copyright notice, this list of conditions and the following
+# #       disclaimer in the documentation and/or other materials provided
+# #       with the distribution.
+# #
+# #     * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
+# #       contributors may be used to endorse or promote products derived
+# #       from this software without specific prior written permission.
+# #
+# # NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# # GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# # HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# # MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# # IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# # ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# # DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# # GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# # INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# # IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+android.hardware.neuralnetworks.IDevice/qti-default        u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/qti-gpu            u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/qti-dsp            u:object_r:hal_neuralnetworks_service:s0
+vendor.qti.hardware.display.config.IDisplayConfig/default u:object_r:vendor_hal_vnddisplayconfig_service:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio0         u:object_r:vendor_hal_telephony_service2:s0
+vendor.qti.hardware.radio.ims.IImsRadio/imsradio1         u:object_r:vendor_hal_telephony_service2:s0
+vendor.qti.hardware.radio.qtiradio.IQtiRadioStable/slot1  u:object_r:vendor_hal_telephony_service2:s0
+vendor.qti.hardware.radio.qtiradio.IQtiRadioStable/slot2  u:object_r:vendor_hal_telephony_service2:s0
+vendor.qti.hardware.radio.qtiradioconfig.IQtiRadioConfig/default u:object_r:vendor_hal_telephony_service2:s0
+
+#line 1 "device/qcom/sepolicy_vndr/qva/vendor/common/service_contexts"
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+vendor.qti.hardware.qxr.IQXRCoreService/default        u:object_r:vendor_hal_qvrd_service:s0
+vendor.qti.hardware.qxr.IQXRCamService/default         u:object_r:vendor_hal_qvrd_service:s0
+vendor.qti.hardware.qxr.IQXRModService/default         u:object_r:vendor_hal_qvrd_service:s0
+vendor.qti.hardware.qxr.IQXRSplitService/default        u:object_r:vendor_hal_sxrd_service:s0
+vendor.qti.hardware.qxr.IQXRAudioService/default        u:object_r:vendor_hal_sxrd_service:s0
+vendor.qti.gnss.ILocAidlGnss/default                   u:object_r:hal_gnss_service:s0
+vendor.qti.hardware.data.connectionfactory.IFactory/slot0 u:object_r:vendor_hal_dataconnection_service:s0
+vendor.qti.hardware.data.connectionfactory.IFactory/slot1 u:object_r:vendor_hal_dataconnection_service:s0
+#line 1 "vendor/honor/chipset/base/sepolicy/service_contexts"
+vendor.honor.hardware.securecamera.ISecureCamera/default           u:object_r:hal_seccamera_service:s0
+#line 1 "vendor/honor/chipset/qcom/base/sepolicy/service_contexts"
+#################[APK]####################
+# DTS2015110304872  machao/mwx306152 20151104 begin 
+#ioinfo					  u:object_r:jankservice_service:s0
+#jank					  u:object_r:jankservice_service:s0
+# DTS2015110304872  machao/mwx306152 20151104 end 
+# DTS2017091602900  chenshouyan/00269428 20170916 begin
+#jankshield    u:object_r:jankservice_service:s0
+# DTS2017091602900  chenshouyan/00269428 20170916 end
+
+# BEGIN PN: DTS2017110308405, Added by x00184306, 2017/11/07
+#ims_ut                   u:object_r:ims_ut_service:s0
+# END PN: DTS2017110308405, Added by x00184306, 2017/11/07
+
+# BEGIN PN: DTS2015102201757,Added by lipeng, 2015/10/22
+#authentication_service     u:object_r:authentication_service:s0
+#/* BEGIN PN:DTS2015111601843 added by hwx281624 20151116 */
+#Binder.Pged        u:object_r:hwpged_service:s0
+# BEGIN PN:DTS2015120407286, Added by huangdezhi/00176038, 20151209
+#com.hihonor.goldeneye                      u:object_r:goldeneye_service:s0
+#com.hihonor.goldeneye.service              u:object_r:goldeneye_service:s0
+# END PN:DTS2015120407286, Added by huangdezhi/00176038, 20151209
+#/* < DTS2015121501791  mwx306152 20151215 begin */
+#SysinfoService                  u:object_r:systeminfo_service:s0
+#/* < DTS2015121501791  mwx306152 20151215 begin */
+#IAwareCMSService        u:object_r:iawarecmservice:s0
+#/* <DTS2016110710366  wangyangtao/00364765 20161126 begin */
+#BdatService             u:object_r:bdat_service:s0
+#/* <DTS2016110710366  wangyangtao/00364765 20161126 end */
+#nonhardaccelpkgs                          u:object_r:nonhardaccelpkgs_service:s0
+# BEGIN AR: AR0004LRL6,Added by m00352283, 2017/01/08
+#hwext_device_service    u:object_r:hwext_device_service:s0
+# END AR: AR0004LRL6,Added by m00352283, 2017/01/08
+
+# BEGIN PN: DTS2017022301786, Added by w00345257, 2017/02/27
+#chr_service             u:object_r:chr_service:s0
+# END   PN: DTS2017022301786, Added by w00345257, 2017/02/27
+#faultdetectservice                        u:object_r:hiview_service:s0
+
+# add for hncamera aidl service
+vendor.honor.hardware.hncamera.ISarService/default           u:object_r:hal_hncamera_service:s0
+
+# DTS2022081560966 p00012723 CHR_RIL_ARCHITECTURE:send raw data to CHR from RIL begin
+vendor.honor.hardware.radio_radar.IRadioRadar/slot1           u:object_r:honor_radio_radar_service:s0
+vendor.honor.hardware.radio_radar.IRadioRadar/slot2           u:object_r:honor_radio_radar_service:s0
+# DTS2022081560966 p00012723 CHR_RIL_ARCHITECTURE:send raw data to CHR from RIL end

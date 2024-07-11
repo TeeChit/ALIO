@@ -1,0 +1,24 @@
+service vendor.camera-provider-2-7 /vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
+    interface android.hardware.camera.provider@2.7::ICameraProvider legacy/1
+    interface android.hardware.camera.provider@2.6::ICameraProvider legacy/1
+    interface android.hardware.camera.provider@2.5::ICameraProvider legacy/1
+    interface android.hardware.camera.provider@2.4::ICameraProvider legacy/1
+    interface vendor.qti.hardware.camera.postproc@1.0::IPostProcService camerapostprocservice
+    interface vendor.honor.hardware.camera.cfgsvr@1.0::IHwCamCfgSvr honor.camera.cfgsvr
+    interface vendor.honor.hardware.camera.cfgsvr@1.1::IHwCamCfgSvr honor.camera.cfgsvr
+    interface vendor.honor.hardware.camera.cfgsvr@1.2::IHwCamCfgSvr honor.camera.cfgsvr
+    interface vendor.honor.hardware.camera.cfgsvr@1.3::IHwCamCfgSvr honor.camera.cfgsvr
+    interface vendor.honor.hardware.camera.camResource@1.0::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.1::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.2::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.3::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.4::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.5::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.6::IHwCameraResourceService honor.cameraresource.service
+    interface vendor.honor.hardware.camera.camResource@1.7::IHwCameraResourceService honor.cameraresource.service
+    class hal
+    user cameraserver
+    group log audio camera input drmrpc oem_2907
+    ioprio rt 4
+    capabilities SYS_NICE
+    task_profiles CameraServiceCapacity HighPerformance ProcessCapacityHigh

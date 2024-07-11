@@ -1,0 +1,343 @@
+
+service fingerprint_log  /vendor/bin/fingerprint_log tzlog_log 11000
+    class hal
+    user system
+    group system
+    oneshot
+    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/tasks /dev/blkio/system-background/tasks
+
+service fingerprint_nolog  /vendor/bin/fingerprint_log tzlog_nolog 11000
+    user system
+    group system
+    disabled
+    oneshot
+    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/tasks /dev/blkio/system-background/tasks
+
+service fingerprint_monitor  /vendor/bin/fingerprint_log sec_monitor_server 11000
+    user root
+    group root
+    socket fingerprint_log_only_m stream 0600 system system
+    oneshot
+    disabled
+    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/tasks /dev/blkio/system-background/tasks
+
+on boot
+#add for fingerprint
+    chmod  0660  /dev/fingerprint
+    chown  system  system  /dev/fingerprint
+    chmod  0660  /sys/devices/platform/fingerprint/irq
+    chown  system  system  /sys/devices/platform/fingerprint/irq
+    chmod  0660  /sys/devices/platform/fingerprint/result
+    chown  system  system  /sys/devices/platform/fingerprint/result
+    chown  system  system  /sys/devices/platform/fingerprint/fingerprint_chip_info
+    chown  system  system  /sys/devices/platform/fingerprint/ud_fingerprint_chip_info
+    chmod  0660  /sys/devices/platform/fingerprint/read_image_flag
+    chown  system  system  /sys/devices/platform/fingerprint/read_image_flag
+    chmod  0660  /sys/devices/platform/fingerprint/nav
+    chown  system  system  /sys/devices/platform/fingerprint/nav
+    chmod  0660  /sys/devices/platform/fingerprint/module_id
+    chown  system  system  /sys/devices/platform/fingerprint/module_id
+    chown  system  system  /sys/devices/platform/fingerprint/module_id_ud
+    chown system system /sys/set_app_info/set_app_info_node
+    chown system system /sys/class/android_usb/android0/switch_request
+    chmod 0664 /sys/class/android_usb/android0/switch_request
+    chown  system  system  /sys/devices/platform/fingerprint/btb_det_gpio
+    chmod 0660 /sys/devices/platform/fingerprint/ultra_ipc_irq
+    chown system system /sys/devices/platform/fingerprint/ultra_ipc_irq
+
+
+    # change the limition below for sensor-hub
+    chown system system /sys/devices/soc0/honor_product
+    chmod 0664 /sys/devices/soc0/honor_product
+    chown system system /sys/devices/platform/honor_tp_color/tp_color_info
+    chmod 0664 /sys/devices/platform/honor_tp_color/tp_color_info
+
+    chown system system /sys/devices/platform/honor_ts_kit_color/ts_kit_color_info
+    chown system system /sys/touchscreen/glove_func/signal_disparity
+    chown system system /sys/touchscreen/holster_touch_window
+    chown system system /sys/touchscreen/touch_chip_info
+    chown system system /sys/touchscreen/calibrate
+    chown system system /sys/touchscreen/calibrate_wakeup_gesture
+    chown system system /sys/touchscreen/touch_glove
+    chown system system /sys/touchscreen/touch_sensitivity
+    chown system system /sys/touchscreen/hand_detect
+    chown system system /sys/touchscreen/supported_func_indicater
+    chown system system /sys/touchscreen/touch_window
+    chown system system /sys/touchscreen/easy_wakeup_gesture
+    chown system system /sys/touchscreen/wakeup_gesture_enable
+    chown system system /sys/touchscreen/touch_dsm_debug
+    chown system system /sys/touchscreen/easy_wakeup_control
+    chown system system /sys/touchscreen/easy_wakeup_position
+    chown system system /sys/touchscreen/touch_register_operation
+    chown system system /sys/touchscreen/tp_capacitance_test_type
+    chown system system /sys/touchscreen/touch_rawdata_debug
+    chown system system /sys/touchscreen/touch_wideth
+    chown system system /sys/touchscreen/roi_enable
+    chown system system /sys/touchscreen/roi_data
+    chown system system /sys/touchscreen/roi_data_debug
+    chown system system /sys/touchscreen/touch_tui_enable
+    chown system system /sys/touchscreen/touch_oem_info
+    chown system system /sys/touchscreen/calibration_info
+    chown system system /sys/touchscreen/tp_capacitance_test_config
+    chown system system /proc/touchscreen/tp_capacitance_data
+    chown system system /sys/touchscreen/fingerprint_switch_ctrl
+    chown system system /sys/touchscreen/power_switch_ctrl
+    chown system system /sys/touchscreen/touch_switch
+    chown system system /sys/touchscreen/udfp_enable
+    chown system system /sys/touchscreen/stylus_wakeup_ctrl
+    chown system system /sys/touchscreen/aod_touch_switch_ctrl
+    chown system system /sys/touchscreen/aod_event_report_ctrl
+    chown system system /sys/touchscreen/tp_ud_lowpower_ctrl
+    chown system system /sys/touchscreen/aod_notify_tp_power_ctrl
+    chown system system /sys/touchscreen/trusted_touch_enable
+    chown system system /sys/touchscreen/trusted_touch_type
+    chown system system /sys/touchscreen/aod_notify_tp_talk_mode
+    chown system system /sys/touchscreen/charger_state
+    chown system system /sys/touchscreen/driver_override
+    chown system system /sys/touchscreen/factory_extra_cmd
+    chown system system /sys/touchscreen/hostprocessing
+    chown system system /sys/touchscreen/loglevel
+    chown system system /sys/touchscreen/modalias
+    chown system system /sys/touchscreen/power
+    chown system system /sys/touchscreen/ring_setting_config_ctrl
+    chown system system /sys/touchscreen/ring_switch_ctrl
+    chown system system /sys/touchscreen/roi_data_internal
+    chown system system /sys/touchscreen/screen_status_switch
+    chown system system /sys/touchscreen/subsystem
+    chown system system /sys/touchscreen/thp_status
+    chown system system /sys/touchscreen/tp_dfx_info
+    chown system system /sys/touchscreen/tui_wake_up_enable
+    chown system system /sys/touchscreen/uevent
+    chown system system /sys/touchscreen/stylus_support
+
+    # for touchscreen0
+    chown system system /sys/touchscreen0/stylus_support
+    chown system system /sys/touchscreen0/touch_chip_info
+    chown system system /sys/touchscreen0/roi_data
+    chown system system /sys/touchscreen0/roi_enable
+    chown system system /sys/touchscreen0/touch_sensitivity
+    chown system system /sys/touchscreen0/touch_glove
+    chown system system /sys/touchscreen0/touch_window
+    chown system system /sys/touchscreen0/touch_switch
+    chown system system /sys/touchscreen0/udfp_enable
+    chown system system /sys/touchscreen0/stylus_wakeup_ctrl
+    chown system system /sys/touchscreen0/supported_func_indicater
+    chown system system /sys/touchscreen0/easy_wakeup_gesture
+    chown system system /sys/touchscreen0/wakeup_gesture_enable
+    chown system system /sys/touchscreen0/easy_wakeup_control
+    chown system system /sys/touchscreen0/easy_wakeup_position
+    chown system system /sys/touchscreen0/touch_oem_info
+    chown system system /sys/touchscreen0/fingerprint_switch_ctrl
+    chown system system /sys/touchscreen0/power_switch_ctrl
+    chown system system /sys/touchscreen0/aod_touch_switch_ctrl
+    chown system system /sys/touchscreen0/aod_event_report_ctrl
+    chown system system /sys/touchscreen0/tp_ud_lowpower_ctrl
+    chown system system /sys/touchscreen0/aod_notify_tp_power_ctrl
+    chown system system /sys/touchscreen0/screen_status_switch
+    chown system system /sys/touchscreen0/aod_notify_tp_talk_mode
+    chown system system /sys/touchscreen0/trusted_touch_enable
+    chown system system /sys/touchscreen0/trusted_touch_type
+    chown system system /sys/touchscreen0/charger_state
+    chown system system /sys/touchscreen0/driver_override
+    chown system system /sys/touchscreen0/factory_extra_cmd
+    chown system system /sys/touchscreen0/hostprocessing
+    chown system system /sys/touchscreen0/loglevel
+    chown system system /sys/touchscreen0/modalias
+    chown system system /sys/touchscreen0/power
+    chown system system /sys/touchscreen0/ring_setting_config_ctrl
+    chown system system /sys/touchscreen0/ring_switch_ctrl
+    chown system system /sys/touchscreen0/roi_data_internal
+    chown system system /sys/touchscreen0/subsystem
+    chown system system /sys/touchscreen0/thp_status
+    chown system system /sys/touchscreen0/tp_dfx_info
+    chown system system /sys/touchscreen0/tui_wake_up_enable
+    chown system system /sys/touchscreen0/uevent
+
+    # for touchscreen1
+    chown system system /sys/touchscreen1/stylus_support
+    chown system system /sys/touchscreen1/touch_chip_info
+    chown system system /sys/touchscreen1/calibrate
+    chown system system /sys/touchscreen1/calibrate_wakeup_gesture
+    chown system system /sys/touchscreen1/touch_glove
+    chown system system /sys/touchscreen1/touch_sensitivity
+    chown system system /sys/touchscreen1/hand_detect
+    chown system system /sys/touchscreen1/supported_func_indicater
+    chown system system /sys/touchscreen1/touch_window
+    chown system system /sys/touchscreen1/easy_wakeup_gesture
+    chown system system /sys/touchscreen1/aod_touch_switch_ctrl
+    chown system system /sys/touchscreen1/wakeup_gesture_enable
+    chown system system /sys/touchscreen1/touch_dsm_debug
+    chown system system /sys/touchscreen1/easy_wakeup_control
+    chown system system /sys/touchscreen1/easy_wakeup_position
+    chown system system /sys/touchscreen1/touch_register_operation
+    chown system system /sys/touchscreen1/tp_capacitance_test_type
+    chown system system /sys/touchscreen1/touch_rawdata_debug
+    chown system system /sys/touchscreen1/touch_wideth
+    chown system system /sys/touchscreen1/roi_enable
+    chown system system /sys/touchscreen1/roi_data
+    chown system system /sys/touchscreen1/roi_data_debug
+    chown system system /sys/touchscreen1/touch_tui_enable
+    chown system system /sys/touchscreen1/touch_oem_info
+    chown system system /sys/touchscreen1/calibration_info
+    chown system system /sys/touchscreen1/tp_capacitance_test_config
+    chown system system /sys/touchscreen1/touch_switch
+    chown system system /sys/touchscreen1/udfp_enable
+    chown system system /sys/touchscreen1/stylus_wakeup_ctrl
+    chown system system /sys/touchscreen1/tp_ud_lowpower_ctrl
+    chown system system /sys/touchscreen1/trusted_touch_enable
+    chown system system /sys/touchscreen1/trusted_touch_type
+    chown system system /proc/touchscreen1/tp_capacitance_data
+    chown system system /sys/touchscreen1/fingerprint_switch_ctrl
+    chown system system /sys/touchscreen1/power_switch_ctrl
+    chown system system /sys/touchscreen1/aod_event_report_ctrl
+    chown system system /sys/touchscreen1/aod_notify_tp_power_ctrl
+    chown system system /sys/touchscreen1/aod_notify_tp_talk_mode
+    chown system system /sys/touchscreen1/charger_state
+    chown system system /sys/touchscreen1/driver_override
+    chown system system /sys/touchscreen1/factory_extra_cmd
+    chown system system /sys/touchscreen1/hostprocessing
+    chown system system /sys/touchscreen1/loglevel
+    chown system system /sys/touchscreen1/modalias
+    chown system system /sys/touchscreen1/power
+    chown system system /sys/touchscreen1/ring_setting_config_ctrl
+    chown system system /sys/touchscreen1/ring_switch_ctrl
+    chown system system /sys/touchscreen1/roi_data_internal
+    chown system system /sys/touchscreen1/screen_status_switch
+    chown system system /sys/touchscreen1/subsystem
+    chown system system /sys/touchscreen1/thp_status
+    chown system system /sys/touchscreen1/tp_dfx_info
+    chown system system /sys/touchscreen1/tui_wake_up_enable
+    chown system system /sys/touchscreen1/uevent
+
+    chown system system /sys/firmware/devicetree/base/soc/spi@890000/honor_thp@0
+    chmod 0750 /sys/firmware/devicetree/base/soc/spi@890000/honor_thp@0
+
+    chown system system /sys/firmware/devicetree/base/soc/spi@990000/honor_thp@0
+    chmod 0750 /sys/firmware/devicetree/base/soc/spi@990000/honor_thp@0
+
+    chown system system /sys/firmware/devicetree/base/soc/spi@a8c000/honor_thp@0
+    chmod 0750 /sys/firmware/devicetree/base/soc/spi@a8c000/honor_thp@0
+
+    chown system system /sys/firmware/devicetree/base/soc/spi@990000/ts_kit
+    chmod 0750 /sys/firmware/devicetree/base/soc/spi@990000/ts_kit
+
+    chown system system /sys/devices/12c.hw-dev-detect/dev_flag
+
+    chmod  0660 /dev/ts_aft_set_info1
+    chown root system /dev/ts_aft_set_info1
+    chmod  0660 /dev/ts_aft_get_info1
+    chown root system /dev/ts_aft_get_info1
+    chmod  0660 /dev/input_mt_wrapper0
+    chown root system /dev/input_mt_wrapper0
+    chmod  0660 /dev/input_mt_wrapper1
+    chown root system /dev/input_mt_wrapper1
+    chmod  0660 /dev/input_mt_wrapper
+    chown root system /dev/input_mt_wrapper
+
+on post-fs-data
+    #Create dir for fingerprint
+    mkdir /data/vendor/log 0755 system system
+    mkdir /data/vendor/log/sec_log 0755 system system
+    mkdir /data/vendor/log/fingerprint 0755 system system
+    #Create dir for thplog
+    mkdir /data/vendor/log/thplog 0774 root system
+
+on post-fs-data
+    chown system system /sys/devices/platform/honor_touch/roi_data
+    chown system system /sys/devices/platform/honor_touch/roi_enable
+    chown system system /sys/devices/platform/honor_touch/roi_data_debug
+    chown system system /sys/devices/platform/honor_touch/touch_chip_info
+    chown system system /data/misc/sensors
+    restorecon /data/misc/sensors
+    #For vibrator calibration
+    chown system system /sys/class/leds/vibrator0/hn_vibrator_cali_val
+    chown system system /sys/class/leds/vibrator0/hn_vibrator_calib
+    chown system system /sys/class/leds/vibrator0/hn_vibrator_set_f0
+    chown system system /sys/class/leds/vibrator1/hn_vibrator_cali_val
+    chown system system /sys/class/leds/vibrator1/hn_vibrator_calib
+    chown system system /sys/class/leds/vibrator1/hn_vibrator_set_f0
+    chown system system /sys/class/leds/vibrator_ldo/activate
+    chown system system /sys/class/leds/vibrator_ldo/duration
+    chown system system /sys/class/leds/vibrator_ldo/state
+    # add haptics
+    chown system system /dev/hnHaptics
+    #Create dir for htee log
+    mkdir /data/vendor/log/tee 0755 root root
+    mkdir /data/vendor/log/audio_log 0777 system system
+    #audio boxid
+    chown system system /dev/deviceboxID
+    chmod 0660 /dev/deviceboxID
+
+service knuckle /system/bin/sensors_qcom
+    class late_start
+    user system
+    group system
+
+on boot
+    chown system camera /sys/class/leds/torch-light0/brightness
+    chown system camera /sys/class/leds/torch-light1/brightness
+    chown system system /sys/devices/platform/soc/soc:qcom,camera-flash@0/flash_thermal_protect
+    chown system system /sys/bus/platform/drivers/camcfgdev/guard_thermal
+    chown system camera /dev/hicam_actuator
+    chmod 0664 /sys/class/leds/torch-light0/brightness
+    chmod 0664 /sys/class/leds/torch-light1/brightness
+    chmod 0664 /sys/devices/platform/soc/soc:qcom,camera-flash@0/flash_thermal_protect
+    chmod 0664 /sys/bus/platform/drivers/camcfgdev/guard_thermal
+    chmod 0664 /dev/hicam_actuator
+    swapon_all fstab.qcom
+
+# add for fingersense
+on boot
+    chown system system /sys/devices/platform/honor_sensor/set_fingersense_enable
+    chown system system /sys/devices/platform/honor_sensor/fingersense_req_data
+    chown system system /sys/devices/platform/honor_sensor/fingersense_latch_data
+    chown system system /sys/devices/platform/honor_sensor/fingersense_latch_data2
+    chown system system /sys/devices/platform/honor_sensor/fingersense_data_ready
+    chown system system /sys/devices/platform/honor_sensor/acc_info
+    chown system system /sys/devices/platform/honor_sensor/fingersense_expand
+
+#add for color sensor
+on boot
+    chown system system /sys/class/ap_sensor/color_sensor/name
+    chmod 644 /sys/class/ap_sensor/color_sensor/name
+    chown system system /sys/class/ap_sensor/color_sensor/color_enable
+    chmod 664 /sys/class/ap_sensor/color_sensor/color_enable
+    chown system system /sys/class/ap_sensor/color_sensor/report_data
+    chmod 644 /sys/class/ap_sensor/color_sensor/report_data
+    chown system system /sys/class/ap_sensor/color_sensor/color_cali
+    chmod 644 /sys/class/ap_sensor/color_sensor/color_cali
+    chown system system /sys/class/ap_sensor/color_sensor/flicker_enable
+    chmod 664 /sys/class/ap_sensor/color_sensor/flicker_enable
+    chown system system /sys/class/ap_sensor/color_sensor/flicker_data
+    chmod 644 /sys/class/ap_sensor/color_sensor/flicker_data
+    chown system system /sys/class/ap_sensor/color_sensor/gain
+    chmod 644 /sys/class/ap_sensor/color_sensor/gain
+    chown system camera /sys/class/ap_sensor/color_sensor/flicker_gain
+    chmod 664 /sys/class/ap_sensor/color_sensor/flicker_gain
+    chown system system /sys/class/ap_sensor/color_sensor/atime
+    chmod 644 /sys/class/ap_sensor/color_sensor/atime
+    chown system system /sys/class/ap_sensor/color_sensor/itime
+    chmod 644 /sys/class/ap_sensor/color_sensor/itime
+    chown system camera /sys/class/ap_sensor/color_sensor/flicker_itime
+    chmod 664 /sys/class/ap_sensor/color_sensor/flicker_itime
+    chown system camera /sys/class/ap_sensor/color_sensor/ring_full
+    chmod 664 /sys/class/ap_sensor/color_sensor/ring_full
+    chown system system /sys/class/ap_sensor/color_sensor/color_cali_state
+    chmod 664 /sys/class/ap_sensor/color_sensor/color_cali_state
+
+#add for consumerir
+on boot
+    chmod 0644 /dev/honor_ir
+    chown system system /dev/honor_ir
+
+#add for sensor event
+    chown system system /dev/sensorevent
+    chmod 660 /dev/sensorevent
+
+#Set preisp permission
+    chown system camera /dev/preisp
+    chmod 0660 /dev/preisp
+    chown system camera /sys/class/mmc_host/mmc0/device/mmc_rescan
+    chmod 0660 /sys/class/mmc_host/mmc0/device/mmc_rescan
+    chown system camera /sys/class/mmc_host/mmc1/device/mmc_rescan
+    chmod 0660 /sys/class/mmc_host/mmc1/device/mmc_rescan

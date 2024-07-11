@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resource>
+    <group>
+        <id value="1"/>
+        <name value="MAX_EGL_CACHE_SIZE"/>
+        <define value="2097152"/>
+        <description value="AR00046GES"/>
+    </group>
+    <group>
+        <id value="2"/>
+        <name value="MAX_EGL_CACHE_KEY_SIZE"/>
+        <define value="12288"/>
+        <description value="AR00046GES"/>
+    </group>
+    <group>
+        <id value="3"/>
+        <name value="OVERRIDE_RS_DRIVER"/>
+        <define value="libRSDriver_adreno.so"/>
+        <description value="AR00046GF0"/>
+    </group>
+    <group>
+        <id value="4"/>
+        <name value="SF_VSYNC_EVENT_PHASE_OFFSET_NS"/>
+        <define value="0"/>
+        <description value="AR00046GES"/>
+    </group>
+    <group>
+        <id value="5"/>
+        <name value="VSYNC_EVENT_PHASE_OFFSET_NS"/>
+        <define value="0"/>
+        <description value=""/>
+    </group>
+</resource>

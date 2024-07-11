@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<displayConfiguration>
+    <quirks>
+        <quirk>canSetBrightnessViaHwc</quirk>
+    </quirks>
+</displayConfiguration>

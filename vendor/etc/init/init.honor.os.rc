@@ -1,0 +1,591 @@
+on early-boot
+    # Support legacy paths
+    #symlink /sdcard /mnt/sdcard
+    #symlink /storage/sdcard0 /sdcard
+    symlink /storage/self/primary /storage/sdcard0
+
+on early-boot
+    # Update dm-verity state and set partition.*.verified properties
+    verity_update_state
+
+on early-fs
+
+# for mini dump
+on property:persist.vendor.ssr.enable_ramdumps=2
+    write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
+    write /sys/module/qcom_ramdump/parameters/enable_dump_collection 0
+    write /sys/class/remoteproc/remoteproc0/coredump disabled
+    write /sys/class/remoteproc/remoteproc1/coredump disabled
+    write /sys/class/remoteproc/remoteproc2/coredump disabled
+# HONOR_RAMDUMP_ARCHITECTURE:restore the previous state of the coredump node
+    start vendor.ssr_setup
+
+# set primary sd directory
+service preparesdservice /system/bin/vdc volume storagetosd
+   class main
+   disabled
+   oneshot
+
+on property:persist.sys.primarysd=*
+   start preparesdservice
+
+on init
+
+# add for dmd
+    chmod 0660 /dev/dsm
+    chown system vendor_dsm /dev/dsm
+
+# add for power engine
+    mkdir /dev/frz
+    mount cgroup none /dev/frz freezer
+    chmod 0775 /dev/frz
+
+    restorecon      /sys/kernel/set_hmp_thresholds/policy
+    restorecon      /sys/class/graphics/fb0/lcd_cabc_mode
+    restorecon      /sys/class/leds/torch/flash_thermal_protect
+    restorecon      /sys/class/hw_power/charger/charge_data/iin_thermal
+    restorecon      /sys/devices/qcom,honor_charger/iin_thermal
+
+    mkdir /dev/frz/aware_frozen
+    chmod 0770 /dev/frz/aware_frozen
+    chown root root /dev/frz/aware_frozen
+
+    write /sys/power/pm_freeze_timeout 5000
+
+    setprop odm.bastet.service.enable true
+
+#cpuset config begin
+    # sets up initial cpusets for ActivityManager
+    mkdir /dev/cpuset
+    mount cgroup none /dev/cpuset cpuset,cpuset_noprefix
+    mount cgroup none /dev/cpuset remount cpuset,blkio,cpuset_noprefix
+
+    # this ensures that the cpusets are present and usable, but the device's
+    # init.rc must actually set the correct cpus
+    mkdir /dev/cpuset/foreground
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/mems 0
+    mkdir /dev/cpuset/background
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/background/mems 0
+
+    # system-background is for system tasks that should only run on
+    # little cores, not on bigs
+    # to be used only by init, so don't change system-bg permissions
+    mkdir /dev/cpuset/system-background
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/system-background/mems 0
+
+    mkdir /dev/cpuset/top-app
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/top-app/mems 0
+
+    # set system-background to 0775 so SurfaceFlinger can touch it
+    chmod 0775 /dev/cpuset/system-background
+
+#cpuset config end
+
+#Added for qosctrl begin
+    chown system system /dev/iaware_qos_ctrl
+    chmod 660 /dev/iaware_qos_ctrl
+#Added for qosctrl end
+
+# sets up initial workingset cgroup
+    mkdir /dev/workingset
+    mount cgroup none /dev/workingset nodev noexec nosuid workingset
+    mkdir /dev/workingset/monitor0
+    mkdir /dev/workingset/monitor1
+
+    chmod 0600 /dev/workingset/tasks
+    chmod 0600 /dev/workingset/monitor0/tasks
+    chmod 0600 /dev/workingset/monitor1/tasks
+    chmod 0600 /dev/workingset/cgroup.procs
+    chmod 0600 /dev/workingset/monitor0/cgroup.procs
+    chmod 0600 /dev/workingset/monitor1/cgroup.procs
+    chmod 0600 /dev/workingset/monitor0/workingset.state
+    chmod 0600 /dev/workingset/monitor1/workingset.state
+    chmod 0600 /dev/workingset/monitor0/workingset.data
+    chmod 0600 /dev/workingset/monitor1/workingset.data
+
+# sets up initial protectLru memcg
+    mkdir /dev/memcg/protect_lru_1
+    mkdir /dev/memcg/protect_lru_2
+    mkdir /dev/memcg/protect_lru_3
+    chmod 0400 /dev/memcg/protect_lru_1
+    chmod 0400 /dev/memcg/protect_lru_2
+    chmod 0400 /dev/memcg/protect_lru_3
+
+service inotifywait /vendor/bin/inotifywait -rm -e modify -e attrib -e close_write -e moved_to -e moved_from -e move -e move_self -e create -e delete -e delete_self -i "%Y/%m/%d %H:%M" -n "%T %w%f %e" -o /log/inotify.log /system
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
+
+#service usb_update_sh /vendor/bin/sh /vendor/etc/usb_update_daemon.sh
+#    class main
+#    disabled
+    # seclabel u:r:usb_update:s0
+
+on property:sys.boot_completed=1 && property:ro.runmode=normal
+    start inotifywait
+
+on fs
+    restorecon /log
+    chmod 775 /log
+    chown root system /log
+
+#service systeminfo /system/bin/systeminfo
+#    class main
+#    disabled
+#    seclabel u:r:systeminfo:s0
+#    oneshot
+
+#on property:systeminfo.enable=true
+#    start systeminfo
+
+#on property:systeminfo.enable=false
+#    stop systeminfo
+
+service ddrtest /vendor/bin/do_ddrtest
+    user root
+    disabled
+    oneshot
+
+service stop_ddrtest /vendor/bin/do_ddrtest
+    user root
+    disabled
+    oneshot
+
+#service thermal-daemon /vendor/bin/thermal-daemon
+#    class main
+#    user system
+#    group system
+    # seclabel u:r:thermal-daemon:s0
+
+service bastetd /system/bin/bastetd
+    class main
+    user root
+    group system root
+    disabled
+    seclabel u:r:bastetd:s0
+
+on property:vendor.debug.rt.ddr.test=1
+    stop ddrtest
+    start ddrtest
+on property:vendor.debug.rt.ddr.test=2
+    start ddrtest
+on property:vendor.debug.rt.ddr.test=3
+    start ddrtest
+on property:vendor.debug.rt.ddr.test=4
+    start stop_ddrtest
+on property:vendor.debug.rt.ddr.test=5
+    stop ddrtest
+    start ddrtest
+on property:vendor.debug.rt.ddr.test=6
+    start ddrtest
+
+on property:odm.bastet.service.enable=true
+    start bastetd
+
+on boot
+    chmod 0660 /dev/hwlog_tag
+    chown system system /dev/hwlog_tag
+    chown system system /dev/hw_bfm
+    chmod 0660 /dev/hw_bfm
+
+# top n memory process
+    chown system system /proc/driver/process_mem
+
+    chmod 0660 /proc/mm_stat/page_alloc_stats
+    chown system system /proc/mm_stat/page_alloc_stats
+
+# Default Enable filesystem anti-aging feature
+    setprop persist.sys.fsantiaging.enable 1
+
+# Disable filesystem anti-aging feature if set override
+on property:persist.sys.fsantiaging.disable_override=1
+    setprop persist.sys.fsantiaging.enable 0
+
+on post-fs
+    chown system system /proc/uid_iostats/show_uid_iostats
+    chmod 0440 /proc/uid_iostats/show_uid_iostats
+    chown system system /proc/uid_iostats/uid_iomonitor_list
+    chmod 0660 /proc/uid_iostats/uid_iomonitor_list
+    chown system system /proc/uid_iostats/remove_uid_list
+    chmod 0660 /proc/uid_iostats/remove_uid_list
+
+    chmod 0664 /vendor/etc/usb_update_daemon.sh
+
+#service hw_fsck_msdos /sbin/fsck_msdos_s
+#    user root
+#    group root
+#    disabled
+#    oneshot
+    # seclabel u:r:hw_fsck_sbin:s0
+
+on property:sys.check.usbupdate=start
+    start usb_update_sh
+
+on property:sys.check.usbupdate=stop
+    stop usb_update_sh
+
+on early-init
+    mkdir /log 0775 system log
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+    chmod 0222 /sys/kernel/tracing/trace_marker
+
+on post-fs-data
+    chmod 0664 /sys/class/hw_power/charger/charge_data/iin_thermal
+    chown system system /sys/class/hw_power/charger/charge_data/iin_thermal
+    chmod 0664 /sys/class/hw_power/charger/charge_data/iin_runningtest
+    chown system system /sys/class/hw_power/charger/charge_data/iin_runningtest
+    chmod 0440 /sys/class/hw_power/charger/charge_data/voltage_sys
+    chown system system /sys/class/hw_power/charger/charge_data/voltage_sys
+    chmod 0664 /sys/class/hw_power/charger/charge_data/iin_rt_current
+    chown system system /sys/class/hw_power/charger/charge_data/iin_rt_current
+    chmod 0664 /sys/class/hw_power/charger/charge_data/enable_hiz
+    chown system system /sys/class/hw_power/charger/charge_data/enable_hiz
+    chmod 0664 /sys/class/hw_power/charger/charge_data/enable_shipmode
+    chown system system /sys/class/hw_power/charger/charge_data/enable_shipmode
+    chmod 0664 /sys/class/hw_power/charger/charge_data/shutdown_watchdog
+    chown system system /sys/class/hw_power/charger/charge_data/shutdown_watchdog
+    chmod 0664 /sys/class/hw_power/charger/charge_data/enable_charger
+    chown system system /sys/class/hw_power/charger/charge_data/enable_charger
+    chmod 0664 /sys/class/hw_power/charger/charge_data/factory_diag
+    chown system system /sys/class/hw_power/charger/charge_data/factory_diag
+    chmod 0660 /sys/class/hw_power/charger/charge_data/update_volt_now
+    chown system system /sys/class/hw_power/charger/charge_data/update_volt_now
+    chmod 0664 /sys/class/hw_power/adapter/test_result
+    chown system system /sys/class/hw_power/adapter/test_result
+    chmod 0660 /sys/class/hw_power/charger/charge_data/ichg_ratio
+    chown system system /sys/class/hw_power/charger/charge_data/ichg_ratio
+    chmod 0660 /sys/class/hw_power/charger/charge_data/vterm_dec
+    chown system system /sys/class/hw_power/charger/charge_data/vterm_dec
+    chmod 0660 /sys/class/hw_power/charger/charge_data/thermal_reason
+    chown system system /sys/class/hw_power/charger/charge_data/thermal_reason
+    chmod 0660 /sys/class/hw_power/interface/enable_charger
+    chown system system /sys/class/hw_power/interface/enable_charger
+    chmod 0660 /sys/class/hw_power/interface/ichg_limit
+    chown system system /sys/class/hw_power/interface/ichg_limit
+    chmod 0660 /sys/class/hw_power/interface/ichg_ratio
+    chown system system /sys/class/hw_power/interface/ichg_ratio
+    chmod 0660 /sys/class/hw_power/interface/vterm_dec
+    chown system system /sys/class/hw_power/interface/vterm_dec
+    chmod 0660 /sys/class/hw_power/interface/enable_debug
+    chown system system /sys/class/hw_power/interface/enable_debug
+    chmod 0660 /sys/class/hw_power/interface/adap_volt
+    chown system system /sys/class/hw_power/interface/adap_volt
+    chmod 0660 /sys/class/hw_power/interface/wl_thermal_ctrl
+    chown system system /sys/class/hw_power/interface/wl_thermal_ctrl
+    chmod 0220 /sys/class/hw_power/interface/iin_thermal
+    chown system system /sys/class/hw_power/interface/iin_thermal
+    chmod 0220 /sys/class/hw_power/interface/iin_thermal_all
+    chown system system /sys/class/hw_power/interface/iin_thermal_all
+    chmod 0660 /sys/class/hw_power/interface/ichg_thermal
+    chown system system /sys/class/hw_power/interface/ichg_thermal
+    chmod 0440 /sys/class/hw_power/interface/ibus
+    chown system system /sys/class/hw_power/interface/ibus
+    chmod 0440 /sys/class/hw_power/interface/vbus
+    chown system system /sys/class/hw_power/interface/vbus
+    chmod 0660 /sys/class/hw_power/interface/rt_test_time
+    chown system system /sys/class/hw_power/interface/rt_test_time
+    chmod 0660 /sys/class/hw_power/interface/rt_test_result
+    chown system system /sys/class/hw_power/interface/rt_test_result
+    chmod 0220 /sys/class/hw_power/interface/rtb_success
+    chown system system /sys/class/hw_power/interface/rtb_success
+    chmod 0660 /sys/class/hw_power/charger/direct_charger_sc/set_resistance_threshold
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/set_resistance_threshold
+    chmod 0660 /sys/class/hw_power/charger/direct_charger_sc/set_chargetype_priority
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/set_chargetype_priority
+    chmod 0660 /sys/class/hw_power/charger/direct_charger_sc/iin_thermal
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/iin_thermal
+    chmod 0660 /sys/class/hw_power/charger/direct_charger_sc/thermal_reason
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/thermal_reason
+    chmod 0660 /sys/class/hw_power/charger/direct_charger_sc/iin_thermal_ichg_control
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/iin_thermal_ichg_control
+    chmod 0660 /sys/class/hw_power/charger/direct_charger_sc/ichg_control_enable
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/ichg_control_enable
+    chmod 0440 /sys/class/hw_power/charger/direct_charger_sc/sc_state
+    chown system system /sys/class/hw_power/charger/direct_charger_sc/sc_state
+    chmod 0660 /sys/class/hw_power/charger/direct_charger/iin_thermal
+    chown system system /sys/class/hw_power/charger/direct_charger/iin_thermal
+    chmod 0660 /sys/class/hw_power/charger/direct_charger/thermal_reason
+    chown system system /sys/class/hw_power/charger/direct_charger/thermal_reason
+    chmod 0660 /sys/class/hw_power/charger/direct_charger/iin_thermal_ichg_control
+    chown system system /sys/class/hw_power/charger/direct_charger/iin_thermal_ichg_control
+    chmod 0660 /sys/class/hw_power/charger/direct_charger/ichg_control_enable
+    chown system system /sys/class/hw_power/charger/direct_charger/ichg_control_enable
+    chmod 0222 /sys/class/hw_power/soc_decimal/start
+    chown system system /sys/class/hw_power/soc_decimal/start
+    chmod 0444 /sys/class/hw_power/soc_decimal/soc
+    chown system system /sys/class/hw_power/soc_decimal/soc
+    chmod 0444 /sys/class/hw_power/power_ui/cable_type
+    chown system system /sys/class/hw_power/power_ui/cable_type
+    chmod 0444 /sys/class/hw_power/power_ui/icon_type
+    chown system system /sys/class/hw_power/power_ui/icon_type
+    chmod 0444 /sys/class/hw_power/power_ui/max_power
+    chown system system /sys/class/hw_power/power_ui/max_power
+    chmod 0444 /sys/class/hw_power/power_ui/wl_off_pos
+    chown system system /sys/class/hw_power/power_ui/wl_off_pos
+    chmod 0444 /sys/class/hw_power/power_ui/wl_fan_status
+    chown system system /sys/class/hw_power/power_ui/wl_fan_status
+    chmod 0444 /sys/class/hw_power/power_ui/wl_cover_status
+    chown system system /sys/class/hw_power/power_ui/wl_cover_status
+    chmod 0444 /sys/class/hw_power/power_ui/water_status
+    chown system system /sys/class/hw_power/power_ui/water_status
+    chmod 0444 /sys/class/hw_power/power_ui/heating_status
+    chown system system /sys/class/hw_power/power_ui/heating_status
+    chmod 0444 /sys/class/hw_power/lga_ck/status
+    chown system system /sys/class/hw_power/lga_ck/status
+    chmod 0440 /sys/devices/platform/honor_ptst/wlc_mmi/result
+    chown system system /sys/devices/platform/honor_ptst/wlc_mmi/result
+    chmod 0440 /sys/devices/platform/honor_ptst/wlc_mmi/timeout
+    chown system system /sys/devices/platform/honor_ptst/wlc_mmi/timeout
+    chmod 0660 /sys/devices/platform/honor_ptst/wlc_mmi/start
+    chown system system /sys/devices/platform/honor_ptst/wlc_mmi/start
+    chmod 0660 /sys/devices/platform/honor_ptst/dc_mmi/test_status
+    chown system system /sys/devices/platform/honor_ptst/dc_mmi/test_status
+    chmod 0444 sys/kernel/debug/power_debug/total_ibus
+    chown system system sys/kernel/debug/power_debug/total_ibus
+    chmod 0444 sys/kernel/debug/power_debug/main_ibus
+    chown system system sys/kernel/debug/power_debug/main_ibus
+    chmod 0444 sys/kernel/debug/power_debug/main_vbus
+    chown system system sys/kernel/debug/power_debug/main_vbus
+    chmod 0444 sys/kernel/debug/power_debug/main_vout
+    chown system system sys/kernel/debug/power_debug/main_vout
+    chmod 0444 sys/kernel/debug/power_debug/main_ibat
+    chown system system sys/kernel/debug/power_debug/main_ibat
+    chmod 0444 sys/kernel/debug/power_debug/main_vbat
+    chown system system sys/kernel/debug/power_debug/main_vbat
+    chmod 0444 sys/kernel/debug/power_debug/main_ic_temp
+    chown system system sys/kernel/debug/power_debug/main_ic_temp
+    chmod 0444 sys/kernel/debug/power_debug/main_ic_id
+    chown system system sys/kernel/debug/power_debug/main_ic_id
+    chmod 0444 sys/kernel/debug/power_debug/main_ic_name
+    chown system system sys/kernel/debug/power_debug/main_ic_name
+    chmod 0444 sys/kernel/debug/power_debug/aux_ibus
+    chown system system sys/kernel/debug/power_debug/aux_ibus
+    chmod 0444 sys/kernel/debug/power_debug/aux_vbus
+    chown system system sys/kernel/debug/power_debug/aux_vbus
+    chmod 0444 sys/kernel/debug/power_debug/aux_vout
+    chown system system sys/kernel/debug/power_debug/aux_vout
+    chmod 0444 sys/kernel/debug/power_debug/aux_ibat
+    chown system system sys/kernel/debug/power_debug/aux_ibat
+    chmod 0444 sys/kernel/debug/power_debug/aux_vbat
+    chown system system sys/kernel/debug/power_debug/aux_vbat
+    chmod 0444 sys/kernel/debug/power_debug/aux_ic_temp
+    chown system system sys/kernel/debug/power_debug/aux_ic_temp
+    chmod 0444 sys/kernel/debug/power_debug/aux_ic_id
+    chown system system sys/kernel/debug/power_debug/aux_ic_id
+    chmod 0444 sys/kernel/debug/power_debug/aux_ic_name
+    chown system system sys/kernel/debug/power_debug/aux_ic_name
+    chmod 0444 sys/kernel/debug/power_debug/tadapt
+    chown system system sys/kernel/debug/power_debug/tadapt
+    chmod 0444 sys/kernel/debug/power_debug/vadapt
+    chown system system sys/kernel/debug/power_debug/vadapt
+    chmod 0444 sys/kernel/debug/power_debug/tusb
+    chown system system sys/kernel/debug/power_debug/tusb
+    chmod 0444 sys/kernel/debug/power_debug/lvc_ibus
+    chown system system sys/kernel/debug/power_debug/lvc_ibus
+    chmod 0444 sys/kernel/debug/power_debug/lvc_vbus
+    chown system system sys/kernel/debug/power_debug/lvc_vbus
+    chmod 0444 sys/kernel/debug/power_debug/lvc_ibat
+    chown system system sys/kernel/debug/power_debug/lvc_ibat
+    chmod 0444 sys/kernel/debug/power_debug/lvc_vbat
+    chown system system sys/kernel/debug/power_debug/lvc_vbat
+    chmod 0444 sys/kernel/debug/power_debug/lvc_ic_id
+    chown system system sys/kernel/debug/power_debug/lvc_ic_id
+    chmod 0444 sys/kernel/debug/power_debug/lvc_ic_name
+    chown system system sys/kernel/debug/power_debug/lvc_ic_name
+    chmod 0444 sys/kernel/debug/power_debug/lvc_vadapt
+    chown system system sys/kernel/debug/power_debug/lvc_vadapt
+    chmod 0660 /sys/class/hw_power/charger/wireless_sc/iin_thermal
+    chown system system /sys/class/hw_power/charger/wireless_sc/iin_thermal
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/vrect
+    chown system system /sys/class/hw_power/charger/wireless_charger/vrect
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/vout
+    chown system system /sys/class/hw_power/charger/wireless_charger/vout
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/iout
+    chown system system /sys/class/hw_power/charger/wireless_charger/iout
+    chmod 0440 /sys/class/hw_power/charger/wireless_charger/tx_adaptor_type
+    chown system system /sys/class/hw_power/charger/wireless_charger/tx_adaptor_type
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/program_otp
+    chown system system /sys/class/hw_power/charger/wireless_charger/program_otp
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/en_enable
+    chown system system /sys/class/hw_power/charger/wireless_charger/en_enable
+    chmod 0440 /sys/class/hw_power/charger/wireless_charger/wireless_succ
+    chown system system /sys/class/hw_power/charger/wireless_charger/wireless_succ
+    chmod 0440 /sys/class/hw_power/charger/wireless_charger/normal_chrg_succ
+    chown system system /sys/class/hw_power/charger/wireless_charger/normal_chrg_succ
+    chmod 0440 /sys/class/hw_power/charger/wireless_charger/fast_chrg_succ
+    chown system system /sys/class/hw_power/charger/wireless_charger/fast_chrg_succ
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/fod_coef
+    chown system system /sys/class/hw_power/charger/wireless_charger/fod_coef
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/interference_setting
+    chown system system /sys/class/hw_power/charger/wireless_charger/interference_setting
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/rx_support_mode
+    chown system system /sys/class/hw_power/charger/wireless_charger/rx_support_mode
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/thermal_ctrl
+    chown system system /sys/class/hw_power/charger/wireless_charger/thermal_ctrl
+    chmod 0660 /sys/class/hw_power/charger/wireless_tx/tx_open
+    chown system system /sys/class/hw_power/charger/wireless_tx/tx_open
+    chmod 0660 /sys/class/hw_power/charger/wireless_aux_tx/tx_open
+    chown system system /sys/class/hw_power/charger/wireless_aux_tx/tx_open
+    chmod 0440 /sys/class/hw_power/charger/wireless_tx/tx_status
+    chown system system /sys/class/hw_power/charger/wireless_tx/tx_status
+    chmod 0440 /sys/class/hw_power/charger/wireless_tx/tx_iin_avg
+    chown system system /sys/class/hw_power/charger/wireless_tx/tx_iin_avg
+    chmod 0444 /sys/class/hw_power/wireless/tx_bd_info
+    chown system system /sys/class/hw_power/wireless/tx_bd_info
+    chmod 0222 /sys/class/hw_power/power_cali/reset
+    chown system system /sys/class/hw_power/power_cali/reset
+    chmod 0660 /sys/class/hw_power/charger/wireless_charger/max_power_switch
+    chown system system /sys/class/hw_power/charger/wireless_charger/max_power_switch
+
+    #run this shell for setting cpuset of 8917
+    chmod 0110 /init.honor.cpu_set.sh
+    exec u:r:qti_init_shell:s0 -- /init.honor.cpu_set.sh
+
+    #DTS2016101406299 wWX367520 20161029
+    mkdir /data/apkpush
+    chmod 0770 /data/apkpush
+    chown system cache /data/apkpush
+    restorecon_recursive /data/apkpush
+
+    setprop vold.crypto_unencrypt_updatedir /data/update
+    mkdir /data/update 0770 system cache encryption=None
+    restorecon /data/update
+
+    mkdir /data/share 0770 media_rw media_rw
+    chown media_rw media_rw /data/share
+    restorecon_recursive /data/share
+
+    #camera for save frame_lost bin file
+    mkdir /data/vendor/camera_frame_lost
+    chown system system /data/vendor/camera_frame_lost
+    chmod 777 /data/vendor/camera_frame_lost
+    restorecon_recursive /data/vendor/camera_frame_lost
+
+    #camera
+    mkdir /data/vendor/camera
+    chown system camera /data/vendor/camera
+    chmod 770 /data/vendor/camera
+
+    #beta_raw_dump
+    mkdir /data/vendor/beta_raw_dump
+    chown system system /data/vendor/beta_raw_dump
+    chmod 777 /data/vendor/beta_raw_dump
+    restorecon_recursive /data/vendor/beta_raw_dump
+
+    #display for save screen calibration file
+    mkdir /data/vendor/log/display
+    chown system system /data/vendor/log/display
+    chmod 770 /data/vendor/log/display
+    restorecon_recursive /data/vendor/log/display
+
+# uniperf gpufreq
+#    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+#    chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+#    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+#    chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+
+#xcollie
+    mkdir /data/vendor/log/reliability
+    chmod 0775 /data/vendor/log/reliability
+    chown root system /data/vendor/log/reliability
+
+    mkdir /data/vendor/log/reliability/xcollie
+    chown system log /data/vendor/log/reliability/xcollie
+    chmod 2775 /data/vendor/log/reliability/xcollie
+    restorecon_recursive /data/vendor/log/reliability/xcollie
+
+#fingerprint
+    mkdir /data/vendor/fingerprint_dump
+    chmod 0770 /data/vendor/fingerprint_dump
+    chown system system /data/vendor/fingerprint_dump
+    restorecon_recursive /data/vendor/fingerprint_dump
+service defragd /system/vendor/bin/defragd
+    class late_start
+
+on property:init.svc.zygote=stopped
+    stop defragd
+
+on property:init.svc.zygote=running && property:sys.userdata_is_ready=1
+    start defragd
+
+on nonencrypted
+    trigger data_ready
+
+on data_ready
+    exec u:r:blkcginit:s0 root root -- /vendor/bin/sh /vendor/etc/blkcg_init.sh 0 0
+    copy_per_line /dev/blkio/tasks /dev/blkio/system-background/tasks
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
+
+## Dubai daemon definition
+service dubaid /system/bin/dubaid
+    class main
+    user root
+    group system
+
+## touchdown reclaim
+on property:odm.extra_watermark_scale_factor=*
+    write /proc/sys/vm/extra_watermark_scale_factor ${odm.extra_watermark_scale_factor}
+
+on property:sys.boot_completed=1 && property:ro.boot.verifiedbootstate=orange
+    write dev/hw_bfm boot_succ
+
+## add for zrhung honor_hung_task
+on property:sys.boot_completed=1
+    write /sys/kernel/hungtask/monitorlist "whitelist,init,system_server,surfaceflinger"
+    write /sys/kernel/hungtask/enable "on"
+    write /sys/kernel/hungtask/ctl_hung_task_panic "on"
+    chown system system /sys/kernel/hungtask/vm_heart
+## scanning cycle of task_structs
+    write /proc/sys/kernel/hung_task_timeout_secs 30
+
+## set value once on boot
+on boot
+    #for watchdog pet
+    chmod 0600 /sys/devices/platform/hypervisor/hypervisor:qcom,hh-watchdog/user_pet_enabled
+    chown system system /sys/devices/platform/hypervisor/hypervisor:qcom,hh-watchdog/user_pet_enabled
+    #for zram
+    write /sys/block/zram0/comp_algorithm lz4
+    write /sys/block/zram0/writeback_disable 0
+    write /sys/block/zram0/writeback_fast_enable 1
+    write /sys/block/zram0/noncompress_enable 1
+
+## add for MT station
+on boot && property:ro.runmode=factory
+    chmod 0674 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chmod 0674 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chmod 0474 /sys/class/kgsl/kgsl-3d0/devfreq/cur_freq
+
+## add for dmabuf reserved and watermark scale factor
+on property:odm.reserved_pool_size_kb=*
+    write /proc/dma_heap/reserved_pool_size_kb ${odm.reserved_pool_size_kb}
+on property:odm.watermark_scale_factor=*
+    write /proc/sys/vm/watermark_scale_factor ${odm.watermark_scale_factor}
+on property:sys.boot_completed=1 && property:ro.logsystem.usertype=3
+    write /sys/kernel/tracing/events/kgsl/adreno_cmdbatch_queued/enable 1
+    write /sys/kernel/tracing/events/kgsl/adreno_cmdbatch_submitted/enable 1
+    write /sys/kernel/tracing/events/kgsl/adreno_cmdbatch_retired/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_pwrlevel/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_buslevel/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_gpubusy/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_pwr_set_state/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_pwrstats/enable 1
+on property:sys.boot_completed=1 && property:ro.logsystem.usertype=1 && property:ro.debuggable=1
+    write /sys/kernel/tracing/events/kgsl/adreno_cmdbatch_queued/enable 1
+    write /sys/kernel/tracing/events/kgsl/adreno_cmdbatch_submitted/enable 1
+    write /sys/kernel/tracing/events/kgsl/adreno_cmdbatch_retired/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_pwrlevel/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_buslevel/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_gpubusy/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_pwr_set_state/enable 1
+    write /sys/kernel/tracing/events/kgsl/kgsl_pwrstats/enable 1

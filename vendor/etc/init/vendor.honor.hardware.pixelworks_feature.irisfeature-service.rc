@@ -1,0 +1,6 @@
+service vendor.honor.hardware.pixelworks_feature /vendor/bin/hw/vendor.honor.hardware.pixelworks_feature.irisfeature-service
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    oneshot

@@ -1,0 +1,7 @@
+service offlinealgo /vendor/bin/hw/offlinealgo@1.0-service
+    interface vendor.honor.hardware.offlinealgo@1.0::IOfflineAlgo default
+    class hal
+    user system
+    group system
+    oneshot
+    disabled

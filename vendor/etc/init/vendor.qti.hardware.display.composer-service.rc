@@ -1,0 +1,10 @@
+service vendor.qti.hardware.display.composer /vendor/bin/hw/vendor.qti.hardware.display.composer-service
+    class hal animation
+    user system
+    group graphics drmrpc system
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    onrestart restart feature_enabler_client
+    onrestart restart displayengine-hal-1-2
+    socket pps stream 0660 system system
+    writepid /dev/cpuset/system-background/tasks

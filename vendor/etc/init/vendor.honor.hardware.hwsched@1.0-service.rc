@@ -1,0 +1,10 @@
+service hwsched-1-0 /vendor/bin/hw/vendor.honor.hardware.hwsched@1.0-service
+    class hal
+    user root
+    group system
+    capabilities SYS_ADMIN SETUID SETGID CHOWN FOWNER FSETID SYS_NICE PERF_EVENT
+    disabled
+
+on property:sys.boot_completed=1
+    start hwsched-1-0
+

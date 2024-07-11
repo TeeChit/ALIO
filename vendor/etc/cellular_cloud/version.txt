@@ -1,0 +1,4 @@
+version=1.10.17.170
+type=CELLULAR_CLOUD
+subtype=QCOM
+compatibleVersion=1

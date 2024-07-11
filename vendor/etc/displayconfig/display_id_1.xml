@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<displayConfiguration
+    isPrimaryDisplay="false"
+    isFoldableDevice="true">
+    <!-- type="nitsMap" -->
+    <lightSensor>
+        <!-- type="xs:string" minOccurs="0" maxOccurs="1" -->
+        <type>android.sensor.light</type>
+        <!-- type="xs:string" minOccurs="0" maxOccurs="1" -->
+        <name></name>
+        <!-- type="refreshRateRange" minOccurs="0" maxOccurs="1" -->
+        <refreshRate>
+            <!-- type="nonNegativeDecimal" minOccurs="1" maxOccurs="1" -->
+            <minimum>300</minimum>
+            <!-- type="nonNegativeDecimal" minOccurs="1" maxOccurs="1" -->
+            <maximum>300</maximum>
+        </refreshRate>
+    </lightSensor>
+    <!-- type="sensorDetails" -->
+   <screenBrightnessMap
+         interpolation="linear">
+         <point>
+           <value>0.0</value>
+           <nits>0.0</nits>
+         </point>
+         <point>
+           <value>0.0156862</value>
+           <nits>2.0</nits>
+         </point>
+         <point>
+           <value>0.8823529</value>
+           <nits>600.0</nits>
+         </point>
+         <point>
+           <value>0.9764705</value>
+           <nits>1200.0</nits>
+         </point>
+         <point>
+           <value>1.0</value>
+           <nits>1600.0</nits>
+         </point>
+   </screenBrightnessMap>
+</displayConfiguration>

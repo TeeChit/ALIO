@@ -1,0 +1,20 @@
+#
+# Copyright (c) 2019 Qualcomm Technologies, Inc.
+# All Rights Reserved.
+# Confidential and Proprietary - Qualcomm Technologies, Inc.
+#
+
+on post-fs-data && property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    chown root system /dev/block/sda7
+    chmod 0660 /dev/block/sda7
+    start time_daemon
+
+on boot && property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    chown root system /dev/block/sda7
+    chmod 0660 /dev/block/sda7
+
+service time_daemon /vendor/bin/time_daemon
+    class main
+    user system
+    group system
+    capabilities SYS_TIME

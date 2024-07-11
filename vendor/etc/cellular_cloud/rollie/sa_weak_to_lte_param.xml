@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 元素名称区分大小写 -->
+<SaToLteParam>
+    <!-- 默认使能方案 参数填 'true' 或 'false' -->
+    <mIsSaToLteCloudEnableOpen>true</mIsSaToLteCloudEnableOpen>
+    <!-- 默认方案使能关联5G省电模式开关方案 参数填 'true' 或 'false' -->
+    <mIsNrLowPowerSwitchCloudEnableOpen>false</mIsNrLowPowerSwitchCloudEnableOpen>
+  <threshold>
+    <!-- 默认-115dBm以下为弱信号 -->
+    <mCloseSaRsrpThd>-115</mCloseSaRsrpThd>
+    <!-- 默认睡眠模式-110dBm以下为弱信号 -->
+    <mSleepModeCloseSaRsrpThd>-110</mSleepModeCloseSaRsrpThd>
+    <!-- 默认sinr -3 以下为弱信号 -->
+    <mCloseSaSinrThd>-3</mCloseSaSinrThd>
+    <!-- 默认 rsrq -43以下为弱信号, 最小值即相当于不会满足rsrq弱信号条件-->
+    <mCloseSaRsrqThd>-43</mCloseSaRsrqThd>
+    <!-- 默认 rsrq 和SNR满足门限后,同时rsrp -100以下为弱信号 -->
+    <mCloseSaSnrRsrqThenRsrpThd>-100</mCloseSaSnrRsrqThenRsrpThd>
+    <!-- 默认-90dBm以上为好信号 -->
+    <mOpenSaRsrpThd>-90</mOpenSaRsrpThd>
+    <!-- 切4G状态下检测LTE信号小于-115dB返回SA -->
+    <mLteWeakBackToSaRsrpThd>-115</mLteWeakBackToSaRsrpThd>
+    <!-- 吞吐80M,单位pbs -->
+    <mThroughputThr>80000</mThroughputThr>
+  </threshold>
+  <timer>
+    <!-- 默认10s弱信号关SA 单位毫秒 -->
+    <mCloseSaTimer>10000</mCloseSaTimer>
+    <!-- 切4G状态下检测LTE弱信号5s后返回SA 单位毫秒 -->
+    <mLteWeakBackToSaTimer>5000</mLteWeakBackToSaTimer>
+    <!-- 灭屏默认5min开SA  单位毫秒 -->
+    <mOpenSaTimerScreenOff>300000</mOpenSaTimerScreenOff>
+    <!-- 亮屏默认3min开SA  单位毫秒 -->
+    <mOpenSaTimerScreenOn>180000</mOpenSaTimerScreenOn>
+    <!-- 4G信号更弱情况下SA切4G保护定时器时长10分钟 单位毫秒 -->
+    <mOpenSaTimerLteWeak>600000</mOpenSaTimerLteWeak>
+    <!-- 睡眠模式默认60min开SA  单位毫秒 -->
+    <mOpenSaTimerSleepMode>3600000</mOpenSaTimerSleepMode>
+    <!-- 当前触发SA切4G与上一次触发4G弱信号返回SA的时间差门限 单位毫秒 -->
+    <mTimeDiffThdFromLteWeakBackToSa>900000</mTimeDiffThdFromLteWeakBackToSa>
+    <!-- 10s检测一次速率 单位毫秒-->
+    <mThroughputCheckPeriod>10000</mThroughputCheckPeriod>
+    <!-- 10秒后检验是否成功切到LTE,如果没有再次下发一次降低NR优先级 单位毫秒 -->
+    <mCheckCloseSATimer>10000</mCheckCloseSATimer>
+  </timer>
+</SaToLteParam>

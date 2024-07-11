@@ -1,0 +1,34 @@
+on boot
+    chown system system /sys/class/hn_thermal/temp/ambient
+    chown system system /sys/class/hn_thermal/temp/fold_state
+
+    chown system system /sys/class/hn_thermal/ipa/cur_power
+    chmod 0664 /sys/class/hn_thermal/ipa/cur_power
+
+    chown system system /sys/class/hn_thermal/ipa/target_power
+    chmod 0664 /sys/class/hn_thermal/ipa/target_power
+
+    chown system system /sys/class/hn_thermal/ipa/mode
+    chmod 0664 /sys/class/hn_thermal/ipa/mode
+
+    chown system system /sys/class/hn_thermal/ipa/ipa_switch
+    chmod 0664 /sys/class/hn_thermal/ipa/ipa_switch
+
+    chown system system /sys/class/hn_thermal/ipa/power_range
+    chmod 0664 /sys/class/hn_thermal/ipa/power_range
+
+    chown system system /sys/class/hn_thermal/ipa/weight
+    chmod 0664 /sys/class/hn_thermal/ipa/weight
+
+    chown system system /sys/class/hn_thermal/ipa/cur_enable
+    chmod 0664 /sys/class/hn_thermal/ipa/cur_enable
+
+    chown system system /sys/class/hn_thermal/temp/shell_back/temp
+    chmod 0664 /sys/class/hn_thermal/temp/shell_back/temp
+    chown system system /sys/class/hn_thermal/temp/shell_frame/temp
+    chmod 0664 /sys/class/hn_thermal/temp/shell_frame/temp
+    chown system system /sys/class/hn_thermal/temp/shell_front/temp
+    chmod 0664 /sys/class/hn_thermal/temp/shell_front/temp
+
+on property:vendor.all.modules.ready=1
+    setprop sys.bms_limit_mode normal

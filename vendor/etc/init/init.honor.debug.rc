@@ -1,0 +1,231 @@
+##
+## This file contains Honor Debug Policy for different runmodes
+##
+
+on boot && property:ro.logsystem.usertype=3
+    chmod 0646 /sys/kernel/ssrdump_reason/fulldump_reason_config
+    setprop persist.log.tag.PerMgrSrv D
+
+# SSR logic in ro.vendor.final_release=false build, if you want your
+# subsystem crash to fulldump on non-final_release build, you need to
+# remove the subsystem name from persist.vendor.ssr.restart_level
+
+on property:ro.runmode=normal && property:ro.vendor.final_release=false
+    setprop persist.vendor.ssr.restart_level "mss slpi adsp"
+    setprop persist.vendor.sensors.debug.hal_trigger_ssr "true"
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/recovery 0
+    restorecon /sys/kernel/kgsl_hugepage/hugepage_alloc
+    restorecon /sys/kernel/kgsl_hugepage/hugepage_process_alloc
+    restorecon /sys/kernel/kgsl_pool/kgsl_pool_info
+    chown system system /sys/kernel/dma_heap/dma_buf_hugepage_size
+    chown system system /sys/kernel/kgsl_hugepage/hugepage_alloc
+    chown system system /sys/kernel/hugepage/pool_shrink
+    chown system system /sys/kernel/hugepage/pool_info
+    chown system system /sys/kernel/dma_buf_pool/dma_buf_pool_info
+    chown system system /sys/kernel/dma_heap/dma_buf_process_huge_alloc
+    chown system system /sys/kernel/kgsl_hugepage/hugepage_process_alloc
+    chown system system /sys/kernel/kgsl_pool/kgsl_pool_info
+
+on property:ro.runmode=normal && property:ro.vendor.final_release=true
+    setprop persist.vendor.ssr.restart_level "ALL_ENABLE"
+    setprop persist.vendor.sensors.debug.hal_trigger_ssr "true"
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/recovery 1
+
+on property:ro.runmode=normal && property:ro.soc.model=SM8450
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/recovery 1
+
+# HONOR_RAMDUMP_ARCHITECTURE:init the modem and wifi minidump prop when boot
+on boot
+    setprop persist.vendor.ssr_enable_modem_minidump 2
+    setprop persist.vendor.ssr_enable_wifi_minidump 2
+
+on boot && property:ro.logsystem.usertype=1
+    setprop persist.vendor.ssr_enable_modem_minidump 0
+    setprop persist.sys.msc.wifiminidump.on "false"
+
+on property:persist.sys.honor.modemminidump.on=*
+    setprop persist.vendor.ssr_enable_modem_minidump ${persist.sys.honor.modemminidump.on}
+    write /sys/kernel/ssrdump_reason/enable_mss_minidump ${persist.sys.honor.modemminidump.on}
+
+# HONOR_RAMDUMP_ARCHITECTURE:start ss_ramdump and start ssr_setup to flush wifi coredump
+on property:persist.sys.msc.wifiminidump.on=true && property:persist.sys.msc.debug.on=0
+    setprop persist.vendor.ssr_enable_wifi_minidump 1
+    write /sys/module/qcom_ramdump/parameters/enable_dump_collection 1
+    start vendor.ssr_setup
+    start vendor.ss_ramdump
+
+on property:persist.sys.msc.wifiminidump.on=false && property:persist.sys.msc.debug.on=0
+    setprop persist.vendor.ssr_enable_wifi_minidump 0
+    write /sys/module/qcom_ramdump/parameters/enable_dump_collection 0
+    start vendor.ssr_setup
+
+# HONOR_RAMDUMP_ARCHITECTURE:start ss_ramdump and start ssr_setup to flush modem coredump
+on property:persist.vendor.ssr_enable_modem_minidump=1 && property:persist.sys.msc.debug.on=0
+    start vendor.ssr_setup
+    start vendor.ss_ramdump
+
+on property:persist.vendor.ssr_enable_modem_minidump=0 && property:persist.sys.msc.debug.on=0
+    start vendor.ssr_setup
+
+# HONOR_RAMDUMP_ARCHITECTURE:stop vendor.ss_ramdump when all the modules not used
+on property:persist.vendor.ssr_enable_modem_minidump=0 && property:persist.sys.msc.wifiminidump.on=false && property:persist.sys.msc.debug.on=0
+    stop vendor.ss_ramdump
+
+on property:ro.runmode=factory
+    setprop persist.sys.msc.debug.on 1
+    setprop persist.vendor.ssr.restart_level "N/A"
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/recovery 0
+
+    mkdir /data/log/fac_log 0755 system system
+    copy /log/GetAdblog.bat /data/log/fac_log/GetAdblog.bat
+    chmod 0664 /data/log/fac_log/GetAdblog.bat
+    chown system system /data/log/fac_log/GetAdblog.bat
+    copy /log/GetAdblog-part.bat /data/log/fac_log/GetAdblog-part.bat
+    chmod 0664 /data/log/fac_log/GetAdblog-part.bat
+    chown system system /data/log/fac_log/GetAdblog-part.bat
+    chmod 0777 /data/misc/camera
+
+on property:persist.sys.msc.debug.on=1 && property:ro.runmode=factory
+    start fingerprint_nolog
+    start fingerprint_monitor
+    start teelogcat
+    setprop persist.vendor.ssr.enable_ramdumps 0
+
+    write /sys/module/qcom_dload_mode/parameters/download_mode 1
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 1
+
+on property:persist.sys.msc.debug.on=1 && property:ro.runmode=normal
+    start fingerprint_nolog
+    start fingerprint_monitor
+    start teelogcat
+    setprop persist.vendor.ssr.enable_ramdumps 1
+
+    write /sys/module/qcom_dload_mode/parameters/download_mode 1
+    write /sys/kernel/dload/dload_mode both
+    write /sys/kernel/dload/emmc_dload 1
+
+on property:persist.sys.msc.debug.on=0
+    stop fingerprint_nolog
+    stop fingerprint_monitor
+    stop teelogcat
+    setprop persist.vendor.ssr.enable_ramdumps 2
+    write /sys/kernel/dload/dload_mode mini
+    write /sys/kernel/dload/emmc_dload 1
+
+on property:persist.sys.msc.debug.on=*
+    write /proc/sys/kernel/sysrq ${persist.sys.msc.debug.on}
+    setprop persist.vendor.qcomsysd.enabled ${persist.sys.msc.debug.on}
+
+service logctl_service /sbin/logctl_service -m 1
+    class late_start
+    user root
+    group system
+    oneshot
+    seclabel u:r:logctlservice:s0
+
+service logcat_service /sbin/logctl_service -m 1 -t 1
+    class late_start
+    user root
+    group system
+    oneshot
+    seclabel u:r:logctlservice:s0
+
+on property:persist.sys.msc.debug.on=*
+    restart logcat_service
+
+on property:ro.logsystem.usertype=*
+    write /proc/log-usertype ${ro.logsystem.usertype}
+
+on property:ro.logsystem.usertype=3
+    insmod /vendor_dlkm/lib/modules/msm_rtb.ko filter=0x237
+
+on property:ro.logsystem.usertype=5
+    insmod /vendor_dlkm/lib/modules/msm_rtb.ko filter=0x237
+
+on property:ro.vendor.final_release=false
+    insmod /vendor_dlkm/lib/modules/msm_rtb.ko filter=0x237
+
+# bugreport is triggered by the KEY_VOLUMEUP and KEY_VOLUMEDOWN keycodes or triggered by projectmenu
+service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service mapper /system/bin/sh /vendor/bin/mappersh
+    class late_start
+    user root
+    group system
+    disabled
+    seclabel u:r:mapper:s0
+
+# add kmemleak debug log
+service kmemleak_debug /system/bin/sh /system/etc/kmemleak.debug.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service goldeneye /system/bin/goldeneye
+    class main
+    user root
+    group root
+
+on property:persist.sys.kmemleak.debug=1
+    start kmemleak_debug
+
+on property:sys.userdata_is_ready=1
+    start rphone
+
+on boot
+    start rphone_early
+
+service rphone_early /system/bin/sh /log/rphone/boot.sh
+    class core
+    oneshot
+    disabled
+    seclabel u:r:su:s0
+
+service rphone /system/bin/sh /data/rphone/boot.sh
+    class core
+    oneshot
+    disabled
+    seclabel u:r:su:s0
+
+# DTS2022052675868 p00012723 CHR_MODEM_LOG:factory config the modem log begin
+service fieldtest_factory_modem_log /system/vendor/bin/diag_mdlog -q 2 -p 2 -u -z -f /data/vendor/log/usingMaskFile/default.cfg -o /data/vendor/log/modem -n 10 -s 100 -c -e -r
+    class late_start
+    user system
+    group system
+    disabled
+    oneshot
+
+service factory_start_modem_log /system/vendor/bin/diag_mdlog -q 2 -p 2 -u -z -f /vendor/etc/qcom_factory_modem.cfg -o /data/vendor/log/modem -n 50 -s 200 -c -e -r
+    class late_start
+    user system
+    group system oem_2901 sdcard_rw sdcard_r media_rw diag
+    disabled
+    oneshot
+
+service factory_stop_modem_log /system/vendor/bin/diag_mdlog -q 2 -p 2 -z -k
+    class late_start
+    user system
+    group system oem_2901 sdcard_rw sdcard_r media_rw diag
+    disabled
+    oneshot
+
+on property:ro.runmode=factory && property:init.svc.qcomsysd=running && property:persist.logd.chr.autoCatchModemlog=1
+    start factory_start_modem_log
+
+on property:persist.logd.chr.autoCatchModemlog=0
+    start factory_stop_modem_log
+# DTS2022052675868 p00012723 CHR_MODEM_LOG:factory config the modem log end
+
+#add for wifi sniffer log begin
+on property:odm.wifi.monitor.mode=4
+    write /sys/module/qca6490/parameters/con_mode 4
+
+on property:odm.wifi.monitor.mode=0
+    write /sys/module/qca6490/parameters/con_mode 0
+#add for wifi sniffer log end

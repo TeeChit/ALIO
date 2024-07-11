@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<match_rules>
+    <description>
+        "feature bit X
+            1 is enable
+            0 is disable
+                bit 0   EFAETURE_AFT,
+                    1   EFAETURE_SENSORHUB,
+                    2   EFAETURE_SENSORMONITOR,
+                    3   EFAETURE_BLUETOOTHPEN,
+                    4   EFAETURE_UPDATEFW,
+                    5   EFAETURE_FP_AUXILIARY,
+            format : Decimal/Hex/bin are ok
+                e.g. : 255 is the same as 0xff
+				method only suport match and starts_with
+        "
+    </description>
+	<version_info>
+		<latest_update_time>2022.07.26</latest_update_time>
+		<latest_update_author>honor</latest_update_author>
+	</version_info>
+	<series>
+		<series_target>B_Series</series_target>
+		<rule>
+			<target>B2429M1100</target>
+			<method>starts_with</method>
+			<feature>0x00</feature>
+			<source>
+				<item>B2429M</item>
+			</source>
+		</rule>
+		<rule>
+			<target>B242A51300</target>
+			<method>starts_with</method>
+			<feature>0x00</feature>
+			<source>
+				<item>B242A5</item>
+			</source>
+		</rule>
+		<rule>
+			<target>B2359S2900</target>
+			<method>starts_with</method>
+			<feature>0x00</feature>
+			<source>
+				<item>B2359S</item>
+			</source>
+		</rule>
+	</series>
+	<series>
+	<series_target>H_Series</series_target>
+	<rule>
+		<target>H007AL1300</target>
+		<method>match</method>
+		<feature>0x1C</feature>
+		<source>
+			<item>H007AL1300</item>
+			<item>H007AL1301</item>
+			<item>H007AL1302</item>
+			<item>H007AL1303</item>
+			<item>H007AL2900</item>
+			<item>H007AK2900</item>
+		</source>
+	</rule>
+	<rule>
+		<target>H008A31300</target>
+		<method>match</method>
+		<feature>0x01</feature>
+		<source>
+			<item>H008A31300</item>
+			<item>H008A31301</item>
+			<item>H008A31302</item>
+			<item>H008A31310</item>
+			<item>H008A31311</item>
+			<item>H008A31312</item>
+			<item>H040A32900</item>
+		</source>
+	</rule>
+	<rule>
+		<target>H051AL2900</target>
+		<method>starts_with</method>
+		<feature>0x1C</feature>
+		<source>
+			<item>H051AL</item>
+			<item>HD051AL</item>
+		</source>
+		<penlist>
+			<item>H051AL1301</item>
+		</penlist>
+	</rule>
+	<rule>
+		<target>H052A32900</target>
+		<method>starts_with</method>
+		<feature>0x14</feature>
+		<source>
+			<item>H052A3</item>
+		</source>
+	</rule>
+	<rule>
+		<target>H088AK1300</target>
+		<method>starts_with</method>
+		<feature>0x1C</feature>
+		<source>
+			<item>H088AK</item>
+		</source>
+		<penlist>
+			<item>H088AK1300</item>
+			<item>H088AK1301</item>
+			<item>H088AK1302</item>
+			<item>H088AK2900</item>
+		</penlist>
+	</rule>
+	<rule>
+		<target>H089A31300</target>
+		<method>starts_with</method>
+		<feature>0x1C</feature>
+		<source>
+			<item>H089A3</item>
+		</source>
+		<penlist>
+			<item>H089A31300</item>
+			<item>H089A31301</item>
+			<item>H089A31302</item>
+			<item>H089A31303</item>
+		</penlist>
+	</rule>
+	<rule>
+		<target>H075AL1300</target>
+		<method>starts_with</method>
+		<feature>0x1C</feature>
+		<source>
+			<item>H075AL</item>
+		</source>
+		<penlist>
+			<item>H075AL1300</item>
+			<item>H075AL1301</item>
+			<item>H075AL1302</item>
+			<item>H075AL2900</item>
+			<item>H075AL2901</item>
+			<item>H075AL1100</item>
+		</penlist>
+	</rule>
+	<rule>
+		<target>H076A31300</target>
+		<method>starts_with</method>
+		<feature>0x1C</feature>
+		<source>
+			<item>H076A3</item>
+		</source>
+		<penlist>
+			<item>H076A31300</item>
+			<item>H076A31303</item>
+		</penlist>
+	</rule>
+	</series>
+</match_rules>

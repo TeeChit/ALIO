@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+ * Copyright (c) 2021 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+--><Group id="LTMConfig">
+    <!-- version should be maintained -->
+    <version>"1.0"</version>
+
+    <default>
+        <feature_visibility>
+            <TemporalFilterSpeedStepSizeOne>8</TemporalFilterSpeedStepSizeOne>
+            <TemporalControlTableInput>0 30 50 128 160 256</TemporalControlTableInput>
+            <TemporalControlTableOutput>1 2 4 4 4 4</TemporalControlTableOutput>
+
+            <BacklightReductionTableInput>2233 3070 7224 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>2233 3070 7079 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+
+            <AmbientLightToContrastStrengthTableInput>1000 10000 40000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+
+            <BacklightToContrastStrengthTableInput>0 2048 4096 6144 8191</BacklightToContrastStrengthTableInput>
+            <BacklightToContrastStrengthTableOutput>256 256 256 256 256</BacklightToContrastStrengthTableOutput>
+            <BacklightToContrastStrengthEnable>1</BacklightToContrastStrengthEnable>
+
+            <LuxStartPoint>0</LuxStartPoint>
+
+            <param001>256</param001>
+            <param002>128</param002>
+            <param003>2</param003>
+            <param004>10</param004>
+            <param005>1.2</param005>
+            <param006>50</param006>
+            <param007>1</param007>
+        </feature_visibility>
+        <feature_dre>
+            <TemporalFilterSpeedStepSizeOne>8</TemporalFilterSpeedStepSizeOne>
+            <TemporalFilterSpeedTableInput>0 30 50 128 160 256</TemporalFilterSpeedTableInput>
+            <TemporalFilterSpeedTableOutput>1 2 4 4 4 4</TemporalFilterSpeedTableOutput>
+
+            <AlsToBoostStrengthTableInput>0 500 2000 10000 99999</AlsToBoostStrengthTableInput>
+            <AlsToBoostStrengthTableOutput>15 15 15 15 15</AlsToBoostStrengthTableOutput>
+
+            <SatGain>1.0</SatGain>
+
+            <LuxEndPoint>0</LuxEndPoint>
+
+            <param001>256</param001>
+            <param002>128</param002>
+            <param003>2</param003>
+            <param004>10</param004>
+            <param005>1.2</param005>
+            <param006>50</param006>
+        </feature_dre>
+    </default>
+	<mode id="0">
+        <feature_visibility>
+            <AmbientLightToContrastStrengthTableInput>1000 9272 30000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+            <BacklightReductionTableInput>2233 3070 7224 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>2233 3070 7079 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+            <LuxStartPoint>2000</LuxStartPoint>
+        </feature_visibility>
+    </mode>
+    <mode id="1">
+        <feature_visibility>
+            <AmbientLightToContrastStrengthTableInput>1000 9272 30000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+            <BacklightReductionTableInput>4000 5773 7224 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>4000 5485 7079 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+            <LuxStartPoint>2000</LuxStartPoint>
+        </feature_visibility>
+    </mode>
+	<mode id="2">
+        <feature_visibility>
+            <AmbientLightToContrastStrengthTableInput>1000 9272 30000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+            <BacklightReductionTableInput>2233 3070 7224 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>2233 3070 7224 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+            <LuxStartPoint>2000</LuxStartPoint>
+        </feature_visibility>
+    </mode>
+	<mode id="3">
+        <feature_visibility>
+            <AmbientLightToContrastStrengthTableInput>1000 9272 30000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+            <BacklightReductionTableInput>2233 3070 7224 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>2233 2855 7079 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+            <LuxStartPoint>0</LuxStartPoint>
+        </feature_visibility>
+    </mode>
+	<mode id="4">
+        <feature_visibility>
+            <AmbientLightToContrastStrengthTableInput>1000 9272 30000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+            <BacklightReductionTableInput>2233 3070 7224 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>2233 2855 7079 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+            <LuxStartPoint>0</LuxStartPoint>
+        </feature_visibility>
+    </mode>
+	<mode id="5">
+        <feature_visibility>
+            <AmbientLightToContrastStrengthTableInput>1000 9272 10000 100000</AmbientLightToContrastStrengthTableInput>
+            <AmbientLightToContrastStrengthTableOutput>0 168 256 256</AmbientLightToContrastStrengthTableOutput>
+            <AmbientLightToContrastStrengthEnable>1</AmbientLightToContrastStrengthEnable>
+            <BacklightReductionTableInput>3360 4270 7030 8191</BacklightReductionTableInput>
+            <BacklightReductionTableOutput>3360 4270 7030 8191</BacklightReductionTableOutput>
+            <BacklightReductionEnable>1</BacklightReductionEnable>
+            <LuxStartPoint>100000</LuxStartPoint>
+        </feature_visibility>
+        <feature_dre>
+            <AlsToBoostStrengthTableInput>0 500 2000 10000 99999</AlsToBoostStrengthTableInput>
+            <AlsToBoostStrengthTableOutput>15 15 15 15 15</AlsToBoostStrengthTableOutput>
+            <LuxEndPoint>99999</LuxEndPoint>
+        </feature_dre>
+    </mode>
+</Group>

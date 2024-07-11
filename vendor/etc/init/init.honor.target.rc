@@ -1,0 +1,32 @@
+on init
+# Setup zram options
+    write /sys/block/zram0/comp_algorithm lz4
+    write /sys/block/zram0/max_comp_streams 8
+    write /sys/block/zram0/non_swap 2048
+
+on boot
+# rcc module
+    chown system system /sys/kernel/rcc/anon_target
+    chown system system /sys/kernel/rcc/avail_target
+    chown system system /sys/kernel/rcc/can_compress
+    chown system system /sys/kernel/rcc/enable
+    chown system system /sys/kernel/rcc/event
+    chown system system /sys/kernel/rcc/force_once
+    chown system system /sys/kernel/rcc/free_size_min
+    chown system system /sys/kernel/rcc/full_clean_size
+    chown system system /sys/kernel/rcc/idle_threshold
+    chown system system /sys/kernel/rcc/max_anon_clean_size
+    chown system system /sys/kernel/rcc/stat
+    chown system system /sys/kernel/rcc/swap_percent_low
+    write /proc/sys/vm/page-cluster 0
+    write /sys/kernel/rcc/event PASSIVE_MODE
+    write /sys/kernel/rcc/max_anon_clean_size 512M
+    write /sys/kernel/rcc/enable 1
+# kernel alloc stack on demand
+    write /proc/sys/vm/stack_page_init_number 1
+
+on property:sys.boot_completed=1
+    write /sys/kernel/rcc/event BOOT_COMPLETE
+
+on property:persist.sys.hyperhold.swapout.enable=1 && property:sys.hyperhold.firstboot=1
+    write /dev/memcg/memory.zswapd_max_reclaim_size 30

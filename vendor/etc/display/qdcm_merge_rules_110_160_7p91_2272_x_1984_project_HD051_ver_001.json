@@ -1,0 +1,358 @@
+{
+	"110_160_7p91_2272_x_1984_project_HD051_ver_001": {
+		"MergedModes": {
+			"STANDARD-sRGB-1015": {
+				"Applicability": {
+					"ColorPrimaries": "sRGB",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 260,
+					"RenderIntentName": "Std"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "LEFT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)STANDARD-sRGB-1015",
+				"ModeNameInputRight": "STANDARD-sRGB-1015",
+				"WhitePoint": 6500
+			},
+			"STANDARD-P3-1015": {
+				"Applicability": {
+					"ColorPrimaries": "P3",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 260,
+					"RenderIntentName": "Std"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "LEFT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)STANDARD-P3-1015",
+				"ModeNameInputRight": "STANDARD-P3-1015",
+				"WhitePoint": 6500
+			},
+			"ENHANCED-sRGB-0906": {
+				"Applicability": {
+					"ColorPrimaries": "sRGB",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 261,
+					"RenderIntentName": "enhance"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "RIGHT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)ENHANCED-sRGB-0906",
+				"ModeNameInputRight": "ENHANCED-sRGB-0906",
+				"WhitePoint": 7000
+			},
+			"ENHANCED-P3-0906": {
+				"Applicability": {
+					"ColorPrimaries": "P3",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 261,
+					"RenderIntentName": "enhance"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "RIGHT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)ENHANCED-P3-0906",
+				"ModeNameInputRight": "ENHANCED-P3-0906",
+				"WhitePoint": 7000
+			},
+			"GALLERY-STANDARD-sRGB-1015": {
+				"Applicability": {
+					"ColorPrimaries": "sRGB",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 264,
+					"RenderIntentName": "Gallery-Std"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "LEFT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)GALLERY-STANDARD-sRGB-1015",
+				"ModeNameInputRight": "GALLERY-STANDARD-sRGB-1015",
+				"WhitePoint": 6500
+			},
+			"GALLERY-STANDARD-P3-1015": {
+				"Applicability": {
+					"ColorPrimaries": "P3",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 264,
+					"RenderIntentName": "Gallery-Std"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "LEFT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)GALLERY-STANDARD-P3-1015",
+				"ModeNameInputRight": "GALLERY-STANDARD-P3-1015",
+				"WhitePoint": 6500
+			},
+			"GALLERY-ENHANCED-sRGB-0906": {
+				"Applicability": {
+					"ColorPrimaries": "sRGB",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 265,
+					"RenderIntentName": "Gallery-enhance"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "RIGHT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)GALLERY-ENHANCED-sRGB-0906",
+				"ModeNameInputRight": "GALLERY-ENHANCED-sRGB-0906",
+				"WhitePoint": 7000
+			},
+			"GALLERY-ENHANCED-P3-0906": {
+				"Applicability": {
+					"ColorPrimaries": "P3",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 265,
+					"RenderIntentName": "Gallery-enhance"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "RIGHT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)GALLERY-ENHANCED-P3-0906",
+				"ModeNameInputRight": "GALLERY-ENHANCED-P3-0906",
+				"WhitePoint": 7000
+			},
+			"VIDEO-STANDARD-sRGB-1015": {
+				"Applicability": {
+					"ColorPrimaries": "sRGB",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 266,
+					"RenderIntentName": "Video-Std"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "LEFT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)VIDEO-STANDARD-sRGB-1015",
+				"ModeNameInputRight": "VIDEO-STANDARD-sRGB-1015",
+				"WhitePoint": 6500
+			},
+			"VIDEO-STANDARD-P3-1015": {
+				"Applicability": {
+					"ColorPrimaries": "P3",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 266,
+					"RenderIntentName": "Video-Std"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "LEFT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)VIDEO-STANDARD-P3-1015",
+				"ModeNameInputRight": "VIDEO-STANDARD-P3-1015",
+				"WhitePoint": 6500
+			},
+			"VIDEO-ENHANCED-sRGB-0906": {
+				"Applicability": {
+					"ColorPrimaries": "sRGB",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 267,
+					"RenderIntentName": "Video-enhance"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "RIGHT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)VIDEO-ENHANCED-sRGB-0906",
+				"ModeNameInputRight": "VIDEO-ENHANCED-sRGB-0906",
+				"WhitePoint": 7000
+			},
+			"VIDEO-ENHANCED-P3-0906": {
+				"Applicability": {
+					"ColorPrimaries": "P3",
+					"GammaTransfer": "sRGB",
+					"RenderIntent": 267,
+					"RenderIntentName": "Video-enhance"
+				},
+				"DynamicRange": "SDR",
+				"MergeOps": {
+					"PostBlendDEMergeOp": "RIGHT_OPERAND",
+					"PostBlendDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendGCMergeOp": "LEFT_OPERAND",
+					"PostBlendGameBlobMergeOp": "RIGHT_OPERAND",
+					"PostBlendGamutMergeOp": "RIGHT_OPERAND",
+					"PostBlendHdrBlobMergeOp": "IDENTITY",
+					"PostBlendIGCMergeOp": "LEFT_OPERAND",
+					"PostBlendPCCMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaDitherMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaGlobalMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMemoryColorMergeOp": "RIGHT_OPERAND",
+					"PostBlendPaMultiZoneMergeOp": "RIGHT_OPERAND"
+				},
+				"ModeNameInputLeft": "(Factory)VIDEO-ENHANCED-P3-0906",
+				"ModeNameInputRight": "VIDEO-ENHANCED-P3-0906",
+				"WhitePoint": 7000
+			}
+		},
+		"ModeMerge": {
+			"PostBlendDEMergeOp": {
+				"Version": 1
+			},
+			"PostBlendDitherMergeOp": {
+				"Version": 1
+			},
+			"PostBlendGCMergeOp": {
+				"Version": 1
+			},
+			"PostBlendGameBlobMergeOp": {
+				"Version": 1
+			},
+			"PostBlendGamutMergeOp": {
+				"Version": 1
+			},
+			"PostBlendHdrBlobMergeOp": {
+				"Version": 1
+			},
+			"PostBlendIGCMergeOp": {
+				"Version": 1
+			},
+			"PostBlendPCCMergeOp": {
+				"Version": 1
+			},
+			"PostBlendPaDitherMergeOp": {
+				"Version": 1
+			},
+			"PostBlendPaGlobalMergeOp": {
+				"Version": 1
+			},
+			"PostBlendPaMemoryColorMergeOp": {
+				"Version": 1
+			},
+			"PostBlendPaMultiZoneMergeOp": {
+				"Version": 1
+			},
+			"Version": 1
+		}
+	},
+	"Copyright": "<!--Copyright(c) 2021 Qualcomm Technologies, Inc.All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.-->"
+}

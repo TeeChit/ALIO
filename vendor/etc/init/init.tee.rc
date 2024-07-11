@@ -1,0 +1,51 @@
+on init
+    # for tee
+    chown system system /sys/kernel/tui/c_state
+    chmod 660 /sys/kernel/load_guestvm_oem_vm/boot_guestvm
+    setprop htee.version "7.0.0"
+    setprop htee.basic   "1"
+    # uncomment below line to debug htvm
+    # write /sys/kernel/tee/htvm_loading_panic 0
+
+on early-boot
+    start teeauth
+    start teeadapter
+
+on property:sys.boot_completed=1
+    enable vendor.qvirtmgr
+    start  vendor.qvirtmgr
+
+service teecd /vendor/bin/teecd
+    class early_hal
+    user root
+    group root readproc
+    seclabel u:r:tee:s0
+
+service teeauth /system_ext/bin/tee_auth_daemon
+    socket tui_daemon stream 660 system system
+    socket tee-multi-user stream 660 system system
+    user system
+    group system readproc
+    seclabel u:r:system_teecd:s0
+    disabled
+
+service teeadapter /system_ext/bin/tee_adapter_daemon
+    user system
+    group system readproc
+    seclabel u:r:system_teecd:s0
+    disabled
+
+service teelogcat /vendor/bin/tlogcat -f
+    class late_start
+    user root
+    group system
+    disabled
+    seclabel u:r:tlogcat:s0
+
+on post-fs-data
+    mkdir /data/vendor/sec_storage_data 0700 system system
+    restorecon /data/vendor/sec_storage_data
+    mkdir /data/vendor/sec_storage_data_users 0700 system system
+    restorecon /data/vendor/sec_storage_data_users
+    mkdir /data/vendor/log/sec_storage_data 0775 system system
+    mkdir /data/vendor/log/sec_storage_data/log 0755 system system

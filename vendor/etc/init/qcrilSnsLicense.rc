@@ -1,0 +1,5 @@
+# AR000G5CJ0 Add interface license begin
+on boot && property:ro.boot.product.hardware.sku=VES-AN00
+    copy /vendor/etc/cellular_cloud/ollie/oem_420_prj_HonorModemRFStd8475_1681493361414.pfm /mnt/vendor/persist/data/pfm/licenses/oem_420_prj_HonorModemRFStd8475_1681493361414.pfm
+    chmod 644 /mnt/vendor/persist/data/pfm/licenses/oem_420_prj_HonorModemRFStd8475_1681493361414.pfm
+# AR000G5CJ0 Add interface license end

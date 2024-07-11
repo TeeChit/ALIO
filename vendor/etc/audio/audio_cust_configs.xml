@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AUDIO_CUST_CONFIG NAME="VALUE">
+    <!-- MMI test config -->
+    <mmi_config key="output_device" value="receiver" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="output_device" value="ep_receiver" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="output_device" value="speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="all_speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="smartpa" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="headphone" out_device="AUDIO_DEVICE_OUT_WIRED_HEADSET" in_device="NONE" smartpa_algo_scenes="NONE" />
+
+    <mmi_config key="input_device" value="mainmic" out_device="NONE" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="input_device" value="submic" out_device="NONE" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="input_device" value="hsmic" out_device="NONE" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="NONE" />
+    <mmi_config key="input_device" value="mainmic2" out_device="NONE" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="input_device" value="submic2" out_device="NONE" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="input_device" value="allmic" out_device="NONE" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="input_device" value="dualmic" out_device="NONE" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+
+    <mmi_config key="output_device" value="leftspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="rightspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="subleftspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="subrightspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="main_left_speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="main_right_speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="sec_left_speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+    <mmi_config key="output_device" value="sec_right_speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_MUSIC" />
+
+    <mmi_config key="output_device" value="speaker_no_algorithm" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="output_device" value="receiver-high-power" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="output_device" value="spk_high_power_no_algo" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="NONE" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <!-- AT test config -->
+    <mmi_config key="audioloop" value="mainmic_headphone" out_device="AUDIO_DEVICE_OUT_WIRED_HEADSET" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="audioloop" value="submic_headphone" out_device="AUDIO_DEVICE_OUT_WIRED_HEADSET" in_device="AUDIO_DEVICE_IN_BUILTIN_MIC" smartpa_algo_scenes="NONE" />
+    <mmi_config key="audioloop" value="hsmic_headphone" out_device="AUDIO_DEVICE_OUT_WIRED_HEADSET" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="NONE" />
+    <mmi_config key="audioloop" value="hsmic_speaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_receiver" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_leftspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_rightspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_mainleftspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_mainrightspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_secleftspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+    <mmi_config key="audioloop" value="hsmic_secrightspeaker" out_device="AUDIO_DEVICE_OUT_SPEAKER" in_device="AUDIO_DEVICE_IN_WIRED_HEADSET" smartpa_algo_scenes="SMARTPA_BYPASS" />
+
+    <!-- OUT configs -->
+    <!--out_config selector="common" mode="AUDIO_MODE_RINGTONE" device="AUDIO_DEVICE_OUT_SPEAKER" usecase="USECASE_AUDIO_PLAYBACK_DEEP_BUFFER" custom_key="" /-->
+
+    <!-- IN configs -->
+    <!--in_config selector="common" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_MIC" channels="2" custom_key=""/-->
+    <!-- IN configs: customized audio path of self-dev record algo -->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-camcorder-tmic"/-->
+    <in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-speaker-tmic"/>
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BACK_MIC" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-camcorder-tmic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_WIRED_HEADSET" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_USB_HEADSET" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-usb-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_USB_DEVICE" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-usb-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-bt-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" source="AUDIO_SOURCE_CAMCORDER" channels="4" custom_key="self-algo-bt-headset-mic"/-->
+
+    <in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-speaker-tmic"/>
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BACK_MIC" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-speaker-tmic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_WIRED_HEADSET" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_USB_HEADSET" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-usb-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_USB_DEVICE" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-usb-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-bt-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" source="AUDIO_SOURCE_MIC" channels="4" custom_key="self-algo-bt-headset-mic"/-->
+
+    <in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-speaker-tmic"/>
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BACK_MIC" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-speaker-tmic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_WIRED_HEADSET" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_USB_HEADSET" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-usb-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_USB_DEVICE" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-usb-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-bt-headset-mic"/-->
+    <!--in_config selector="record_algo" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" source="AUDIO_SOURCE_UNPROCESSED" channels="4" custom_key="self-algo-bt-headset-mic"/-->
+
+    <!--used for wakeup enroll, the mode device source channels not actually use only for xml parse-->
+    <in_config selector="wakeup_enroll" mode="AUDIO_MODE_NORMAL" device="AUDIO_DEVICE_IN_BUILTIN_MIC" source="AUDIO_SOURCE_VOICE_RECOGNITION" channels="1" custom_key="enroll-speaker-mic"/>
+
+</AUDIO_CUST_CONFIG>

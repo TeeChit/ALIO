@@ -1,0 +1,203 @@
+{
+  "config":
+  {
+    "hw_platform": ["QRD"],
+    "soc_id": ["537"],
+    "platform_subtype": ["ali"]
+  },
+  "tsl2522_0_platform":{
+    "owner": "sns_tsl2522",
+    ".config":{
+      "owner": "sns_tsl2522",
+      "bus_type":{ "type": "int", "ver": "1",
+        "data": "0"
+      },
+      "bus_instance":{ "type": "int", "ver": "0",
+        "data": "1"
+      },
+      "slave_config":{ "type": "int", "ver": "0",
+        "data": "0x29"
+      },
+      "min_bus_speed_khz":{ "type": "int", "ver": "0",
+        "data": "400"
+      },
+      "max_bus_speed_khz":{ "type": "int", "ver": "0",
+        "data": "400"
+      },
+      "reg_addr_type":{ "type": "int", "ver": "0",
+        "data": "0"
+      },
+      "dri_irq_num":{ "type": "int", "ver": "0",
+        "data": "67"
+      },
+      "irq_pull_type":{ "type": "int", "ver": "0",
+        "data": "3"
+      },
+      "irq_is_chip_pin":{ "type": "int", "ver": "0",
+        "data": "1"
+      },
+      "irq_drive_strength":{ "type": "int", "ver": "0",
+        "data": "0"
+      },
+      "irq_trigger_type":{ "type": "int", "ver": "0",
+        "data": "1"
+      },
+      "num_rail":{ "type": "int", "ver": "0",
+        "data": "2"
+      },
+      "rail_on_state":{ "type": "int", "ver": "0",
+        "data": "2"
+      },
+      "vddio_rail":{ "type": "str", "ver": "0",
+        "data": "/pmic/client/sensor_vddio"
+      },
+      "rigid_body_type":{ "type": "int", "ver": "0",
+        "data": "0"
+      }
+    },
+    ".als":{
+      "owner": "sns_tsl2522",
+      ".fac_cal":{
+        "owner": "sns_tsl2522",
+        "scale":{ "type": "flt", "ver": "1",
+          "data": "1.0"
+        },
+        "ch0_scale":{ "type": "flt", "ver": "1",
+          "data": "0.859811"
+        },
+        "ch1_scale":{ "type": "flt", "ver": "1",
+          "data": "0.844926"
+        }
+      },
+      ".custom_cal":{
+        "owner": "sns_tsl2522",
+          "coef_0_a":{ "type": "flt", "ver": "0",
+            "data": "0.1579"
+          },
+          "coef_1_a":{ "type": "flt", "ver": "0",
+            "data": "-1.8746"
+          },
+          "dgf_a":{ "type": "flt", "ver": "0",
+            "data": "7.4977"
+          },
+          "coef_0_b":{ "type": "flt", "ver": "0",
+            "data": "0.3706"
+          },
+          "coef_1_b":{ "type": "flt", "ver": "0",
+            "data": "-0.1922"
+          },
+          "dgf_b":{ "type": "flt", "ver": "0",
+            "data": "2.1261"
+          },
+          "coef_0_c":{ "type": "flt", "ver": "0",
+            "data": "2.4657"
+          },
+          "coef_1_c":{ "type": "flt", "ver": "0",
+            "data": "0.1241"
+          },
+          "dgf_c":{ "type": "flt", "ver": "0",
+            "data": "0.186"
+          },
+          "thresh_1":{ "type": "flt", "ver": "0",
+            "data": "0.186"
+          },
+          "thresh_2":{ "type": "flt", "ver": "0",
+            "data": "0.491"
+          }
+        },
+      ".def_config":{
+        "owner": "sns_tsl2522",
+          "sample_time":{ "type": "flt", "ver": "0",
+            "data": "999.0"
+          },
+          "num_samples":{ "type": "flt", "ver": "0",
+            "data": "35.0"
+          },
+          "wait_time":{ "type": "flt", "ver": "0",
+            "data": "123.0"
+          },
+          "trigger_mode":{ "type": "flt", "ver": "0",
+            "data": "1.0"
+          },
+          "wait_time_resolution":{ "type": "flt", "ver": "0",
+            "data": "0.0"
+          },
+          "agc_mode":{ "type": "flt", "ver": "0",
+            "data": "0.0"
+          },
+          "agc_num_samples":{ "type": "flt", "ver": "0",
+            "data": "0.0"
+          },
+          "persist":{ "type": "flt", "ver": "0",
+            "data": "0.0"
+          },
+          "gain0":{ "type": "flt", "ver": "0",
+            "data": "6.0"
+          },
+          "gain1":{ "type": "flt", "ver": "0",
+            "data": "6.0"
+          },
+          "auto_gain":{ "type": "flt", "ver": "0",
+            "data": "1.0"
+          },
+          "a_thrs_width":{ "type": "flt", "ver": "0",
+            "data": "10.0"
+          }
+      },
+      ".cal_target":{
+        "owner": "sns_tsl2522",
+          "lux_target":{ "type": "flt", "ver": "0",
+            "data": "300.0"
+          },
+          "lux_target_tolerance":{ "type": "flt", "ver": "0",
+            "data": "20.0"
+          },
+          "ch0_cal_target":{ "type": "flt", "ver": "1",
+            "data": "43633.0"
+          },
+          "ch1_cal_target":{ "type": "flt", "ver": "1",
+            "data": "53303.0"
+          }
+      }
+    },
+    ".placement":{
+      "owner": "sns_tsl2522",
+        "0":{ "type": "flt", "ver": "2",
+          "data": "2101.68"
+        },
+        "1":{ "type": "flt", "ver": "2",
+          "data": "0.9441"
+        },
+        "2":{ "type": "flt", "ver": "2",
+          "data": "0.1199"
+        },
+        "3":{ "type": "flt", "ver": "2",
+          "data": "2101.68"
+        },
+        "4":{ "type": "flt", "ver": "2",
+          "data": "0.9441"
+        },
+        "5":{ "type": "flt", "ver": "2",
+          "data": "0.1199"
+        },
+        "6":{ "type": "flt", "ver": "1",
+          "data": "1880"
+        },
+        "7":{ "type": "flt", "ver": "1",
+          "data": "0.9441"
+        },
+        "8":{ "type": "flt", "ver": "1",
+          "data": "0.1199"
+        },
+        "9":{ "type": "flt", "ver": "2",
+          "data": "2101.68"
+        },
+        "10":{ "type": "flt", "ver": "2",
+          "data": "0.9441"
+        },
+        "11":{ "type": "flt", "ver": "2",
+          "data": "0.1199"
+        }
+    }
+  }
+}

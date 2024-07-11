@@ -1,0 +1,11 @@
+service sensors-hal-1-2_hw /vendor/bin/hw/vendor.honor.hardware.sensors@1.2-service
+    interface android.hardware.sensors@1.0::ISensors default
+    interface vendor.honor.hardware.sensors@1.0::ISensors default
+    interface vendor.honor.hardware.sensors@1.1::ISensors default
+    interface vendor.honor.hardware.sensors@1.2::ISensors default
+    class hal
+    oneshot
+    disabled
+    user system
+    group system log input
+    capabilities SYS_NICE

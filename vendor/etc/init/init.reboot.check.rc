@@ -1,0 +1,13 @@
+service reboot_check /vendor/bin/reboot_check
+    class late_start
+    user root
+    group system root
+    disabled
+    oneshot
+    seclabel u:r:xmntn:s0
+
+on property:init.svc.xmntn_rainbow=stopped
+    start reboot_check
+
+on property:init.svc.reboot_check=stopped
+    rm /log/charger_flag

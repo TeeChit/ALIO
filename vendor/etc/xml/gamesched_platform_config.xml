@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- config value
+ * Copyright (C) 2018 Honor Device.
+ *
+-->
+<gamesched_platform_config version="1.0">
+    <cpu_domain_list para_size="2">
+        <mCpuDomains id="0">
+            <numOfCpus>4</numOfCpus>
+            <cpuMask>0f</cpuMask>
+            <cpuIds>0 1 2 3</cpuIds>
+            <numOfFreqs>8</numOfFreqs>
+            <freqs>691200 806400 940800 1113600 1324800 1497600 1651200 1804800</freqs>
+            <scalingGovernor>schedutil</scalingGovernor>
+            <cpuType>armv8_pmuv3</cpuType>
+        </mCpuDomains>
+        <mCpuDomains id="1">
+            <numOfCpus>4</numOfCpus>
+            <cpuMask>f0</cpuMask>
+            <cpuIds>4 5 6 7</cpuIds>
+            <numOfFreqs>10</numOfFreqs>
+            <freqs>691200 960000 1190400 1344000 1497600 1651200 1900800 2054400 2112000 2208000</freqs>
+            <scalingGovernor>schedutil</scalingGovernor>
+            <cpuType>armv8_pmuv3</cpuType>
+        </mCpuDomains>
+    </cpu_domain_list>
+
+    <counter_events_list para_size="1">
+        <mCounterEvents id="0">
+            <rawId>6</rawId>
+            <name>Gpu Active</name>
+            <normalizeCoef>1000000</normalizeCoef>
+            <predictorCreateFunc>nullptr</predictorCreateFunc>
+        </mCounterEvents>
+    </counter_events_list>
+
+    <ddr_info_list para_size="1">
+        <mDdrInfo id="0">
+            <ddrFreq>3879 5931 6515 7980 10437 12191</ddrFreq>
+            <ddrBws>3879000 5931000 6515000 7980000 10437000 12191000</ddrBws>
+            <ddrBwsLowThre>3879 5931 6515 7980 10437 12191</ddrBwsLowThre>
+        </mDdrInfo>
+    </ddr_info_list>
+
+    <low_limit_freqs_list para_size="1">
+        <mLowLimitFreqs id="0">
+            <lpCpuFreq>0 1324800 7980</lpCpuFreq>
+            <pfCpuFreq>1 1497600 7980</pfCpuFreq>
+            <gpuFreq>0 410 7980</gpuFreq>
+        </mLowLimitFreqs>
+    </low_limit_freqs_list>
+
+    <boost_combs_list para_size="3">
+        <boost_combs id="0">1 1651200 7980</boost_combs>
+        <boost_combs id="1">1 1900800 12191</boost_combs>
+        <boost_combs id="2">1 2208000 12191</boost_combs>
+    </boost_combs_list>
+
+    <thermal_combs_list para_size="1">
+        <boost_combs id="0">1 2208000 12191</boost_combs>
+    </thermal_combs_list>
+</gamesched_platform_config>
+

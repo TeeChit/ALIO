@@ -1,0 +1,15 @@
+
+on early-boot
+    write /proc/sys/net/core/rmem_default 0x100000
+    start vendor.diag-router
+
+on post-fs-data
+    rm /data/diag_logs/diag_socket_pid
+
+service vendor.diag-router /vendor/bin/diag-router
+    class hal
+    user system
+    group system
+    capabilities KILL
+    disabled
+

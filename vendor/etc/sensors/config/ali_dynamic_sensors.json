@@ -1,0 +1,69 @@
+{
+	"config": {
+		"hw_platform": ["QRD"],
+		"soc_id": ["537"],
+		"platform_subtype": ["ali"]
+	},
+	"sns_dynamic_libraries": {
+		"owner": "dynamic_sensor",
+		"detect_on_every_boot": {
+			"type": "int",
+			"ver": "1",
+			"data": "1"
+		},
+		".lib0": {
+			"owner": "dynamic_sensor",
+			"name": {
+				"type": "str",
+				"ver": "1",
+				"data": "sns_bmi3x0_normal.so"
+			},
+			"reg_fun": {
+				"type": "str",
+				"ver": "1",
+				"data": "sns_register_bmi3x0"
+			},
+			"reg_cnt": {
+				"type": "int",
+				"ver": "1",
+				"data": "1"
+			}
+		},
+		".lib1": {
+			"owner": "dynamic_sensor",
+			"name": {
+				"type": "str",
+				"ver": "1",
+				"data": "sns_lsm6dso_normal.so"
+			},
+			"reg_fun": {
+				"type": "str",
+				"ver": "1",
+				"data": "sns_register_lsm6dso"
+			},
+			"reg_cnt": {
+				"type": "int",
+				"ver": "1",
+				"data": "1"
+			}
+		},
+		".lib2": {
+			"owner": "dynamic_sensor",
+			"name": {
+				"type": "str",
+				"ver": "1",
+				"data": "icm4x6xa_2_0_normal.so"
+			},
+			"reg_fun": {
+				"type": "str",
+				"ver": "1",
+				"data": "sns_register_icm4x6xa"
+			},
+			"reg_cnt": {
+				"type": "int",
+				"ver": "1",
+				"data": "1"
+			}
+		}
+	}
+}
