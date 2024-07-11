@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<LCD_COMPENSATION>
+    <SensorName Value="c849uvy">
+        <ENTER_LCD_COMPENSATION_LUX Value="360"/>
+        <EXIT_LCD_COMPENSATION_LUX Value="340"/>
+    </SensorName>
+    <SensorName Value="c849bdh">
+        <ENTER_LCD_COMPENSATION_LUX Value="360"/>
+        <EXIT_LCD_COMPENSATION_LUX Value="340"/>
+    </SensorName>
+    <SensorName Value="c849uvo">
+        <ENTER_LCD_COMPENSATION_LUX Value="360"/>
+        <EXIT_LCD_COMPENSATION_LUX Value="340"/>
+    </SensorName>
+    <SensorName Value="c834jdi">
+        <ENTER_LCD_COMPENSATION_LUX Value="360"/>
+        <EXIT_LCD_COMPENSATION_LUX Value="340"/>
+    </SensorName>
+    <SensorName Value="c834ogi">
+        <ENTER_LCD_COMPENSATION_LUX Value="360"/>
+        <EXIT_LCD_COMPENSATION_LUX Value="340"/>
+    </SensorName>
+</LCD_COMPENSATION>

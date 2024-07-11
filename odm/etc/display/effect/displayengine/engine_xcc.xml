@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+	<id>23</id>
+	<updated>2016-12-24</updated>
+	<feature name="XCC">
+		<mode name="MODE_UI">
+			<param name="enable">1</param>
+			<param name="xcc_lut">
+				0x0, 0x8000, 0x0,0x0,0x0,0x0,0x8000,0x0,0x0,0x0,0x0,0x8000,
+			</param>
+		</mode>
+		<mode name="MODE_VIDEO">
+			<param name="enable">1</param>
+			<param name="xcc_lut">
+				0x0, 0x8000, 0x0,0x0,0x0,0x0,0x8000,0x0,0x0,0x0,0x0,0x8000,
+			</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>
+

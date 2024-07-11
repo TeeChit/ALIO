@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<smallfaceConfig>
+     <!--- smallFace switch[ enable:1 disable:0] --->
+     <smallFaceEnable              value="1"/>
+     <!--- smallFace Threshold --->
+    <smallFaceThreshold            value="0.2"/>
+     <!--- bodndary Threshold two elements [boundary0, boundary1] --->
+    <boundary0                     value="0.25"/>
+    <boundary1                     value="0.75"/>
+</smallfaceConfig>

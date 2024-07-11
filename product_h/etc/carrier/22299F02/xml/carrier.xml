@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="f436f444f59a405786223177d05ae27d">
+  <dict>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="hn_remove_2g_only">true</bool>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="hn_remove_3g_only">true</bool>
+  </dict>
+</config>

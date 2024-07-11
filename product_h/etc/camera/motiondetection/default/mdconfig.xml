@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="gb2312"?>
+<MDAlgoConfig>
+    <!--HighSpeed2MidSpeed2LowSpeed Threshold in Raw Domain-->
+    <h2mRawThrd>1500</h2mRawThrd>
+    <m2lRawThrd>515</m2lRawThrd>
+    <l2uRawThrd>260</l2uRawThrd>
+    <l2uRawThrdHandheld>180</l2uRawThrdHandheld>
+    <l2uRawThrdGlobalMotion>800</l2uRawThrdGlobalMotion>
+    <l2uRawThrdUndefined>634</l2uRawThrdUndefined>
+    <!--Face Unmoiton2Motion Threshold in Raw Domain-->
+    <faceRawThrd>180</faceRawThrd>
+    <!--Scene Unmoiton2Motion Numb/Moiton2Unmotion Numb-->
+    <u2mNumStable>1</u2mNumStable>
+    <m2uNumStable>5</m2uNumStable>
+    <u2mNumShaking>6</u2mNumShaking>
+    <m2uNumShaking>1</m2uNumShaking>
+    <u2mBufferTimeStable>60</u2mBufferTimeStable>
+    <m2uBufferTimeStable>700</m2uBufferTimeStable>
+    <u2mBufferTimeShaking>360</u2mBufferTimeShaking>
+    <m2uBufferTimeShaking>25</m2uBufferTimeShaking>
+    <u2mBufferTimeTOF>300</u2mBufferTimeTOF>
+    <m2uBufferTimeTOF>180</m2uBufferTimeTOF>
+    <!--Anti Motion Banding Thrd-->
+    <mBandingStTh>8</mBandingStTh>
+    <mBandingRlTh>100</mBandingRlTh>
+    <!--motion Wins Disable Mask-->
+    <mDisableMask>1</mDisableMask>
+    <!--Sensitivity Enhence Switch-->
+    <smlAreaSwitch>0</smlAreaSwitch>
+    <rgbDetSwitch>0</rgbDetSwitch>
+    <!--globalMoiton Thrd-->
+    <globalMotionTh>15</globalMotionTh>
+    <!--4DTracking Switch AF&UI-->
+    <afTrackSwitch>1</afTrackSwitch>
+    <!--4DTracking ForecastRatio AF&UI-->
+    <afTrackForecast>1</afTrackForecast>
+    <!--4DTracking Space Time Filter Thrd---->
+    <tkSpaceFilterTh>2</tkSpaceFilterTh>
+    <tkTimeFilterTh>6</tkTimeFilterTh>
+    <afNumTrackMotionTh>10</afNumTrackMotionTh>
+    <!--Multiframe Filter Disable Switch--->
+    <mfFilterDisable>0</mfFilterDisable>
+    <motionVersionSwitch>1</motionVersionSwitch>
+    <warpSwitch>1</warpSwitch>
+    <NEONSwitch>1</NEONSwitch>
+    <tofBufferTime>300</tofBufferTime>
+    <tofDistanceThred>300</tofDistanceThred>
+    <increaseExpoSwitch>0</increaseExpoSwitch>
+    <lowLightThred>10</lowLightThred>
+    <decreaseExpoSwitch>1</decreaseExpoSwitch>
+    <enable1xOnly>0</enable1xOnly>
+</MDAlgoConfig>

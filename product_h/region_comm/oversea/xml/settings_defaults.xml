@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+  <!--2023-11-28 14:41:15.0-->
+  <string hn_def_theme="/product_h/region_comm/oversea/themes/Colorful.hwt"/>
+  <!--2023-11-28 14:41:15.0-->
+  <string hn_reduce_sar_fcc="310,311,312,313,314,315,316,330,332,534,535,544,334,722,734,732,740,730,716,748,708,710,714,744,415,363,364,362,302,704,706,368,372,370,338,374,342,352,358,360,738,746,356,702,344,404,405,406,736,712,432,425,450,365,350,346,366,340,354,742,376,348"/>
+  <!--2023-11-28 14:41:15.0-->
+  <string hn_reduce_sar_special="208,308,340,543,546,547,647,742"/>
+  <!--2024-01-26 16:23:44.0-->
+  <string hn_theme_sort="Wisdom Light##Colorful##Satin Wind##Carve##Growth##Planet##Meander##Radiant Wing##Flying Of Life"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.secure.game_dnd_mode="2"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.secure.game_gesture_disabled_mode="1"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.secure.game_key_control_mode="2"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.secure.game_power_save_mode="1"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.secure.game_triple_finger="1"/>
+  <!--2024-04-08 17:09:35.0-->
+  <string upgrade_guide_activity_path="com.hihonor.android.upgradeguide.UpgradeWizardActivity"/>
+  <!--2024-04-08 17:09:35.0-->
+  <string upgrade_guide_lightpot="26040801:1,2,3,4;"/>
+</resources>

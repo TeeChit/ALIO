@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="e1948335f9708ca923aaa54223cbbd8c">
+  <dict>
+    <!--2023-01-31 11:43:14.000-->
+    <bool key="delay_detach_switch">true</bool>
+    <!--2023-01-31 11:43:14.000-->
+    <int key="max_message_size">307200</int>
+    <!--2023-01-31 11:43:14.000-->
+    <int key="num_match">8</int>
+    <!--2023-01-31 11:43:14.000-->
+    <bool key="single_pdp_enabled">true</bool>
+    <!--2023-01-31 11:43:14.000-->
+    <int key="sms_to_mms_textthreshold">5</int>
+  </dict>
+</config>

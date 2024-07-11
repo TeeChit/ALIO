@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GB2312"?>
+<SubPipelineSet>
+    <SubPipeline Name="NormalPreview">
+        <PadDescription  PadName="In0"   InnerNodeName="Node0"  InnerNodePadName="In0" />
+        <PadDescription  PadName="Out0"  InnerNodeName="Node0"  InnerNodePadName="Out0" />
+        <Node Name="Node0"  Type="Plugin"     AlgoName="Counter">      <Connect  PadName=""  PeerNodeName=""  PeerPadName="" /> </Node>
+    </SubPipeline>
+
+    <SubPipeline Name="Tof">
+        <PadDescription  PadName="In0"   InnerNodeName="Node0"   InnerNodePadName="In0" />
+        <PadDescription  PadName="Out0"  InnerNodeName="Node3"   InnerNodePadName="Out0" />
+        <Node Name="Node0"  Type="Plugin"  AlgoName="ITOFCollector">    <Connect  PadName="Out0"  PeerNodeName="Node1"   PeerPadName="In0" /> </Node>
+        <Node Name="Node1"  Type="Plugin"  AlgoName="ITOFAE">           <Connect  PadName="Out0"  PeerNodeName="Node2"   PeerPadName="In0" /> </Node>
+        <Node Name="Node2"  Type="Plugin"  AlgoName="ITOFStrategy">     <Connect  PadName="Out0"  PeerNodeName="Node3"   PeerPadName="In0" /> </Node>
+        <Node Name="Node3"  Type="Plugin"  AlgoName="ITOFDepthCalc">    <Connect  PadName="In0"   PeerNodeName="Node2"   PeerPadName="Out0" /> </Node>
+    </SubPipeline>
+
+    <SubPipeline Name="NormalTiny">
+        <PadDescription  PadName="In0"   InnerNodeName="Node0"  InnerNodePadName="In0" />
+        <PadDescription  PadName="Out0"  InnerNodeName="Node2"  InnerNodePadName="Out0" />
+        <Node Name="Node0"  Type="Plugin"     AlgoName="Misc">         <Connect  PadName="Out0"  PeerNodeName="Node1"   PeerPadName="In0" /> </Node>
+        <Node Name="Node1"  Type="Plugin"     AlgoName="LaserMgr">     <Connect  PadName="Out0"  PeerNodeName="Node2"  PeerPadName="In0" /> </Node>
+        <Node Name="Node2"  Type="Plugin"     AlgoName="AssistAF">     <Connect  PadName="In0"   PeerNodeName="Node1"  PeerPadName="Out0" /> </Node>
+    </SubPipeline>
+</SubPipelineSet>

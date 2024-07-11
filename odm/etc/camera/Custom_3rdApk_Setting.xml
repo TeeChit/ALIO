@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Custom3rdApkSetting>
+        <CustomType type = "0">  <!--ev -->
+            <ApkList pkg="com.jingyao.easybike"/>
+            <ApkList pkg="com.hua**i.health"/>
+            <ApkList pkg="com.sankuai.meituan"/>
+            <ApkList pkg="com.hua**i.browser"/>
+            <ApkList pkg="com.wisedu.cpdaily"/>
+        </CustomType>
+        <CustomType type = "1">  <!--reconfig -->
+            <ApkList pkg="com.hihonor.mmitest"/>
+            <ApkList pkg="com.kwai.video"/>
+            <ApkList pkg="org.codeaurora.ims"/>
+            <ApkList pkg="com.tencent.mobileqq"/>
+        </CustomType>
+        <CustomType type = "2">  <!--ae bandingmode -->
+            <ApkList pkg="com.whatsapp"/>
+            <ApkList pkg="com.instagram.android"/>
+        </CustomType>
+        <CustomType type = "3">  <!--CLARITY-->
+            <ApkList pkg="com.tencent.mm"/>
+        </CustomType>
+        <CustomType type = "4">  <!--default usecase-->
+            <ApkList pkg="com.adib.mobile"/>
+        </CustomType>
+         <CustomType type = "5">  <!--VIRCAM FORCE FORMAT-->
+            <ApkList pkg="com.hihonor.dmsdptest" />
+            <ApkList pkg="com.tencent.mm" />
+            <ApkList pkg="com.tencent.mobileqq" />
+            <ApkList pkg="com.hua**i.welink" />
+            <ApkList pkg="com.alibaba.android.rimet" />
+        </CustomType>
+</Custom3rdApkSetting>

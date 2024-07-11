@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB2312"?>
+    <!--- FDNodeEnable -->
+    <!---     0 : disable ANC FD Algo, but still use ancfd node -->
+    <!---     0 : enable  ANC FD Algo -->
+    <!--- GetAttributeNeed -->
+    <!---     0 : Will not call algo api: GetAttribute for lower power cost -->
+    <!--- SetConfigOnce -->
+    <!---     0 : Config algo every process -->
+    <!---     0 : Config algo only first process -->
+    <!--- ANCLog -->
+    <!---     enable ANC algo log -->
+    <!--- Attrmode -->
+    <!---     0 : ANC_FD_ATTR_POSE3D -->
+    <!---     1 : ANC_FD_ATTR_POSE3D | ANC_FD_ATTR_FACEHAPPY | ANC_FD_ATTR_RACE -->
+    <!--- DefaultOrientation -->
+    <!---     If get device orientation fail, use DefaultOrientation -->
+    <!---     If get device orientation fail, use DefaultOrientation -->
+
+
+<CONFIG_PARA>
+
+    <!--- ANC FD node debug parameter -->
+    <FDDebugLog             value="0"/>
+    <ImageDump              value="0"/>
+    <FDNodeEnable           value="1"/>
+
+    <!--- ANC FD node ctrl parameter -->
+    <GetAttributeNeed       value="0"/>
+    <AttributeFps           value="5"/>
+    <SetConfigOnce          value="0"/>
+    <maxFaceNum             value="10"/>
+    <maxFPSWithFace         value="30"/>
+    <maxFPSWithNoFace       value="30"/>
+    <MCmaxFPSWithFace       value="15"/>
+    <MCmaxFPSWithNoFace     value="15"/>
+    <InitialNoFrameSkipCountInit  value="15"/>
+    <MaxPendingFramesInit         value="15"/>
+    <DelayCountInit         value="1"/>
+    <HoldCountInit          value="1"/>
+
+    <!--- ANC FD algo ctrl parameter -->
+    <ANCLog                 value="0"/>
+    <Attrmode               value="2"/>
+    <DefaultOrientation     value="0"/>
+    <DetectFps              value="2.0"/>
+    <TrackDelay             value="3"/>
+    <WakeUp                 value="0"/>
+    <FaceConfidenceFilter   value="0.8"/>
+    <DetectionMode          value="3"/>
+    <MinFaceSize            value="20"/>
+    <IsRectQualcomm         value="1"/>
+    <HappyThreshold         value="80"/>
+    <FaceMaskRatio          value="0.5"/>
+</CONFIG_PARA>

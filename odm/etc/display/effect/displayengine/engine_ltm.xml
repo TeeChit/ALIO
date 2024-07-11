@@ -1,0 +1,11 @@
+<DisplayEngineConfig>
+	<id>1</id>
+	<updated>2021-04-27</updated>
+	<feature name="LTM">
+		<mode name="MODE_DEFAULT">
+			<param name="FossEnable">0</param>
+			<param name="LTMEnable">0</param>
+			<param name="SVIEnable">1</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RoundCornerDisplay>
+    <LCDModel Name="default">
+        <SurfaceConfig>
+            <TopSurface Support="true" DisplayMode="1" />
+            <BottomSurface Support="false" DisplayMode="0" />
+        </SurfaceConfig>
+        <ROG Width="1200" Height="2652">
+            <Portrait>
+                <LayerHide Filename="hide_up.png" OffsetX="0" OffsetY="0" />
+            </Portrait>
+            <Landscape>
+                <LayerUp Filename="land_up.png" OffsetX="0" OffsetY="0" />
+            </Landscape>
+        </ROG>
+    </LCDModel>
+</RoundCornerDisplay>

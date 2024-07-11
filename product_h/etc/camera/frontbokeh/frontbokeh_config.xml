@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+    <InitModel value = "4"/><!--init model: BEST_PERFORMANCE-0x1/PERFORMANCE_FIRST-0x2/QUALITY_FIRST-0x3/BEST_QUALITY-0x4-->
+    <BlurValue value = "40"/><!--The intensity of blur, range [0, 100]-->
+    <VideoInitModel value = "1"/><!--init model for video: BEST_PERFORMANCE-0x1/PERFORMANCE_FIRST-0x2/QUALITY_FIRST-0x3/BEST_QUALITY-0x4-->
+    <VideoBlurValue value = "50"/><!--The intensity of blur, range [0, 100]-->
+</CONFIG_PARA>

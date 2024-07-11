@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+	<id>23</id>
+	<updated>2021-09-07</updated>
+	<feature name="DimmingFrames">
+		<mode name="FEATURE_CONTRAST">
+		</mode>
+		<mode name="FEATURE_BLC">
+		</mode>
+		<mode name="FEATURE_GMP">
+		</mode>
+		<mode name="FEATURE_GAMMA">
+		</mode>
+		<mode name="FEATURE_IGAMMA">
+		</mode>
+		<mode name="FEATURE_XCC">
+			<param name="MODE_AMBIENT_LUX_CHANGE">200</param>
+			<param name="MODE_EYE_PROTECT_ENABLE">50</param>
+			<!-- schedule eye protect -->
+			<param name="MODE_SCHEDULE_EYE_PROTECTION">100</param>
+			<!-- smart eye protect -->
+			<param name="MODE_SMART_EYE_PROTECTION">10800</param>
+			<param name="MODE_SMART_EYE_PROTECTION_MANUAL_OPERATION">50</param>
+			<param name="MODE_DISABLE">50</param>
+			<param name="MODE_NATURAL_TONE_ENABLE">200</param>
+			<param name="MODE_NATURAL_TONE_DISABLE">200</param>
+			<param name="MODE_EBOOK">20</param>
+			<param name="MODE_UI">120</param>
+			<param name="MODE_IMAGE">120</param>
+			<param name="MODE_SCREEN_ON">1</param>
+			<param name="MODE_DIMMING_FRAME_STEP_1">100</param>
+			<param name="MODE_DIMMING_FRAME_STEP_2">200</param>
+			<param name="MODE_DIMMING_FRAME_STEP_3">300</param>
+			<param name="MODE_DIMMING_FRAME_STEP_4">400</param>
+			<param name="MODE_DIMMING_FRAME_STEP_5">500</param>
+		</mode>
+	</feature>
+	<feature name="ComponentMapping">
+		<mode name="COMPONENT_SHARP">
+		</mode>
+		<mode name="COMPONENT_CONTRAST">
+			<param name="UI">FEATURE_CONTRAST</param>
+		</mode>
+		<mode name="COMPONENT_BLC">
+		</mode>
+		<mode name="COMPONENT_GMP">
+		</mode>
+		<mode name="COMPONENT_XCC">
+		</mode>
+		<mode name="COMPONENT_HUE">
+		</mode>
+		<mode name="COMPONENT_SAT">
+		</mode>
+		<mode name="COMPONENT_GAMMA">
+		</mode>
+		<mode name="COMPONENT_IGAMMA">
+		</mode>
+	</feature>
+	<feature name="Arbiter">
+		<mode name="ComponentPriority">
+			<param name="COMPONENT_CONTRAST">DE_FEATURE_SRE, DE_FEATURE_LRE, DE_FEATURE_HDR10, DE_FEATURE_CONTRAST</param>
+			<param name="COMPONENT_GMP">DE_FEATURE_HDR10, DE_FEATURE_GMP</param>
+			<param name="COMPONENT_GAMMA">DE_FEATURE_HDR10</param>
+			<param name="COMPONENT_IGAMMA">DE_FEATURE_HDR10</param>
+			<param name="COMPONENT_XCC">DE_FEATURE_EYE_PROTECT,DE_FEATURE_READING_GLOBAL, DE_FEATURE_READING, DE_FEATURE_3D_COLOR_TEMPERATURE, DE_FEATURE_XNIT, DE_FEATURE_RGLED</param>
+		</mode>
+		<mode name="ComponentInnerFilter">
+			<param name="DE_SCENE_ACTION_AMBIENT_CHANGE">FEATURE_CONTRAST, FEATURE_BLC</param>
+		</mode>
+		<mode name="CTRL">
+			<param name="Enable">1</param>
+			<param name="Interval">2</param>
+			<param name="XccLinear">0</param>
+			<param name="XccNaturalToneAvgWeight">-1.0</param>
+			<param name="XccEyeProtectionAvgWeight">-1.0</param>
+			<param name="Xcc3DTemperatureAvgWeight">-1.0</param>
+			<param name="XccEyeProtectionMultiplyWeight">0.5</param>
+			<param name="Xcc3DTemperatureMultiplyWeight">-1</param>
+			<param name="SkipRefreshForSetEffect">1</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>

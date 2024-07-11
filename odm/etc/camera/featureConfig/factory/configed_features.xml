@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<FEATURE_CONFIG>
+    <VIDEO_MODE Feature="NormalVideo" Mode="single"/>
+    <CAMERA_CAPTURE>
+        <FORE_GROUND_MODE>
+            <DCHDC_CALIB_MODE        Feature="HdcCalibMode"       Mode="single"/>
+            <LASER_FOV_CALIB_MODE    Feature="LaserFovCalibMode"  Mode="single"/>
+            <DCMMI_MODE              Feature="DcMMIMode"          Mode="single"/>
+            <DC_SPEC_CALIB_MODE      Feature="DcSpecCalibMode"    Mode="single"/>
+            <GRAY_CHECK_MODE         Feature="GrayGheckMode"      Mode="single"/>
+            <SCENE_MODE Value="NormalCapture">
+                <RootNode Feature="normalmode" Mode="single"/>
+            </SCENE_MODE>
+        </FORE_GROUND_MODE>
+        <BACK_GROUND_MODE Feature="PostNormalMode" Mode="single"/>
+    </CAMERA_CAPTURE>
+</FEATURE_CONFIG>

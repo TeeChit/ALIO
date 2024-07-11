@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+	<id>23</id>
+	<updated>2017-06-16</updated>
+	<feature name="SDR2HDR">
+		<mode name="CTRL">
+			<param name="Enable">1</param>
+		</mode>
+		<mode name="AISRENABLE">
+			<param name="AiSrEnable">1</param>
+		</mode>
+		<mode name="STATE">
+			<param name="DefaultState">1</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>

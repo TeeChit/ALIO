@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ArcBokehConfig>
+    <ArcBokeh mainWidthCropNoScale="4000" mainHeightCropNoScale="3000" auxWidthCropNoScale="2592" auxHeightCropNoScale="1944" imageDegree = "270" UseDefaultCaliData = "1" LuxThreshold = "250"
+        portraitValue = "10" getFaceFromHalMeta = "1"></ArcBokeh>
+</ArcBokehConfig>

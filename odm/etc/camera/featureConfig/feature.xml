@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="GB2312"?>
+<FeatureConfig>
+    <!-- VIDEO_MODE BEGIN -->
+    <Feature Name="VideoBase" RequestName="normalshot">
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Source" Type="Plugin"      AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Tiny" PeerPadName="In0"/> </Node>
+            <Node Name="Tiny"   Type="SubPipeline" AlgoName="NormalTiny">   <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"   Type="Plugin"      AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Tiny" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/></Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">    <Connect PadName="Out0" PeerNodeName="Raw2Yuv"   PeerPadName="In0"/>
+                                                                           <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv"   Type="Plugin" AlgoName="Raw2YuvPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/></Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">     <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/></Node>
+            <Node Name="Sink"  Type="Plugin" AlgoName="SinkPlugin" StreamType="Raw2Yuv"> <Connect PadName="In0"     PeerNodeName="Raw2Yuv" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1" Type="Plugin" AlgoName="SinkPlugin"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">   <Connect PadName="Out0" PeerNodeName="HwBeauty"    PeerPadName="In0"/> </Node>
+            <Node Name="HwBeauty"    Type="Plugin" AlgoName="HwBeautyPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"  PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">     <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PreviewSat" FilterType="PreviewSatFilter">
+            <Node Name="Source"     Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="SatPreview" PeerPadName="In0"/> </Node>
+            <Node Name="SatPreview" Type="Plugin" AlgoName="SatPreviewPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"       PeerPadName="In0"/> </Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="Preview"> <Connect PadName="In0" PeerNodeName="SatPreview" PeerPadName="Out0" /> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="NormalVideo" RequestName = "normalshot" Base = "VideoBase">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="ColorEffect"  PeerPadName="In0"/> </Node>
+            <Node Name="ColorEffect" Type="Plugin" AlgoName="ColorEffect">  <Connect PadName="Out0" PeerNodeName="Sink"         PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="ColorEffect"  PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PreviewVideoIpp" FilterType="PreviewVideoFilter">
+            <Node Name="Source"              Type="Plugin" AlgoName="SourcePlugin">        <Connect PadName="Out0" PeerNodeName="MulticamConsistency" PeerPadName="In0"/> </Node>
+            <Node Name="MulticamConsistency" Type="Plugin" AlgoName="MulticamConsistency"> <Connect PadName="Out0" PeerNodeName="Beauty"              PeerPadName="In0"/> </Node>
+            <Node Name="Beauty"              Type="Plugin" AlgoName="HwBeautyIpp">         <Connect PadName="Out0" PeerNodeName="ScreenDisplay"       PeerPadName="In0"/> </Node>
+            <Node Name="ScreenDisplay"       Type="Plugin" AlgoName="ScreenDisplay">       <Connect PadName="Out0" PeerNodeName="ColorEffect"         PeerPadName="In0"/> </Node>
+            <Node Name="ColorEffect"         Type="Plugin" AlgoName="ColorEffect">         <Connect PadName="Out0" PeerNodeName="Sw3dLut"             PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLut"             Type="Plugin" AlgoName="Sw3dLut">             <Connect PadName="Out0" PeerNodeName="Sink"                PeerPadName="In0"/> </Node>
+            <Node Name="Sink"                Type="Plugin" AlgoName="SinkPlugin">          <Connect PadName="In0"  PeerNodeName="Sw3dLut"             PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="RecordVideoIpp" FilterType="RecordVideoFilter">
+            <Node Name="Source"              Type="Plugin" AlgoName="SourcePlugin">        <Connect PadName="Out0" PeerNodeName="MulticamConsistency" PeerPadName="In0"/> </Node>
+            <Node Name="MulticamConsistency" Type="Plugin" AlgoName="MulticamConsistency"> <Connect PadName="Out0" PeerNodeName="Beauty"              PeerPadName="In0"/> </Node>
+            <Node Name="Beauty"              Type="Plugin" AlgoName="HwBeautyIpp">         <Connect PadName="Out0" PeerNodeName="ScreenDisplay"  PeerPadName="In0"/> </Node>
+            <Node Name="ScreenDisplay"       Type="Plugin" AlgoName="ScreenDisplay">       <Connect PadName="Out0" PeerNodeName="ColorEffect"         PeerPadName="In0"/> </Node>
+            <Node Name="ColorEffect"         Type="Plugin" AlgoName="ColorEffect">         <Connect PadName="Out0" PeerNodeName="Sw3dLut"             PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLut"             Type="Plugin" AlgoName="Sw3dLut">             <Connect PadName="Out0" PeerNodeName="Sink"                PeerPadName="In0"/> </Node>
+            <Node Name="Sink"                Type="Plugin" AlgoName="SinkPlugin">          <Connect PadName="In0"  PeerNodeName="Sw3dLut"             PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="AipIpp" FilterType="AipFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Node0" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="WaterMarkFilterIpp" FilterType="WaterMarkFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Node0" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="VideoBokeh" RequestName = "normalshot" Base = "VideoBase">
+        <Pipeline Name="PreviewVideoIpp" FilterType="RecordVideoFilter">
+            <Node  Name="Source"     Type="Plugin"  AlgoName="SourcePlugin">  <Connect  PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0" /></Node>
+            <Node  Name="Beauty"     Type="Plugin"  AlgoName="HwBeautyIpp">  <Connect  PadName="Out0" PeerNodeName="VideoBokeh" PeerPadName="In0" /></Node>
+            <Node  Name="VideoBokeh"     Type="Plugin"  AlgoName="VideoBokehForSingleCamera">  <Connect  PadName="Out0" PeerNodeName="ColorEffect" PeerPadName="In0" /></Node>
+            <Node  Name="ColorEffect"        Type="Plugin" AlgoName="ColorEffect">         <Connect PadName="Out0" PeerNodeName="Sink"             PeerPadName="In0"/> </Node>
+            <Node  Name="Sink"       Type="Plugin"  AlgoName="SinkPlugin" StreamType = "Preview">    <Connect  PadName="In0"  PeerNodeName="ColorEffect"  PeerPadName="Out0" /></Node>
+        </Pipeline>
+        <Pipeline Name="RecordVideoIpp" FilterType="RecordVideoFilter">
+            <Node  Name="Source"     Type="Plugin"  AlgoName="SourcePlugin">  <Connect  PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0" /></Node>
+            <Node  Name="Beauty"     Type="Plugin"  AlgoName="HwBeautyIpp">  <Connect  PadName="Out0" PeerNodeName="VideoBokeh" PeerPadName="In0" /></Node>
+            <Node  Name="VideoBokeh"     Type="Plugin"  AlgoName="VideoBokehForSingleCamera">  <Connect  PadName="Out0" PeerNodeName="Sink" PeerPadName="In0" /></Node>
+            <Node  Name="Sink"       Type="Plugin"  AlgoName="SinkPlugin">    <Connect  PadName="In0"  PeerNodeName="VideoBokeh"  PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="DualVideoFront" RequestName = "normalDualVideoShot">
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Misc" PeerPadName="In0"/></Node>
+            <Node Name="Misc" Type="Plugin" AlgoName="Misc"><Connect PadName="Out0" PeerNodeName="GestureVlog" PeerPadName="In0"/></Node>
+            <Node Name="GestureVlog" Type="Plugin" AlgoName="GestureDetectVlog"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="GestureVlog" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PreviewVideoIpp" FilterType="PreviewVideoFilter">
+            <Node  Name="Source" Type="Plugin"  AlgoName="SourcePlugin">  <Connect  PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0" /></Node>
+            <Node Name="Beauty" Type="Plugin" AlgoName="HwBeautyIpp"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node  Name="Sink"  Type="Plugin"  AlgoName="SinkPlugin" StreamType="Preview"> <Connect  PadName="In0" PeerNodeName="Beauty" PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="DualVideoBack" RequestName = "normalDualVideoShot">
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Misc" PeerPadName="In0"/></Node>
+            <Node Name="Misc" Type="Plugin" AlgoName="Misc"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Misc" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PreviewVideoIpp" FilterType="PreviewVideoFilter">
+            <Node  Name="Source"     Type="Plugin"  AlgoName="SourcePlugin">  <Connect  PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0" /></Node>
+            <Node Name="Beauty" Type="Plugin" AlgoName="HwBeautyIpp"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node  Name="Sink" Type="Plugin"  AlgoName="SinkPlugin" StreamType="Preview"> <Connect  PadName="In0" PeerNodeName="Beauty" PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="PersonTrackingVideo" RequestName="normalshot" Base = "VideoBase">
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Tiny" PeerPadName="In0"/></Node>
+            <Node Name="Tiny" Type="SubPipeline" AlgoName="Feature16Tiny"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Tiny" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PreviewVideoIpp" FilterType="PreviewVideoFilter">
+            <Node  Name="Source"     Type="Plugin"  AlgoName="SourcePlugin"> <Connect   PadName="Out0"  PeerNodeName="Beauty" PeerPadName="In0" /></Node>
+            <Node  Name="Beauty"     Type="Plugin"  AlgoName="HwBeautyIpp">   <Connect  PadName="Out0" PeerNodeName="Sink" PeerPadName="In0" /></Node>
+            <Node  Name="Sink"       Type="Plugin"  AlgoName="SinkPlugin"  StreamType = "Preview">   <Connect   PadName="In0"   PeerNodeName="Beauty"  PeerPadName="Out0" /></Node>
+        </Pipeline>
+        <Pipeline Name="RecordVideoIpp" FilterType="RecordVideoFilter">
+            <Node  Name="Source"     Type="Plugin"  AlgoName="SourcePlugin">  <Connect  PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0" /></Node>
+            <Node  Name="Beauty"             Type="Plugin"  AlgoName="HwBeautyIpp">        <Connect  PadName="Out0" PeerNodeName="Sink" PeerPadName="In0" /></Node>
+            <Node  Name="Sink"       Type="Plugin"  AlgoName="SinkPlugin" StreamType = "Record">    <Connect  PadName="In0"  PeerNodeName="Beauty"  PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="NormalMovieVideo" RequestName = "normalMovieShot" Base = "NormalVideo">
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Source"      Type="Plugin"      AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Sw3dLutTiny" PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLutTiny" Type="Plugin"      AlgoName="Sw3dLutTiny">  <Connect PadName="Out0" PeerNodeName="Tiny"        PeerPadName="In0"/> </Node>
+            <Node Name="Tiny"        Type="SubPipeline" AlgoName="NormalTiny">   <Connect PadName="Out0" PeerNodeName="Sink"        PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin"      AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Tiny"        PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="IPE"         PeerPadName="In0"/> </Node>
+            <Node Name="IPE"         Type="Plugin" AlgoName="IPEPlugin">     <Connect PadName="Out0" PeerNodeName="Sw3dLutPp"   PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLutPp"   Type="Plugin" AlgoName="Sw3dLutPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <!-- VIDEO_MODE END -->
+
+    <!-- CAMERA_CAPTURE BEGIN -->
+    <Feature Name="normalmode" RequestName = "normalshot">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin">        <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="Counter">             <Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/> </Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="MulticamConsistency"> <Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/> </Node>
+            <Node Name="Node3" Type="Plugin" AlgoName="HwBeautyIpp">         <Connect PadName="Out0" PeerNodeName="Node4" PeerPadName="In0"/> </Node>
+            <Node Name="Node4" Type="Plugin" AlgoName="ScbokehIpp">          <Connect PadName="Out0" PeerNodeName="Node5" PeerPadName="In0"/> </Node>
+            <Node Name="Node5" Type="SubPipeline" AlgoName="NormalPreview"><Connect PadName="Out0" PeerNodeName="Node6" PeerPadName="In0"/></Node>
+            <Node Name="Node6" Type="Plugin" AlgoName="AssistAF"><Connect PadName="Out0" PeerNodeName="Node7" PeerPadName="In0"/></Node>
+            <Node Name="Node7" Type="Plugin" AlgoName="AfCalib"><Connect PadName="Out0" PeerNodeName="Node8" PeerPadName="In0"/></Node>
+            <Node Name="Node8" Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="Preview"><Connect PadName="In0"   PeerNodeName="Node7"   PeerPadName="Out0" /> </Node>
+        </Pipeline>
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Node0" Type="Plugin"      AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="SubPipeline" AlgoName="NormalTiny">   <Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/> </Node>
+            <Node Name="Node2" Type="Plugin"      AlgoName="Frontgesture"> <Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/> </Node>
+            <Node Name="Node3" Type="Plugin"      AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Node2" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="Raw2Yuv"   PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv"   Type="Plugin" AlgoName="Raw2YuvPlugin">   <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">      <Connect PadName="Out0" PeerNodeName="CopyYuv"   PeerPadName="In0"/>
+                                                                             <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">       <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="CopyYuv"   Type="Plugin" AlgoName="CopyYuvPlugin">   <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType ="Raw2Yuv"> <Connect PadName="In0" PeerNodeName="CopyYuv"   PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType ="Jpeg">    <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin"> <Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PreviewSat" FilterType="PreviewSatFilter">
+            <Node Name="Source"     Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="SatPreview" PeerPadName="In0"/> </Node>
+            <Node Name="SatPreview" Type="Plugin" AlgoName="SatPreviewPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"       PeerPadName="In0"/> </Node>
+            <Node Name="Sink"       Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="Preview"> <Connect PadName="In0" PeerNodeName="SatPreview" PeerPadName="Out0" /> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="foreNormalmode" RequestName="normalshot">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="Counter">      <Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/> </Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="HwBeautyIpp">  <Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/> </Node>
+            <Node Name="Node3" Type="Plugin" AlgoName="ScbokehIpp">   <Connect PadName="Out0" PeerNodeName="Node4" PeerPadName="In0"/> </Node>
+            <Node Name="Node4" Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="Preview"> <Connect PadName="In0" PeerNodeName="Node3" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Node0" Type="Plugin"      AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="SubPipeline" AlgoName="NormalTiny">   <Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/> </Node>
+            <Node Name="Node2" Type="Plugin"      AlgoName="Frontgesture"> <Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/> </Node>
+            <Node Name="Node3" Type="Plugin"      AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Node2" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"  Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin"> <Connect PadName="Out0" PeerNodeName="Jpeg"    PeerPadName="In0"/> </Node>
+            <Node Name="Jpeg"    Type="Plugin" AlgoName="JpegEncoderPlugin"  PlaceholderType="Tail"><Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/> </Node>
+            <Node Name="Sink1"   Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0"  PeerNodeName="Jpeg"    PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PreviewSat" FilterType="PreviewSatFilter">
+            <Node Name="Source"     Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="SatPreview" PeerPadName="In0"/> </Node>
+            <Node Name="SatPreview" Type="Plugin" AlgoName="SatPreviewPlugin"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/>       </Node>
+            <Node Name="Sink"       Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="Preview"><Connect PadName="In0"   PeerNodeName="SatPreview"   PeerPadName="Out0" /> </Node>
+        </Pipeline>
+    </Feature>
+    <!-- FORE_GROUND_MODE BEGIN -->
+    <Feature Name="HdcCalibMode" RequestName="hdccalib" Base = "normalmode">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Node0" Type="Plugin"      AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="Node1" Type="SubPipeline" AlgoName="NormalPreview"> <Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/> </Node>
+            <Node Name="Node2" Type="Plugin"      AlgoName="HdcCalibIpp">   <Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/> </Node>
+            <Node Name="Node3" Type="Plugin"      AlgoName="SinkPlugin">    <Connect PadName="In0"  PeerNodeName="Node2" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0"   Type="Plugin" AlgoName="SourcePlugin">      <Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin">     <Connect PadName="Out0" PeerNodeName="Node1"   PeerPadName="In0"/> </Node>
+            <Node Name="Node1"   Type="Plugin" AlgoName="HdcCalibPpAlgo">    <Connect PadName="Out0" PeerNodeName="Jpeg"    PeerPadName="In0"/> </Node>
+            <Node Name="Jpeg"    Type="Plugin" AlgoName="JpegEncoderPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"    PeerPadName="In0"/> </Node>
+            <Node Name="Sink"    Type="Plugin" AlgoName="SinkPlugin">        <Connect PadName="In0"  PeerNodeName="Jpeg"    PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="LaserFovCalibMode" RequestName="laserFOVCali" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0"   Type="Plugin" AlgoName="SourcePlugin">      <Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin">     <Connect PadName="Out0" PeerNodeName="Node1"   PeerPadName="In0"/> </Node>
+            <Node Name="Node1"   Type="Plugin" AlgoName="laserfovcalib">     <Connect PadName="Out0" PeerNodeName="Jpeg"    PeerPadName="In0"/> </Node>
+            <Node Name="Jpeg"    Type="Plugin" AlgoName="JpegEncoderPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"    PeerPadName="In0"/> </Node>
+            <Node Name="Sink"    Type="Plugin" AlgoName="SinkPlugin">        <Connect PadName="In0"  PeerNodeName="Jpeg"    PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="DcMMIMode" RequestName="dcmmi" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0"   Type="Plugin" AlgoName="SourcePlugin">      <Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin">     <Connect PadName="Out0" PeerNodeName="Node1"   PeerPadName="In0"/> </Node>
+            <Node Name="Node1"   Type="Plugin" AlgoName="DCMMIPpAlgo">       <Connect PadName="Out0" PeerNodeName="Jpeg"    PeerPadName="In0"/> </Node>
+            <Node Name="Jpeg"    Type="Plugin" AlgoName="JpegEncoderPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"    PeerPadName="In0"/> </Node>
+            <Node Name="Sink"    Type="Plugin" AlgoName="SinkPlugin"> <Connect PadName="In0" PeerNodeName="Jpeg" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="GrayGheckMode" RequestName="graycheck" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0"   Type="Plugin" AlgoName="SourcePlugin">      <Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin">     <Connect PadName="Out0" PeerNodeName="Node1"   PeerPadName="In0"/> </Node>
+            <Node Name="Node1"   Type="Plugin" AlgoName="GrayCheckPpAlgo">   <Connect PadName="Out0" PeerNodeName="Jpeg"    PeerPadName="In0"/> </Node>
+            <Node Name="Jpeg"    Type="Plugin" AlgoName="JpegEncoderPlugin"> <Connect PadName="Out0" PeerNodeName="Sink"    PeerPadName="In0"/> </Node>
+            <Node Name="Sink"    Type="Plugin" AlgoName="SinkPlugin">        <Connect PadName="In0"  PeerNodeName="Jpeg"    PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="foreMainDarkvision" RequestName="darkvisionshot" Base="foreNormalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="DarkVision"  PeerPadName="In0"/> </Node>
+            <Node Name="DarkVision"  Type="Plugin" AlgoName="DarkVisionPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="foreWideDarkvision" RequestName="darkvisionshot" Base="foreNormalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="DarkVision"  PeerPadName="In0"/> </Node>
+            <Node Name="DarkVision"  Type="Plugin" AlgoName="DarkVisionPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="foreWideSupernight" RequestName="supernightshot" Base="foreNormalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="SuperNight"  PeerPadName="In0"/> </Node>
+            <Node Name="SuperNight"  Type="Plugin" AlgoName="SuperNightPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="foreTeleSuperNight" RequestName="supernightshot" Base="foreWideSupernight"/>
+
+    <Feature Name="foreMainAiRawElliplite" RequestName="elliplite" Base="foreNormalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="AiRaw"       PeerPadName="In0"/> </Node>
+            <Node Name="AiRaw"       Type="Plugin" AlgoName="AiRawV2PpAlgo">   <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="forewideTFSuperNight" RequestName="tfsupernightshot" Base="foreNormalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node  Name="Source"     Type="Plugin"      AlgoName="SourcePlugin"><Connect      PadName="Out0"    PeerNodeName="RawUnpack"    PeerPadName="In0" /></Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"><Connect PadName="Out0" PeerNodeName="TFSuperNight" PeerPadName="In0"/></Node>
+            <Node Name="TFSuperNight" Type="Plugin" AlgoName="TFSuperNightPpAlgo"><Connect PadName="Out0" PeerNodeName="IPE" PeerPadName="In0"/></Node>
+            <Node Name="IPE" Type="Plugin" AlgoName="IPEPlugin"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node  Name="JpegEncoder" Type="Plugin"     AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect         PadName="Out0"    PeerNodeName="Sink"    PeerPadName="In0" /></Node>
+            <Node  Name="Sink"        Type="Plugin"     AlgoName="SinkPlugin"><Connect       PadName="In0"     PeerNodeName="JpegEncoder"    PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="foremainTFSuperNight" RequestName="tfsupernightshot" Base="forewideTFSuperNight"/>
+    <Feature Name="foreteleTFSuperNight" RequestName="tfsupernightshot" Base="forewideTFSuperNight"/>
+    <!-- FORE_GROUND_MODE END -->
+
+    <!-- BACK_GROUND_MODE BEGIN -->
+    <!-- FRONT_CAMERA_MODE BEGIN -->
+    <Feature Name="frontRemosaic" RequestName="fofflineremosaic" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Fork" PeerPadName="In0"/></Node>
+            <Node Name="Fork"           Type="Plugin" AlgoName="ForkPlugin">    <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/>
+                                                                                <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/></Node>
+            <Node Name="Thumbnail"      Type="Plugin" AlgoName="Thumbnail">     <Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/></Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin" StreamType ="Raw"><Connect	PadName="In0" PeerNodeName="Fork" PeerPadName="Out0"/></Node>
+            <Node Name="Sink1"          Type="Plugin" AlgoName="SinkPlugin" StreamType ="Jpeg"><Connect	PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"          Type="Plugin" AlgoName="SourcePlugin">         <Connect PadName="Out0" PeerNodeName="Remosaic"         PeerPadName="In0" /></Node>
+            <Node Name="Remosaic"        Type="Plugin" AlgoName="RemosaicPpAlgo">       <Connect PadName="Out0" PeerNodeName="JpegEncoder"      PeerPadName="In0" /></Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect  PadName="Out0"       PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink"            Type="Plugin" AlgoName="SinkPlugin">           <Connect PadName="In0" PeerNodeName="JpegEncoder"       PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontRemosaicBeauty" RequestName="fofflineremosaic" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Copy"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Copy"      Type="Plugin" AlgoName="CopyPlugin">       <Connect PadName="Out0" PeerNodeName="Sink1"      PeerPadName="In0" /></Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Copy"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="Remosaic"   PeerPadName="In0"/> </Node>
+            <Node Name="Remosaic"    Type="Plugin" AlgoName="RemosaicPpAlgo">  <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/> </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainRemosaic" RequestName="fofflinecopyremosaic" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Fork" PeerPadName="In0"/></Node>
+            <Node Name="Fork"           Type="Plugin" AlgoName="ForkPlugin">    <Connect PadName="Out0" PeerNodeName="Copy" PeerPadName="In0"/>
+                                                                                <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/></Node>
+            <Node Name="Thumbnail"      Type="Plugin" AlgoName="Thumbnail">     <Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/></Node>
+            <Node Name="Copy"        Type="Plugin" AlgoName="CopyPlugin">       <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0" /></Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin" StreamType ="Raw"><Connect	PadName="In0" PeerNodeName="Copy" PeerPadName="Out0"/></Node>
+            <Node Name="Sink1"          Type="Plugin" AlgoName="SinkPlugin" StreamType ="Jpeg"><Connect	PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"          Type="Plugin" AlgoName="SourcePlugin">         <Connect PadName="Out0" PeerNodeName="Remosaic"         PeerPadName="In0" /></Node>
+            <Node Name="Remosaic"        Type="Plugin" AlgoName="RemosaicPpAlgo">       <Connect PadName="Out0" PeerNodeName="JpegEncoder"      PeerPadName="In0" /></Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect  PadName="Out0"       PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink"            Type="Plugin" AlgoName="SinkPlugin">           <Connect PadName="In0" PeerNodeName="JpegEncoder"       PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontRawhdrFaceSR" RequestName="frontRawhdrAnc" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0"         PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0"         PeerNodeName="Firk" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontMFNRFaceSR"  RequestName="frontRawhdrAnc"      Base="frontRawhdrFaceSR"/>
+    <Feature Name="frontNightFaceSR" RequestName="frontNightRawhdrAnc" Base="frontRawhdrFaceSR"/>
+    <Feature Name="frontRawhdrRemosaic" RequestName="frontRawhdrAnc" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Copy"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Copy"      Type="Plugin" AlgoName="CopyPlugin">       <Connect PadName="Out0" PeerNodeName="Sink1"      PeerPadName="In0" /></Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Copy"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontNightRemosaic" RequestName="frontNightRawhdrAnc" Base="frontRawhdrRemosaic"/>
+    <Feature Name="frontMFNRFaceSRRemosiac"  RequestName="frontRawhdrAnc"      Base="frontRawhdrRemosaic"/>
+    <Feature Name="frontRawhdrFaceSRLut" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontMFNRFaceSRLut"  RequestName="frontRawhdrAnc"      Base="frontRawhdrFaceSRLut"/>
+    <Feature Name="frontNightFaceSRLut" RequestName="frontNightRawhdrAnc" Base="frontRawhdrFaceSRLut"/>
+
+    <Feature Name="frontNightFaceSRBeauty" RequestName="frontNightRawhdrAnc" Base="frontNightFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontNightFaceSRBeautyRemosaic" RequestName="frontNightRawhdrAnc" Base="frontNightRemosaic">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontNightFaceSRLutBeauty" RequestName="frontNightRawhdrAnc" Base="frontNightFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontNightFaceSRBokeh" RequestName="frontNightRawhdrAnc" Base="frontNightFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontNightFaceSRLutBokeh" RequestName="frontNightRawhdrAnc" Base="frontNightFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontNightFaceSRBokehBeauty" RequestName="frontNightRawhdrAnc" Base="frontNightFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontNightFaceSRLutBokehBeauty" RequestName="frontNightRawhdrAnc" Base="frontNightFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"      PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontRawhdrFaceSRBeauty" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontRawhdrFaceSRBeautyRemosaic" RequestName="frontRawhdrAnc" Base="frontRawhdrRemosaic">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontRawhdrFaceSRLutBeauty" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontRawhdrFaceSRBokeh" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontRawhdrFaceSRLutBokeh" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontRawhdrFaceSRBokehBeauty" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontRawhdrFaceSRLutBokehBeauty" RequestName="frontRawhdrAnc" Base="frontRawhdrFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontMFNRFaceSRBeauty" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontMFNRFaceSRBeautyRemosaic" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSRRemosiac">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontMFNRFaceSRLutBeauty" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontMFNRFaceSRBokeh" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="frontMFNRFaceSRLutBokeh" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontMFNRFaceSRBokehBeauty" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="frontMFNRFaceSRLutBokehBeauty" RequestName="frontRawhdrAnc" Base="frontMFNRFaceSR">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="RawHdr"      PeerPadName="In0"/>  </Node>
+            <Node Name="RawHdr"      Type="Plugin" AlgoName="RawhdrAncPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/>  </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="Sw3dLut"      PeerPadName="In0"/>  </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">         <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">  <Connect PadName="Out0" PeerNodeName="FrontBokeh"  PeerPadName="In0"/>  </Node>
+            <Node Name="FrontBokeh"  Type="Plugin" AlgoName="BlurAlgo">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/>  </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <!-- FRONT_CAMERA_MODE END -->
+
+    <!-- BACK_CAMERA_MODE BEGIN -->
+    <Feature Name="mainDarkvision" RequestName="darkvisionshot" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="DarkVision"  PeerPadName="In0"/> </Node>
+            <Node Name="DarkVision"  Type="Plugin" AlgoName="DarkVisionPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin"> <Connect PadName="In0" PeerNodeName="JpegEncoder"     PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="wideDarkvision" RequestName="darkvisionshot" Base="mainDarkvision"/>
+    <Feature Name="teleDarkvision" RequestName="darkvisionshot" Base="mainDarkvision"/>
+
+    <Feature Name="mainSuperNight" RequestName="supernightshot" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="SuperNight"  PeerPadName="In0"/> </Node>
+            <Node Name="SuperNight"  Type="Plugin" AlgoName="SuperNightPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0" PeerNodeName="JpegEncoder"  PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="wideSuperNight" RequestName="supernightshot" Base="mainSuperNight"/>
+    <Feature Name="teleSuperNight" RequestName="supernightshot" Base="mainSuperNight"/>
+
+    <Feature Name="mainTFSuperNight" RequestName="tfsupernightshot" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Fork" PeerPadName="In0"/></Node>
+            <Node Name="Fork" Type="Plugin" AlgoName="ForkPlugin"><Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                  <Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/></Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <!-- <Node Name="Copy" Type="Plugin" AlgoName="CopyPlugin"><Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/></Node> -->
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"><Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/></Node>
+            <Node Name="Sink1" Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw"><Connect PadName="In0" PeerNodeName="Fork" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0"/></Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"><Connect PadName="Out0" PeerNodeName="TFSuperNight" PeerPadName="In0"/></Node>
+            <Node Name="TFSuperNight" Type="Plugin" AlgoName="TFSuperNightPpAlgo"><Connect PadName="Out0" PeerNodeName="IPE" PeerPadName="In0"/></Node>
+            <Node Name="IPE" Type="Plugin" AlgoName="IPEPlugin"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="wideTFSuperNight" RequestName="tfsupernightshot" Base="mainTFSuperNight"/>
+    <Feature Name="teleTFSuperNight" RequestName="tfsupernightshot" Base="mainTFSuperNight"/>
+
+    <Feature Name="mainAiRawElliplite" RequestName="elliplite" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0" /> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0" />
+                                                                          <Connect PadName="Out1" PeerNodeName="Thumbnail"     PeerPadName="In0" /> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0" /> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0" /> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0" /> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="AiRaw"       PeerPadName="In0"/> </Node>
+            <Node Name="AiRaw"       Type="Plugin" AlgoName="AiRawV2PpAlgo">   <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">       <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"   PeerNodeName="Node4" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainHdrp" RequestName="rawhdr" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="Rawhdr"    PeerPadName="In0"/>  </Node>
+            <Node Name="Rawhdr"    Type="Plugin" AlgoName="RawhdrDsp">       <Connect PadName="Out0" PeerNodeName="IPE"       PeerPadName="In0"/>  </Node>
+            <Node Name="IPE"       Type="Plugin" AlgoName="IPEPlugin">       <Connect PadName="Out0" PeerNodeName="Jpeg"      PeerPadName="In0"/>  </Node>
+            <Node Name="Jpeg"      Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="Jpeg"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="wideHdrp"     RequestName="rawhdr"   Base="mainHdrp"/>
+    <Feature Name="mainHdrplite" RequestName="hdrplite" Base="mainHdrp"/>
+    <Feature Name="wideHdrplite" RequestName="hdrplite" Base="mainHdrplite"/>
+
+    <Feature Name="mainHdrpYuvsr" RequestName="hdrpliteYuvSr" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="Rawhdr"    PeerPadName="In0"/>  </Node>
+            <Node Name="Rawhdr"    Type="Plugin" AlgoName="RawhdrDspYuvSr">       <Connect PadName="Out0" PeerNodeName="IPE"       PeerPadName="In0"/>  </Node>
+            <Node Name="IPE"       Type="Plugin" AlgoName="IPEPlugin">       <Connect PadName="Out0" PeerNodeName="Jpeg"      PeerPadName="In0"/>  </Node>
+            <Node Name="Jpeg"      Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="Jpeg"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainHdrpFov" RequestName="rawhdrAncfusion" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin">    <Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0"/>  </Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"> <Connect PadName="Out0" PeerNodeName="Rawhdr"    PeerPadName="In0"/>  </Node>
+            <Node Name="Rawhdr"    Type="Plugin" AlgoName="RawhdrDsp">       <Connect PadName="Out0" PeerNodeName="IPE"    PeerPadName="In0"/>  </Node>
+            <Node Name="IPE"       Type="Plugin" AlgoName="IPEPlugin">       <Connect PadName="Out0" PeerNodeName="Fusion"      PeerPadName="In0"/>  </Node>
+            <Node Name="Fusion"    Type="Plugin" AlgoName="AncfusionPpAlgo"> <Connect PadName="Out0" PeerNodeName="Jpeg"       PeerPadName="In0"/></Node>
+            <Node Name="Jpeg"      Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin">      <Connect PadName="In0"  PeerNodeName="Jpeg"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="wideHdrpFov"     RequestName="rawhdrAncfusion" Base="mainHdrpFov"/>
+    <Feature Name="mainHdrpliteFov" RequestName="hdrpliteAncfusion" Base="mainHdrpFov"/>
+    <Feature Name="wideHdrpliteFov" RequestName="hdrpliteAncfusion" Base="mainHdrpliteFov"/>
+
+    <Feature Name="mainYuvSR" RequestName="sthdrshot" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"    Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Fork"      PeerPadName="In0"/> </Node>
+            <Node Name="Fork"      Type="Plugin" AlgoName="ForkPlugin">   <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/>
+                                                                          <Connect PadName="Out0" PeerNodeName="Sink1"     PeerPadName="In0"/> </Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail">    <Connect PadName="Out0" PeerNodeName="Sink"      PeerPadName="In0"/> </Node>
+            <Node Name="Sink"      Type="Plugin" AlgoName="SinkPlugin" StreamType = "Jpeg"> <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/> </Node>
+            <Node Name="Sink1"     Type="Plugin" AlgoName="SinkPlugin" StreamType = "Raw">  <Connect PadName="In0" PeerNodeName="Fork"      PeerPadName="Out0"/> </Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Raw2Yuv"     PeerPadName="In0"/> </Node>
+            <Node Name="Raw2Yuv"     Type="Plugin" AlgoName="Raw2YuvPlugin"> <Connect PadName="Out0" PeerNodeName="Sthdr"       PeerPadName="In0"/> </Node>
+            <Node Name="Sthdr"       Type="Plugin" AlgoName="SthdrPpAlgo">   <Connect PadName="Out0" PeerNodeName="IPE"         PeerPadName="In0"/> </Node>
+            <Node Name="IPE"         Type="Plugin" AlgoName="IPEPlugin">     <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0" PeerNodeName="JpegEncoder"  PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="teleYuvSR" RequestName="sthdrshot" Base="mainYuvSR"/>
+    <Feature Name="mainHdSR"  RequestName="sthdrshot" Base="mainYuvSR"/>
+    <Feature Name="teleHdSR"  RequestName="sthdrshot" Base="mainHdSR"/>
+
+    <Feature Name="wideRemosaic" RequestName="fofflinecopyremosaic" Base="mainRemosaic"/>
+
+    <Feature Name="mainDVFaceSR" RequestName="darkvisionshot" Base="mainDarkvision">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="DarkVision"  PeerPadName="In0"/> </Node>
+            <Node Name="DarkVision"  Type="Plugin" AlgoName="DarkVisionPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainDVFaceSRBeauty" RequestName="darkvisionshot" Base="mainDarkvision">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="DarkVision"  PeerPadName="In0"/> </Node>
+            <Node Name="DarkVision"  Type="Plugin" AlgoName="DarkVisionPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">        <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/> </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo">   <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainSNFaceSR" RequestName="arcsoftSuperNightBokehSnapshot" Base="mainSuperNight">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="SuperNight"  PeerPadName="In0"/> </Node>
+            <Node Name="SuperNight"  Type="Plugin" AlgoName="SuperNightPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainSNFaceSRBokeh" RequestName="arcsoftSuperNightBokehSnapshot" Base="mainSuperNight">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">     <Connect PadName="Out0" PeerNodeName="RawUnpack"   PeerPadName="In0"/> </Node>
+            <Node Name="RawUnpack"   Type="Plugin" AlgoName="RawUnpackPlugin">  <Connect PadName="Out0" PeerNodeName="SuperNight"  PeerPadName="In0"/> </Node>
+            <Node Name="SuperNight"  Type="Plugin" AlgoName="SuperNightPpAlgo"> <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">        <Connect PadName="Out0" PeerNodeName="bokeh"       PeerPadName="In0"/> </Node>
+            <Node Name="bokeh"       Type="Plugin" AlgoName="refocusArcSoft">   <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"    PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">       <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainSNFaceSRBeauty" RequestName="arcsoftSuperNightBokehSnapshot" Base="mainSuperNight">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0"/></Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"><Connect PadName="Out0" PeerNodeName="SuperNight" PeerPadName="In0"/></Node>
+            <Node Name="SuperNight" Type="Plugin" AlgoName="SuperNightPpAlgo"><Connect PadName="Out0" PeerNodeName="PortraitFd" PeerPadName="In0"/></Node>
+            <Node Name="PortraitFd" Type="Plugin" AlgoName="PortraitFdPlugin"><Connect PadName="Out0" PeerNodeName="PortraitLandmark" PeerPadName="In0"/></Node>
+            <Node Name="PortraitLandmark" Type="Plugin" AlgoName="PortraitLandmark"><Connect PadName="Out0" PeerNodeName="PortraitEulerAngles" PeerPadName="In0"/></Node>
+            <Node Name="PortraitEulerAngles" Type="Plugin" AlgoName="PortraitEulerAngles"><Connect PadName="Out0" PeerNodeName="FaceSr" PeerPadName="In0"/></Node>
+            <Node Name="FaceSr" Type="Plugin" AlgoName="StmFaceSr"><Connect PadName="Out0" PeerNodeName="FillLight" PeerPadName="In0"/></Node>
+            <Node Name="FillLight" Type="Plugin" AlgoName="FillLight"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainSNFaceSRBokehBeauty" RequestName="arcsoftSuperNightBokehSnapshot" Base="mainSuperNight">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0"/></Node>
+            <Node Name="RawUnpack" Type="Plugin" AlgoName="RawUnpackPlugin"><Connect PadName="Out0" PeerNodeName="SuperNight" PeerPadName="In0"/></Node>
+            <Node Name="SuperNight" Type="Plugin" AlgoName="SuperNightPpAlgo"><Connect PadName="Out0" PeerNodeName="PortraitFd" PeerPadName="In0"/></Node>
+            <Node Name="PortraitFd" Type="Plugin" AlgoName="PortraitFdPlugin"><Connect PadName="Out0" PeerNodeName="PortraitLandmark" PeerPadName="In0"/></Node>
+            <Node Name="PortraitLandmark" Type="Plugin" AlgoName="PortraitLandmark"><Connect PadName="Out0" PeerNodeName="PortraitEulerAngles" PeerPadName="In0"/></Node>
+            <Node Name="PortraitEulerAngles" Type="Plugin" AlgoName="PortraitEulerAngles"><Connect PadName="Out0" PeerNodeName="FaceSr" PeerPadName="In0"/></Node>
+            <Node Name="FaceSr" Type="Plugin" AlgoName="StmFaceSr"><Connect PadName="Out0" PeerNodeName="bokeh" PeerPadName="In0"/></Node>
+            <Node Name="bokeh" Type="Plugin" AlgoName="refocusArcSoft"><Connect PadName="Out0" PeerNodeName="FillLight" PeerPadName="In0"/></Node>
+            <Node Name="FillLight" Type="Plugin" AlgoName="FillLight"><Connect PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0"/></Node>
+            <Node Name="Beauty" Type="Plugin" AlgoName="HwBeautyPpAlgo"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainFaceSRHdrBokeh" RequestName="arcsoftHdrBokehSnapshot" Base="normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv"        Type="Plugin" AlgoName="Raw2YuvPlugin"> <Connect PadName="Out0" PeerNodeName="Fork" PeerPadName="In0"/></Node>
+            <Node Name="Fork"           Type="Plugin" AlgoName="ForkPlugin">    <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/>
+                                                                                <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/></Node>
+            <Node Name="Thumbnail"      Type="Plugin" AlgoName="Thumbnail">     <Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/></Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin" StreamType="Raw2Yuv">
+                                                                                <Connect PadName="In0" PeerNodeName="Fork" PeerPadName="Out0"/></Node>
+            <Node Name="Sink1"          Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0" PeerNodeName="Thumbnail" PeerPadName="Out0"/></Node>
+        </Pipeline>
+         <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="FaceSr" PeerPadName="In0"/></Node>
+            <Node Name="FaceSr"         Type="Plugin" AlgoName="StmFaceSr">     <Connect PadName="Out0" PeerNodeName="bokeh" PeerPadName="In0"/></Node>
+            <Node Name="bokeh"          Type="Plugin" AlgoName="refocusArcSoft">
+                                                                                <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder"    Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail">
+                                                                                <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainFaceSRBokeh" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRHdrBokeh"/>
+    <Feature Name="mainFaceSRNightBokeh" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRHdrBokeh"/>
+    <Feature Name="mainFaceSRHdrBokeh3DLut" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokeh">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">   <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">      <Connect PadName="Out0" PeerNodeName="bokeh"       PeerPadName="In0"/> </Node>
+            <Node Name="bokeh"       Type="Plugin" AlgoName="refocusArcSoft"> <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">     <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainFaceSRHdr3DLut" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokeh3DLut"/>
+    <Feature Name="mainFaceSRNightBokeh3DLut" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokeh3DLut"/>
+
+    <Feature Name="mainFaceSRHdrBokehBeauty" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokeh">
+         <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="FaceSr" PeerPadName="In0"/></Node>
+            <Node Name="FaceSr"         Type="Plugin" AlgoName="StmFaceSr">     <Connect PadName="Out0" PeerNodeName="bokeh" PeerPadName="In0"/></Node>
+            <Node Name="bokeh"          Type="Plugin" AlgoName="refocusArcSoft"><Connect PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0"/></Node>
+            <Node Name="Beauty"         Type="Plugin" AlgoName="HwBeautyPpAlgo"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder"    Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail">
+                                                                                <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainFaceSRBokehBeauty" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRHdrBokehBeauty"/>
+    <Feature Name="mainFaceSRNightBokehBeauty" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRHdrBokehBeauty"/>
+    <Feature Name="mainFaceSRHdrBokeh3DLutBeauty" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokehBeauty">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">   <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">      <Connect PadName="Out0" PeerNodeName="bokeh"       PeerPadName="In0"/> </Node>
+            <Node Name="bokeh"       Type="Plugin" AlgoName="refocusArcSoft"> <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">        <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/> </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0"   PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">     <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainFaceSRHdr3DLutBeauty" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokeh3DLutBeauty"/>
+    <Feature Name="mainFaceSRNightBokeh3DLutBeauty" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRHdrBokeh3DLutBeauty"/>
+
+    <Feature Name="mainFaceSRBokeh3DLut" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRBokeh">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">   <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">      <Connect PadName="Out0" PeerNodeName="bokeh"       PeerPadName="In0"/> </Node>
+            <Node Name="bokeh"       Type="Plugin" AlgoName="refocusArcSoft"> <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">        <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"  PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">     <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainFaceSRLut" RequestName="arcsoftHdrBokehSnapshot" Base="mainFaceSRBokeh3DLut"/>
+
+    <Feature Name="mainFaceSRBeauty" RequestName="normalshot" Base="normalmode">
+         <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="FaceSr" PeerPadName="In0"/></Node>
+            <Node Name="FaceSr"         Type="Plugin" AlgoName="StmFaceSr">     <Connect PadName="Out0" PeerNodeName="Beauty" PeerPadName="In0"/></Node>
+            <Node Name="Beauty"         Type="Plugin" AlgoName="HwBeautyPpAlgo"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder"    Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail">
+                                                                                <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0" PeerNodeName="JpegEncoder" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="mainFaceSRBokeh3DLutBeauty" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRBokehBeauty">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin">   <Connect PadName="Out0" PeerNodeName="FaceSr"      PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"      Type="Plugin" AlgoName="StmFaceSr">      <Connect PadName="Out0" PeerNodeName="bokeh"       PeerPadName="In0"/> </Node>
+            <Node Name="bokeh"       Type="Plugin" AlgoName="refocusArcSoft"> <Connect PadName="Out0" PeerNodeName="Sw3dLut"     PeerPadName="In0"/> </Node>
+            <Node Name="Sw3dLut"     Type="Plugin" AlgoName="Sw3dLutPpAlgoV2">        <Connect PadName="Out0" PeerNodeName="Beauty"      PeerPadName="In0"/>  </Node>
+            <Node Name="Beauty"      Type="Plugin" AlgoName="HwBeautyPpAlgo"> <Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0"  PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">     <Connect PadName="In0"  PeerNodeName="JpegEncoder" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="mainFaceSRLutBeauty" RequestName="arcsoftBokehSnapshot" Base="mainFaceSRBokeh3DLutBeauty"/>
+
+    <Feature Name="mainFaceSR" RequestName="normalshot" Base="normalmode">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"         Type="Plugin" AlgoName="SourcePlugin">  <Connect PadName="Out0" PeerNodeName="FaceSr"       PeerPadName="In0"/> </Node>
+            <Node Name="FaceSr"         Type="Plugin" AlgoName="StmFaceSr">     <Connect PadName="Out0" PeerNodeName="JpegEncoder"  PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder"    Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail">
+                                                                                <Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"           Type="Plugin" AlgoName="SinkPlugin">    <Connect PadName="In0"  PeerNodeName="JpegEncoder"  PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="bestshotMode"  RequestName="bestshot" Base="normalmode">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Source"      Type="Plugin" AlgoName="SourcePlugin"> <Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/> </Node>
+            <Node Name="bestshot"    Type="Plugin" AlgoName="bestshot">     <Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/> </Node>
+            <Node Name="JpegEncoder" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"> <Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/> </Node>
+            <Node Name="Sink"        Type="Plugin" AlgoName="SinkPlugin">   <Connect PadName="In0"  PeerNodeName="Node2" PeerPadName="Out0"/> </Node>
+        </Pipeline>
+    </Feature>
+
+    <Feature Name="AiRawNightVideo" RequestName = "AiRawNightVideo" Base = "NormalVideo">
+        <Pipeline Name="StreamingForeIpp" FilterType="StreamingForePreviewFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="AIRaw" PeerPadName="In0"/></Node>
+            <Node Name="AIRaw" Type="Plugin" AlgoName="AIRawIpp"><Connect PadName="Out0" PeerNodeName="IFE" PeerPadName="In0"/></Node>
+            <Node Name="IFE" Type="Plugin" AlgoName="IFEPlugin"><Connect PadName="Out0" PeerNodeName="Fusion" PeerPadName="In0"/></Node>
+            <Node Name="Fusion" Type="Plugin" AlgoName="FusionPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="StreamingForePreview"><Connect PadName="In0" PeerNodeName="Fusion" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="StreamingPreviewIpp" FilterType="StreamingPreviewFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="EIS" PeerPadName="In0"/></Node>
+            <Node Name="EIS" Type="Plugin" AlgoName="EISPlugin"><Connect PadName="Out0" PeerNodeName="IPE" PeerPadName="In0"/></Node>
+            <Node Name="IPE" Type="Plugin" AlgoName="IPEStremingPlugin"><Connect PadName="Out0" PeerNodeName="ScreenDisplay" PeerPadName="In0"/></Node>
+            <Node Name="ScreenDisplay"     Type="Plugin"  AlgoName="ScreenDisplay">   <Connect  PadName="Out0" PeerNodeName="Sink" PeerPadName="In0" /></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" PlaceholderType="Tail" StreamType="Preview"><Connect PadName="In0" PeerNodeName="ScreenDisplay" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <!-- <Pipeline Name="StreamingRecordVideo" FilterType="StreamingRecordVideoFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="EIS" PeerPadName="In0"/></Node>
+            <Node Name="EIS" Type="Plugin" AlgoName="EISPlugin"><Connect PadName="Out0" PeerNodeName="IPE" PeerPadName="In0"/></Node>
+            <Node Name="IPE" Type="Plugin" AlgoName="IPEStremingPlugin"><Connect PadName="Out0" PeerNodeName="WatermarkFilterIpp" PeerPadName="In0"/></Node>
+            <Node Name="WatermarkFilterIpp" Type="Plugin" AlgoName="WatermarkFilterIpp"><Connect PadName="Out0" PeerNodeName="ScreenDisplay" PeerPadName="In0"/></Node>
+            <Node Name="ScreenDisplay"     Type="Plugin"  AlgoName="ScreenDisplay">   <Connect  PadName="Out0" PeerNodeName="Sink" PeerPadName="In0" /></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" StreamType="Record"><Connect PadName="In0" PeerNodeName="ScreenDisplay" PeerPadName="Out0"/></Node>
+        </Pipeline> -->
+    </Feature>
+    <Feature Name="AiRawHdrpliteVideo" RequestName = "aiRawHdrpLiteVideo" Base = "NormalVideo">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Node0"      Type="Plugin"   AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="RawUnpack" PeerPadName="In0" /></Node>
+            <Node Name="RawUnpack"  Type="Plugin"   AlgoName="RawUnpackPlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0" /></Node>
+            <Node Name="Node1"      Type="Plugin"   AlgoName="AiRawV2PpAlgo"><Connect PadName="Out0" PeerNodeName="HwBeauty" PeerPadName="In0" /></Node>
+            <Node Name="HwBeauty"   Type="Plugin"   AlgoName="HwBeautyPpAlgo"><Connect PadName="Out0" PeerNodeName="JpegEncoder" PeerPadName="In0"/></Node>
+            <Node Name="JpegEncoder" Type="Plugin"  AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0" /></Node>
+            <Node Name="Node3"      Type="Plugin"   AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node2" PeerPadName="Out0" /></Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node  Name="Source"    Type="Plugin"  AlgoName="SourcePlugin"><Connect  PadName="Out0" PeerNodeName="Fork" PeerPadName="In0" /></Node>
+            <Node  Name="Fork"      Type="Plugin"  AlgoName="ForkPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0" />
+                                                                                              <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0" /></Node>
+            <Node  Name="Thumbnail"  Type="Plugin"  AlgoName="Thumbnail"><Connect PadName="Out0" PeerNodeName="Sink1"  PeerPadName="In0" /></Node>
+            <Node  Name="Sink"       Type="Plugin"  AlgoName="SinkPlugin" StreamType = "Raw"><Connect  PadName="In0"  PeerNodeName="Fork"  PeerPadName="Out0" /></Node>
+            <Node  Name="Sink1"      Type="Plugin"  AlgoName="SinkPlugin" StreamType = "Jpeg"><Connect  PadName="In0"  PeerNodeName="Thumbnail"  PeerPadName="Out0" /></Node>
+        </Pipeline>
+    </Feature>
+    <!-- BACK_CAMERA_MODE END -->
+    <!-- BACK_GROUND_MODE END -->
+    <!-- CAMERA_CAPTURE END -->
+</FeatureConfig>

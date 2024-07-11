@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Config>
+<!--
+	very import:
+	1��should not motify Priority
+	2��motify tag must be very carefully
+	Priority 
+	1 CameraSence : Normal/Dual/Aperture/Movie/Facesmooth/ThirdCam/SmartTracking/StroyMode
+	2 Sensor Position : Rear/Front
+	3 resolution : 4K/FHD
+	4 fps : 60FPS/30FPS/AutoFPS
+	5 stream : PRE/REC
+	6 sensorId : Main/Wide/Tele/Tele2
+	7 lensType : LARGEN/KT/SUNNY/GSEO
+	8 driveric
+-->
+	<OutIsApkBuffer  value="1"/>
+	<maxBufferNumber value="16"/>
+	<regionLimited value="0"/>
+	<wideBaseRatio value="0.65"/>
+	<wideBaseRatioMarie value="0.79"/>
+
+	<tnrDropFrameCount value="2"/>
+
+	<isPassByPanningFaceCorrect value="1"/>
+	<heatEscapeMode value="1"/>
+	<fourKPreStabEnable value="1"/>
+	<foreRearDualEnable value="3"/>
+
+	<isNeedIspTnr value="0"/>
+	<isNeedIspDualVidPre value="1"/>
+	<vidTnrMode value="4"/>
+
+	<fullScreenWidth value="2288"/>
+	<fullScreenHeight value="1080"/>
+	<fullScreenWidth2nd value="2560"/>
+	<fullScreenHeight2nd value="1080"/>
+
+	<!--0:default 1:eis 3.0-->
+	<eisSmoothStrategy value="1"/>
+	
+	<OisLumaDetectTime value="5"/>
+	<OisLumaThreHigh value="100"/>
+	<OisLumaThreLow value="90"/>
+	
+	<!--min:1-->
+	<outBufferMaxSize value="20"/>
+	<VideoStabLatency value="8"/>
+	<VideoStabLatency_Normal_PRE value="1"/>
+	<VideoStabLatency_Normal_REC value="8"/>
+	<VideoStabLatency_Normal_FHD_30FPS_PRE value="1"/>
+	<VideoStabLatency_Normal_30FPS_REC value="16"/>
+	<VideoStabLatency_Normal_FHD_60FPS_REC value="8"/>
+	<VideoStabLatency_Normal_4K_30FPS_PRE value="1"/>
+	<VideoStabLatency_Normal_4K_60FPS value="1"/>
+	<VideoStabLatency_Movie value="1"/>
+	<VideoStabLatency_Facesmooth value="1"/>
+	<VideoStabLatency_Dual value="1"/>
+	<VideoStabLatency_ThirdCam value="1"/>
+	
+	<!--frame ratio-->
+	<FrameRatio value="120"/>
+	<FrameRatio_Normal_4K value="100"/>
+	<FrameRatio_Normal value="120"/>	
+	<FrameRatio_Facesmooth value="100"/>
+	<FrameRatio_Movie value="100"/>
+	
+	<FrameSizeWidth value="0"/>
+	<FrameSizeHeight value="0"/>
+	<FrameSizeWidth_Normal_4K_30FPS_Main value="4096"/>
+	<FrameSizeHeight_Normal_4K_30FPS_Main value="2304"/>
+	
+	<!--0:disable 1:enable, this tag donot distinguishes different sensors which are decided by EisOptimizedSensors-->
+	<EisOptimizedLayoutEnable value="0"/>
+	<EisOptimizedLayoutEnable_ThirdCam value="0"/>
+	<EisOptimizedLayoutEnable_Normal_Front value="1"/>
+	<EisOptimizedLayoutEnable_Normal_Rear value="1"/>
+	<EisOptimizedLayoutEnable_Normal_Front_4K_60FPS value="0"/>
+	<EisOptimizedLayoutEnable_Normal_Rear_4K_60FPS value="0"/>
+	<EisOptimizedLayoutEnable_Facesmooth value="1"/>
+	<EisOptimizedLayoutEnable_Movie value="1"/>
+	<EisOptimizedLayoutEnable_SuperEis value="1"/>
+	
+	<!--min: 25 max:1000, this cropratio is from input size, and will be divided by 1000.0f-->
+	<CropRatio value="200"/>
+	<CropRatio_ThirdCam value="167"/>
+	<CropRatio_Rear_Wide value="290"/>
+	<CropRatio_Normal_Front_30FPS value="320"/>
+	<CropRatio_Normal_FHD219_Rear_Wide value="167"/>
+	<CropRatio_Normal_FHDFULL_Rear_Wide value="167"/>
+	<CropRatio_Normal_4K_Rear_Wide value="167"/>
+	<CropRatio_Normal_4K_Front_30FPS value="320"/>
+	<CropRatio_SmartTracking value="100"/>
+	<CropRatio_StroyMode value="100"/>
+	<CropRatio_SuperEis value="450"/>
+	
+	<!--ipp mode 1:IPP 2:IPP [in place]+IPPPREVID[transform]+IPPRECORDVID[transform] 3:IPP [transform]+IPPRECORDVID[transform]-->
+	<IppLayoutMode value="2"/>
+	<IppLayoutMode_Dual value="2"/>
+	<IppLayoutMode_Movie value="1"/>
+	<IppLayoutMode_Facesmooth value="1"/>
+	<IppLayoutMode_NORMAL value="2"/>
+	<IppLayoutMode_SuperEis value="2"/>
+	<IppLayoutMode_NORMAL_4K_60FPS value="2"/>
+	<IppLayoutMode_NORMAL_4K_AutoFPS value="1"/>
+	<IppLayoutMode_ThirdCam value="1"/>
+	
+	<!--0:disable 1:enable-->
+	<PostPreFilterNeeded value="0"/>
+	
+	<!--0:disable 1:enable-->
+	<PostVidFilterNeeded value="0"/>
+	
+	<!--0:GPU WARP  1:ISP WARP-->
+	<WarpMode value="0"/>
+	<!--
+	<WarpMode_Normal value="0"/>
+	<WarpMode_Normal_4K value="1"/>
+	<WarpMode_Normal_4K_30FPS_PRE value="0"/>
+	<WarpMode_Normal_4K_30FPS_REC value="1"/>
+	<WarpMode_Normal_4K_30FPS_REC_MAIN value="0"/>
+	<WarpMode_Normal_Front_4K_30FPS value="0"/>
+	<WarpMode_Movie value="1"/>
+	<WarpMode_Facesmooth value="1"/>
+	<WarpMode_Aperture value="1"/>
+	<WarpMode_Dual value="0"/>
+	<WarpMode_SmartTracking value="1"/>
+	<WarpMode_StroyMode value="1"/>
+	<WarpMode_SuperEis value="0"/>
+	-->
+	
+	<!--0:NO TNR 1:ONE PASS 2:TWO PASS-->
+	<IspTnrMode value="0"/>
+	<IspTnrMode_Normal_PRE value="0"/>
+	<IspTnrMode_Normal_REC value="0"/>
+	<IspTnrMode_Normal_4K_60FPS value="1"/>
+	<IspTnrMode_Normal_4K_AutoFPS value="1"/>
+	<IspTnrMode_Normal_4K_30FPS_PRE value="0"/>
+	<IspTnrMode_Normal_4K_30FPS_REC value="2"/>
+	<IspTnrMode_Movie value="1"/>
+	<IspTnrMode_Facesmooth value="1"/>
+	<IspTnrMode_Aperture value="1"/>
+	<IspTnrMode_Dual value="1"/>
+
+	<!--disable EIS if surpass this iso value-->
+	<MaxAvailableIso value="8000"/>
+        <WaitTimeout     value="20"/>
+	<!--0:disable 1:enable-->
+	<ZoomCorrectionEnable value="0"/>
+	<ZoomCorrectionEnable_Front value="0"/>
+	<ZoomCorrectionEnable_SmartTracking value="0"/>
+	<ZoomCorrectionEnable_StroyMode value="0"/>
+	<ZoomCorrectionEnable_Dual value="0"/>
+	<ZoomCorrectionEnable_TELE value="0"/>
+	<ZoomCorrectionEnable_TELE2 value="0"/>
+	
+	<!--0:disable 1:enable-->
+	<SoftTnrEnable value="0"/>
+	
+	<SoftTnrLumaLow_Normal_4K_30FPS_PRE value="30"/>
+	<SoftTnrLumaHigh_Normal_4K_30FPS_PRE value="40"/>
+	
+	<!--0:disable 1:enable-->
+	<MainOisEisEnable value="0"/>
+	
+	<!--0:disable 1:enable-->
+	<TeleOisEisEnable value="1"/>
+	
+	<!--0:disable 1:enable-->
+	<Tele2OisEisEnable value="0"/>
+	
+	<!--0:disable 1:enable-->
+	<ServoOffTeleOisEnable_Normal_Rear_4K_60FPS value="0"/>
+	<EnableServoOffOisWhenNotWork_Normal_Rear_Tele value="0"/>
+	
+	<!--0:OIS_CONTROL_BY_LV_ONCE 1:OIS_ALWAYS_ON 2:OIS_ALWAYS_CONTROL_BY_LV-->
+	<OisControlMode value="2"/>
+	<OisControlMode_MAIN value="2"/>
+	<OisControlMode_TELE value="0"/>
+	<OisControlMode_TELE2 value="1"/>
+	
+	<!--0:disable 1:enable-->
+	<DistortionCorrectionSwitch value="0"/>
+	<DistortionCorrectionSwitch_Front value="0"/>
+	<DistortionCorrectionSwitch_SuperEis_LARGENMARIE value="0"/>
+	<DistortionCorrectionSwitch_Normal_Rear value="0"/>
+	<DistortionCorrectionLens value="0"/>
+	<DistortionCorrectionLens_Front value="0"/>
+	<DistortionCorrectionLens_SuperEis_LARGENMARIE value="0"/>
+	<DistortionCorrectionLens_Normal_Rear_Main_LARGEN value="0"/>
+	<DistortionCorrectionLens_Normal_Rear_Main_KT value="0"/>
+	<DistortionCorrectionLens_Normal_Rear_Wide value="0"/>
+</Config>

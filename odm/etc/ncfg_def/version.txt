@@ -1,0 +1,5 @@
+version=1.10.22.100
+type=NCFG_DEF
+subtype=QCOM
+compatibleVersion=1
+restartDelay=10

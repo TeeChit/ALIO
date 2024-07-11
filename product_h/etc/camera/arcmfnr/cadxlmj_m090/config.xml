@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="gb2312"?>
+<ArcMfnralgoConfig>
+    <!--ArcSoft MFNR-->
+    <BRIGHTNESS value="10"/><!--Adjustable parameter for brightness, the range is -100~+100-->
+    <CONTRAST value="10"/><!--Adjustable parameter for contrast, the range is -100~+100-->
+    <SHARPNESS value="10"/><!--Adjustable parameter for sharpness, the range is 0~+100-->
+</ArcMfnralgoConfig>

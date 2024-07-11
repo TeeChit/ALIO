@@ -1,0 +1,72 @@
+{
+    "id": "party",
+    "title_id": "story_template_title_party",
+    "music": "Resource/music/out.aac",
+    "resolution": [2520, 1080],
+    "segments": [
+        {
+            "camera_id": 0,
+            "duration": 4.0,
+            "demo_offset": [0, 4.0],
+            "shot_mode": "dual_video",
+            "twins_video_status": "NORMAL",
+            "audio_offset": 0,
+            "algo_scripts": {
+                "operation_mode": "front_rear_dual_view"
+            },
+            "camera_effects": {
+                "beauty": "5"
+            }
+        },
+        {
+            "camera_id": 0,
+            "duration": 4.0,
+            "shot_mode": "normal_video",
+            "demo_offset": [3.5, 7.5],
+            "audio_offset": 3.5,
+            "algo_scripts": {
+            },
+            "camera_effects": {
+                "beauty": "5"
+            }
+        },
+        {
+            "camera_id": 0,
+            "duration": 4,
+            "shot_mode": "normal_video",
+            "demo_offset": [7, 11],
+            "audio_offset": 7,
+            "algo_scripts": {
+            },
+            "camera_effects": {
+                "beauty": "5"
+            }
+        },
+        {
+            "camera_id": 0,
+            "duration": 3,
+            "shot_mode": "dual_video",
+            "twins_video_status": "NORMAL",
+            "demo_offset": [10.5, 13.5],
+            "audio_offset": 10.5,
+            "algo_scripts": {
+                "operation_mode": "front_rear_dual_view"
+            },
+            "camera_effects": {
+                "beauty": "5"
+            }
+        },
+        {
+            "camera_id": 1,
+            "duration": 4.3,
+            "shot_mode": "single_video",
+            "demo_offset": [13, 17.3],
+            "audio_offset": 13,
+            "algo_scripts": {
+            },
+            "camera_effects": {
+                "beauty": "5"
+            }
+        }
+    ]
+}

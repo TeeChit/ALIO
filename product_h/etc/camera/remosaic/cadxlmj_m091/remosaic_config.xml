@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="GB2312"?>
+<RemosaicConfig>
+    <Remosaic remosaicSupported="0" remosaicThred="100" remosaicIsoThred="100" remosaicZoomRatio="3" insensorZoomYuvsrSupported="0" iszIsoThred="0"></Remosaic>
+</RemosaicConfig>

@@ -1,0 +1,5 @@
+/product_h/app/HnFidoAsm/HnFidoAsm.apk
+/product_h/app/HnFidoClient/HnFidoClient.apk
+/product_h/app/HnPanPayService/HnPanPayService.apk
+/product_h/app/HnSmartShot/HnSmartShot.apk,priv
+/product_h/app/SWSHeadphone/SWSHeadphone.apk

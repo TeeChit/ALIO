@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packageList>
+	<packageInfo author="荣耀终端有限公司" feature="WLAN基本配置。" package="com.android.wifi.resources.overlay" label="com.android.wifi.resources.overlay">
+	</packageInfo>
+	<packageInfo package="com.android.frameworkreshnext.overlay" feature="定制系统资源。" author="荣耀终端有限公司" label="com.android.frameworkreshnext.overlay">
+	</packageInfo>
+	<packageInfo package="com.android.frameworkres.overlay" feature="定制系统资源。" author="荣耀终端有限公司" label="com.android.frameworkres.overlay">
+	</packageInfo>
+	<packageInfo package="com.android.systemui.overlay" feature="管理设备用户界面SystemUI相关的资源，如：图标大小，边距等。 " author="荣耀终端有限公司" label="com.android.systemui.overlay">
+	</packageInfo>
+	<packageInfo package="com.hihonor.aipluginengine" feature="提供智慧引擎能力" author="荣耀终端有限公司" label="com.hihonor.aipluginengine">
+	</packageInfo>
+	<packageInfo package="com.hihonor.android.fmradio" feature="提供收音机功能。" author="荣耀终端有限公司" label="com.hihonor.android.fmradio">
+	</packageInfo>
+	<packageInfo package="com.hihonor.android.upgradeguide" feature="升级向导可以为您展示新版本的一些有价值的特性。" author="荣耀终端有限公司" label="com.hihonor.android.upgradeguide">
+	</packageInfo>
+	<packageInfo package="com.hihonor.aod" feature="灭屏时，常亮显示日期、时间、未接来电数目和短信数目等信息。" author="荣耀终端有限公司" label="com.hihonor.aod">
+	</packageInfo>
+	<packageInfo package="com.hihonor.camera" feature="荣耀原生相机，提供拍照、录像等功能。" author="荣耀终端有限公司" use-permission="荣耀原生相机，提供拍照、录像等功能。" label="com.hihonor.camera">
+	</packageInfo>
+	<packageInfo package="com.hihonor.fido.uafclient" feature="为满足FIDO（快速线上身份认证）协议的应用提供基础能力支持，第三方应用可通过该应用绑定指纹完成在线身份认证。" author="荣耀终端有限公司" label="com.hihonor.fido.uafclient">
+	</packageInfo>
+	<packageInfo package="com.hihonor.hnasm" feature="为FIDO（快速线上身份认证）协议提供底层能力支撑。" author="荣耀终端有限公司" label="com.hihonor.hnasm">
+	</packageInfo>
+	<packageInfo package="com.hihonor.hndockbar" feature="荣耀侧边栏" author="荣耀终端有限公司" label="com.hihonor.hndockbar">
+	</packageInfo>
+	<packageInfo package="com.hihonor.hnoffice" feature="荣耀文档" author="永中软件股份有限公司" label="com.hihonor.hnoffice">
+	</packageInfo>
+	<packageInfo package="com.hihonor.hnpanpayservice" feature="荣耀泛支付服务是一个系统基础服务，主要功能是提供支付相关功能（如支持指纹、人脸服务）的互联网金融身份认证等。" author="荣耀终端有限公司" label="com.hihonor.hnpanpayservice">
+	</packageInfo>
+	<packageInfo package="com.hihonor.imedia.sws" feature="Honor Histen音效设置，用户可以根据喜好设置和配置音效均衡器等信息。" author="荣耀终端有限公司" label="com.hihonor.imedia.sws">
+	</packageInfo>
+	<packageInfo package="com.hihonor.parallelspace" feature="提供双空间保存用户高安全等级数据和应用的能力" author="荣耀终端有限公司" label="com.hihonor.parallelspace">
+	</packageInfo>
+	<packageInfo package="com.hihonor.photos" label="图库" feature="展示用户图片、视频等，包括本地图片相册、云端相册及共享相册。可支持图片的查看、删除、分享、复制、重命名等操作。是用户查看、管理图片的主要途径。" author="荣耀终端有限公司" use-permission="位置,存储内容,网络通信,蓝牙">
+	</packageInfo>
+	<packageInfo package="com.hihonor.smartshot" feature="智能截屏，您可以直接通过指关节在屏幕上画闭合图形进行自定义截屏，指关节画出的区域即为截取的区域，让截屏更加灵活易用。" author="荣耀终端有限公司" label="com.hihonor.smartshot">
+	</packageInfo>
+</packageList>

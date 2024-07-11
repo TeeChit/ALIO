@@ -1,0 +1,93 @@
+on init
+# set high-fg cpuset
+    mkdir /dev/cpuset/high-fg
+    write /dev/cpuset/high-fg/cpus 0-7
+    write /dev/cpuset/high-fg/mems 0
+    chown system system /dev/cpuset/high-fg
+    chown system system /dev/cpuset/high-fg/cpus
+    chown system system /dev/cpuset/high-fg/tasks
+    chown system system /dev/cpuset/high-fg/cgroup.procs
+    chmod 0664 /dev/cpuset/high-fg/cpus
+    chmod 0664 /dev/cpuset/high-fg/tasks
+    chmod 0664 /dev/cpuset/high-fg/cgroup.procs
+
+on early-fs
+
+on fs
+
+on post-fs
+
+on post-fs-data
+
+on early-boot
+
+on boot
+#for sim config
+    setprop persist.radio.multisim.config dsds
+    setprop ro.support_ori_poweroffalarm true
+# Enable filesystem anti-aging feature
+    setprop persist.sys.fsantiaging.enable 1
+
+on load_bpf_programs && property:ro.odm.build.version.incremental=*
+    setprop ro.odm.build.fingerprint ${ro.product.odm.brand}/${ro.product.odm.name}/${ro.product.odm.device}_${ro.boot.product.hardware.sku}:${ro.build.version.release}/${ro.product.odm.brand}${ro.boot.product.hardware.sku}/${ro.odm.build.version.incremental}:${ro.vendor.build.type}/${ro.vendor.build.tags}
+
+#for ALI-N03 sim config
+on property:ro.boot.product.hardware.sku=ALI-N03
+    setprop persist.radio.multisim.config ss
+
+#for ALI_oversea camera media_profiles
+on post-fs && property:ro.boot.camera_product=ALI_OVERSEA
+    setprop ro.media.xml_variant.profiles _V1_0_ali_oversea
+
+# hyperhold
+service hyperhold-hw-1-0 /vendor/bin/hw/vendor.honor.hardware.hyperhold@1.0-service
+    override
+    interface vendor.honor.hardware.hyperhold@1.0::IPersistingData hyperhold_hal
+    oneshot
+    disabled
+    class hal
+    user root
+    group system
+
+#for ALI-N21 nfc
+on property:ro.boot.product.hardware.sku=ALI-N21
+    symlink /odm/hn_odm/ALI-N21  /mnt/hn_odm
+
+#for ALI-N21P nfc
+on property:ro.boot.product.hardware.sku=ALI-N21P
+    symlink /odm/hn_odm/ALI-N21P  /mnt/hn_odm
+
+#for ALI-N03 nfc
+on property:ro.boot.product.hardware.sku=ALI-N03
+    service vendor.nfc_hal_service.snxxx /vendor/bin/hw/android.hardware.nfc@1.2-service.snxxx
+        class hal
+        user nfc
+        group nfc system
+        disabled
+
+#for ALI-N23 nfc
+on property:ro.boot.product.hardware.sku=ALI-N23
+    service vendor.nfc_hal_service.snxxx /vendor/bin/hw/android.hardware.nfc@1.2-service.snxxx
+        class hal
+        user nfc
+        group nfc system
+        disabled
+
+#for ALI-N23P nfc
+on property:ro.boot.product.hardware.sku=ALI-N23P
+    service vendor.nfc_hal_service.snxxx /vendor/bin/hw/android.hardware.nfc@1.2-service.snxxx
+        class hal
+        user nfc
+        group nfc system
+        disabled
+
+#for ALI-N03P nfc
+on property:ro.boot.product.hardware.sku=ALI-N03P
+    service vendor.nfc_hal_service.snxxx /vendor/bin/hw/android.hardware.nfc@1.2-service.snxxx
+        class hal
+        user nfc
+        group nfc system
+        disabled
+
+on property:ro.persistent_properties.ready=true
+    setprop persist.log.control disable

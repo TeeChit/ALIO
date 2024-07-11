@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="gb2312"?>
+<ArcMfnralgoConfig>
+        <ISO1 value="200"/>
+        <INTENSITY1 value="30"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY1 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION1 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN1 value="10"/><!--Range is [0,100], default is 40.-->
+        <YREPROC1 value="40"/><!--Range is [0,100], default is 20-->
+        <UVREPROC1 value="0"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST1 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE1 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD1 value="4"/>
+        <IMGENHANCEMETHOD1 value="0"/>
+
+        <ISO2 value="400"/>
+        <INTENSITY2 value="30"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY2 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION2 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN2 value="10"/><!--Range is [0,100], default is 40.-->
+        <YREPROC2 value="40"/><!--Range is [0,100], default is 20-->
+        <UVREPROC2 value="0"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST2 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE2 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD2 value="4"/>
+        <IMGENHANCEMETHOD2 value="0"/>
+
+        <ISO3 value="800"/>
+        <INTENSITY3 value="40"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY3 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION3 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN3 value="10"/><!--Range is [0,100], default is 40.-->
+        <YREPROC3 value="50"/><!--Range is [0,100], default is 20-->
+        <UVREPROC3 value="15"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST3 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE3 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD3 value="4"/>
+        <IMGENHANCEMETHOD3 value="0"/>
+
+        <ISO4 value="1600"/>
+        <INTENSITY4 value="50"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY4 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION4 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN4 value="30"/><!--Range is [0,100], default is 40.-->
+        <YREPROC4 value="60"/><!--Range is [0,100], default is 20-->
+        <UVREPROC4 value="30"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST4 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE4 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD4 value="4"/>
+        <IMGENHANCEMETHOD4 value="0"/>
+
+        <ISO5 value="3000"/>
+        <INTENSITY5 value="60"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY5 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION5 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN5 value="70"/><!--Range is [0,100], default is 40.-->
+        <YREPROC5 value="70"/><!--Range is [0,100], default is 20-->
+        <UVREPROC5 value="50"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST5 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE5 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD5 value="4"/>
+        <IMGENHANCEMETHOD5 value="1"/>
+
+        <ISO6 value="6400"/>
+        <INTENSITY6 value="70"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY6 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION6 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN6 value="70"/><!--Range is [0,100], default is 40.-->
+        <YREPROC6 value="70"/><!--Range is [0,100], default is 20-->
+        <UVREPROC6 value="50"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST6 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE6 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD6 value="4"/>
+        <IMGENHANCEMETHOD6 value="1"/>
+
+        <ISO7 value="8000"/>
+        <INTENSITY7 value="70"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY7 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION7 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN7 value="70"/><!--Range is [0,100], default is 40.-->
+        <YREPROC7 value="70"/><!--Range is [0,100], default is 20-->
+        <UVREPROC7 value="50"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST7 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE7 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD7 value="4"/>
+        <IMGENHANCEMETHOD7 value="1"/>
+
+        <ISO8 value="10000"/>
+        <INTENSITY8 value="70"/><!--Range is [0,100], default is 40.-->
+        <LIGHTINTENSITY8 value="0"/><!--Range is [0,100], default is 30-->
+        <SATURATION8 value="50"/><!--Range is [0,100], default is 50-->
+        <SHARPEN8 value="70"/><!--Range is [0,100], default is 40.-->
+        <YREPROC8 value="70"/><!--Range is [0,100], default is 20-->
+        <UVREPROC8 value="50"/><!--Range is [0,100], default is 20-->
+        <SCENECONTRAST8 value="0"/><!--Range is [0,100], default is 20.-->
+        <DARKDENOISE8 value="0"/><!--Range is [0,100], default is 0-->
+        <LSHARPENMETHOD8 value="4"/>
+        <IMGENHANCEMETHOD8 value="1"/>
+
+</ArcMfnralgoConfig>

@@ -1,0 +1,124 @@
+﻿{
+  "type": "fresh",
+  "duration": 25000,
+  "name": "Comfort",
+  "id": "Fresh_25_1",
+  "separationStep": 1530,
+  "separationMinDuration": 5000,
+  "separationMaxDuration": 10000,
+  "transitions": [
+    {
+      "name": "叠化",
+      "priority": 10,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "模糊",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "融化",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "上移",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "下移",
+      "priority": 90,
+      "pickCondition": 2,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "左移",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "右移",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "黑场",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "白场",
+      "priority": 90,
+      "pickCondition": 1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "放大",
+      "priority": 50,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "缩小",
+      "priority": 50,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "旋转",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    }
+  ],
+  "transitionMaxCount": 4,
+  "filterId": "filter_res_16",
+  "filterStrength": 0.3,
+  "sticker": {
+    "id": "love_my_life",
+    "scaleHorizon": 1,
+    "scaleVertical": 1,
+    "locationHorizonX": 0,
+    "locationHorizonY": 0,
+    "locationVerticalX": 0,
+    "locationVerticalY": 0,
+    "beginTime": 1
+  },
+  "borderId": "null",
+  "specialEffect": [
+    {
+      "effectId": "sun_halo",
+      "effectStart": 0
+    },
+    {
+      "effectId": "golden",
+      "effectStart": -1
+    },
+    {
+      "effectId": "light_spot",
+      "effectStart": -1
+    }
+  ],
+  "tail": "honor_vlog"
+}

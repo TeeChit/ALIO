@@ -1,0 +1,107 @@
+#for connectivity
+on early-init
+    setprop persist.service.hdb.enable true
+
+on boot
+    setprop ro.connectivity.chiptype ${ro.boot.odm.conn.chiptype}
+    setprop ro.connectivity.sub_chiptype ${ro.boot.odm.conn.schiptype}
+
+    mkdir /data/misc/hwpush
+    chmod 0770 /data/misc/hwpush
+    chown system system /data/misc/hwpush
+    restorecon_recursive /data/misc/hwpush
+
+    mkdir /data/misc/hipush
+    chmod 0770 /data/misc/hipush
+    chown system system /data/misc/hipush
+    restorecon_recursive /data/misc/hipush
+
+    write /proc/sys/kernel/hung_task_panic 1
+    write /proc/sys/kernel/hung_task_timeout_secs 120
+    write /proc/hung_task/hw_monitor_list "whitelist,system_server,surfaceflinger"
+    write /proc/hung_task/hw_enable "on"
+
+#bluetooth
+    mkdir /data/log/bt
+    chown bluetooth bluetooth /data/log/bt
+    chmod 775 /data/log/bt
+
+on property:msc.config.emcom=true && property:ro.build.characteristics=default
+    start emcomd
+
+on property:msc.config.emcom=true && property:ro.build.characteristics=tablet
+    start emcomd
+
+service emcomd /system/bin/emcomd
+    class main
+    socket emcomd stream 0600 system system
+    user root
+    group root system vpn
+    seclabel u:r:emcomd:s0
+    disabled
+
+on post-fs-data
+
+    mkdir /data/systemfeature
+    chmod 770 /data/systemfeature
+    chown system system /data/systemfeature
+    restorecon_recursive /data/systemfeature
+
+    mkdir /data/systemfeature/systemfeature
+    chmod 770 /data/systemfeature/systemfeature
+    chown system system /data/systemfeature/systemfeature
+    restorecon_recursive /data/systemfeature/systemfeature
+
+    mkdir /data/misc/hwpki
+    chmod 770 /data/misc/hwpki
+    chown system system /data/misc/hwpki
+    restorecon_recursive /data/misc/hwpki
+
+    mkdir /data/misc/hnpki
+    chmod 770 /data/misc/hnpki
+    chown system system /data/misc/hnpki
+    restorecon_recursive /data/misc/hnpki
+
+    mkdir /data/misc/hsm
+    chmod 0770 /data/misc/hsm
+    chown system system /data/misc/hsm
+    restorecon_recursive /data/misc/hsm
+
+    mkdir /data/misc/installer
+    chmod 2770 /data/misc/installer
+    chown system vendor_installer /data/misc/installer
+    restorecon_recursive /data/misc/installer
+
+    mkdir /data/log/ramdump 0775 system system
+
+    mkdir /data/log/reliability/xcollie
+    chown system log /data/log/reliability/xcollie
+    chmod 2775 /data/log/reliability/xcollie
+    restorecon_recursive /data/log/reliability/xcollie
+
+    mkdir /data/log/modem_crash
+    chmod 0755 /data/log/modem_crash
+    chown root system /data/log/modem_crash
+
+    mkdir /data/cota 0775 system system encryption=None
+    restorecon_recursive /data/cota
+
+    mkdir /data/cota/ecota
+    chmod 0755 /data/cota/ecota
+    chown root root /data/cota/ecota
+    restorecon_recursive /data/cota/ecota
+
+    mkdir /data/cota/cloud
+    chmod 0770 /data/cota/cloud
+    chown system system /data/cota/cloud
+    restorecon_recursive /data/cota/cloud
+
+on property:sys.boot_completed=1
+    write /proc/self/reclaim file
+
+# for bluetooth
+on property:bluetooth.btsnoop.file.create=true
+    mkdir /data/log/bt
+    chown bluetooth bluetooth /data/log/bt
+    chmod 775 /data/log/bt
+    setprop bluetooth.btsnoop.file.create false

@@ -1,0 +1,124 @@
+﻿{
+  "type": "soothing",
+  "duration": 15000,
+  "name": "Beautiful-15",
+  "id": "Soothing_15_3",
+  "separationStep": 1300,
+  "separationMinDuration": 5000,
+  "separationMaxDuration": 10000,
+  "transitions": [
+    {
+      "name": "叠化",
+      "priority": 90,
+      "pickCondition": 1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "模糊",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "融化",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "上移",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "下移",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "左移",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "右移",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "黑场",
+      "priority": 90,
+      "pickCondition": 2,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "白场",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "放大",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "缩小",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "旋转",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    }
+  ],
+  "transitionMaxCount": 3,
+  "filterId": "filter_res_14",
+  "filterStrength": 0.4,
+  "sticker": {
+    "id": "null",
+    "scaleHorizon": 0.4,
+    "scaleVertical": 0.6,
+    "locationHorizonX": 0,
+    "locationHorizonY": 0,
+    "locationVerticalX": 0,
+    "locationVerticalY": 0,
+    "beginTime": 0
+  },
+  "borderId": "null",
+  "specialEffect": [
+    {
+      "effectId": "snow",
+      "effectStart": 0
+    },
+    {
+      "effectId": "blue_star",
+      "effectStart": -1
+    },
+    {
+      "effectId": "yellow_star",
+      "effectStart": -1
+    }
+  ],
+  "tail": "honor_vlog"
+}

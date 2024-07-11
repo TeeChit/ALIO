@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EIS_TNR>
+    <!--AF instruction
+        camera_position:    -1-default   0—rear   1-front
+        camera_index：   -1-default   2-main   4-wide   8-tele   16-tele2
+    -->
+
+    <!--rear main-->
+    <AF camera_position="0" camera_index="2">
+        <minLensPosCode>234</minLensPosCode>
+        <maxLensPosCode>897</maxLensPosCode>
+        <minLensPos>5.68</minLensPos>
+        <maxLensPos>6.06</maxLensPos>
+    </AF>
+
+    <!--rear wide-->
+    <AF camera_position="0" camera_index="4">
+        <minLensPosCode>282</minLensPosCode>
+        <maxLensPosCode>693</maxLensPosCode>
+        <minLensPos>5.68</minLensPos>
+        <maxLensPos>5.88</maxLensPos>
+    </AF>
+
+    <!--OISSensor instruction
+        camera_index：   -1-default   2-main   4-wide   8-tele   16-tele2
+        driverIC:   -1-default   4-Onsenmi124EP3   5-Onsenmi150   6-Onsenmi128   7-DW9781B   9-RenasasS4H
+        gyro_sensor:   -1-default   0-GYRO_VENDOR_INVEN_ICM20690   2-GYRO_VENDOR_ST_LSM6DSM   6-GYRO_VENDOR_BOSCH_BMI260
+        actuator_type:   -1-default   1-ACTUATOR_TYPE_TDK   2-ACTUATOR_TYPE_MITSUMI
+    -->
+    <!--default driverIC    default gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="-1" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2826</translationGainX>
+        <translationGainY>0.4817</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.010885</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    INVEN gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="0" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.3</translationGainX>
+        <translationGainY>0.3636</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>-1.006</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    INVEN gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="0" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+       <translationGainX>0.3</translationGainX>
+        <translationGainY>0.3636</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>-1.006</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    INVEN gyroscope    rear tele PhotoPreviewEnable-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="0" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2826</translationGainX>
+        <translationGainY>0.4817</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.010885</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    INVEN gyroscope    rear tele PhotoPreviewEnable-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="0" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.6045</translationGainX>
+        <translationGainY>0.8061</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>1.3084</offsetTime>
+    </OISSensor>
+
+
+    <!--DW driverIC    ST gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="2" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2541</translationGainX>
+        <translationGainY>0.3838</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>-0.1448</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    ST gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="2" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2541</translationGainX>
+        <translationGainY>0.3838</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>-0.1448</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    ST gyroscope    rear tele PhotoPreviewEnable-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="2" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2078</translationGainX>
+        <translationGainY>0.4444</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>0.325</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    ST gyroscope    rear tele PhotoPreviewEnable-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="2" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>1.3458</translationGainX>
+        <translationGainY>1.0861</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.5</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    BOSCH gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="6" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.201847</translationGainX>
+        <translationGainY>0.36341</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>-0.4</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    BOSCH gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="6" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+         <translationGainX>0.201847</translationGainX>
+        <translationGainY>0.36341</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>-0.4</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    BOSCH gyroscope    rear tele PhotoPreviewEnable-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="6" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.5719</translationGainX>
+        <translationGainY>0.7734</translationGainY>
+        <oisAxisAngle>315</oisAxisAngle>
+        <offsetTime>2.3</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    BOSCH gyroscope    rear tele PhotoPreviewEnable-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="6" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2826</translationGainX>
+        <translationGainY>0.4817</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.010885</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    default gyroscope    rear main default-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="-1" actuator_type="0" stream_type="-1" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2826</translationGainX>
+        <translationGainY>0.4817</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.010885</offsetTime>
+    </OISSensor>
+
+    <!--DW driverIC    default gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="7" gyro_sensor="-1" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2826</translationGainX>
+        <translationGainY>0.4817</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.010885</offsetTime>
+    </OISSensor>
+
+    <!--default driverIC    default gyroscope    rear tele default-->
+    <OISSensor camera_index="8" driverIC="-1" gyro_sensor="-1" actuator_type="0" stream_type="2" sensor_mode="-1" resolution="-1">
+        <translationGainX>0.2826</translationGainX>
+        <translationGainY>0.4817</translationGainY>
+        <oisAxisAngle>0</oisAxisAngle>
+        <offsetTime>0.010885</offsetTime>
+    </OISSensor>
+
+    <!--EIS instruction
+        camera_position:   0—rear   1-front
+        camera_index：   2-main   4-wide   8-tele   16-tele2
+        gyro_sensor:   0-GYRO_VENDOR_INVEN_ICM20690   2-GYRO_VENDOR_ST_LSM6DSM   6-GYRO_VENDOR_BOSCH_BMI260
+        sensor_mode:   -1-default   30-remosaic   31-binning   32-hdr   33-quadabin
+        resolution:   -1-default   1-4K   2-19:9   3-21:9   4-1080p   5-720p
+        fps:   -1-default   1-30fps   2-60fps   3-auto
+        camera_scene：   -1-default   2-dual_video
+        camera_lensType:   -1-default   254-LENS_TYPE_LARGEN_MARIE
+    -->
+    <!--defalut gyroscope    rear main normal-->
+    <EIS camera_position="0" camera_index="2" gyro_sensor="-1" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.7</focalLength>
+        <gyroOffsetTime>0.39</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--defalut gyroscope    rear wide_marieLargn default-->
+    <EIS camera_position="0" camera_index="4" gyro_sensor="-1" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.527</focalLength>
+        <gyroOffsetTime>0.35</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--defalult gyroscope    rear tele default-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="-1" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.527</focalLength>
+        <gyroOffsetTime>0.35</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--defalut gyroscope    rear tele PhotoPreviewEnable-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="-1" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="2">
+        <focalLength>3.962</focalLength>
+        <gyroOffsetTime>1.7</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+
+    <!--ST gyroscope    rear main normal-->
+    <EIS camera_position="0" camera_index="2" gyro_sensor="2" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.6944</focalLength>
+        <gyroOffsetTime>-9.0</gyroOffsetTime>
+        <rollingShutterTime>15.2276</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--ST gyroscope    rear wide_marieLargn default-->
+    <EIS camera_position="0" camera_index="4" gyro_sensor="2" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.7491</focalLength>
+        <gyroOffsetTime>-7.0</gyroOffsetTime>
+        <rollingShutterTime>21</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--ST gyroscope    rear tele default-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="2" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>2.2916</focalLength>
+        <gyroOffsetTime>1.02204</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--ST gyroscope    rear tele PhotoPreviewEnable-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="2" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="2">
+        <focalLength>3.962</focalLength>
+        <gyroOffsetTime>1.593</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--ST gyroscope    front main-->
+    <EIS camera_position="1" camera_index="2" gyro_sensor="2" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.386</focalLength>
+        <gyroOffsetTime>2</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--INVENSENSE gyroscope    rear main-->
+    <EIS camera_position="0" camera_index="2" gyro_sensor="0" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.6944</focalLength>
+        <gyroOffsetTime>-2</gyroOffsetTime>
+        <rollingShutterTime>15.2276</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--INVENSENSE gyroscope    rear wide_marieLargn default-->
+    <EIS camera_position="0" camera_index="4" gyro_sensor="0" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.25</focalLength>
+        <gyroOffsetTime>1.7</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--INVENSENSE gyroscope    rear tele-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="0" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>2.3125</focalLength>
+        <gyroOffsetTime>1.2077</gyroOffsetTime>
+        <rollingShutterTime>16.2</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--INVENSENSE gyroscope    rear tele PhotoPreviewEnable-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="0" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="2">
+        <focalLength>4.371</focalLength>
+        <gyroOffsetTime>3.75</gyroOffsetTime>
+        <rollingShutterTime>16.2</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--INVENSENSE gyroscope    front main-->
+    <EIS camera_position="1" camera_index="2" gyro_sensor="0" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.258</focalLength>
+        <gyroOffsetTime>2</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--BOSCH gyroscope    rear main-->
+    <EIS camera_position="0" camera_index="2" gyro_sensor="6" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.7378</focalLength>
+        <gyroOffsetTime>-2</gyroOffsetTime>
+        <rollingShutterTime>15.2276</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--BOSCH gyroscope    rear wide_marieLargn defaut-->
+    <EIS camera_position="0" camera_index="4" gyro_sensor="6" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.385</focalLength>
+        <gyroOffsetTime>-0.2</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--BOSCH gyroscope    rear tele-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="6" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>2.3541</focalLength>
+        <gyroOffsetTime>1.417</gyroOffsetTime>
+        <rollingShutterTime>16.2</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--BOSCH gyroscope    rear tele PhotoPreviewEnable-->
+    <EIS camera_position="0" camera_index="8" gyro_sensor="6" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="2">
+        <focalLength>3.9412</focalLength>
+        <gyroOffsetTime>3.03</gyroOffsetTime>
+        <rollingShutterTime>16.2</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+
+    <!--BOSCH gyroscope    front main-->
+    <EIS camera_position="1" camera_index="2" gyro_sensor="6" sensor_mode="-1" resolution="-1" fps="-1"
+         camera_scene="-1" camera_lensType="-1" stream_type="-1">
+        <focalLength>0.7726</focalLength>
+        <gyroOffsetTime>7.5</gyroOffsetTime>
+        <rollingShutterTime>13</rollingShutterTime>
+        <rollingShutterTimeUsage>0</rollingShutterTimeUsage>  <!--0:use theoretical value   1:use xml value-->
+    </EIS>
+    <!--ZoomStabilization instruction
+        camera_position:    -1-default   0—rear   1-front
+        camera_index：   -1-default   2-main   4-wide   8-tele   16-tele2
+        camera_lensType:   -1-default   254-LENS_TYPE_LARGEN_MARIE
+        resolution:   -1-default   1-4K   2-19:9   3-21:9   4-1080p   5-720p
+    -->
+
+    <!--rear wide freeForm 4K-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="-1" resolution="1">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide freeForm 19:9-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="-1" resolution="2">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide freeForm 21:9-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="-1" resolution="3">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide freeForm 1080p-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="-1" resolution="4">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide freeForm 720p-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="-1" resolution="5">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide largn 4K-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="254" resolution="1">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide largn 19:9-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="254" resolution="2">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide largn 21:9-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="254" resolution="3">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide largn 1080p-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="254" resolution="4">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear wide largn 720p-->
+    <ZoomStabilization camera_position="0" camera_index="4" camera_lensType="254" resolution="5">
+        <minRatio>0.64</minRatio>
+        <inflectionPoint>0.64</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear main-->
+    <ZoomStabilization camera_position="0" camera_index="2" camera_lensType="-1" resolution="-1">
+        <minRatio>1.0</minRatio>
+        <inflectionPoint>1.0</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear tele-->
+    <ZoomStabilization camera_position="0" camera_index="8" camera_lensType="-1" resolution="-1">
+        <minRatio>6</minRatio>
+        <inflectionPoint>10.2</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear tele 1080P-->
+    <ZoomStabilization camera_position="0" camera_index="8" camera_lensType="-1" resolution="6">
+        <minRatio>3.48</minRatio>
+        <inflectionPoint>10.2</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear tele 4K-->
+    <ZoomStabilization camera_position="0" camera_index="8" camera_lensType="-1" resolution="1">
+        <minRatio>4.4</minRatio>
+        <inflectionPoint>4.4</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear tele FHDP-->
+    <ZoomStabilization camera_position="0" camera_index="8" camera_lensType="-1" resolution="8">
+        <minRatio>3.48</minRatio>
+        <inflectionPoint>10.2</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--rear tele FHDP2-->
+    <ZoomStabilization camera_position="0" camera_index="8" camera_lensType="-1" resolution="3">
+        <minRatio>4.4</minRatio>
+        <inflectionPoint>4.4</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--front wide defualt-->
+    <ZoomStabilization camera_position="1" camera_index="2" camera_lensType="-1" resolution="-1">
+        <minRatio>1.0</minRatio>
+        <inflectionPoint>1.0</inflectionPoint>
+    </ZoomStabilization>
+
+    <!--SensorModeSwitch instruction
+        camera_position:    -1-default   0—rear   1-front
+        camera_index：   -1-default   2-main   4-wide   8-tele   16-tele2
+        resolution:   -1-default   1-4K   2-19:9   3-21:9   4-1080p   5-720p
+    -->
+
+    <!--rear tele default-->
+    <SensorModeSwitch camera_position="0" camera_index="8" resolution="-1">
+        <remosaicModeCoeff>1.0</remosaicModeCoeff>
+    </SensorModeSwitch>
+
+    <!--rear tele 4k-->
+    <SensorModeSwitch camera_position="0" camera_index="8" resolution="1">
+        <remosaicModeCoeff>1.0</remosaicModeCoeff>
+    </SensorModeSwitch>
+
+    <!--rear tele 19:9-->
+    <SensorModeSwitch camera_position="0" camera_index="8" resolution="2">
+        <remosaicModeCoeff>1.0</remosaicModeCoeff>
+    </SensorModeSwitch>
+
+    <!--rear tele 21:9-->
+    <SensorModeSwitch camera_position="0" camera_index="8" resolution="3">
+        <remosaicModeCoeff>1.0</remosaicModeCoeff>
+    </SensorModeSwitch>
+
+    <!--rear tele 1080p-->
+    <SensorModeSwitch camera_position="0" camera_index="8" resolution="4">
+        <remosaicModeCoeff>1.0</remosaicModeCoeff>
+    </SensorModeSwitch>
+
+    <!--rear tele 720p-->
+    <SensorModeSwitch camera_position="0" camera_index="8" resolution="5">
+        <remosaicModeCoeff>1.0</remosaicModeCoeff>
+    </SensorModeSwitch>
+
+    <!--DistortCorrection instruction
+        camera_position:    -1-default   0—rear   1-front
+        camera_index：   -1-default   2-main   4-wide   8-tele   16-tele2
+        camera_lensType:   -1-default   254-LENS_TYPE_LARGEN_MARIE
+        camera_scene：   -1-default   2-dual_video   9-superEIS
+    -->
+
+    <!--rear main KT-->
+    <DistortCorrection camera_position="0" camera_index="2" camera_lensType="1" camera_scene="-1">
+        <distortRestricWidthRange>4</distortRestricWidthRange>
+        <distortRestricHeightRange>2</distortRestricHeightRange>
+        <cropRatio>0.9595</cropRatio>
+    </DistortCorrection>
+
+    <!--rear main Largn-->
+    <DistortCorrection camera_position="0" camera_index="2" camera_lensType="0" camera_scene="-1">
+        <distortRestricWidthRange>1.6</distortRestricWidthRange>
+        <distortRestricHeightRange>1.6</distortRestricHeightRange>
+        <cropRatio>0.94905</cropRatio>
+    </DistortCorrection>
+
+    <!--rear wide free normal-->
+    <DistortCorrection camera_position="0" camera_index="4" camera_lensType="-1" camera_scene="-1">
+        <distortRestricWidthRange>4.7</distortRestricWidthRange>
+        <distortRestricHeightRange>1.22</distortRestricHeightRange>
+        <cropRatio>0.95</cropRatio>
+    </DistortCorrection>
+
+    <!--rear wide largen normal-->
+    <DistortCorrection camera_position="0" camera_index="4" camera_lensType="254" camera_scene="-1">
+        <distortRestricWidthRange>11.3</distortRestricWidthRange>
+        <distortRestricHeightRange>6.76</distortRestricHeightRange>
+        <cropRatio>0.97375</cropRatio>
+    </DistortCorrection>
+
+    <!--rear Tele-->
+    <DistortCorrection camera_position="0" camera_index="8" camera_lensType="-1" camera_scene="-1">
+        <distortRestricWidthRange>0</distortRestricWidthRange>
+        <distortRestricHeightRange>0</distortRestricHeightRange>
+        <cropRatio>0.95</cropRatio>
+    </DistortCorrection>
+
+    <!--rear wide free Super EIS-->
+    <DistortCorrection camera_position="0" camera_index="4" camera_lensType="-1" camera_scene="9">
+        <distortRestricWidthRange>4.7</distortRestricWidthRange>
+        <distortRestricHeightRange>1.22</distortRestricHeightRange>
+        <cropRatio>1.0</cropRatio>
+    </DistortCorrection>
+
+    <!--rear wide largen Super EIS-->
+    <DistortCorrection camera_position="0" camera_index="4" camera_lensType="254" camera_scene="9">
+        <distortRestricWidthRange>11.3</distortRestricWidthRange>
+        <distortRestricHeightRange>6.765</distortRestricHeightRange>
+        <cropRatio>1.0</cropRatio>
+    </DistortCorrection>
+
+    <!--front main-->
+    <DistortCorrection camera_position="1" camera_index="2" camera_lensType="-1" camera_scene="-1">
+        <distortRestricWidthRange>33.34</distortRestricWidthRange>
+        <distortRestricHeightRange>18.63</distortRestricHeightRange>
+        <cropRatio>0.838</cropRatio>
+    </DistortCorrection>
+
+    <RecedeStabilization>
+        <dynamicRecedeStabilizationEnable>1</dynamicRecedeStabilizationEnable>        <!--Int -->
+        <mainDynamicRecedeEnable>0</mainDynamicRecedeEnable>        <!--Int -->
+        <wideDynamicRecedeEnable>1</wideDynamicRecedeEnable>        <!--Int -->
+        <teleDynamicRecedeEnable>0</teleDynamicRecedeEnable>        <!--Int -->
+        <tele2DynamicRecedeEnable>0</tele2DynamicRecedeEnable>        <!--Int -->
+        <motionGain0>0.0</motionGain0>        <!--float -->
+        <motionGain1>0.1</motionGain1>        <!--float -->
+        <motionGain2>0.2</motionGain2>        <!--float -->
+        <motionGain3>0.2</motionGain3>        <!--float -->
+        <expoGain0>0.0</expoGain0>        <!--float -->
+        <expoGain1>0.0</expoGain1>        <!--float -->
+        <expoGain2>4.0</expoGain2>        <!--float -->
+        <expoGain3>9.0</expoGain3>        <!--float -->
+        <eisDecayPreRatio>0.1</eisDecayPreRatio>        <!--float -->
+        <lumaAvgThr>30</lumaAvgThr>        <!--int -->
+        <baseWqr>0.05</baseWqr>        <!--float -->
+    </RecedeStabilization>
+
+    <!--FaceDeforMation Param-->
+    <FaceDeformation>
+        <faceDeformationCorrectionEnable>1</faceDeformationCorrectionEnable>
+        <rotationLatencyForMainAxis>4</rotationLatencyForMainAxis>
+        <faceDeformationThreshlod>0.8</faceDeformationThreshlod>
+        <panningCoeff>4.5</panningCoeff>
+        <enterPanningCounterSelfieForFace>15</enterPanningCounterSelfieForFace>
+        <exitPanningCounterSelfieForFace>15</exitPanningCounterSelfieForFace>
+        <maxPanningCounterSelfie>30</maxPanningCounterSelfie>
+        <minPanningCounterSelfie>0</minPanningCounterSelfie>
+        <maxPanningRSCorrectionRatio>0.65</maxPanningRSCorrectionRatio>
+        <minPanningRSCorrectionRatio>0.25</minPanningRSCorrectionRatio>
+    </FaceDeformation>
+
+    <FaceStabilization>
+        <faceStabilizationEnable>1</faceStabilizationEnable>        <!--Int -->
+        <walkingEpsilon>38</walkingEpsilon>        <!--Int -->
+        <faceEpsilonUpper>340</faceEpsilonUpper>        <!--Int -->
+        <faceEpsilonLower>300</faceEpsilonLower>        <!--Int -->
+        <faceEpsilonRatio>0.8</faceEpsilonRatio>
+        <faceEpsilonIncrementStep>6</faceEpsilonIncrementStep>        <!--Int -->
+        <faceEpsilonDecrementStep>8</faceEpsilonDecrementStep>        <!--Int -->
+        <faceEpsilonUpperDecrementStep>20</faceEpsilonUpperDecrementStep>        <!--Int -->
+        <faceEpsilonLowerDecrementStep>20</faceEpsilonLowerDecrementStep>        <!--Int -->
+        <faceMotionStd>100</faceMotionStd>        <!--Int -->
+        <faceMotionIncreaseStep>50</faceMotionIncreaseStep>        <!--Int -->
+    </FaceStabilization>
+</EIS_TNR>

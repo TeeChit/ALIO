@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <!-- Additional permissions-->
+    <privapp-permissions package="com.google.android.apps.messaging">
+        <permission name="android.permission.SATELLITE_COMMUNICATION"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.google.android.ims">
+        <permission name="android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS"/>
+        <permission name="android.permission.PACKET_KEEPALIVE_OFFLOAD"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+
+</permissions>

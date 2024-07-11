@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AncRawHdrConfig>
+    <RAW_HDR_AELV_THRESHOLD value="270"/><!--when aelv is greater than AELV_THRESHOLD, enter rawhdr, otherwise enter superNightLite-->
+    <RAW_HDR_ISO_THRESHOLD value="600"/><!--when iso is greater than RAW_HDR_ISO_THRESHOLD, enter rawhdr, otherwise enter Q_MFNR-->
+</AncRawHdrConfig>

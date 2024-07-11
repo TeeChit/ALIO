@@ -1,0 +1,4 @@
+version=1.10.24.100
+type=BrightnessConfig
+subtype=generic
+compatibleVersion=1

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GB2312"?>
+<VCMConfig>
+    <VCMEnableFlag                 value="1"/>
+    <reloadXML                     value="0"/>
+    <debugVCMLog                   value="0"/>
+    <Deviation                     value="5"/>
+    <AFdecisionMode                value="1"/>
+    <AFStablizeCountThreshold      value="0"/>
+    <VCMThresholdMode              value="1"/>
+    <VCMNegate                     value="1"/>
+    <AF_DAC_FACE_FORWARD           value="100"/>
+    <AF_DAC_FACE_UP                value="161"/>
+    <AF_DAC_FACE_DOWN              value="43"/>
+
+
+    <!--- begin for VCMThreshold map, don't add other parm after --->
+    <VCMThreshold Zcode="-9.807"   Threshold="315" ></VCMThreshold> <!---  up  90 degree --->
+    <VCMThreshold Zcode="-8.496"   Threshold="325" ></VCMThreshold> <!---  up  60 degree --->
+    <VCMThreshold Zcode="-6.935"   Threshold="349" ></VCMThreshold> <!---  up  45 degree --->
+    <VCMThreshold Zcode="-4.905"   Threshold="367" ></VCMThreshold> <!---  up  30 degree --->
+    <VCMThreshold Zcode="0.0"      Threshold="376" ></VCMThreshold> <!---       0 degree --->
+    <VCMThreshold Zcode="4.905"    Threshold="392" ></VCMThreshold> <!--- down 30 degree --->
+    <VCMThreshold Zcode="6.935"    Threshold="404" ></VCMThreshold> <!--- down 45 degree --->
+    <VCMThreshold Zcode="8.496"    Threshold="410" ></VCMThreshold> <!--- down 60 degree --->
+    <VCMThreshold Zcode="9.807"    Threshold="422" ></VCMThreshold> <!--- down 90 degree --->
+</VCMConfig>

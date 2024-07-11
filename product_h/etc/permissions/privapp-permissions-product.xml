@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.hihonor.smartshot">
+        <permission name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="hihonor.android.permission.HW_SIGNATURE_OR_SYSTEM"/>
+        <permission name="hihonor.android.permission.SET_CANNOT_UNINSTALLED_PERMISSION"/>
+    </privapp-permissions>
+
+</permissions>

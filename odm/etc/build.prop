@@ -1,0 +1,62 @@
+#############################################################################
+########"      __        __               _                     "############
+########"      \ \      / /_ _ _ __ _ __ (_)_ __   __ _         "############
+########"       \ \ /\ / / _` | '__| '_ \| | '_ \ / _` |        "############
+########"        \ V  V / (_| | |  | | | | | | | | (_| |        "############
+########"         \_/\_/ \__,_|_|  |_| |_|_|_| |_|\__, |        "############
+########"                                         |___/         "############
+########"                                                       "############
+########"   ONLY PROTOCOL PROPS ALLOWED IN THIS SECTION BEGIN   "############
+########"                                                       "############
+########"                                                       "############
+########"   ONLY PROTOCOL PROPS ALLOWED IN THIS SECTION END     "############
+#############################################################################
+
+ro.product.odm.brand=HONOR
+ro.product.odm.device=HNALI-Q
+ro.product.first_api_level=33
+ro.vendor.radio.modem_cap=5EE9
+ro.vendor.radio.dubious_nr_cell=false
+persist.vendor.sensors.enable.mag_filter=true
+
+#dalvik vm configuration
+dalvik.vm.heapgrowthlimit=384m
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapsize=512m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heaptargetutilization=0.75
+
+ro.vendor.display.touch_vsync_opt=1
+ro.vendor.display.local_anim.config=1
+
+ro.vendor.display.svi=1
+ro.vendor.display.sensortype=2
+
+vendor.display.svi.config=1
+vendor.display.svi.config_path=/odm/etc/display/effect/sviconfig.xml
+ro.vendor.display.pause_app_vsync.config=1
+ro.vendor.display.precompile_skshader_config=1
+vendor.display.hold_binder_of_updateinputflinger=1
+
+#for display
+vendor.display.localHDR_prop=1
+ro.vendor.display.disable_dpu_LocalHDR=1
+
+debug.sf.disable_client_composition_cache=0
+debug.sf.predict_hwc_composition_strategy=1
+
+ro.vendor.display.precompile_shader.config=1
+
+
+ro.vendor.wifi_calling_disable_sa=true
+ro.vendor.display.client_use_unknown_dataspace=true
+
+# gpu paral
+ro.vendor.display.use_sw_sync=true
+ro.vendor.display.predict_strategy=true
+debug.sf.predict_hwc_composition_strategy=1
+
+ro.vendor.display.multi.sched=1
+
+ro.vendor.display.hdroff=1

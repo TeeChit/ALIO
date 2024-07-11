@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<SensorList>
+    <OpenStatus>1</OpenStatus>
+    <List>
+        <sensor_name>cafkmtx_m030</sensor_name>
+        <sensor_name>cafkhqf_m110</sensor_name>
+        <sensor_name>c834jdi_m030</sensor_name>
+        <sensor_name>c834ogi_m060</sensor_name>
+        <sensor_name>cadxlmj_m060</sensor_name>
+        <sensor_name>cadxlmj_m090</sensor_name>
+        <sensor_name>cadxlmj_m091</sensor_name>
+    </List>
+</SensorList>

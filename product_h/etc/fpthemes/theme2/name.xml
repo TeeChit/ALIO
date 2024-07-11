@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<name>
+	<values>Emerald Fireworks</values>
+	<values-zh-CN>翡翠烟火</values-zh-CN>
+	<values-am>ኤመራልድ ሪችት</values-am>
+	<values-ar>الألعاب النارية الزمردية</values-ar>
+	<values-as>এমাৰেল্ড ফায়াৰৱৰ্ক</values-as>
+	<values-az-LATN>Zümrüdü atəşfəşanlıq</values-az-LATN>
+	<values-jv-LATN>Kembang Api Jamrud</values-jv-LATN>
+	<values-my-QAAG>ျမေရာင္ မီးပန္း</values-my-QAAG>
+	<values-sr-LATN>Smaragdni vatromet</values-sr-LATN>
+	<values-be>Смарагдавы феерверк</values-be>
+	<values-bg>Изумрудени фойерверки</values-bg>
+	<values-bn>এমর্লাড ফায়ারওয়ার্ক</values-bn>
+	<values-bo>མེ་དང་དུ་བ་སྔོན་པོ།</values-bo>
+	<values-bs-LATN>Smaragdni vatromet</values-bs-LATN>
+	<values-ca>Pirotècnia esmeralda</values-ca>
+	<values-cs>Smaragdové ohňostroje</values-cs>
+	<values-da>Smaragdfyrværkeri</values-da>
+	<values-de>Smaragd-Feuerwerk</values-de>
+	<values-el>Σμαραγδένια πυροτεχνήματα</values-el>
+	<values-en-GB>Emerald Fireworks</values-en-GB>
+	<values-es>Fuegos artificiales esmeralda</values-es>
+	<values-es-US>Fuegos artificiales verdes</values-es-US>
+	<values-et>Smaragdilutulestik</values-et>
+	<values-eu>Esmeraldazko su artifizialak</values-eu>
+	<values-fa>آتش‌بازی زمردین</values-fa>
+	<values-fi>Smaragdinvihreä ilotulitus</values-fi>
+	<values-fr>Feux d\'artifice émeraude</values-fr>
+	<values-gl>Foguetes esmeralda</values-gl>
+	<values-gu>એમરલ્ડ ફાયરવર્ક્સ</values-gu>
+	<values-hi>एमरल्ड फायरवर्क्स</values-hi>
+	<values-hr>Smaragdni vatromet</values-hr>
+	<values-hu>Smaragd tűzijátékok</values-hu>
+	<values-in>Kembang Api Zamrud</values-in>
+	<values-it>Fuochi d\'artificio di smeraldo</values-it>
+	<values-iw>זיקוקי ברקת</values-iw>
+	<values-ja>エメラルドの花火</values-ja>
+	<values-ka>ზურმუხტისფერი ფეიერვერკი</values-ka>
+	<values-kk>Зүбаржат отшашулар</values-kk>
+	<values-km>កាំជ្រួចពណ៌ត្បូងមរកត</values-km>
+	<values-kn>ಪಚ್ಚೆ ಬಾಣಬಿರುಸುಗಳು</values-kn>
+	<values-ko>에메랄드 불꽃</values-ko>
+	<values-lo>ດອກໄມ້ໄຟມໍລະກົດ</values-lo>
+	<values-lt>Smaragdiniai fejerverkai</values-lt>
+	<values-lv>Smaragda uguņošana</values-lv>
+	<values-mai>इमेराल्ड फायरवर्क्स</values-mai>
+	<values-mi>Pahū Emerara</values-mi>
+	<values-mk>Огномет од смарагди</values-mk>
+	<values-ml>മരതക പൂത്തിരി</values-ml>
+	<values-mn>Маргад галын наадам</values-mn>
+	<values-mr>हिरव्या रंगाचे आतिषबाजीचे फटाके</values-mr>
+	<values-ms>Bunga Api Zamrud</values-ms>
+	<values-my>မြရောင် မီးပန်း</values-my>
+	<values-nb>Smaragd-fyrverkeri</values-nb>
+	<values-ne>एमरल्ड फायरवर्क्स</values-ne>
+	<values-nl>Emerald Fireworks</values-nl>
+	<values-or>ଏମାର୍ଲ୍ଡ ଫାୟାରୱାର୍କ୍ସ</values-or>
+	<values-pa>ਐਮਰਲਡ ਫਾਇਰਵਰਕਸ</values-pa>
+	<values-pl>Szmaragdowe fajerwerki</values-pl>
+	<values-pt>Fogos de artifício esmeralda</values-pt>
+	<values-pt-PT>Emerald Fireworks</values-pt-PT>
+	<values-ro>Focuri de artificii de smarald</values-ro>
+	<values-ru>Изумрудный фейерверк</values-ru>
+	<values-si>හරිතවර්ණ ගිනිකෙළි</values-si>
+	<values-sk>Smaragdový ohňostroj</values-sk>
+	<values-sl>Smaragden ognjemet</values-sl>
+	<values-sv>Smaragdfyrverkerier</values-sv>
+	<values-sw>Fataki za Zumaridi</values-sw>
+	<values-ta>மரகதப் பட்டாசுகள்</values-ta>
+	<values-te>ఎమరాల్డ్ ఫైర్ వర్క్స్</values-te>
+	<values-th>ดอกไม้ไฟมรกต</values-th>
+	<values-tl>Emerald Fireworks</values-tl>
+	<values-tr>Zümrüt Havai Fişek</values-tr>
+	<values-ug>زۇمرەت ۋە ساليۇت</values-ug>
+	<values-uk>Смарагдовий феєрверк</values-uk>
+	<values-ur>زمرد آتش بازی</values-ur>
+	<values-uz>Zumrad mushaklar</values-uz>
+	<values-vi>Pháo hoa xanh ngọc</values-vi>
+	<values-zh-HK>翡翠煙火</values-zh-HK>
+	<values-zh-TW>翡翠煙火</values-zh-TW>
+</name>

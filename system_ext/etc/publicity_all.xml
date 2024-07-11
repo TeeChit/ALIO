@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packageList>
+	<packageInfo author="谷歌" feature="随卡适配，配置 VoLTE、RCS、VoWiFi 等功能的参数。" package="com.android.carrierconfig" label="com.android.carrierconfig">
+	</packageInfo>
+	<packageInfo package="com.hihonor.securityserver" feature="安全特性的公共进程服务" author="荣耀终端有限公司" label="com.hihonor.securityserver">
+	</packageInfo>
+	<packageInfo package="com.qti.dpmserviceapp" feature="高通原生的后台数据管理功耗优化方案" author="高通" label="com.qti.dpmserviceapp">
+	</packageInfo>
+	<packageInfo package="com.qti.qcc" feature="提供高通平台Xtra数据下载" author="高通" label="com.qti.qcc">
+	</packageInfo>
+	<packageInfo package="com.qualcomm.location" feature="提供高通平台AGPS、Xtra服务的应用。" author="高通" label="com.qualcomm.location">
+	</packageInfo>
+	<packageInfo package="com.qualcomm.qcrilmsgtunnel" feature="为qcril提供上行下行的OEM_HOOK_ROW消息。" author="高通" label="com.qualcomm.qcrilmsgtunnel">
+	</packageInfo>
+	<packageInfo package="com.qualcomm.qti.telephonyservice" feature="提供高通平台通话基础服务的应用。" author="高通" label="com.qualcomm.qti.telephonyservice">
+	</packageInfo>
+	<packageInfo package="org.codeaurora.ims" feature="提供高通平台VoLTE通信服务的应用。" author="高通" label="org.codeaurora.ims">
+	</packageInfo>
+</packageList>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<name>
+	<values>Lattice Planet</values>
+	<values-zh-CN>点阵星球</values-zh-CN>
+	<values-am>ፍግርግር ፕላኔት</values-am>
+	<values-ar>كوكب بلوري</values-ar>
+	<values-as>লেটিচ প্লেনেট</values-as>
+	<values-az-LATN>Şəbəkə planet</values-az-LATN>
+	<values-jv-LATN>Kisi-kisi Planet</values-jv-LATN>
+	<values-my-QAAG>မွန္ကူကြက္ၿဂိဳဟ္</values-my-QAAG>
+	<values-sr-LATN>Rešetkasta planeta</values-sr-LATN>
+	<values-be>Рашэцістая планета</values-be>
+	<values-bg>Мрежеста планета</values-bg>
+	<values-bn>ল্যাটিস প্ল্যানেট</values-bn>
+	<values-bo>ཚེག་གནས་སྐར་ཚོམས།</values-bo>
+	<values-bs-LATN>Rešetkasta planeta</values-bs-LATN>
+	<values-ca>Planeta enreixat</values-ca>
+	<values-cs>Mřížovaná planeta</values-cs>
+	<values-da>Gitterplanet</values-da>
+	<values-de>Gitterplanet</values-de>
+	<values-el>Πλανήτης</values-el>
+	<values-en-GB>Lattice Planet</values-en-GB>
+	<values-es>Planeta</values-es>
+	<values-es-US>Planeta entramado</values-es-US>
+	<values-et>Võreplaneet</values-et>
+	<values-eu>Planeta-sarea</values-eu>
+	<values-fa>سیاره مشبک</values-fa>
+	<values-fi>Uritettu planeetta</values-fi>
+	<values-fr>Structure de planète</values-fr>
+	<values-gl>Planeta con celosía</values-gl>
+	<values-gu>લેટ્ટીસ પ્લેનેટ</values-gu>
+	<values-hi>लैटिस प्लैनेट</values-hi>
+	<values-hr>Rešetkasti planet</values-hr>
+	<values-hu>Rácsos bolygó</values-hu>
+	<values-in>Planet Kisi</values-in>
+	<values-it>Pianeta Lattice</values-it>
+	<values-iw>כוכב לכת מסורג</values-iw>
+	<values-ja>格子状の惑星</values-ja>
+	<values-ka>გისოსიანი პლანეტა</values-ka>
+	<values-kk>Торлы ғаламшар</values-kk>
+	<values-km>គ្រោងភព</values-km>
+	<values-kn>ಲ್ಯಾಟಿಸ್ ಪ್ಲಾನೆಟ್</values-kn>
+	<values-ko>격자 행성</values-ko>
+	<values-lo>ເຄືອຂ່າຍດາວເຄາະ</values-lo>
+	<values-lt>Planetos tinklelis</values-lt>
+	<values-lv>Režģota planēta</values-lv>
+	<values-mai>लैटिस प्लानेट</values-mai>
+	<values-mi>Aorangi Tukutuku</values-mi>
+	<values-mk>Решеткаста планета</values-mk>
+	<values-ml>ലാറ്റസ് പ്ലാനറ്റ്</values-ml>
+	<values-mn>Торон гариг</values-mn>
+	<values-mr>जाळीदार ग्रह</values-mr>
+	<values-ms>Planet Kekisi</values-ms>
+	<values-my>မှန်ကူကွက်ဂြိုဟ်</values-my>
+	<values-nb>Gitterplanet</values-nb>
+	<values-ne>ल्याटिस प्लानेट</values-ne>
+	<values-nl>Lattice Planet</values-nl>
+	<values-or>ଲାଟିସ୍‌ ପ୍ଲାନେଟ୍</values-or>
+	<values-pa>ਲੈਟੀਸ ਪਲੈਨੇਟ</values-pa>
+	<values-pl>Siatkowa planeta</values-pl>
+	<values-pt>Malha planetária</values-pt>
+	<values-pt-PT>Lattice Planet</values-pt-PT>
+	<values-ro>Planetă matrice</values-ro>
+	<values-ru>Планета</values-ru>
+	<values-si>දැලිස් ග්‍රහයා</values-si>
+	<values-sk>Mriežková planéta</values-sk>
+	<values-sl>Mrežasti planet</values-sl>
+	<values-sv>Gallerplanet</values-sv>
+	<values-sw>Ulimwengu wa Nyota</values-sw>
+	<values-ta>அணிக்கோவைக் கிரகம்</values-ta>
+	<values-te>లాటైస్ ప్లానెట్</values-te>
+	<values-th>ดาวเคราะห์โครงผลึก</values-th>
+	<values-tl>Lattice Planet</values-tl>
+	<values-tr>Örgü Gezegen</values-tr>
+	<values-ug>چاقناق يۇلتۇز</values-ug>
+	<values-uk>Кристалічна планета</values-uk>
+	<values-ur>جالی سیارہ</values-ur>
+	<values-uz>Qafasdagi sayyora</values-uz>
+	<values-vi>Hành tinh mạng</values-vi>
+	<values-zh-HK>點陣星球</values-zh-HK>
+	<values-zh-TW>點陣星球</values-zh-TW>
+</name>

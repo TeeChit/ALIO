@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?>
+<ArcMfnralgoConfig>
+    <ARC_MFNR_PRIOR value="0"/>
+    <ARC_MFNR_PRIOR_ISO_LOW value="1400"/>
+    <ARC_MFNR_PRIOR_ISO_HIGH value="3000"/>
+</ArcMfnralgoConfig>

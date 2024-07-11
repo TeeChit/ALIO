@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+    <spcseas valuesoft = "5" valueTone = "17" valueSlender = "5" value4 = "0"/> <!-- spcseas = SouthPacific SouthEastAsia-->
+    <la valuesoft = "0" valueTone = "17" valueSlender = "0" value4 = "0"/> <!-- la = LatinAmerica-->
+    <eu valuesoft = "0" valueTone = "17" valueSlender = "0" value4 = "0"/> <!-- eu = Europe-->
+    <meafnaf valuesoft = "0" valueTone = "17" valueSlender = "0" value4 = "0"/> <!-- meafnaf = MiddleEastAfrica-->
+    <cea valuesoft = "0" valueTone = "17" valueSlender = "0" value4 = "0"/> <!-- cea = Middle Asia-->
+</CONFIG_PARA>

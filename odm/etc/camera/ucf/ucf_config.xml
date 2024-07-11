@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UCF>
+<!-- Baltimore platform UCF config -->
+<dispatch_size> 8 </dispatch_size>
+<big_core_max_th_num> 4 </big_core_max_th_num>
+<mid_core_max_th_num> 6 </mid_core_max_th_num>
+<little_core_max_th_num> 4 </little_core_max_th_num>
+<big_core_num> 1 </big_core_num>
+<mid_core_num> 3 </mid_core_num>
+<little_core_num> 4 </little_core_num>
+<parallel_for_schedule> dynamic </parallel_for_schedule>
+<hybrid_schedule_enable> 0 </hybrid_schedule_enable>
+</UCF>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <VIDEO_ONLY_SKINBASE_FLAG value="0"/>
+    <PICTURE_REINIT_FLAG value="0"/>
+    <SPECIALTEST_ENABLE_FLAG value="0"/>
+    <BLUR_FACE_BEAUTY value="0"/>
+</Config>

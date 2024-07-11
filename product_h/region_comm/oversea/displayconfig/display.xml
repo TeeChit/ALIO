@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<displayConfiguration>
+   <screenBrightnessMap
+         interpolation="linear">
+         <point>
+           <value>0.0</value>
+           <nits>0.0</nits>
+         </point>
+         <point>
+           <value>0.0156862</value>
+           <nits>2.0</nits>
+         </point>
+         <point>
+           <value>0.8823529</value>
+           <nits>590.0</nits>
+         </point>
+         <point>
+           <value>1.0</value>
+           <nits>1000.0</nits>
+         </point>
+   </screenBrightnessMap>
+</displayConfiguration>

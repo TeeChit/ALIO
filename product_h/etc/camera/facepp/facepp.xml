@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+        <ALGO_ENABLE value="1"/><!--NOTE: if you set ALGO_ENABLE=1, you also need set FD_ALGO_TYPE=3 in config.xml under this dirctory-->
+        <DETECT_MODE value="3"/>
+        <FRAME_INTERVAL value="1"/>
+        <CONFIDENCE_FILTER value="0.8"/>
+        <WORK_LOAD value="0.1"/>
+        <SMOOTH_RESULT value="1"/>
+        <HAPPY_CONFIDENCE_FILTER value="0.80"/>
+        <HAPPY_CONFIDENCE_THRESOLD value="80"/>
+        <HAPPY_FRAMECOUNT value="1"/>
+        <DETECT_FPS value="2"/>
+        <SMOOTH_TH value="5"/>
+        <BRIGHT_BY_HIST_ENABLE value="1"/>
+</CONFIG_PARA>

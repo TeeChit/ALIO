@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EyeProtectionConfig>
+    <EyeProtectionBrightnessPoints>
+        <Point>0,5</Point>
+        <Point>10,26</Point>
+        <Point>25,47</Point>
+        <Point>50,58</Point>
+        <Point>100,62</Point>
+        <Point>400,80</Point>
+        <Point>1000,112</Point>
+        <Point>2000,169</Point>
+        <Point>4000,255</Point>
+        <Point>5000,255</Point>
+        <Point>10000,255</Point>
+        <Point>40000,255</Point>
+    </EyeProtectionBrightnessPoints>
+    <LessWarm>30</LessWarm>
+    <MoreWarm>20</MoreWarm>
+    <LuxLevel>
+        <Value>0.0</Value>
+        <Value>100.0</Value>
+        <Value>1000.0</Value>
+        <Value>3000.0</Value>
+    </LuxLevel>
+</EyeProtectionConfig>

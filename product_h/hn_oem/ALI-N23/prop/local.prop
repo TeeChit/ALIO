@@ -1,0 +1,17 @@
+# 2023-11-28 14:41:15.0
+ro.build.id=HONORALI-N23
+# 2023-11-28 14:41:15.0
+ro.config.dsds_mode=umts_gsm
+# 2023-11-28 14:41:15.0
+ro.config.product_version_pre=ALI-N23
+# 2023-11-28 14:41:15.0
+ro.config.safety_certification=ic,ce
+# 2023-11-28 14:41:15.0
+ro.gsensor.calibrate=true
+# 2023-11-28 14:41:15.0
+ro.product.model=ALI-NX3
+# 2023-11-28 14:41:15.0
+ro.product.name=ALI-NX3
+# 2023-11-28 14:41:15.0
+ro.qti.sensors.gravity=true
+ro.build.description=ALI-N23-user 8.0.0 HONORALI-N23 164-OVS-LGRP2 release-keys

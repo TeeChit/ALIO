@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="GB2312"?>
+<FEATURE_CONFIG>
+    <VIDEO_MODE>
+        <SCENE_MODE Value="NightVideoMode"          Feature="AiRawNightVideo"  Mode="single"/>
+        <SCENE_MODE Value="MovieMode"               Feature="NormalMovieVideo" Mode="single"/>
+        <SCENE_MODE Value="ProfessionalVideoMode">
+            <RootNode Exps="ZOOM >= 100">
+                <TrueNode Feature="NormalVideo" Mode="single"/>
+                <FalseNode Feature="NormalVideo" Mode="single"/>
+            </RootNode>
+        </SCENE_MODE>
+        <SCENE_MODE Value="VideoBokehMode"          Feature="VideoBokeh" Mode="single"/>
+        <SCENE_MODE Value="PersonTracking"   Feature="PersonTrackingVideo" Mode="single"/>
+        <SCENE_MODE Value="DualVideo">
+            <RootNode Exps="IS_FRONT_VIDEO_MODE">
+                <TrueNode Feature="DualVideoFront" Mode="single"/>
+                <FalseNode Feature="DualVideoBack" Mode="single"/>
+            </RootNode>
+        </SCENE_MODE>
+        <SCENE_MODE Value="SingleVideo">
+            <RootNode Exps="IS_FRONT_VIDEO_MODE">
+                <TrueNode Feature="DualVideoFront" Mode="single"/>
+                <FalseNode Feature="DualVideoBack" Mode="single"/>
+            </RootNode>
+        </SCENE_MODE>
+        <RootNode Feature="NormalVideo" Mode="single"/>
+    </VIDEO_MODE>
+    <CAMERA_CAPTURE>
+        <FORE_GROUND_MODE>
+            <DCHDC_CALIB_MODE     Feature="HdcCalibMode"      Mode="single"/>
+            <LASER_FOV_CALIB_MODE Feature="LaserFovCalibMode" Mode="single"/>
+            <DCMMI_MODE           Feature="DcMMIMode"         Mode="single"/>
+            <DC_SPEC_CALIB_MODE   Feature="DcSpecCalibMode"   Mode="single"/>
+            <GRAY_CHECK_MODE      Feature="GrayGheckMode"     Mode="single"/>
+            <SUPER_CAMERA_NIGHT>
+                <RootNode Exps="CAPTURE_ESCAPE">
+                    <TrueNode Feature="foreNormalmode" Mode="single"/>
+                    <FalseNode Exps="ZOOM &lt; 100">
+                        <TrueNode Exps="CAMERA_SUPER_ISO">
+                            <TrueNode Feature="foreWideDarkvision" Mode="single"/>
+                            <FalseNode Feature="forewideTFSuperNight" Mode="single"/>
+                        </TrueNode>
+                        <FalseNode Exps="CAMERA_SUPER_ISO">
+                            <TrueNode Feature="foreMainDarkvision" Mode="nrhdr"/>
+                            <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                <TrueNode Feature="foremainTFSuperNight" Mode="nrhdr"/>
+                                <FalseNode Exps="CAMERA_NIGHT">
+                                    <TrueNode Feature="foreMainAiRawElliplite" Mode="single"/>
+                                    <FalseNode Feature="foremainTFSuperNight" Mode="nrhdr"/>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </FalseNode>
+                </RootNode>
+            </SUPER_CAMERA_NIGHT>
+            <SCENE_MODE Value="NormalCapture">
+                <RootNode Feature="foreNormalmode" Mode="single"/>
+            </SCENE_MODE>
+        </FORE_GROUND_MODE>
+        <BACK_GROUND_MODE>
+            <FRONT_CAMERA_MODE>
+                <SCENE_MODE Value="NightShot">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="BEAUTY_MODE">
+                            <TrueNode Exps="IS_NIGHT_ISO_LV">
+                                <TrueNode Feature="frontNightFaceSRBeauty" Mode="rawhdr"/>
+                                <FalseNode Exps="IS_RAW_HDR">
+                                    <TrueNode Feature="frontRawhdrFaceSRBeauty" Mode="rawhdr"/>
+                                    <FalseNode Feature="frontMFNRFaceSRBeauty" Mode="hdrplite"/>
+                                </FalseNode>
+                            </TrueNode>
+                            <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                <TrueNode Feature="frontNightFaceSR" Mode="rawhdr"/>
+                                <FalseNode Exps="IS_RAW_HDR">
+                                    <TrueNode Feature="frontRawhdrFaceSR" Mode="rawhdr"/>
+                                    <FalseNode Feature="frontMFNRFaceSR" Mode="hdrplite"/>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="Portrait">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode  Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="PORTRAIT_MODE">
+                            <TrueNode Exps="BEAUTY_MODE">
+                                <TrueNode Exps="IS_NIGHT_ISO_LV">
+                                    <TrueNode Feature="frontNightFaceSRLutBokehBeauty" Mode="rawhdr"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode Feature="frontRawhdrFaceSRLutBokehBeauty" Mode="rawhdr"/>
+                                        <FalseNode Feature="frontMFNRFaceSRLutBokehBeauty" Mode="hdrplite"/>
+                                    </FalseNode>
+                                </TrueNode>
+                                <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                    <TrueNode Feature="frontNightFaceSRLutBokeh" Mode="rawhdr"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode Feature="frontRawhdrFaceSRLutBokeh" Mode="rawhdr"/>
+                                        <FalseNode Feature="frontMFNRFaceSRLutBokeh" Mode="hdrplite"/>
+                                    </FalseNode>
+                                </FalseNode>
+                            </TrueNode>
+                            <FalseNode Exps="BEAUTY_MODE">
+                                <TrueNode Exps="IS_NIGHT_ISO_LV">
+                                    <TrueNode Feature="frontNightFaceSRLutBeauty" Mode="rawhdr"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode Feature="frontRawhdrFaceSRLutBeauty" Mode="rawhdr"/>
+                                        <FalseNode Feature="frontMFNRFaceSRLutBeauty" Mode="hdrplite"/>
+                                    </FalseNode>
+                                </TrueNode>
+                                <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                    <TrueNode Feature="frontNightFaceSRLut" Mode="rawhdr"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode Feature="frontRawhdrFaceSRLut" Mode="rawhdr"/>
+                                        <FalseNode Feature="frontMFNRFaceSRLut" Mode="hdrplite"/>
+                                    </FalseNode>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="NormalCapture">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode  Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="IS_NIGHT_ISO_LV">
+                            <TrueNode Feature="frontNightFaceSR" Mode="rawhdr"/>
+                            <FalseNode Exps="IS_RAW_HDR">
+                                <TrueNode Feature="frontRawhdrFaceSR" Mode="rawhdr"/>
+                                <FalseNode Feature="frontMFNRFaceSR" Mode="hdrplite"/>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="UltraHighRes">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode Exps="IS_REMOSAIC_MODE">
+                            <TrueNode Feature="frontRemosaic" Mode="offremosaic"/>
+                            <FalseNode Feature="normalmode" Mode="single"/>
+                        </TrueNode>
+                        <FalseNode Exps="IS_REMOSAIC_MODE">
+                            <TrueNode Feature="frontRemosaicBeauty" Mode="offremosaic"/>
+                            <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                <TrueNode Feature="frontNightFaceSRBeautyRemosaic" Mode="single"/>
+                                <FalseNode Exps="IS_RAW_HDR">
+                                    <TrueNode Feature="frontRawhdrFaceSRBeautyRemosaic" Mode="single"/>
+                                    <FalseNode Feature="frontMFNRFaceSRBeautyRemosaic" Mode="single"/>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+            </FRONT_CAMERA_MODE>
+            <BACK_CAMERA_MODE>
+                <SCENE_MODE Value="Burst">
+                    <RootNode Feature="bestshotMode" Mode="burst"/>
+                </SCENE_MODE>
+                <SCENE_MODE Value="SuperMacro">
+                    <RootNode Exps="CAPTURE_ESCAPE &amp;&amp; !BURST_MODE">
+                        <TrueNode Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="CAMERA_SUPER_ISO">
+                            <TrueNode Feature="wideDarkvision" Mode="single"/>
+                            <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                <TrueNode Feature="wideTFSuperNight" Mode="single"/>
+                                <FalseNode Exps="IS_RAW_HDR">
+                                    <TrueNode Feature="wideHdrp" Mode="rawhdr"/>
+                                    <FalseNode Feature="wideHdrplite" Mode="hdrplite"/>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="UltraHighRes">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode Exps="IS_REMOSAIC_MODE">
+                            <TrueNode Exps="ZOOM &lt; 100">
+                                <TrueNode Feature="wideRemosaic" Mode="offremosaic"/>
+                                <FalseNode Feature="mainRemosaic" Mode="single"/>
+                            </TrueNode>
+                            <FalseNode Feature="normalmode" Mode="single"/>
+                        </TrueNode>
+                        <FalseNode Exps="ZOOM &lt; 100">
+                            <TrueNode Exps="IS_REMOSAIC_MODE">
+                                <TrueNode Feature="wideRemosaic" Mode="offremosaic"/>
+                                <FalseNode Exps="CAMERA_SUPER_ISO">
+                                    <TrueNode Feature="wideDarkvision" Mode="single"/>
+                                    <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                        <TrueNode Feature="wideTFSuperNight" Mode="single"/>
+                                        <FalseNode Exps="IS_RAW_HDR">
+                                            <TrueNode Feature="wideHdrp" Mode="rawhdr"/>
+                                            <FalseNode Feature="wideHdrplite" Mode="hdrplite"/>
+                                        </FalseNode>
+                                    </FalseNode>
+                                </FalseNode>
+                            </TrueNode>
+                            <FalseNode Exps="IS_REMOSAIC_MODE">
+                                <TrueNode Feature="mainRemosaic" Mode="single"/>
+                                <FalseNode Exps="CAMERA_SUPER_ISO">
+                                    <TrueNode Feature="mainDarkvision" Mode="nrhdr"/>
+                                    <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                        <TrueNode Feature="mainTFSuperNight" Mode="single"/>
+                                        <FalseNode Exps="CAMERA_NIGHT">
+                                            <TrueNode Feature="mainAiRawElliplite" Mode="ellip"/>
+                                            <FalseNode Exps="IS_RAW_HDR">
+                                                <TrueNode Feature="mainHdrp" Mode="rawhdr"/>
+                                                <FalseNode Feature="mainHdrplite" Mode="hdrplite"/>
+                                            </FalseNode>
+                                        </FalseNode>
+                                    </FalseNode>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="NormalCapture">
+                    <RootNode Exps="CAPTURE_ESCAPE &amp;&amp; !BURST_MODE">
+                        <TrueNode Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="ZOOM &lt; 100">
+                            <TrueNode Exps="CAMERA_SUPER_ISO">
+                                <TrueNode Feature="wideDarkvision" Mode="single"/>
+                                <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                    <TrueNode Feature="wideTFSuperNight" Mode="single"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode Feature="wideHdrp" Mode="rawhdr"/>
+                                        <FalseNode Feature="wideHdrplite" Mode="hdrplite"/>
+                                    </FalseNode>
+                                </FalseNode>
+                            </TrueNode>
+                            <FalseNode Exps="IS_INSENSORZOOM">
+                                <TrueNode Exps="ZOOM >=200">
+                                    <TrueNode Feature="mainYuvSR" Mode="rawhdr"/>
+                                    <FalseNode Feature="normalmode" Mode="single"/>
+                                </TrueNode>
+                                <FalseNode Exps="ZOOM >=200">
+                                    <TrueNode Exps="CAMERA_SUPER_ISO">
+                                        <TrueNode Feature="mainDarkvision" Mode="single"/>
+                                        <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                            <TrueNode Feature="mainTFSuperNight" Mode="single"/>
+                                            <FalseNode Exps="CAMERA_NIGHT">
+                                                <TrueNode Feature="mainAiRawElliplite" Mode="ellip"/>
+                                                <FalseNode Exps="IS_RAW_HDR">
+                                                    <TrueNode Feature="mainYuvSR" Mode="single"/>
+                                                    <FalseNode Feature="mainYuvSR" Mode="single"/>
+                                                </FalseNode>
+                                            </FalseNode>
+                                        </FalseNode>
+                                    </TrueNode>
+                                    <FalseNode Exps="CAMERA_SUPER_ISO">
+                                        <TrueNode Feature="mainDarkvision" Mode="single"/>
+                                        <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                            <TrueNode Feature="mainTFSuperNight" Mode="single"/>
+                                            <FalseNode Exps="CAMERA_NIGHT">
+                                                <TrueNode Feature="mainAiRawElliplite" Mode="ellip"/>
+                                                <FalseNode Exps="IS_RAW_HDR">
+                                                    <TrueNode Feature="mainHdrp" Mode="rawhdr"/>
+                                                    <FalseNode Feature="mainHdrplite" Mode="hdrplite"/>
+                                                </FalseNode>
+                                            </FalseNode>
+                                        </FalseNode>
+                                    </FalseNode>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="Professional">
+                    <RootNode Feature="normalmode" Mode="single"/>
+                </SCENE_MODE>
+                <SCENE_MODE Value="Portrait">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="PORTRAIT_MODE">
+                            <TrueNode Exps="BEAUTY_MODE">
+                                <TrueNode Exps="PORTRAIT_NIGHT_ISO">
+                                    <TrueNode  Feature="mainFaceSRNightBokeh3DLutBeauty" Mode="single"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode  Feature="mainFaceSRHdrBokeh3DLutBeauty" Mode="single"/>
+                                        <FalseNode Feature="mainFaceSRHdrBokeh3DLutBeauty" Mode="single"/>
+                                    </FalseNode>
+                                </TrueNode>
+                                <FalseNode Exps="PORTRAIT_NIGHT_ISO">
+                                    <TrueNode  Feature="mainFaceSRNightBokeh3DLut" Mode="single"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode  Feature="mainFaceSRHdrBokeh3DLut" Mode="single"/>
+                                        <FalseNode Feature="mainFaceSRHdrBokeh3DLut" Mode="single"/>
+                                    </FalseNode>
+                                </FalseNode>
+                            </TrueNode>
+                            <FalseNode Exps="BEAUTY_MODE">
+                                <TrueNode Exps="PORTRAIT_NIGHT_ISO">
+                                    <TrueNode  Feature="mainFaceSRNightBokeh3DLutBeauty" Mode="single"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode  Feature="mainFaceSRHdrBokeh3DLutBeauty" Mode="single"/>
+                                        <FalseNode Feature="mainFaceSRHdrBokeh3DLutBeauty" Mode="single"/>
+                                    </FalseNode>
+                                </TrueNode>
+                                <FalseNode Exps="PORTRAIT_NIGHT_ISO">
+                                    <TrueNode  Feature="mainFaceSRNightBokeh3DLut" Mode="single"/>
+                                    <FalseNode Exps="IS_RAW_HDR">
+                                        <TrueNode  Feature="mainFaceSRHdrBokeh3DLut" Mode="single"/>
+                                        <FalseNode Feature="mainFaceSRHdrBokeh3DLut" Mode="single"/>
+                                    </FalseNode>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="Aperture">
+                    <RootNode Exps="CAPTURE_ESCAPE">
+                        <TrueNode Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="PORTRAIT_SUPER_ISO">
+                            <TrueNode  Feature="normalmode" Mode="single"/>
+                            <FalseNode Exps="IS_RAW_HDR">
+                                <TrueNode  Feature="mainFaceSRHdrBokeh" Mode="single"/>
+                                <FalseNode Feature="mainFaceSRBokeh" Mode="single"/>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+                <SCENE_MODE Value="Hdr">
+                    <RootNode Exps="CAPTURE_ESCAPE &amp;&amp; !BURST_MODE">
+                        <TrueNode Feature="normalmode" Mode="single"/>
+                        <FalseNode Exps="ZOOM &lt; 100">
+                            <TrueNode Exps="CAMERA_SUPER_ISO">
+                                <TrueNode Feature="wideDarkvision" Mode="single"/>
+                                <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                    <TrueNode Feature="wideTFSuperNight" Mode="single"/>
+                                    <FalseNode Feature="wideHdrp" Mode="rawhdr"/>
+                                </FalseNode>
+                            </TrueNode>
+                            <FalseNode Exps="ZOOM &lt; 200">
+                                <TrueNode Exps="CAMERA_SUPER_ISO">
+                                    <TrueNode Feature="mainDarkvision" Mode="single"/>
+                                    <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                        <TrueNode Feature="mainTFSuperNight" Mode="single"/>
+                                        <FalseNode Exps="CAMERA_NIGHT">
+                                            <TrueNode Feature="mainAiRawElliplite" Mode="ellip"/>
+                                               <FalseNode Feature="mainHdrp" Mode="rawhdr"/>
+                                        </FalseNode>
+                                    </FalseNode>
+                                </TrueNode>
+                                <FalseNode Exps="CAMERA_SUPER_ISO">
+                                    <TrueNode Feature="mainDarkvision" Mode="single"/>
+                                    <FalseNode Exps="IS_NIGHT_ISO_LV">
+                                        <TrueNode Feature="mainTFSuperNight" Mode="single"/>
+                                        <FalseNode Exps="CAMERA_NIGHT">
+                                            <TrueNode Feature="mainAiRawElliplite" Mode="ellip"/>
+                                            <FalseNode Feature="mainYuvSR" Mode="single"/>
+                                        </FalseNode>
+                                    </FalseNode>
+                                </FalseNode>
+                            </FalseNode>
+                        </FalseNode>
+                    </RootNode>
+                </SCENE_MODE>
+            </BACK_CAMERA_MODE>
+        </BACK_GROUND_MODE>
+    </CAMERA_CAPTURE>
+</FEATURE_CONFIG>

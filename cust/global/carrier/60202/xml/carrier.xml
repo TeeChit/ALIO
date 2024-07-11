@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="eda88cb60186c761776b1a60f3d41f0f">
+  <dict>
+    <!--2023-01-31 11:53:12.000-->
+    <int key="num_match">8</int>
+    <!--2023-01-31 11:53:12.000-->
+    <string key="voicemail_carrier">Vodafone</string>
+    <!--2023-01-31 11:53:12.000-->
+    <string key="voicemail_number">808</string>
+    <!--2023-01-31 11:53:12.000-->
+    <string key="voicemail_tag">voicemail</string>
+  </dict>
+</config>

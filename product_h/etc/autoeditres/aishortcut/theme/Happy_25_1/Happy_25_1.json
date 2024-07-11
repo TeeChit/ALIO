@@ -1,0 +1,124 @@
+﻿{
+  "type": "happy",
+  "duration": 25000,
+  "name": "Lovely",
+  "id": "Happy_25_1",
+  "separationStep": 1650,
+  "separationMinDuration": 4000,
+  "separationMaxDuration": 8000,
+  "transitions": [
+    {
+      "name": "叠化",
+      "priority": 10,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "模糊",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "融化",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "上移",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "下移",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "左移",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "右移",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "黑场",
+      "priority": 50,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "白场",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "放大",
+      "priority": 90,
+      "pickCondition": 1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "缩小",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "旋转",
+      "priority": 90,
+      "pickCondition": 2,
+      "horizon": true,
+      "vertical": true
+    }
+  ],
+  "transitionMaxCount": 4,
+  "filterId": "filter_res_04",
+  "filterStrength": 0.1,
+  "sticker": {
+    "id": "lets_smile",
+    "scaleHorizon": 0.4,
+    "scaleVertical": 0.6,
+    "locationHorizonX": 3.6,
+    "locationHorizonY": -0.75,
+    "locationVerticalX": 0.4,
+    "locationVerticalY": -0.6,
+    "beginTime": 0
+  },
+  "borderId": "magazine1",
+  "specialEffect": [
+    {
+      "effectId": "romantic_heart",
+      "effectStart": 0
+    },
+    {
+      "effectId": "flowers",
+      "effectStart": -1
+    },
+    {
+      "effectId": "blingbling",
+      "effectStart": -1
+    }
+  ],
+  "tail": "honor_vlog"
+}

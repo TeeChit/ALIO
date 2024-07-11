@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="a66292725cf36187e2fd03f6f71a06d6">
+  <dict>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="carrier_force_volte_switch_on_bool">true</bool>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="carrier_hide_clir_bool">true</bool>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="carrier_volte_available_bool">true</bool>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="carrier_volte_show_switch_bool">false</bool>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="carrier_vt_available_bool">false</bool>
+  </dict>
+</config>

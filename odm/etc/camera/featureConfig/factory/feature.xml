@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="GB2312"?>
+<FeatureConfig>
+<!--Common Used by Front and Rear Mode Begin-->
+    <Feature Name="normalmode" RequestName = "normalshot">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="SubPipeline" AlgoName="NormalPreview"><Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/></Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="LaserCalib"><Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/></Node>
+            <Node Name="Node3" Type="Plugin" AlgoName="AfCalib"><Connect PadName="Out0" PeerNodeName="Node4" PeerPadName="In0"/></Node>
+            <Node Name="Node4" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node3" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="TofIpp" FilterType="TofIppFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="ITOFCollector"><Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/></Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="ITOFAE"><Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/></Node>
+            <Node Name="Node3" Type="Plugin" AlgoName="ITOFStrategy"><Connect PadName="Out0" PeerNodeName="Node4" PeerPadName="In0"/></Node>
+            <Node Name="Node4" Type="Plugin" AlgoName="ITOFDepthCalc"><Connect PadName="Out0" PeerNodeName="Node5" PeerPadName="In0"/></Node>
+            <Node Name="Node5" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node4" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="SubPipeline" AlgoName="NormalTiny"><Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/></Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node1" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin"><Connect PadName="Out0" PeerNodeName="Jpeg" PeerPadName="In0"/></Node>
+            <Node Name="Jpeg" Type="Plugin" AlgoName="JpegEncoderPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Source" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="PostNormalMode" RequestName="normalshot" Base="normalmode">
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="JpegEncoderPlugin" PlaceholderType="Tail"><Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/></Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node1" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin"><Connect PadName="Out0" PeerNodeName="Fork" PeerPadName="In0"/></Node>
+            <Node Name="Fork" Type="Plugin" AlgoName="ForkPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/>
+                                                                  <Connect PadName="Out1" PeerNodeName="Thumbnail" PeerPadName="In0"/></Node>
+            <Node Name="Thumbnail" Type="Plugin" AlgoName="Thumbnail"><Connect PadName="Out0" PeerNodeName="Sink1" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" StreamType="Raw2Yuv"><Connect PadName="In0" PeerNodeName="Fork" PeerPadName="Out0"/></Node>
+            <Node Name="Sink1" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Source" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="HdcCalibMode" RequestName="hdccalib" Base = "normalmode">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="SubPipeline" AlgoName="NormalPreview"><Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/></Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="HdcCalibIpp"><Connect PadName="Out0" PeerNodeName="Node3" PeerPadName="In0"/></Node>
+            <Node Name="Node3" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node2" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="HdcCalibPpAlgo"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node1" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="DcMMIMode" RequestName="dcmmi" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="DCMMIPpAlgo"><Connect PadName="Out0" PeerNodeName="Jpeg" PeerPadName="In0"/></Node>
+            <Node Name="Jpeg" Type="Plugin" AlgoName="JpegEncoderPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Jpeg" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="LaserFovCalibMode" RequestName="laserFOVCali" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="laserfovcalib"><Connect PadName="Out0" PeerNodeName="Jpeg" PeerPadName="In0"/></Node>
+            <Node Name="Jpeg" Type="Plugin" AlgoName="JpegEncoderPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Jpeg" PeerPadName="Out0"/></Node>
+
+        </Pipeline>
+    </Feature>
+    <!--Feature Name="DcSpecCalibMode" RequestName="speccalib" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SpecCalibPpAlgo"><Connect PadName="Out0" PeerNodeName="Node2" PeerPadName="In0"/></Node>
+            <Node Name="Node2" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node1" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature-->
+    <Feature Name="GrayGheckMode" RequestName="graycheck" Base = "normalmode">
+        <Pipeline Name="ForePp" FilterType="FPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Raw2Yuv" PeerPadName="In0"/></Node>
+            <Node Name="Raw2Yuv" Type="Plugin" AlgoName="Raw2YuvPlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="GrayCheckPpAlgo"><Connect PadName="Out0" PeerNodeName="Jpeg" PeerPadName="In0"/></Node>
+            <Node Name="Jpeg" Type="Plugin" AlgoName="JpegEncoderPlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Jpeg" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="VideoBase" RequestName="normalshot">
+        <Pipeline Name="TofIpp" FilterType="TofIppFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node0" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="StatIpp" FilterType="StatFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Tiny" PeerPadName="In0"/></Node>
+            <Node Name="Tiny" Type="SubPipeline" AlgoName="NormalTiny"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Tiny" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PostPp" FilterType="PPFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node0" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+    <Feature Name="NormalVideo" RequestName = "normalshot" Base = "VideoBase">
+        <Pipeline Name="PostIpp" FilterType="PreviewFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node0" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="PreviewVideoIpp" FilterType="PreviewVideoFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" StreamType = "Preview"><Connect PadName="In0" PeerNodeName="Source" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="RecordVideoIpp" FilterType="RecordVideoFilter">
+            <Node Name="Source" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Sink" PeerPadName="In0"/></Node>
+            <Node Name="Sink" Type="Plugin" AlgoName="SinkPlugin" StreamType = "Record"><Connect PadName="In0" PeerNodeName="Source" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="AipIpp" FilterType="AipFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node0" PeerPadName="Out0"/></Node>
+        </Pipeline>
+        <Pipeline Name="WaterMarkFilterIpp" FilterType="WaterMarkFilter">
+            <Node Name="Node0" Type="Plugin" AlgoName="SourcePlugin"><Connect PadName="Out0" PeerNodeName="Node1" PeerPadName="In0"/></Node>
+            <Node Name="Node1" Type="Plugin" AlgoName="SinkPlugin"><Connect PadName="In0" PeerNodeName="Node0" PeerPadName="Out0"/></Node>
+        </Pipeline>
+    </Feature>
+</FeatureConfig>

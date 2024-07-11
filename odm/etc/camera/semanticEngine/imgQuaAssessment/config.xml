@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GB2312"?>
+<HONOR_ALGO_CONFIG>
+    <ModelInfo path="/odm/etc/camera/semanticEngine/imgQuaAssessment/" name="model.serialized.bin">
+        <Manager>
+            <input_data_type Value="UINT8"></input_data_type>
+            <output_data_type Value="UINT8"></output_data_type>
+            <runtime Value="DSP"></runtime>
+        </Manager>
+        <InputInfo>
+            <input_1 Value="input_1">
+                <min>-2.127012</min>
+                <max>2.630778</max>
+                <offset>-114.000000</offset>
+                <scale>0.018658</scale>
+                <dims>4</dims>
+                <shape>5, 224, 224, 3</shape>
+            </input_1>
+        </InputInfo>
+        <OutputInfo>
+            <output_1 Value="_571">
+                <min>-11.963402</min>
+                <max>96.989006</max>
+                <offset>-28.000000</offset>
+                <scale>0.427264</scale>
+                <dims>4</dims>
+                <shape>5, 1, 1, 1</shape>
+            </output_1>
+        </OutputInfo>
+        <Mean>123.675, 116.28, 103.53</Mean>
+        <Std>58.395, 57.12, 57.375</Std>
+        <MaxBit>255</MaxBit>
+    </ModelInfo>
+    <Preprocess>
+        <operate_1>
+            <type OptType="PREPROCESS_OPT_CONVERT_FORMAT" OptCls="PREPROCESS_CONVERT_FORMAT_NV12TORGB"/>
+        </operate_1>
+        <operate_2>
+            <type OptType="PREPROCESS_OPT_RESIZE" OptCls="PREPROCESS_RESIZE_UNCHAR"/>
+        </operate_2>
+    </Preprocess>
+</HONOR_ALGO_CONFIG>

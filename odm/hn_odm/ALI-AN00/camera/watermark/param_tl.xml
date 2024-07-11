@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Config>
+  <watermark_width value="6144"/>
+  <watermark_height value="907"/>
+  <watermark_position value="1"/>
+  <watermark_line value="2"/>
+  <watermark_paddingTop value="130"/>
+  <watermark_paddingBottom value="106"/>
+  <watermark_textSize value="270"/>
+  <param_A value="308"/>
+  <param_B value="250"/>
+  <param_B_small value="159"/>
+  <param_C value="2600"/>
+  <param_C_small value="2600"/>
+  <param_D value="6912"/>
+  <param_E value="100"/>
+  <param_F value="100"/>
+  <yfactor value="0"/>
+</Config>

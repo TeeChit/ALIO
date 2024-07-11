@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+  <!--2023-11-28 14:41:15.0-->
+  <integer needRestore_touchdisablemode="0"/>
+  <!--2023-11-28 14:41:15.0-->
+  <string ringtone_preview_effect="true"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.global.hn_wifi_ap_band="2"/>
+  <!--2023-11-28 14:41:15.0-->
+  <string settings.secure.invoke_hivoice_keypress_type="power"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.system.sws_mode="3"/>
+  <!--2023-11-28 14:41:15.0-->
+  <integer settings.system.touch_disable_mode="1"/>
+</resources>

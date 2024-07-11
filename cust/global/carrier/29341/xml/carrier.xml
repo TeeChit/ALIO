@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="26959c1df0b9b577ed2b48f06988dffc">
+  <dict>
+    <!--2023-01-31 11:52:50.000-->
+    <bool key="delay_detach_switch">true</bool>
+    <!--2023-11-22 10:12:59.000-->
+    <string key="dial_numbers_over_cs">113</string>
+    <!--2023-01-31 11:52:50.000-->
+    <string key="hn_ims_cb_service_class">AO:0;OI:0;OX:0</string>
+    <!--2023-01-31 11:52:50.000-->
+    <int key="max_message_size">3145728</int>
+    <!--2023-01-31 11:52:50.000-->
+    <int key="num_match">8</int>
+    <!--2023-01-31 11:52:50.000-->
+    <int key="sms_to_mms_textthreshold">5</int>
+  </dict>
+</config>

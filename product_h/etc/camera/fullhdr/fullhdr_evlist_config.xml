@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+    <fullhdr_evlist>
+        <Expo ev_capnum = "7"/>
+        <Expo ev_front = "0.01 -12.0 -24.0 -30.0 -30.0 -30.0 0.01"/>
+        <Expo ev_rear = "0.01 7.2 3.0 -12.0 -24.0 -30.0 0.01"/>
+    </fullhdr_evlist>
+    <isSwapRearEVList value = "1"/>
+    <isAddZeroEV value = "1"/>
+</CONFIG_PARA>

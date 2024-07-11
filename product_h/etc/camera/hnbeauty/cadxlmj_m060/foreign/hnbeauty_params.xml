@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="GB2312"?>
+<HnBeautyParams faceAttr="1" paramVersion="60">
+	<Mode name="Preview">
+		<ParamterDefault><!--for all other females not included in below sets, always needed-->
+			<SkinSoften    > 1  2  3  4  5        8  16  22 30 35</SkinSoften    ><!--10 number means Level1~Level10, same as below-->
+			<SkinToneBright> 0  0  0  0  0        0  0  0  0  0</SkinToneBright>
+			<SkinToneStyle > 0  0  0  0  0        0  0  0  0  0</SkinToneStyle >
+			<LipBeauty     > 0  0  0  0  0        0  0  0  0  0</LipBeauty     >
+			<FaceSlender   > 0  0  0  0  0                     </FaceSlender   ><!--5 number means Level1~Level5-->
+		</ParamterDefault>
+	</Mode>
+	<Mode name="Capture">
+		<ParamterDefault><!--for all other females not included in below sets, always needed-->
+			<SkinSoften     > 1  2  3  4  5        8  16  22 30 35</SkinSoften     >
+			<SkinToneBright > 0  0  0  0  0        0  0  0  0  0</SkinToneBright >
+			<SkinToneStyle  > 0  0  0  0  0        0  0  0  0  0</SkinToneStyle  >
+			<LipBeauty      > 0  0  0  0  0        0  0  0  0  0</LipBeauty      >
+			<EyeBrighten    > 0  0  0  0  0        0  0  0  0  0</EyeBrighten    >
+			<TeethWhiten    > 0  0  0  0  0        0  0  0  0  0</TeethWhiten    >
+			<NoseHighlight  > 0  0  0  0  0        0  0  0  0  0</NoseHighlight  >
+			<Depouch        > 0  0  0  0  0        0  0  0  0  0</Depouch        >
+			<Deblemish      > 0  0  0  0  0        0  0  0  0  0</Deblemish      >
+			<RemoveShine    > 0  0  0  0  0        0  0  0  0  0</RemoveShine    >
+			<RemoveShineLcd > 0  0  0  0  0        0  0  0  0  0</RemoveShineLcd >
+			<Blush          > 0  0  0  0  0        0  0  0  0  0</Blush          >
+			<LipGloss       > 0  0  0  0  0        0  0  0  0  0</LipGloss       >
+			<EyebrowSharp   > 0  0  0  0  0        0  0  0  0  0</EyebrowSharp   >
+			<EyebrowSaturate> 0  0  0  0  0        0  0  0  0  0</EyebrowSaturate>
+			<EyebrowDye     > 0  0  0  0  0        0  0  0  0  0</EyebrowDye     >
+			<LyingSilkworm  > 0  0  0  0  0        0  0  0  0  0</LyingSilkworm  >
+			<PupilBrighten  > 0  0  0  0  0        0  0  0  0  0</PupilBrighten  >
+			<FaceSlender    > 0  0  0  0  0                     </FaceSlender    >
+			<EyeEnlargement > 0  0  0  0  0                     </EyeEnlargement >
+		</ParamterDefault>
+	</Mode>
+	<Mode name="BeautyRatio">
+		<GenderRatio gender="male" >
+			<SkinSoften     >0.0 0.0 0.0 0.0 0.1       0.2  0.3  0.5  0.7  0.8</SkinSoften     ><!--10 float means Level1~Level10 ratio for male, same as below-->
+			<SkinToneBright >0.4 0.4 0.4 0.4 0.4       0.5  0.6  0.7  0.8  1.0</SkinToneBright >
+			<SkinToneStyle  >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</SkinToneStyle  >
+			<LipBeauty      >0.08 0.08 0.08 0.08 0.08     0.08 0.08 0.08 0.08 0.08</LipBeauty>
+			<EyeBrighten    >0.7 0.7 0.7 0.7 0.8       0.8  0.8  0.8  0.9  1.0</EyeBrighten    >
+			<TeethWhiten    >0.7 0.7 0.7 0.7 0.7       0.7  0.7  0.8  0.9  1.0</TeethWhiten    >
+			<NoseHighlight  >0.7 0.7 0.7 0.7 0.7       0.7  0.7  0.8  0.9  1.0</NoseHighlight  >
+			<Depouch        >1.0 1.0 1.0 1.0 1.0       1.0  1.0  1.0  1.0  1.0</Depouch        >
+			<Deblemish      >1.0 1.0 1.0 1.0 1.0       1.0  1.0  1.0  1.0  1.0</Deblemish      >
+			<RemoveShine    >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</RemoveShine    >
+			<Blush          >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</Blush          >
+			<LipGloss       >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</LipGloss       >
+			<EyebrowSharp   >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</EyebrowSharp   >
+			<EyebrowSaturate>0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</EyebrowSaturate>
+			<EyebrowDye     >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</EyebrowDye     >
+			<LyingSilkworm  >0.0 0.0 0.0 0.0 0.0       0.0  0.0  0.0  0.0  0.0</LyingSilkworm  >
+			<PupilBrighten  >0.7 0.7 0.7 0.7 0.8       0.8  0.8  0.8  0.9  1.0</PupilBrighten  >
+			<FaceSlender    >0.7 0.7 0.7 0.7 0.7                              </FaceSlender    ><!--5 float means Level1~Level5 ratio for male, same as below-->
+			<EyeEnlargement >0.7 0.7 0.7 0.7 0.7                              </EyeEnlargement >
+		</GenderRatio>
+		<SkinQualityRatio>1.0 1.0 1.0 1.0 1.0</SkinQualityRatio><!--5 float means SkinSoften ratio for SkinQuality 1~5-->
+		<EnvLumaRatio><!--1,luma must be sorted fron small to big; 2,you can add&modify&delete level as you want-->
+			<EnvLumaRatioSet>40  0.6</EnvLumaRatioSet><!--<=luma, SkinSoften ratio to multi-->
+			<EnvLumaRatioSet>60  1.0</EnvLumaRatioSet>
+			<EnvLumaRatioSet>85  1.0</EnvLumaRatioSet>
+			<EnvLumaRatioSet>150 0.7</EnvLumaRatioSet>
+		</EnvLumaRatio>
+	</Mode>
+</HnBeautyParams>

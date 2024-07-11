@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<FeatureConfig>
+    <Feature Name="OfflineAlgo">
+        <Pipeline Name="FaceDetection">
+            <Node Name="FaceDetect"  NextNodeName = "PreProcess"  PreNodeName="FaceDetection" ></Node>
+            <Node Name="PreProcess"  NextNodeName = "FaceAttribute"  PreNodeName="FaceDetect" ></Node>
+            <Node Name="FaceAttribute"  NextNodeName = "FaceDetection"  PreNodeName="PreProcess" ></Node>
+        </Pipeline>
+        <Pipeline Name="HumanDetection">
+            <Node Name="HumanDetect"  NextNodeName = "HumanDetection"  PreNodeName="HumanDetection" ></Node>
+        </Pipeline>
+        <Pipeline Name="ImgQua">
+            <Node Name="ImgQua"  NextNodeName = "ImgQua"  PreNodeName="ImgQua" ></Node>
+        </Pipeline>
+    </Feature>
+</FeatureConfig>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gb2312"?>
+<QcomPpalgoConfig>
+    <!--ArcSoft MFNR hitmode 13, xian not use-->
+    <ARC_MFNR_ENABLE value="0"/>
+    <FULLHDR_ENABLE value="0"/>
+    <STHDR_ENABLE value="1"/>
+    <RAW_HDR_ENABLE value="1"/>
+    <RAW_SN_LITE_ENABLE value="1"/>
+    <QCOM_MFNR_ENABLE value="1"/>
+    <HONOR_MFNR_PORTRAIT_BOKEH_ENABLE value="0"/>
+    <LHDR_DENOISE_ENABLE value="0"/>
+    <!--ArcSoft MFNR yuvmfnr 22-->
+    <ARC_MFNR_MULSCENE_ENABLE value="0"/>
+    <!--Qcom MFNR In frontPortraitBokehMode-->
+    <QCOM_MFNR_PORTRAIT_BOKEH_ENABLE value="1"/>
+</QcomPpalgoConfig>

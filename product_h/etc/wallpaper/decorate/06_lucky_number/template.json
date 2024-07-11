@@ -1,0 +1,242 @@
+﻿{
+    "order": 3,
+    "lockScreenInfo": {
+        "templateId": "06_lucky_number",
+        "templateName": [
+            {
+                "region": "zh-rCN",
+                "name": "幸运数字"
+            },
+            {
+                "region": "en",
+                "name": "Lucky number"
+            }
+        ],
+        "thumbnailSrc": "06_preview_lockscreen.png",
+        "originSrc": "06_origin.png",
+        "decorateType": 1,
+        "frameRectangle": [
+            0.024,
+            0.272,
+            0.976,
+            0.91
+        ],
+        "layers": [
+            {
+                "id": "layer_origin",
+                "type": 0,
+                "src": "06_origin.png"
+            },
+            {
+                "id": "layer_res1",
+                "type": 2,
+                "src": "06_res2_1.png",
+                "colorPolicy": 3,
+                "color": "#FFF2D4B6",
+                "gradientColor": "#FFF2B6B6"
+            },
+            {
+                "id": "layer_timer",
+                "type": 3,
+                "layout": 0,
+                "font": "HonorDigits_ItalicVF.ttf",
+                "colorPolicy": 4,
+                "color": "#FFBF6030"
+            },
+            {
+                "id": "layer_res2",
+                "type": 2,
+                "src": "06_res2_2.png",
+                "colorPolicy": 3,
+                "color": "#FFF2D4B6",
+                "gradientColor": "#FFF2B6B6"
+            }
+        ],
+        "styles": [
+            "人物",
+            "宠物",
+            "植物",
+            "艺术"
+        ],
+        "decorateReses": [
+            {
+                "id": "res1",
+                "src": "06_res0.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res0_1.png",
+                    "layer_res2": "06_res0_2.png"
+                }
+            },
+            {
+                "id": "res2",
+                "src": "06_res1.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res1_1.png",
+                    "layer_res2": "06_res1_2.png"
+                }
+            },
+            {
+                "id": "res3",
+                "src": "06_res2.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res2_1.png",
+                    "layer_res2": "06_res2_2.png"
+                }
+            },
+            {
+                "id": "res4",
+                "src": "06_res3.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res3_1.png",
+                    "layer_res2": "06_res3_2.png"
+                }
+            },
+            {
+                "id": "res5",
+                "src": "06_res4.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res4_1.png",
+                    "layer_res2": "06_res4_2.png"
+                }
+            },
+            {
+                "id": "res6",
+                "src": "06_res5.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res5_1.png",
+                    "layer_res2": "06_res5_2.png"
+                }
+            },
+            {
+                "id": "res7",
+                "src": "06_res6.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res6_1.png",
+                    "layer_res2": "06_res6_2.png"
+                }
+            },
+            {
+                "id": "res8",
+                "src": "06_res7.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res7_1.png",
+                    "layer_res2": "06_res7_2.png"
+                }
+            },
+            {
+                "id": "res9",
+                "src": "06_res8.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res8_1.png",
+                    "layer_res2": "06_res8_2.png"
+                }
+            },
+            {
+                "id": "res10",
+                "src": "06_res9.png",
+                "resLayerMappings": {
+                    "layer_res1": "06_res9_1.png",
+                    "layer_res2": "06_res9_2.png"
+                }
+            }
+        ],
+        "decorateColors": [
+            {
+                "mainColor": "#FFF2D4B6",
+                "gradientColor": "#FFF2B6B6",
+                "timerColor": "#FFBF6030"
+            },
+            {
+                "mainColor": "#FFF2C8B6",
+                "gradientColor": "#FFF2B6C7",
+                "timerColor": "#FFB3443E"
+            },
+            {
+                "mainColor": "#FFF2E3B6",
+                "gradientColor": "#FFF2CFB6",
+                "timerColor": "#FFCC751F"
+            },
+            {
+                "mainColor": "#FFF2F2B6",
+                "gradientColor": "#FFF2DEB6",
+                "timerColor": "#FFBF891D"
+            },
+            {
+                "mainColor": "#FFD4F2AA",
+                "gradientColor": "#FFF2F2B6",
+                "timerColor": "#FF648013"
+            },
+            {
+                "mainColor": "#FFBBE6B8",
+                "gradientColor": "#FFD7E6AC",
+                "timerColor": "#FF408013"
+            },
+            {
+                "mainColor": "#FFB8E6B8",
+                "gradientColor": "#FFB8E6D2",
+                "timerColor": "#FF19803C"
+            },
+            {
+                "mainColor": "#FFB8E6CB",
+                "gradientColor": "#FFB8E2E6",
+                "timerColor": "#FF198066"
+            },
+            {
+                "mainColor": "#FFB8E6E2",
+                "gradientColor": "#FFB6CFF2",
+                "timerColor": "#FF267C99"
+            },
+            {
+                "mainColor": "#FFC2E6F2",
+                "gradientColor": "#FFC2C6F2",
+                "timerColor": "#FF3E6FB3"
+            },
+            {
+                "mainColor": "#FFC2DAF2",
+                "gradientColor": "#FFCAC2F2",
+                "timerColor": "#FF4D60BF"
+            },
+            {
+                "mainColor": "#FFC2CEF2",
+                "gradientColor": "#FFD6C2F2",
+                "timerColor": "#FF564DBF"
+            },
+            {
+                "mainColor": "#FFC2C2F2",
+                "gradientColor": "#FFE2C2F2",
+                "timerColor": "#FF653EB3"
+            },
+            {
+                "mainColor": "#FFD2C2F2",
+                "gradientColor": "#FFEEC2F2",
+                "timerColor": "#FF823EB3"
+            },
+            {
+                "mainColor": "#FFE2C2F2",
+                "gradientColor": "#FFF2C2DA",
+                "timerColor": "#FFA64BA6"
+            },
+            {
+                "mainColor": "#FFF2C2E8",
+                "gradientColor": "#FFF2C2C7",
+                "timerColor": "#FFA64B74"
+            },
+            {
+                "mainColor": "#FFD9CEAD",
+                "gradientColor": "#FFB3A374",
+                "timerColor": "#FF73623F"
+            },
+            {
+                "mainColor": "#FF2E2F33",
+                "gradientColor": "#FFADAEB3",
+                "timerColor": "#FFF0F0F2"
+            }
+        ]
+    },
+    "desktopInfo": {
+        "templateId": "06_lucky_number",
+        "groupImageRes": {
+            "src": "06_origin.png"
+        }
+    }
+}

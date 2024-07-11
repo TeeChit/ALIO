@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<favorites xmlns:launcher="http://schemas.android.com/apk/res/com.hihonor.android.launcher">
+
+    <!--桌面小工具-->
+    <appwidget
+        launcher:packageName="com.hihonor.android.totemweather"
+        launcher:className="com.hihonor.android.totemweather.widget.aodwidget.AodWidgetWeatherProvider"
+        launcher:op="delete" />
+    <appwidget
+        launcher:packageName="com.hihonor.android.totemweather"
+        launcher:className="com.hihonor.android.totemweather.widget.mulanwidget.MulanWidgetWeatherProvider"
+        launcher:container="-100"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="4"
+        launcher:spanY="2" />
+    <!--删除Games文件夹-->
+    <folder
+        launcher:title="@string/folder_games"
+        launcher:op="delete" />
+    <!--热门推荐-->
+    <folder
+       launcher:title="@string/cust_folder_name_popular_apps"
+       launcher:appid="100"
+       launcher:container="-100"
+       launcher:screen="1"
+       launcher:x="1"
+       launcher:y="1"
+       launcher:op="insertinto"/>
+</favorites>

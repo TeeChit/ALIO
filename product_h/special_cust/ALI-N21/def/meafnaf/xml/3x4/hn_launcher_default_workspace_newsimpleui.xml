@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<favorites xmlns:launcher="http://schemas.android.com/apk/res/com.hihonor.android.launcher">
+    <!-- 桌面widget -->
+    <appwidget
+        launcher:packageName="com.hihonor.android.totemweather"
+        launcher:className="com.hihonor.android.totemweather.widget.aodwidget.AodWidgetWeatherProvider"
+        launcher:op="delete" />
+    <appwidget
+        launcher:packageName="com.hihonor.android.totemweather"
+        launcher:className="com.hihonor.android.totemweather.widget.mulanwidget.MulanWidgetWeatherProvider"
+        launcher:container="-100"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="3"
+        launcher:spanY="2"/>
+</favorites>

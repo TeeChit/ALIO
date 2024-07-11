@@ -1,0 +1,48 @@
+<dr is_using="1">
+    <ae_dynamic_range_calib>
+        <underexpo_factor_zone>0,  20, 40,  60,  90,  140, 210, 300, 400, 512</underexpo_factor_zone>
+        <underexpo_ratio_zone_outdoor>70, 80, 90, 100, 110, 120, 130, 140, 150, 160</underexpo_ratio_zone_outdoor>
+        <underexpo_ratio_zone_indoor>60, 60, 60, 60, 60, 120, 130, 140, 150, 160</underexpo_ratio_zone_indoor>
+        <lv_zone>-50, -20,   10,  40,  60,  80,  100, 120, 140, 160</lv_zone>
+        <max_underexpo_ratio>150, 150, 150, 180, 300, 400, 400, 400, 400, 400</max_underexpo_ratio>
+        <underexpo_ratio_weight_zone>30,  40,  40,  40,  50,  80,  95,  100, 100, 100</underexpo_ratio_weight_zone>
+        <overexpo_area_ratio_zone>0,   10,  20,  30,  40,  50,  60,  70,  85, 100</overexpo_area_ratio_zone>
+        <overexpo_dr_ratio_zone>140, 160, 170, 180, 190, 200, 210, 220, 230, 240</overexpo_dr_ratio_zone>
+        <face_overexpo_dr_ratio_zone>120, 140, 150, 160, 170, 180, 190, 200, 210, 220</face_overexpo_dr_ratio_zone>
+    </ae_dynamic_range_calib>
+    <ae_raw_hdr_scene_detect_calib>
+        <lv_zone>-50,  -20,  0,  20,  40,  60,  70,  80,  90,  100, 110, 120, 130, 140</lv_zone>
+        <bright_thd_zone>200, 200, 210, 210, 210, 210, 220, 240, 260, 260, 280, 280, 280, 280</bright_thd_zone>
+        <face_lv_zone>-50,  -20,  0,  20,  40,  60,  70,  80,  90,  100, 110, 120, 130, 140</face_lv_zone>
+        <face_bright_thd_zone>180, 200, 200, 200, 200, 215, 230, 245, 260, 280, 280, 280, 280, 280</face_bright_thd_zone>
+        <bright_thd_tolerance>15</bright_thd_tolerance>
+        <raw_hdr_thd>900</raw_hdr_thd>
+        <face_luma_thd>100</face_luma_thd>
+        <face_dr_gain_value>0</face_dr_gain_value>
+        <face_ratio_zone>0.001, 0.01</face_ratio_zone>
+    </ae_raw_hdr_scene_detect_calib>
+    <ae_region_weight_table_index>
+        200, 120,
+        119, 100,
+        99,  60,
+        59,  40,
+        39,  20,
+        19,   0
+    </ae_region_weight_table_index>
+    <ae_region_weight>
+        7,  8,  9,  9, 10, 10, 10, 10, 10, 11, 12, 13,
+        7,  8,  9,  9, 10, 10, 10, 10, 10, 11, 12, 13,
+        7,  7,  7,  7,  8,  8,  9, 10, 10, 11, 12, 13,
+        7,  8,  8,  8,  8,  8,  9, 10, 10, 11, 12, 13,
+        7,  8,  9,  9,  9,  9, 10, 10, 10, 11, 12, 13,
+        7,  8,  9,  9,  9,  9, 10, 10, 10, 11, 12, 13
+    </ae_region_weight>
+    <illuminance_calibration>
+        <otp_iso_expo>3525</otp_iso_expo>
+        <otp_iso_comp>1000</otp_iso_comp>
+        <otp_calib_target>46</otp_calib_target>
+        <otp_sat_gain>1067</otp_sat_gain>
+    </illuminance_calibration>
+    <otp_iso_golden>0x253</otp_iso_golden>
+    <aperture>220</aperture>
+</dr>

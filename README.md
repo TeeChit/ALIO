@@ -1,0 +1,20 @@
+## magic-user 14 UP1A.231005.007 eng.root.20240618.112512 release-keys
+- Manufacturer: qualcomm
+- Platform: parrot
+- Codename: parrot
+- Brand: qti
+- Flavor: magic-user
+- Release Version: 14
+- Kernel Version: 5.10.198
+- Id: UP1A.231005.007
+- Incremental: eng.root.20240531.221642
+- Tags: release-keys
+- CPU Abilist: arm64-v8a,armeabi-v7a,armeabi
+- A/B Device: true
+- Treble Device: true
+- Locale: en-US
+- Screen Density: undefined
+- Fingerprint: qti/parrot/parrot:12/SKQ1.220119.001/root05312214:user/release-keys
+- OTA version: 
+- Branch: magic-user-14-UP1A.231005.007-eng.root.20240618.112512-release-keys
+- Repo: qti/parrot

@@ -1,0 +1,210 @@
+﻿{
+    "order": 4,
+    "lockScreenInfo": {
+        "templateId": "07_fashion_style",
+        "templateName": [
+            {
+                "region": "zh-rCN",
+                "name": "时尚格调"
+            },
+            {
+                "region": "en",
+                "name": "Stylish"
+            }
+        ],
+        "thumbnailSrc": "07_preview_lockscreen.png",
+        "originSrc": "07_origin.png",
+        "decorateType": 1,
+        "frameRectangle": [
+            0.08,
+            0.3,
+            0.92,
+            0.87
+        ],
+        "layers": [
+            {
+                "id": "layer_origin",
+                "type": 0,
+                "src": "07_origin.png"
+            },
+            {
+                "id": "layer_res1",
+                "type": 2,
+                "src": "07_res1_1.png",
+                "colorPolicy": 1,
+                "color": "#FFB39D92"
+            },
+            {
+                "id": "layer_res2",
+                "type": 2,
+                "src": "07_res1_2.png"
+            },
+            {
+                "id": "layer_res3",
+                "type": 2,
+                "src": "07_res1_3.png",
+                "colorPolicy": 2,
+                "color": "#FF261C17"
+            },
+            {
+                "id": "layer_timer",
+                "type": 3,
+                "layout": 0,
+                "font": "HonorDigits_HY_SerifVF.ttf",
+                "colorPolicy": 4,
+                "color": "#FF594136"
+            }
+        ],
+        "styles": [
+            "人物",
+            "宠物",
+            "艺术",
+            "风景"
+        ],
+        "decorateReses": [
+            {
+                "id": "res1",
+                "src": "07_res1.png",
+                "resLayerMappings": {
+                    "layer_res1": "07_res1_1.png",
+                    "layer_res2": "07_res1_2.png",
+                    "layer_res3": "07_res1_3.png"
+                },
+                "frameRectangle": [
+                    0.23,
+                    0.3,
+                    1,
+                    0.87
+                ]
+            },
+            {
+                "id": "res2",
+                "src": "07_res2.png",
+                "resLayerMappings": {
+                    "layer_res1": "07_res2_1.png",
+                    "layer_res2": "07_res2_2.png",
+                    "layer_res3": "07_res2_3.png"
+                },
+                "frameRectangle": [
+                    0,
+                    0.3,
+                    0.77,
+                    0.87
+                ]
+            },
+            {
+                "id": "res3",
+                "src": "07_res3.png",
+                "resLayerMappings": {
+                    "layer_res1": "07_res3_1.png",
+                    "layer_res2": "07_res3_2.png",
+                    "layer_res3": "07_res3_3.png"
+                },
+                "frameRectangle": [
+                    0,
+                    0.3,
+                    0.77,
+                    0.87
+                ]
+            }
+        ],
+        "decorateColors": [
+            {
+                "mainColor": "#FFB39D92",
+                "subColor": "#FF261C17",
+                "timerColor": "#FF594136"
+            },
+            {
+                "mainColor": "#FFB39492",
+                "subColor": "#FF261817",
+                "timerColor": "#FF593736"
+            },
+            {
+                "mainColor": "#FFB3A392",
+                "subColor": "#FF261F17",
+                "timerColor": "#FF4D3D2E"
+            },
+            {
+                "mainColor": "#FFBFB999",
+                "subColor": "#FF262417",
+                "timerColor": "#FF595336"
+            },
+            {
+                "mainColor": "#FFAAB392",
+                "subColor": "#FF222617",
+                "timerColor": "#FF454D2E"
+            },
+            {
+                "mainColor": "#FFA0B392",
+                "subColor": "#FF1D2617",
+                "timerColor": "#FF3B4D2E"
+            },
+            {
+                "mainColor": "#FF92B39D",
+                "subColor": "#FF17261C",
+                "timerColor": "#FF365941"
+            },
+            {
+                "mainColor": "#FF92B3AB",
+                "subColor": "#FF172622",
+                "timerColor": "#FF365950"
+            },
+            {
+                "mainColor": "#FF92ABB3",
+                "subColor": "#FF172226",
+                "timerColor": "#FF365059"
+            },
+            {
+                "mainColor": "#FF96A2B3",
+                "subColor": "#FF171D26",
+                "timerColor": "#FF364459"
+            },
+            {
+                "mainColor": "#FF969BB3",
+                "subColor": "#FF171A26",
+                "timerColor": "#FF363B59"
+            },
+            {
+                "mainColor": "#FF9996B3",
+                "subColor": "#FF181726",
+                "timerColor": "#FF393659"
+            },
+            {
+                "mainColor": "#FFA096B3",
+                "subColor": "#FF1C1726",
+                "timerColor": "#FF413659"
+            },
+            {
+                "mainColor": "#FFA796B3",
+                "subColor": "#FF201726",
+                "timerColor": "#FF4A3659"
+            },
+            {
+                "mainColor": "#FFB396B3",
+                "subColor": "#FF261726",
+                "timerColor": "#FF593659"
+            },
+            {
+                "mainColor": "#FFB396A3",
+                "subColor": "#FF26171E",
+                "timerColor": "#FF593646"
+            },
+            {
+                "mainColor": "#FFB3AB92",
+                "subColor": "#FF262217",
+                "timerColor": "#FF595036"
+            },
+            {
+                "mainColor": "#FFAAABB3",
+                "subColor": "#FF171A26",
+                "timerColor": "#FF47484D"
+            }
+        ]
+    },
+    "desktopInfo": {
+        "templateId": "07_fashion_style",
+        "groupImageRes": {
+            "src": "07_origin.png"
+        }
+    }
+}

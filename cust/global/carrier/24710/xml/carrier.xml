@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="4237b46c0c6b7d5276de5b2513f9175a">
+  <dict>
+    <!--2023-01-31 11:48:30.000-->
+    <int key="max_message_size">307200</int>
+    <!--2023-01-31 11:48:30.000-->
+    <int key="num_match">7</int>
+    <!--2023-01-31 11:48:30.000-->
+    <int key="plmn_esm_flag">0</int>
+    <!--2023-01-31 11:48:30.000-->
+    <bool key="single_pdp_enabled">true</bool>
+    <!--2023-01-31 11:48:30.000-->
+    <int key="sms_to_mms_textthreshold">5</int>
+  </dict>
+</config>

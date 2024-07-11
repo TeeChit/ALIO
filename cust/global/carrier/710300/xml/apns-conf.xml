@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apns version="8">
+  <apn carrier="Tigo Internet" mcc="710" mnc="300" apn="internet.tigo.ni" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsc="" type="default" protocol="IPV4V6" roaming_protocol="IPV4V6"/>
+</apns>

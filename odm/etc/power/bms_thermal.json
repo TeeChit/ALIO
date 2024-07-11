@@ -1,0 +1,231 @@
+{
+    "version": "1.0.0",
+    "delay" : 10,
+    "schedule_time" : 10,
+    "sensor" : {
+        "name": "charger",
+        "accuracy": 1
+    },
+    "temp_level" : {
+        "comments" : "low_threshold, high_threshold, hysteresis_value, unit is millicentigrade",
+        "table" : [
+            [38000, 39000, 5000],
+            [39000, 41000, 1000],
+            [41000, 42000, 2000],
+            [42000, 45000, 1000],
+            [45000, 49000, 1000],
+            [49000, 99000, 3000]
+        ]
+    },
+    "current_limit" : {
+        "comments" : "scale1, scale2, scale3, scale4, scale5, scale6",
+        "wcurrent_5v" : {
+            "channel" : 0,
+            "prefix" : "dcp 0#",
+            "limit" : [2000, 1600, 1200, 1000, 900, 500]
+        },
+        "wcurrent_9v" : {
+            "channel" : 0,
+            "prefix" : "dcp 1#",
+            "limit": [1600, 1400, 1000, 700, 500, 200]
+        },
+        "direct_charger" : {
+            "channel" : 1,
+            "prefix" : "lvc ",
+            "limit": [11000, 9500, 6400, 6000, 5000, 4000]
+        },
+        "direct_charger_sc" : {
+            "channel" : 0,
+            "prefix" : "sc 0#",
+            "limit": [11000, 9500, 6400, 6000, 5000, 4000]
+        },
+        "direct_charger_duo_sc" : {
+            "channel" : 0,
+            "prefix" : "sc 1#",
+            "limit": [11000, 9500, 6400, 6000, 5000, 4000]
+        },
+	"wlcurrent_5v" : {
+            "channel" : 0,
+            "prefix" : "dcp 2#",
+            "limit" : [2000, 1600, 1200, 1000, 900, 500]
+        },
+	"wlcurrent_9v" : {
+            "channel" : 0,
+            "prefix" : "dcp 3#",
+            "limit" : [1600, 1400, 1000, 700, 500, 200]
+        },
+         "wlcurrent_sc" : {
+            "channel" : 0,
+            "prefix" : "wl_sc 0#",
+            "limit" : [0, 1000, 800, 700, 700, 700]
+        }
+    },
+    "su_version": "1.0.0",
+    "su_delay" : 1,
+    "su_current_limit" : {
+        "comments" : "hota, normal",
+        "wcurrent_5v" : {
+            "channel" : 0,
+            "prefix" : "dcp 0#",
+            "limit" : [900, 1300]
+        },
+        "wcurrent_9v" : {
+            "channel" : 0,
+            "prefix" : "dcp 1#",
+            "limit": [700, 1300]
+        },
+        "direct_charger" : {
+            "channel" : 1,
+            "prefix" : "lvc ",
+            "limit": [1500, 1500]
+        },
+        "direct_charger_sc" : {
+            "channel" : 0,
+            "prefix" : "sc 0#",
+            "limit": [1500, 1500]
+        },
+	"direct_charger_duo_sc" : {
+            "channel" : 0,
+            "prefix" : "sc 1#",
+            "limit": [1500, 1500]
+        }
+    },
+	"thermal_adsp_version": "1.0.0",
+	"thermal_adsp_delay" : 1,
+	"thermal_adsp_config": [
+		{
+			"index_mapping": 0,
+			"channel_config": [
+				{
+					"thermal_channel": 0,
+					"state_config": [
+						{
+							"comments": "fold",
+							"thermal_state": 0,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						},
+						{
+							"comments": "unfold",
+							"thermal_state": 1,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						},
+						{
+							"comments": "fold_turbo",
+							"thermal_state": 2,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						}
+					]
+				},
+				{
+					"thermal_channel": 1,
+					"state_config": [
+						{
+							"comments": "fold",
+							"thermal_state": 0,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						},
+						{
+							"comments": "unfold",
+							"thermal_state": 1,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						},
+						{
+							"comments": "fold_turbo",
+							"thermal_state": 2,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						}
+					]
+				},
+				{
+					"thermal_channel": 2,
+					"state_config": [
+						{
+							"comments": "fold",
+							"thermal_state": 0,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[33,       38,        2000, 0,        1600, 0,       0, 0,       6400, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[38,       39,        2000, 0,        1400, 0,       0, 0,       5500, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[39,       40,        2000, 0,        1400, 0,       0, 0,       3700, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[40,       42,        2000, 0,        1000, 0,       0, 0,       3000, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[42,       44,        2000, 0,        1000, 0,       0, 0,       2200, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[44,       46,        2000, 0,        700, 0,        0, 0,       1800, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[46,       48,        1500, 0,        500, 0,        0, 0,       1500, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[48,       50,        1000, 0,        200, 0,        0, 0,       1000, 0,  0, 0,       0, 0,       0, 0,         0, 0]
+								]
+							}
+						},
+						{
+							"comments": "unfold",
+							"thermal_state": 1,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+								]
+							}
+						},
+						{
+							"comments": "fold_turbo",
+							"thermal_state": 2,
+							"temp_config": {
+								"comments":
+									"low_tmep, high_temp, 5v_iin, 5v_chg, 9v_iin, 9v_ch, w_5v, w_9v, dc0, dc1, hdc0, hdc1, wdc0, wdc1, whdc0, whdc1, wl_ctrl volt",
+								"table": [
+									[33,       36,        2000, 0,        1600, 0,       0, 0,       6400, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[36,       37,        1600, 0,        1400, 0,       0, 0,       5500, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[37,       41,        1200, 0,        1000, 0,       0, 0,       4600, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[41,       42,        1200, 0,        1000, 0,       0, 0,       4000, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[42,       43,        1200, 0,        1000, 0,       0, 0,       3000, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[43,       44,        1000, 0,        700, 0,        0, 0,       2200, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[44,       46,        900, 0,         500, 0,        0, 0,       1800, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[46,       48,        900, 0,         500, 0,        0, 0,       1500, 0,  0, 0,       0, 0,       0, 0,         0, 0],
+									[48,       50,        500, 0,         200, 0,        0, 0,       1000, 0,  0, 0,       0, 0,       0, 0,         0, 0]
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

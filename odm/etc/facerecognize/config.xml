@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+    <platformType value = "snpe"/>
+    <bigCoreList value = "4 5 6 7"/>
+    <roiRect value = "126 516 46 434"/>
+    <stableFrameCount value = "10"/>
+    <fovLimit value = "160 320"/>
+    <unlockThreshold_cn value = "0.92"/>
+    <unlockThreshold_aboard value = "0.942"/>
+    <livenessThreshold value = "0.9"/>
+    <eysStateThreshold value = "7.0"/>
+    <logLevel value = "2"/>
+    <defaultFaceRect value = "0 400 80 400"/>
+    <isChildMode value = "0"/>
+    <maskUnlockSupported value = "1"/>
+    <maskUnlockUX value = "1" />
+</CONFIG_PARA>

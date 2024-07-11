@@ -1,0 +1,84 @@
+# 2023-11-28 14:41:15.0
+msc.booster.evs_close_vc=def/eea;demo/normal
+# 2023-11-28 14:41:15.0
+msc.config.emcom_mpux=0
+# 2023-11-28 14:41:15.0
+msc.config.multiwindow_optimization=true
+# 2023-11-28 14:41:15.0
+msc.config.navi_extend=false
+# 2023-11-28 14:41:15.0
+msc.config.support_geofence=true
+# 2023-11-28 14:41:15.0
+msc.config.vowifi_mmsut=true
+# 2023-11-28 14:41:15.0
+msc.disable_multiwindow=false
+# 2023-11-28 14:41:15.0
+msc.fingerprint.powerfingerdestorydelay=1000
+# 2023-11-28 14:41:15.0
+msc.gallery.ai_editing_enable=true
+# 2023-11-28 14:41:15.0
+msc.input.consumeModeSelect=1
+# 2023-11-28 14:41:15.0
+msc.network.emcom_qoe_strategy=0
+# 2023-11-28 14:41:15.0
+msc.notification.ongoing.deleted=0
+# 2023-11-28 14:41:15.0
+msc.perf.fas_enable=true
+# 2023-11-28 14:41:15.0
+msc.pms.recovery_preset_app=true
+# 2023-11-28 14:41:15.0
+msc.settings.support_5g_mode=true
+# 2023-12-25 15:04:29.0
+msc.super_device.capability_level=1,2,3,16
+# 2023-11-28 14:41:15.0
+mscw.enableEOS=1
+# 2023-11-28 14:41:15.0
+ro.blight.exempt_app_type=-1,1,5,8,16,24
+# 2023-11-28 14:41:15.0
+ro.config.blight_power_curve=50,1;100,0.8;300,0.8;350,0.9;380,1
+# 2023-11-28 14:41:15.0
+ro.config.cdma_quiet=true
+# 2023-11-28 14:41:15.0
+ro.config.empty.package=true
+# 2023-11-28 14:41:15.0
+ro.config.gallery_story_disable=true
+# 2023-11-28 14:41:15.0
+ro.config.gameassist=1
+# 2023-11-28 14:41:15.0
+ro.config.gameassist.anti-touch=1
+# 2023-11-28 14:41:15.0
+ro.config.launch_gesture_navi_page=true
+# 2023-11-28 14:41:15.0
+ro.config.quicknote=false
+# 2023-11-28 14:41:15.0
+ro.config.touch.head_down=false
+# 2023-11-28 14:41:15.0
+ro.config.weakauth_face_limit=true
+# 2023-11-28 14:41:15.0
+ro.feature.notepad.location_reminder=false
+# 2023-11-28 14:41:15.0
+ro.feature.notepad.shortcut_lite=false
+# 2023-11-28 14:41:15.0
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+# 2023-11-28 14:41:15.0
+ro.gsensor.calibrate=true
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_fusion_ver=0
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_map_matching=0
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_nw_pos_db=NA
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_pdrsupport=false
+# 2023-11-28 14:41:15.0
+ro.powersavemode.backlight_ratio=80
+# 2023-11-28 14:41:15.0
+ro.product.proximityenable=false
+# 2023-11-28 14:41:15.0
+ro.qti.sensors.gravity=true
+# 2023-11-28 14:41:15.0
+ro.telephony.default_network=9
+# 2023-11-28 14:41:15.0
+ro.vendor.config.vowifi=true
+# 2023-11-28 14:41:15.0
+telephony.lteOnCdmaDevice=0

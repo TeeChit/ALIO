@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <whiteapp
+        name="WeChat"
+        package="com.tencent.mm" />
+    <whiteapp
+        name="WhatsApp Messenger"
+        package="com.whatsapp" />
+    <whiteapp
+        name="Facebook Messenger"
+        package="com.facebook.orca" />
+    <whiteapp
+        name="Telegram"
+        package="org.telegram.messenger" />
+    <whiteapp
+        name="Snapchat"
+        package="com.snapchat.android" />
+    <whiteapp
+        name="Viber"
+        package="com.viber.voip" />
+    <whiteapp
+        name="WhatsApp Business"
+        package="com.whatsapp.w4b" />
+    <whiteapp
+        name="zoom"
+        package="us.zoom.videomeetings" />
+    <whiteapp
+        name="google chat"
+        package="com.google.android.apps.dynamite" />
+</resources>

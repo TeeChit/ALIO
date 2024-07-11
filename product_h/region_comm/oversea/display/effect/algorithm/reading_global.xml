@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReadingConfig>
+	<feature name="READING_ALGORITHM">
+		<mode name="PARAMETERS">
+			<param name="AmbientLuxThreshold">0</param>
+			<param name="AmbientLuxThreshold">10</param>
+			<param name="AmbientLuxThreshold">20</param>
+			<param name="AmbientLuxThreshold">50</param>
+			<param name="AmbientLuxThreshold">300</param>
+			<param name="AmbientLuxThreshold">400</param>
+			<param name="AmbientLuxThreshold">600</param>
+			<param name="AmbientLuxThreshold">1000</param>
+			<param name="AmbientLuxThreshold">1500</param>
+			<param name="AmbientLuxThreshold">5000</param>
+			<param name="AmbientLuxThreshold">40000</param>
+
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.180,0.370,0.095</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.181,0.371,0.095</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.182,0.372,0.096</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.183,0.373,0.097</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.184,0.374,0.098</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.185,0.375,0.099</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.186,0.376,0.100</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.187,0.377,0.101</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.188,0.378,0.102</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.189,0.379,0.103</param>
+			<param name="XccLut">0,0.200,0.420,0.100,0,0.190,0.410,0.098,0,0.190,0.380,0.104</param>
+		</mode>
+	</feature>
+</ReadingConfig>

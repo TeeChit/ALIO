@@ -1,0 +1,27 @@
+# 2023-11-28 14:41:15.0
+msc.config.switchdata_4G=false
+# 2023-11-28 14:41:15.0
+msc.pp.cmcc_cu_dsdx_enable=false
+# 2023-11-28 14:41:15.0
+msc.pp.qcril_cross_mapping=false
+# 2023-11-28 14:41:15.0
+persist.radio.multisim.config=ss
+# 2023-11-28 14:41:15.0
+persist.sys.dualcards=false
+# 2023-11-28 14:41:15.0
+ro.build.id=HONORALI-N03
+# 2023-11-28 14:41:15.0
+ro.config.product_version_pre=ALI-N03
+# 2023-11-28 14:41:15.0
+ro.config.safety_certification=ic,ce
+# 2023-11-28 14:41:15.0
+ro.dual.sim.phone=false
+# 2023-11-28 14:41:15.0
+ro.gsensor.calibrate=true
+# 2023-11-28 14:41:15.0
+ro.product.model=ALI-NX3
+# 2023-11-28 14:41:15.0
+ro.product.name=ALI-NX3
+# 2023-11-28 14:41:15.0
+ro.qti.sensors.gravity=true
+ro.build.description=ALI-N03-user 8.0.0 HONORALI-N03 164-OVS-LGRP2 release-keys

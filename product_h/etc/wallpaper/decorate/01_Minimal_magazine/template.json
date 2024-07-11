@@ -1,0 +1,192 @@
+﻿{
+    "order": 1,
+    "lockScreenInfo": {
+        "templateId": "01_Minimal_magazine",
+        "templateName": [
+            {
+                "region": "zh-rCN",
+                "name": "极简杂志"
+            },
+            {
+                "region": "en",
+                "name": "Minimal magazine"
+            }
+        ],
+        "thumbnailSrc": "01_preview_lockscreen.png",
+        "originSrc": "01_origin.png",
+        "decorateType": 1,
+        "frameRectangle": [
+            0.1,
+            0.273,
+            0.9,
+            0.91
+        ],
+        "layers": [
+            {
+                "id": "layer_origin",
+                "type": 0,
+                "src": "01_origin.png"
+            },
+            {
+                "id": "layer_res1",
+                "type": 2,
+                "src": "01_res1_1.png",
+                "colorPolicy": 2,
+                "color": "#FFEDF2E9"
+            },
+            {
+                "id": "layer_res2",
+                "type": 2,
+                "src": "01_res1_2.png",
+                "colorPolicy": 1,
+                "color": "#FF4E7334"
+            },
+            {
+                "id": "layer_timer",
+                "type": 3,
+                "layout": 0,
+                "font": "HonorDigits_HY_SerifVF.ttf",
+                "colorPolicy": 4,
+                "color": "#FF4E7334"
+            }
+        ],
+        "styles": [
+            "人物",
+            "宠物",
+            "艺术",
+            "风景"
+        ],
+        "decorateReses": [
+            {
+                "id": "res1",
+                "src": "01_res1.png",
+                "resLayerMappings": {
+                    "layer_res1": "01_res1_1.png",
+                    "layer_res2": "01_res1_2.png"
+                }
+            },
+            {
+                "id": "res2",
+                "src": "01_res2.png",
+                "resLayerMappings": {
+                    "layer_res1": "01_res2_1.png",
+                    "layer_res2": "01_res2_2.png"
+                }
+            },
+            {
+                "id": "res3",
+                "src": "01_res3.png",
+                "resLayerMappings": {
+                    "layer_res1": "01_res3_1.png",
+                    "layer_res2": "01_res3_2.png"
+                }
+            },
+            {
+                "id": "res4",
+                "src": "01_res4.png",
+                "resLayerMappings": {
+                    "layer_res1": "01_res4_1.png",
+                    "layer_res2": "01_res4_2.png"
+                }
+            }
+        ],
+        "decorateColors": [
+            {
+                "mainColor": "#FF4E7334",
+                "subColor": "#FFEDF2E9",
+                "timerColor": "#FF4E7334"
+            },
+            {
+                "mainColor": "#FFA63F3A",
+                "subColor": "#FFF2E9E9",
+                "timerColor": "#FFA63F3A"
+            },
+            {
+                "mainColor": "#FFB3592D",
+                "subColor": "#FFF2ECE9",
+                "timerColor": "#FFB3592D"
+            },
+            {
+                "mainColor": "#FFBF7830",
+                "subColor": "#FFF2EDE9",
+                "timerColor": "#FFBF7830"
+            },
+            {
+                "mainColor": "#FFBFA313",
+                "subColor": "#FFF2F1E9",
+                "timerColor": "#FFBFA313"
+            },
+            {
+                "mainColor": "#FF637334",
+                "subColor": "#FFF0F2E9",
+                "timerColor": "#FF637334"
+            },
+            {
+                "mainColor": "#FF347349",
+                "subColor": "#FFE9F2EC",
+                "timerColor": "#FF347349"
+            },
+            {
+                "mainColor": "#FF347363",
+                "subColor": "#FFE9F2F0",
+                "timerColor": "#FF347363"
+            },
+            {
+                "mainColor": "#FF266980",
+                "subColor": "#FFE9F0F2",
+                "timerColor": "#FF266980"
+            },
+            {
+                "mainColor": "#FF365F99",
+                "subColor": "#FFE9EDF2",
+                "timerColor": "#FF365F99"
+            },
+            {
+                "mainColor": "#FF3D4D99",
+                "subColor": "#FFE9EAF2",
+                "timerColor": "#FF3D4D99"
+            },
+            {
+                "mainColor": "#FF524BA6",
+                "subColor": "#FFE9E9F2",
+                "timerColor": "#FF524BA6"
+            },
+            {
+                "mainColor": "#FF694BA6",
+                "subColor": "#FFECE9F2",
+                "timerColor": "#FF694BA6"
+            },
+            {
+                "mainColor": "#FF764599",
+                "subColor": "#FFEEE9F2",
+                "timerColor": "#FF764599"
+            },
+            {
+                "mainColor": "#FF8C468C",
+                "subColor": "#FFF2E9F2",
+                "timerColor": "#FF8C468C"
+            },
+            {
+                "mainColor": "#FF993D67",
+                "subColor": "#FFF2E9F2",
+                "timerColor": "#FF993D67"
+            },
+            {
+                "mainColor": "#FF918666",
+                "subColor": "#FFF2F0E9",
+                "timerColor": "#FF918666"
+            },
+            {
+                "mainColor": "#FF45464D",
+                "subColor": "#FFF0F0F2",
+                "timerColor": "#FF49494D"
+            }
+        ]
+    },
+    "desktopInfo": {
+        "templateId": "01_Minimal_magazine",
+        "groupImageRes": {
+            "src": "01_origin.png"
+        }
+    }
+}

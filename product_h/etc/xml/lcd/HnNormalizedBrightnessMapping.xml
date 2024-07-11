@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HnNormalizedBrightnessMapping>
+    <BrightnessAfterMapMinForManufacture>38</BrightnessAfterMapMinForManufacture>
+    <BrightnessAfterMapMaxForManufacture>3515</BrightnessAfterMapMaxForManufacture>
+    <MappingBrightnessPoints>
+        <Point>156,38</Point>
+        <Point>195,80</Point>
+        <Point>234,240</Point>
+        <Point>274,392</Point>
+        <Point>313,436</Point>
+        <Point>352,485</Point>
+        <Point>2038,1580</Point>
+        <Point>3058,1961</Point>
+        <Point>4862,2482</Point>
+        <Point>6431,2865</Point>
+        <Point>8824,3515</Point>
+        <Point>10000,4095</Point>
+    </MappingBrightnessPoints>
+    <PanelMaxBrightnessNode>/sys/class/backlight/panel0-backlight/max_brightness</PanelMaxBrightnessNode>
+</HnNormalizedBrightnessMapping>

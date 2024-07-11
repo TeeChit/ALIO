@@ -1,0 +1,10 @@
+/product_h/region_comm/oversea/app/AiPluginEngine/AiPluginEngine.apk
+/product_h/region_comm/oversea/app/Gallery2/base-master.apk,priv
+/product_h/region_comm/oversea/app/HnAOD/HnAOD.apk
+/product_h/region_comm/oversea/app/HnCamera2/base-master.apk,priv
+/product_h/region_comm/oversea/app/HnDockBar/HnDockBar.apk
+/product_h/region_comm/oversea/app/HnFmRadio/HnFmRadio.apk
+/product_h/region_comm/oversea/app/HnParallelSpace/HnParallelSpace.apk
+/product_h/region_comm/oversea/app/HnUpgradeGuide/HnUpgradeGuide.apk,priv
+/product_h/region_comm/oversea/app/SwiftKey/SwiftKey.apk
+/product_h/region_comm/oversea/app/SwiftKeyFactorySettings/SwiftKeyFactorySettings.apk

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config hashvalue="96c15e1e5fb904963838c4eb2c5c29cf">
+  <dict>
+    <array key="apnReminder">
+      <dict>
+        <string key="remindType">imsiChange</string>
+        <string key="title">Please Choose your Tariff:</string>
+        <string key="name">Talkmobile Prepay</string>
+        <string key="apn">payg.talkmobile.co.uk</string>
+        <string key="displayName">1 for Talk Mobile Prepay</string>
+        <string key="onsName">Talkmobile</string>
+        <string key="otherApns"></string>
+        <string key="vmNumber">121</string>
+        <string key="vmTag">voicemail</string>
+      </dict>
+      <dict>
+        <string key="remindType">imsiChange</string>
+        <string key="title">Please Choose your Tariff:</string>
+        <string key="name">Talkmobile Contract</string>
+        <string key="apn">talkmobile.co.uk</string>
+        <string key="displayName">2 for Talk Mobile Postpay</string>
+        <string key="onsName">Talkmobile</string>
+        <string key="otherApns"></string>
+        <string key="vmNumber">121</string>
+        <string key="vmTag">voicemail</string>
+      </dict>
+    </array>
+  </dict>
+</config>

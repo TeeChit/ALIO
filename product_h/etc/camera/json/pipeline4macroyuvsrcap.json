@@ -1,0 +1,205 @@
+{
+    "imports" : [
+        "/system_ext/lib64/libhwfilter_qcom.so"
+    ],
+
+    "filters" :
+    [
+        {
+            "id" : "ppsource",
+            "type" : "ppsource",
+            "captureTotal" : 8
+        },
+
+        {
+            "id" : "encoder",
+            "type" : "qcom_filter_jpeg"
+        },
+
+        {
+            "id" : "writer",
+            "type" : "filewriter"
+        },
+
+        {
+            "id" : "STHDR",
+            "type" : "STHDR"
+        },
+
+        {
+            "id" : "thumbnail",
+            "type" : "quickthumbnail"
+        },
+
+        {
+            "id" : "notifier",
+            "type" : "thumbnail-notifier"
+        },
+
+        {
+            "id" : "peek",
+            "type" : "peek"
+        },
+
+        {
+            "id" : "peekMeta",
+            "type" : "peek"
+        },
+        {
+            "id" : "HwExifPp",
+            "type" : "HwExifPp"
+        }
+    ],
+
+    "connections" :
+    [
+        {
+            "from" :
+            {
+                "filter" : "ppsource",
+                "port" : "out0"
+            },
+
+            "to" :
+            {
+                "filter" : "STHDR",
+                "port" : "inMain"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "STHDR",
+                "port" : "OutDestyuv"
+            },
+            "to" :
+            {
+                "filter" : "HwExifPp",
+                "port" : "inMain"
+            }
+        },
+
+       {
+            "from" :
+            {
+                "filter" : "HwExifPp",
+                "port" : "OutDestyuv"
+            },
+            "to" :
+            {
+                "filter" : "encoder",
+                "port" : "inMain"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "encoder",
+                "port" : "jpeg"
+            },
+
+            "to" :
+            {
+                "filter" : "writer",
+                "port" : "in"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "STHDR",
+                "port" : "OutQuickThumbnailyuv"
+            },
+
+            "to" :
+            {
+                "filter" : "thumbnail",
+                "port" : "inMain"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "thumbnail",
+                "port" : "outThumbnail"
+            },
+
+            "to" :
+            {
+                "filter" : "notifier",
+                "port" : "in"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "ppsource",
+                "port" : "out_meta"
+            },
+
+            "to" :
+            {
+                "filter" : "peekMeta",
+                "port" : "in"
+            }
+        },
+        {
+            "from" :
+            {
+                "filter" : "peekMeta",
+                "port" : "out"
+            },
+
+            "to" :
+            {
+                "filter" : "STHDR",
+                "port" : "inMeta"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "STHDR",
+                "port" : "OutMeta"
+            },
+            "to" :
+            {
+                "filter" : "HwExifPp",
+                "port" : "inMeta"
+            }
+        },
+
+        {
+            "from" :
+            {
+                "filter" : "HwExifPp",
+                "port" : "OutMeta"
+            },
+            "to" :
+            {
+                "filter" : "encoder",
+                "port" : "inMeta"
+            }
+        },
+        {
+            "from" :
+            {
+                "filter" : "peekMeta",
+                "port" : "peek0"
+            },
+
+            "to" :
+            {
+                "filter" : "thumbnail",
+                "port" : "inMeta"
+            }
+        }
+    ]
+}
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+	<id>23</id>
+	<updated>2016-12-24</updated>
+	<feature name="AMOLED">
+		<mode name="CTRL">
+			<param name="Enable">1</param>
+		</mode>
+		<mode name="FILTER">
+			<param name="DE_SCENE_ACTION_NORMAL_LIGHT">MODE_AMOLED</param>
+			<param name="DE_SCENE_ACTION_SCREEN_OFF">MODE_SCREEN_OFF</param>
+			<param name="DE_SCENE_ACTION_SCREEN_ON">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_HBM_DIMMING_ON">MODE_HBM_DIMMING_ON</param>
+			<param name="DE_SCENE_ACTION_HBM_DIMMING_OFF">MODE_HBM_DIMMING_OFF</param>
+			<param name="DE_SCENE_ACTION_FINGERPRINT_HBM_OFF">MODE_SCALING_DOWN</param>
+			<param name="DE_SCENE_ACTION_FINGERPRINT_HBM_ON">MODE_SCALING_UP</param>
+			<param name="DE_SCENE_ACTION_MANUFACTURE_BRIGHTNESS">MODE_MANUFACTURE_BRIGHTNESS</param>
+			<param name="DE_SCENE_ACTION_UD_FINGER_PRINT_BACKLIGHT">MODE_UD_FINGER_PRINT_BACKLIGHT</param>
+			<param name="DE_SCENE_ACTION_DC_BRIGHTNESS_DIMMING_ON">MODE_DC_BRIGHTNESS_ON</param>
+			<param name="DE_SCENE_ACTION_DC_BRIGHTNESS_DIMMING_OFF">MODE_DC_BRIGHTNESS_OFF</param>
+			<param name="DE_SCENE_ACTION_UD_ENROLL_FINGER_PRINT_START">MODE_DIMMING_FRAME_STEP_1</param>
+			<param name="DE_SCENE_ACTION_UD_ENROLL_FINGER_PRINT_END">MODE_DIMMING_FRAME_STEP_2</param>
+			<param name="DE_SCENE_ACTION_UD_FINGER_PRINT_LOCK_START">MODE_DIMMING_FRAME_STEP_1</param>
+			<param name="DE_SCENE_ACTION_UD_USER_PRESENT_ENTER">MODE_DIMMING_FRAME_STEP_2</param>
+			<param name="DE_SCENE_ACTION_UDALS_STOP">MODE_GAME</param>
+			<param name="DE_SCENE_ACTION_UDALS_RUN">MODE_DISABLE</param>
+			<param name="DE_SCENE_ACTION_COLOR_INVERSE_ON">MODE_COLOR_INVERSE</param>
+			<param name="DE_SCENE_ACTION_COLOR_INVERSE_OFF">MODE_COLOR_INVERSE_DISABLE</param>
+			<param name="DE_SCENE_ACTION_AMBIENT_LUX_CHANGE">MODE_AMBIENT_LUX_CHANGE</param>
+			<param name="DE_SCENE_ACTION_UI_ENTER">MODE_UI</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>

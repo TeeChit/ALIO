@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+<IppConfig>
+    <IppAlgo name="FaceDetection" switcher="1" ></IppAlgo>
+    <IppAlgo name="SceneDetection" switcher="1" ></IppAlgo>
+    <IppAlgo name="SmartAE" switcher="0" ></IppAlgo>
+    <IppAlgo name="Frontgesture" switcher="0" ></IppAlgo>
+    <IppAlgo name="FrontGestureArc" switcher="1" ></IppAlgo>
+    <IppAlgo name="MotionDetect" switcher="1" ></IppAlgo>
+    <IppAlgo name="AgeGenderEstimate" switcher="1" ></IppAlgo>
+    <IppAlgo name="AgeGender" switcher="0" ></IppAlgo>
+    <DEFAULT_AI_MODE_SWITCH_ON value="1"/>
+</IppConfig>

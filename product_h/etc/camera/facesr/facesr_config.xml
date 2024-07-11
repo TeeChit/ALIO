@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+    <InitModel value = "1"/><!--init model: FACE_SR_INTERNAL_MODEL 0x0 // FACE_SR_EXTERNAL_MODEL 0x1-->
+    <CameraBackEnable value = "0"/><!--FACE_SR_CAMERA_BACK_BYPASS 0x0 // FACE_SR_CAMERA_BACK_ZOOM_ENABLE 0x1 // FACE_SR_CAMERA_BACK_ENABLE 0x2-->
+</CONFIG_PARA>

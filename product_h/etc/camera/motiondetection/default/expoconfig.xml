@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="gb2312"?>
+<MDExpoConfig>
+    <!--ExpoControlParam-->
+    <NEED_DECREASE_EXPO value="1"/>
+    <MAX_ISO value="8000"/>
+    <MIN_EXPO_PROTECT value="1111"/>
+    <MIN_EXPO_INDOOR  value="2500"/>
+    <IGNORE_MOTION_EXPO value="1667"/>
+    <EXPO_FLICKER_GUARD value="300"/>
+    <!--GsensorMotionDetectControl-->
+    <AUXIL_GSENSOR_ON value="1"/>
+    <GSENSOR_VARIANCE_L value="100"/>
+    <GSENSOR_VARIANCE_M value="300"/>
+    <GSENSOR_VARIANCE_H value="500"/>
+    <!--SwitcherForQuickerShot-->
+    <QUICK_SHOT_FORCE_ON value="0"/>
+    <!--set HDR/motion compatible-->
+    <HDR_MOTION_COMPATIBILITY value="0"/> <!--0: COMPATIBLE 1: HDR take precedence  2: MOTION take precedence-->
+    <!--set ZOOM/motion compatible-->
+    <BAN_DECREASE_SHUTTER_AT_ZOOM value="2"/> <!--e.g.  >2x erease motion results-->
+
+    <AISceneParams>
+        <!-- <DParam>231</DParam> --><!-- SD_TEXT by  appSceneIndex-->
+        <DParam>191</DParam><!-- SD_CAT by  appSceneIndex -->
+        <DParam>201</DParam><!-- SD_DOG by  appSceneIndex -->
+        <DParam>271</DParam><!-- SD_PANDA by  appSceneIndex -->
+        <!-- <DParam>281</DParam> --><!-- SD_CAR by  appSceneIndex -->
+        <DParam>70</DParam><!-- SD_FOOD by  appSceneIndex food never makes a motion ;)-->
+    </AISceneParams>
+
+    <!--DecisionParams-->
+    <!-- usage rules:          factor: 1000000 100000   10000              100          10       1                    -->
+    <!--                                 Bokeh|AI on|colorEffect mode on|scenemode|cameraid|create or not             -->
+    <!-- Normal_Wide_AI_ColorFilter  ON    0     1       1                   0           2       1         =   0110021 -->
+    <!-- Portrait_Front_Bokeh        OFF   1     0       0                  23           1       0         =   1002310 -->
+    <!-- cameraid: main:0 front:1 wide:2 macro:3 logic:4-->
+    <DecisionParams>
+        <DParam>1</DParam><!-- Normal_Main -->
+        <DParam>10</DParam><!-- Normal_Front -->
+        <DParam>20</DParam><!-- Normal_Wide -->
+        <DParam>100001</DParam><!-- Normal_Main_AI -->
+        <DParam>100020</DParam><!-- Normal_Wide_AI -->
+        <DParam>10001</DParam><!-- Normal_Main_ColorFilter -->
+        <DParam>10020</DParam><!-- Normal_Wide_ColorFilter -->
+        <DParam>10010</DParam><!-- Normal_Front_ColorFilter -->
+        <DParam>110001</DParam><!-- Normal_Main_AI_ColorFilter -->
+        <DParam>110020</DParam><!-- Normal_Wide_AI_ColorFilter -->
+        <DParam>2341</DParam><!-- Portrait_Rear -->
+        <DParam>2310</DParam><!-- Portrait_Front -->
+        <DParam>1002340</DParam><!-- Portrait_Rear_Bokeh -->
+        <DParam>1002310</DParam><!-- Portrait_Front_Bokeh -->
+        <DParam>500</DParam><!-- HDRMode_Main -->
+        <DParam>520</DParam><!-- HDRMode_Wide -->
+        <DParam>510</DParam><!-- HDRMode_Front -->
+        <DParam>1301</DParam><!-- WaterMark_Main -->
+        <DParam>1310</DParam><!-- WaterMark_Front -->
+        <DParam>1001940</DParam><!-- ApertureMode -->
+        <DParam>5300</DParam><!-- HighResolution -->
+    </DecisionParams>
+
+</MDExpoConfig>

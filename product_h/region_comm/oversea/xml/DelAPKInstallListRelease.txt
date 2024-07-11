@@ -1,0 +1,3 @@
+/product_h/region_comm/oversea/app/HnHealthApp/HnHealthApp.apk,priv
+/product_h/region_comm/oversea/app/HnOffice/HnOffice.apk
+/product_h/region_comm/oversea/app/HnRideMode/HnRideMode.apk

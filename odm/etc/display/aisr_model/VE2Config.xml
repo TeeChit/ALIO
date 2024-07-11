@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VE2Config>
+    <updated>2023-01-12</updated>
+    <productID>ALI</productID>
+    <feature name="adaptive_sharpness">
+        <param name="DCTslope">650000.0</param>
+        <param name="DCTintercept">0.08</param>
+        <param name="maxRatio">0.35</param>
+        <param name="minRatio">0.0</param>
+        <param name="processTime">30</param>
+        <param name="initWeight">0.0</param>
+        <param name="minEdge">-100.0</param>
+        <param name="maxEdge">100.0</param>
+        <param name="resolutionRatio">35.0</param>
+    </feature>
+</VE2Config>
+

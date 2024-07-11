@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+	<id>23</id>
+	<updated>2016-12-24</updated>
+	<feature name="EYEPROTECTION">
+		<mode name="FILTER">
+			<param name="DE_SCENE_ACTION_EYEPROTECTION_ON">MODE_EYE_PROTECT|EYEDIMMING_STOP</param>
+			<param name="DE_SCENE_ACTION_EYEPROTECTION_OFF">MODE_DISABLE|EYEDIMMING_STOP</param>
+			<param name="DE_SCENE_ACTION_EYEPROTECTION_TIME_ON">MODE_SCHEDULE_EYE_PROTECTION|EYEDIMMING_DOING</param>
+			<param name="DE_SCENE_ACTION_EYEPROTECTION_TIME_OFF">MODE_DISABLE|EYEDIMMING_DOING</param>
+			<param name="DE_SCENE_ACTION_COLORTEMP_CHANGE">MODE_AMBIENT_LUX_OFFSET</param>
+			<param name="DE_SCENE_ACTION_READMODE_ON">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_READMODE_OFF">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_SMART_EYEPROTECTION_ON">MODE_SMART_EYE_PROTECTION</param>
+			<param name="DE_SCENE_ACTION_SMART_EYEPROTECTION_OFF">MODE_DISABLE</param>
+			<param name="DE_SCENE_ACTION_SCREEN_ON">MODE_SCREEN_ON</param>
+			<param name="DE_SCENE_ACTION_SCREEN_OFF">MODE_SCREEN_OFF</param>
+		</mode>
+	<mode name="CTRL">
+			<param name="Enable">1</param>
+			<param name="SmartEyeProtectionDivideCnt">36</param>
+			<param name="SmartEyeProtectionDivideTime">9</param>
+			<param name="SmartEyeProtectionRollBackStep">1</param>
+			<param name="SmartEyeProtectionRollBackInterval">8</param>
+			<param name="IsSupportLocalHbm">true</param>
+			<param name="IsSupportEP">true</param>
+			<param name="IsSupportSmartEP">true</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>

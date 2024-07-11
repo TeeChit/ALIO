@@ -1,0 +1,21 @@
+# 2023-11-28 14:41:15.0
+msc.config.nfc_msimce=true
+# 2023-11-28 14:41:15.0
+msc.nfc.camera_type=20,21
+# 2023-11-28 14:41:15.0
+ro.build.id=HONORALI-N21
+# 2023-11-28 14:41:15.0
+ro.config.dsds_mode=umts_gsm
+# 2023-11-28 14:41:15.0
+ro.config.product_version_pre=ALI-N21
+# 2023-11-28 14:41:15.0
+ro.config.safety_certification=ce
+# 2023-11-28 14:41:15.0
+ro.gsensor.calibrate=true
+# 2023-11-28 14:41:15.0
+ro.product.model=ALI-NX1
+# 2023-11-28 14:41:15.0
+ro.product.name=ALI-NX1
+# 2023-11-28 14:41:15.0
+ro.qti.sensors.gravity=true
+ro.build.description=ALI-N21-user 8.0.0 HONORALI-N21 164-OVS-LGRP2 release-keys

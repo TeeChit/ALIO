@@ -1,0 +1,26 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<EIS_TNR>
+    <productId>20</productId>
+    <fullScreenWidth>2336</fullScreenWidth>
+    <fullScreenHeight>1080</fullScreenHeight>
+    <fullScreenWidth2nd>2560</fullScreenWidth2nd>
+    <fullScreenHeight2nd>1080</fullScreenHeight2nd>
+    <isWarpRestrictEnable>0</isWarpRestrictEnable>
+    <widthRestrictMax>1024</widthRestrictMax>
+    <heightRestrictMax>1024</heightRestrictMax>
+
+    <isDynamicRoiEnable>1</isDynamicRoiEnable>
+
+    <senceHNNEnable>1</senceHNNEnable>
+    <imageFusionEnable>1</imageFusionEnable>
+    <orbImageMaxWidth>1024</orbImageMaxWidth>
+    <orbImageMaxHeight>1024</orbImageMaxHeight>
+
+    <sofAtExpoBegin>0</sofAtExpoBegin>
+    <gyroFreq>400.0</gyroFreq>
+    <oisFreq>500.0</oisFreq>
+    <teleMaxZoomRatio>100.0</teleMaxZoomRatio>
+    <teleMinZoomRatio>3.48</teleMinZoomRatio>
+    <isEIS5DPreEnable>0</isEIS5DPreEnable>
+    <remosaicSwitchRatio>7.0</remosaicSwitchRatio>
+</EIS_TNR>

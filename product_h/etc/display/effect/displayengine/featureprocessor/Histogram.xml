@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+    <id>23</id>
+    <updated>2022-09-19</updated>
+    <feature name="HISTOGRAM">
+        <mode name="FILTER">
+            <param name="DE_SCENE_ACTION_SCREEN_OFF">MODE_DISABLE</param>
+            <param name="DE_SCENE_ACTION_REAL_SCREEN_ON">MODE_SCREEN_ON</param>
+            <param name="DE_SCENE_ACTION_REAL_SCREEN_OFF">MODE_SCREEN_OFF</param>
+        </mode>
+        <mode name="CTRL">
+            <param name="Enable">1</param>
+        </mode>
+        <mode name="BLACK_SCREEN_CHECK">
+            <param name="Enable">1</param>
+        </mode>
+            <mode name="STATE">
+            <param name="DefaultState">1</param>
+        </mode>
+    </feature>
+</DisplayEngineConfig>

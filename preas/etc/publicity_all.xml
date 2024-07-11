@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packageList>
+	<packageInfo package="com.google.android.configupdater" feature="提供 Android 系统模块和设备中已安装应用程序的详细信息，还有助于检查基本 Android 系统模块的更新" author="谷歌" label="com.google.android.configupdater">
+	</packageInfo>
+	<packageInfo package="com.google.android.gms" feature="为第三方应用程序提供谷歌核心服务" author="谷歌" label="com.google.android.gms">
+	</packageInfo>
+	<packageInfo package="com.google.android.gms.location.history" feature="用于服务 Google 地图历史信息" author="谷歌" label="com.google.android.gms.location.history">
+	</packageInfo>
+	<packageInfo package="com.google.android.gms.policy_sidecar_aps" feature="提供 Android 平台预定义的服务" author="谷歌" label="com.google.android.gms.policy_sidecar_aps">
+	</packageInfo>
+	<packageInfo package="com.google.android.onetimeinitializer" feature="用于开机启动时的应用初始化" author="谷歌" label="com.google.android.onetimeinitializer">
+	</packageInfo>
+	<packageInfo package="com.google.android.overlay.gmsconfig.common" feature="Google 框架资源" author="谷歌" label="com.google.android.overlay.gmsconfig.common">
+	</packageInfo>
+	<packageInfo package="com.google.android.trichromelibrary" feature="提供谷歌浏览器需要的三方库" author="谷歌" label="com.google.android.trichromelibrary">
+	</packageInfo>
+	<packageInfo package="com.google.android.webview" feature="用以支持 Android 应用显示网页内容" author="谷歌" label="com.google.android.webview">
+	</packageInfo>
+</packageList>

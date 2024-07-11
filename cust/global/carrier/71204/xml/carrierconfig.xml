@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="aeeab9e5eaca8bc6aacb3376a1f8a153">
+  <dict>
+    <!--2024-01-06 09:40:48.000-->
+    <bool key="carrier_default_data_roaming_enabled_bool">true</bool>
+    <!--2024-04-25 14:30:36.000-->
+    <bool key="carrier_default_volte_switch_on_bool">true</bool>
+    <!--2024-04-25 14:30:36.000-->
+    <bool key="carrier_show_second_calllog_icon">true</bool>
+    <!--2024-04-25 14:30:36.000-->
+    <string key="carrier_volte_hd_icon_flag">10101010</string>
+    <!--2024-05-23 17:35:41.000-->
+    <string key="carrier_vowifi_hd_icon_flag">10101010</string>
+    <!--2023-10-17 11:33:21.000-->
+    <bool key="enabledMMS">false</bool>
+    <!--2023-01-31 11:42:00.000-->
+    <bool key="groupChatDefaultsToMMS">false</bool>
+    <!--2024-01-08 09:41:32.000-->
+    <bool key="hide_nr_tile_flag">false</bool>
+    <!--2023-01-31 11:42:00.000-->
+    <int key="smsToMmsTextThreshold">-1</int>
+    <!--2023-01-31 11:42:00.000-->
+    <bool key="smsUsesSimpleCharactersOnly">true</bool>
+    <!--2024-05-23 17:35:41.000-->
+    <string key="wfc_format_wifi_string">%1$s</string>
+  </dict>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312"?>
+<SENSOR_CONFIG>
+    <Sensor sensorname = "c834jdi_m030">
+        <Information_sensor camera_name = "FRONT_MAIN_1"/>
+    </Sensor>
+    <Sensor sensorname = "c834ogi_m060">
+        <Information_sensor camera_name = "FRONT_MAIN_2"/>
+    </Sensor>
+    <Sensor sensorname = "cadxlmj_m090">
+        <Information_sensor camera_name = "REAR_MAIN_1"/>
+    </Sensor>
+    <Sensor sensorname = "cadxlmj_m060">
+        <Information_sensor camera_name = "REAR_MAIN_2"/>
+    </Sensor>
+    <Sensor sensorname = "cadxlmj_m091">
+        <Information_sensor camera_name = "REAR_MAIN_3"/>
+    </Sensor>
+
+</SENSOR_CONFIG>

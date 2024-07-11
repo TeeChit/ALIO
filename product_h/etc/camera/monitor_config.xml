@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GB2312"?>
+<MonitorConfig  Version="MTK_MonitorConfig_V1" Time="20191105">
+    <BigDataConfig Enable="1">
+        <Monitor Type="PP_foreground" BigData="1"/> <!-- "PP_foreground" means CAMERA_FRONT -->
+        <Monitor Type="PP_background" BigData="1"/> <!-- "PP_background" means CAMERA_BACK -->
+        <Monitor Type="v2_version" BigData="1"/> <!-- "v2_version" means new version bigdata -->
+    </BigDataConfig>
+</MonitorConfig>

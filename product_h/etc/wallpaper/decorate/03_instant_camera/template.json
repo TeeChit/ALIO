@@ -1,0 +1,190 @@
+﻿{
+    "order": 2,
+    "lockScreenInfo": {
+        "templateId": "03_instant_camera",
+        "templateName": [
+            {
+                "region": "zh-rCN",
+                "name": "时光隽永"
+            },
+            {
+                "region": "en",
+                "name": "Enduring moments"
+            }
+        ],
+        "thumbnailSrc": "03_preview_lockscreen.png",
+        "originSrc": "03_origin.png",
+        "decorateType": 1,
+        "frameRectangle": [
+            0.106,
+            0.336,
+            0.91,
+            0.726
+        ],
+        "layers": [
+            {
+                "id": "layer_origin",
+                "type": 0,
+                "src": "03_origin.png"
+            },
+            {
+                "id": "layer_res1",
+                "type": 2,
+                "src": "03_res1_1.png",
+                "colorPolicy": 1,
+                "color": "#FFBFD2D9"
+            },
+            {
+                "id": "layer_res2",
+                "type": 2,
+                "src": "03_res1_2.png"
+            },
+            {
+                "id": "layer_res3",
+                "type": 2,
+                "src": "03_res1_3.png"
+            },
+            {
+                "id": "layer_timer",
+                "type": 3,
+                "layout": 0,
+                "font": "HonorDigits_DecoVF.ttf",
+                "colorPolicy": 4,
+                "color": "#FF3F6673"
+            }
+        ],
+        "styles": [
+            "人物",
+            "宠物",
+            "艺术",
+            "风景"
+        ],
+        "decorateReses": [
+            {
+                "id": "res1",
+                "src": "03_res1.png",
+                "resLayerMappings": {
+                    "layer_res1": "03_res1_1.png",
+                    "layer_res2": "03_res1_2.png",
+                    "layer_res3": "03_res1_3.png"
+                }
+            },
+            {
+                "id": "res2",
+                "src": "03_res2.png",
+                "resLayerMappings": {
+                    "layer_res1": "03_res2_1.png",
+                    "layer_res2": "03_res2_2.png",
+                    "layer_res3": "03_res2_3.png"
+                }
+            },
+            {
+                "id": "res3",
+                "src": "03_res3.png",
+                "resLayerMappings": {
+                    "layer_res1": "03_res3_1.png",
+                    "layer_res2": "03_res3_2.png",
+                    "layer_res3": "03_res3_3.png"
+                }
+            },
+            {
+                "id": "res4",
+                "src": "03_res4.png",
+                "resLayerMappings": {
+                    "layer_res1": "03_res4_1.png",
+                    "layer_res2": "03_res4_2.png",
+                    "layer_res3": "03_res4_3.png"
+                }
+            },
+            {
+                "id": "res5",
+                "src": "03_res5.png",
+                "resLayerMappings": {
+                    "layer_res1": "03_res5_1.png",
+                    "layer_res2": "03_res5_2.png",
+                    "layer_res3": "03_res5_3.png"
+                }
+            }
+        ],
+        "decorateColors": [
+            {
+                "mainColor": "#FFBFD2D9",
+                "timerColor": "#FF3F6673"
+            },
+            {
+                "mainColor": "#FFE6C5C3",
+                "timerColor": "#FF805553"
+            },
+            {
+                "mainColor": "#FFE6C7B8",
+                "timerColor": "#FF73503F"
+            },
+            {
+                "mainColor": "#FFE6CFB8",
+                "timerColor": "#FF73593F"
+            },
+            {
+                "mainColor": "#FFE6DEB8",
+                "timerColor": "#FF665E38"
+            },
+            {
+                "mainColor": "#FFD1D9B8",
+                "timerColor": "#FF5B6638"
+            },
+            {
+                "mainColor": "#FFCAD9BF",
+                "timerColor": "#FF4B6638"
+            },
+            {
+                "mainColor": "#FFBFD9C7",
+                "timerColor": "#FF386647"
+            },
+            {
+                "mainColor": "#FFBFD9D2",
+                "timerColor": "#FF38665B"
+            },
+            {
+                "mainColor": "#FFBFCAD9",
+                "timerColor": "#FF3F5573"
+            },
+            {
+                "mainColor": "#FFBFC3D9",
+                "timerColor": "#FF3F4873"
+            },
+            {
+                "mainColor": "#FFC1BFD9",
+                "timerColor": "#FF433F73"
+            },
+            {
+                "mainColor": "#FFC7BFD9",
+                "timerColor": "#FF503F73"
+            },
+            {
+                "mainColor": "#FFCEBFD9",
+                "timerColor": "#FF5D3F73"
+            },
+            {
+                "mainColor": "#FFD9BFD9",
+                "timerColor": "#FF733F73"
+            },
+            {
+                "mainColor": "#FFD9BFCA",
+                "timerColor": "#FF733F56"
+            },
+            {
+                "mainColor": "#FFBFBAAC",
+                "timerColor": "#FF4D4632"
+            },
+            {
+                "mainColor": "#FFD0D2D9",
+                "timerColor": "#FF49494D"
+            }
+        ]
+    },
+    "desktopInfo": {
+        "templateId": "03_instant_camera",
+        "groupImageRes": {
+            "src": "03_origin.png"
+        }
+    }
+}

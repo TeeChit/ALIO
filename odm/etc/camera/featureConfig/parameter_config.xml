@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIG_PARA>
+    <ISO_THREASH_FOR_NIGHT value = "3200"/>
+    <LV_THREASH_FOR_NIGHT value="20"/>
+    <DISTANCE_THREASH_FOR_FUSION value="800"/> <!-- for black white and color fusion  -->
+    <LV_THREASH_FOR_FUSION value="50"/> <!-- for black white and color fusion -->
+    <DISTANCE_THREASH_FOR_TELE_MAIN value="1000"/> <!-- < threash main cammera, else tele camera in Noraml Snapshot mode or Profession mode-->
+    <ISO_THREASH_FOR_NOT_MIDDLE_BRIGHTNESS value="200"/> <!-- not middle brightness && -->
+    <LV_THREASH_FOR_NOT_MIDDLE_BRIGHTNESS value="100"/> <!-- not middle brightness && -->
+    <ISO_THREASH_FOR_FRONT_NOT_MIDDLE_BRIGHTNESS value="200"/> <!-- front middle brightness || -->
+    <LV_THREASH_FOR_FRONT_NOT_MIDDLE_BRIGHTNESS value="100"/> <!-- front middle brightness || -->
+    <ISO_THREASH_FOR_FRONT_NIGHT value = "2000"/>
+    <LV_THREASH_FOR_FRONT_NIGHT value="50"/>
+    <LV_THREASH_FOR_FRONT_NIGHT_RAW_HDR value="100000"/>
+    <THREASH_EXTREAM_NIGHT value="4500"/>
+    <LUXINDEX_THREASH_MCF value="100"/>
+    <DISTANCE_THREASH_MCF value="5000"/>
+</CONFIG_PARA>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="9d36ed0eac416f99ea93c271804e7826">
+  <dict>
+    <!--2023-11-28 14:42:03.0-->
+    <int key="hn_default_networkmode_nr">65</int>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="hn_remove_2g_only">true</bool>
+    <!--2023-11-28 14:42:03.0-->
+    <bool key="hn_remove_3g_only">true</bool>
+  </dict>
+</config>

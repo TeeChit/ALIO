@@ -1,0 +1,124 @@
+﻿{
+  "type": "fresh",
+  "duration": 15000,
+  "name": "Quiet-15",
+  "id": "Fresh_15_1",
+  "separationStep": 1500,
+  "separationMinDuration": 5000,
+  "separationMaxDuration": 10000,
+  "transitions": [
+    {
+      "name": "叠化",
+      "priority": 90,
+      "pickCondition": 2,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "模糊",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "融化",
+      "priority": 0,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "上移",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "下移",
+      "priority": 90,
+      "pickCondition": 1,
+      "horizon": true,
+      "vertical": false
+    },
+    {
+      "name": "左移",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "右移",
+      "priority": 90,
+      "pickCondition": 1,
+      "horizon": false,
+      "vertical": true
+    },
+    {
+      "name": "黑场",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "白场",
+      "priority": 90,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "放大",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "缩小",
+      "priority": 70,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    },
+    {
+      "name": "旋转",
+      "priority": 30,
+      "pickCondition": -1,
+      "horizon": true,
+      "vertical": true
+    }
+  ],
+  "transitionMaxCount": 2,
+  "filterId": "filter_res_14",
+  "filterStrength": 0.4,
+  "sticker": {
+    "id": "tomorrow",
+    "scaleHorizon": 0.4,
+    "scaleVertical": 0.6,
+    "locationHorizonX": 3,
+    "locationHorizonY": -0.5,
+    "locationVerticalX": 0.35,
+    "locationVerticalY": -0.5,
+    "beginTime": 1
+  },
+  "borderId": "ins2",
+  "specialEffect": [
+    {
+      "effectId": "sunshine",
+      "effectStart": 1
+    },
+    {
+      "effectId": "light_spot",
+      "effectStart": -1
+    },
+    {
+      "effectId": "tindal_light",
+      "effectStart": -1
+    }
+  ],
+  "tail": "honor_vlog"
+}

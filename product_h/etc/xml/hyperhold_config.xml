@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swap>
+    <integrationControl>True</integrationControl>
+    <subProcessSingleGroup>True</subProcessSingleGroup>
+    <swapEnable>True</swapEnable>
+    <gkiMode>True</gkiMode>
+    <swapOutEnable>True</swapOutEnable>
+    <swapMinRamSize>6</swapMinRamSize>
+    <swapMinRomSize>64</swapMinRomSize>
+    <dynamicSwapSizeSwitch>True</dynamicSwapSizeSwitch>
+    <storage size="64">
+        <module name="storageParam">
+            <param key="dailySwapOutQuotaMax">10</param>
+            <param key="swapOriginalAmount">20</param>
+            <param key="swapDeclineRatio">10</param>
+            <param key="swapFinalLimit">20</param>
+            <param key="swapControlDays">7</param>
+            <param key="swapRedDeclineRatio">5</param>
+            <param key="lifeTimeEstTypA">2</param>
+            <param key="lifeTimeEstTypB">2</param>
+            <param key="lifeTimePreEolInfo">2</param>
+            <param key="wbLifeTimeEstTypA">5</param>
+            <param key="wbLifeTimeEstTypB">5</param>
+            <param key="wbLifeTimePreEolInfo">2</param>
+        </module>
+    </storage>
+    <storage size="128">
+        <module name="storageParam">
+            <param key="dailySwapOutQuotaMax">99</param>
+            <param key="swapOriginalAmount">20</param>
+            <param key="swapDeclineRatio">10</param>
+            <param key="swapFinalLimit">20</param>
+            <param key="swapControlDays">-7</param>
+            <param key="swapRedDeclineRatio">5</param>
+            <param key="lifeTimeEstTypA">2</param>
+            <param key="lifeTimeEstTypB">2</param>
+            <param key="lifeTimePreEolInfo">2</param>
+            <param key="wbLifeTimeEstTypA">5</param>
+            <param key="wbLifeTimeEstTypB">5</param>
+            <param key="wbLifeTimePreEolInfo">2</param>
+        </module>
+    </storage>
+    <storage size="256">
+        <module name="storageParam">
+            <param key="dailySwapOutQuotaMax">99</param>
+            <param key="swapOriginalAmount">70</param>
+            <param key="swapDeclineRatio">20</param>
+            <param key="swapFinalLimit">20</param>
+            <param key="swapControlDays">-7</param>
+            <param key="swapRedDeclineRatio">5</param>
+            <param key="lifeTimeEstTypA">8</param>
+            <param key="lifeTimeEstTypB">8</param>
+            <param key="lifeTimePreEolInfo">2</param>
+            <param key="wbLifeTimeEstTypA">6</param>
+            <param key="wbLifeTimeEstTypB">6</param>
+            <param key="wbLifeTimePreEolInfo">2</param>
+        </module>
+    </storage>
+    <storage size="512">
+        <module name="storageParam">
+            <param key="dailySwapOutQuotaMax">99</param>
+            <param key="swapOriginalAmount">90</param>
+            <param key="swapDeclineRatio">20</param>
+            <param key="swapFinalLimit">20</param>
+            <param key="swapControlDays">-7</param>
+            <param key="swapRedDeclineRatio">5</param>
+            <param key="lifeTimeEstTypA">8</param>
+            <param key="lifeTimeEstTypB">8</param>
+            <param key="lifeTimePreEolInfo">2</param>
+            <param key="wbLifeTimeEstTypA">6</param>
+            <param key="wbLifeTimeEstTypB">6</param>
+            <param key="wbLifeTimePreEolInfo">2</param>
+        </module>
+    </storage>
+    <memory size="16">
+        <swapInOut>
+            <module name="psi">
+                <param key="psiOpen">false</param>
+                <param key="psiDelay">100</param>
+            </module>
+            <module name="psiEvent">
+                <param key="threshold">70</param>
+                <param key="window">1000</param>
+            </module>
+            <module name="rootMemcg">
+                <param key="rootSoftLimit">-1</param>
+                <param key="rootAppScore">300</param>
+                <param key="rootReclaimRatio">40</param>
+                <param key="rootSwapRatio">20</param>
+                <param key="rootReclaimRefault">100</param>
+            </module>
+            <module name="kill">
+                <param key="killThreshold">800</param>
+                <param key="killLimit">-1</param>
+                <param key="killParamRef">buffer size</param>
+                <param key="appThreshold">5</param>
+                <param key="bigKillMem">800</param>
+                <param key="appReqKillThreshold">600</param>
+                <param key="appReqKillMemMax">2500</param>
+                <param key="doBigMemKillWhenUnmet">true</param>
+            </module>
+            <module name="killOpt">
+                <param key="levelTwo">850</param>
+                <param key="levelThree">850</param>
+                <param key="bufferScreenOffChange">0</param>
+                <param key="screenOffQuickBuffer">800</param>
+            </module>
+            <module name="bufferSize">
+                <param key="defaultSize">1500</param>
+                <param key="warningSize">1600</param>
+                <param key="lowSize">1450</param>
+                <param key="upperSize">1530</param>
+                <param key="highSize">1550</param>
+                <param key="swapReserve">500</param>
+                <param key="minBuffer">900</param>
+                <param key="maxBuffer">1500</param>
+                <param key="appStartDelay">1</param>
+                <param key="reclaimDelay">3</param>
+                <param key="reclaimFailWindow">5</param>
+                <param key="reclaimFailCount">1</param>
+                <param key="raiseBufferTimeWidth">10</param>
+                <param key="raiseBufferMax">1500</param>
+                <param key="raiseBufferStep">10</param>
+            </module>
+            <module name="frontRatio">
+                <param key="reclaimRatio">0</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="activeRatio">
+                <param key="reclaimRatio">60</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="freezeRatio">
+                <param key="reclaimRatio">80</param>
+                <param key="swapRatio">100</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+            <module name="ak">
+                <param key="akEnable">false</param>
+                <param key="akEnableDebug">false</param>
+                <param key="akEnableDebugTime">false</param>
+            </module>
+            <module name="others">
+                <param key="logEnable">false</param>
+                <param key="scorePolicyEnable">false</param>
+                <param key="dailySwapOutQuotaMax">99</param>
+                <param key="zramCriticalThres">4608</param>
+                <param key="anonMinSize">500</param>
+                <param key="dynamicSwapSize">8</param>
+            </module>
+            <module name="batteryMonitor">
+                <param key="switch">false</param>
+                <param key="ram2ZramRatio">100,80,60,40,30</param>
+                <param key="zram2EswapRatio">100,80,60,40,30</param>
+                <param key="zswapdInterval">3,4,5,6,6</param>
+                <param key="batteryRefreshInterval">180</param>
+            </module>
+        </swapInOut>
+        <whiteList>
+            <module name="app">
+                <param key="pkg">com.hihonor.camera</param>
+                <param key="killThreshold">1100</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.meitu.myxj.selfie.merge.activity.SelfieCameraActivity</param>
+                <param key="killThreshold">900</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.scanner.ui.BaseScanUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.mmsight.ui.SightCaptureUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+        </whiteList>
+        <actList>
+            <module name="scoreRatio">
+                <param key="score">200</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="subProcessScoreRatio">
+                <param key="score">350</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">20</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="activeapplist">
+                <param key="pkgname0">com.android.phone</param>
+                <param key="pkgname1">com.hihonor.android.launcher</param>
+                <param key="pkgname2">com.hihonor.systemserver</param>
+                <param key="pkgname3">com.android.systemui</param>
+                <param key="pkgname4">com.hihonor.systemmanager</param>
+                <param key="pkgname5">system_server</param>
+                <param key="pkgname6">com.baidu.input_hihonor</param>
+            </module>
+        </actList>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">300</param>
+                <param key="maxRam">500</param>
+                <param key="swapRatio">80</param>
+                <param key="reclaimRatio">80</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">500</param>
+                <param key="maxRam">1000</param>
+                <param key="swapRatio">70</param>
+                <param key="reclaimRatio">70</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">1000</param>
+                <param key="maxRam">2147483647</param>
+                <param key="swapRatio">50</param>
+                <param key="reclaimRatio">50</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <specialGroup name="specialGroup1">
+            <module name="specialParam">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+            </module>
+            <module name="applist">
+                <param key="pkgname0">com.tencent.mm</param>
+                <param key="pkgname1">com.tencent.mobileqq</param>
+            </module>
+        </specialGroup>
+        <frequentUseSwapRatioList>
+            <module name="frequentUseRatio">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="freqUseThres">20</param>
+            </module>
+        </frequentUseSwapRatioList>
+        <backgroundActiveSwapRatioList>
+            <module name="backgroundActive">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="bgActiveThres">25</param>
+            </module>
+        </backgroundActiveSwapRatioList>
+        <SwapThreshold>
+            <module name="swapOutThreshold">
+                <param key="singleAppThres">100</param>
+                <param key="allThres">1000</param>
+            </module>
+        </SwapThreshold>
+    </memory>
+    <memory size="12">
+        <swapInOut>
+            <module name="psi">
+                <param key="psiOpen">false</param>
+                <param key="psiDelay">100</param>
+            </module>
+            <module name="psiEvent">
+                <param key="threshold">70</param>
+                <param key="window">1000</param>
+            </module>
+            <module name="rootMemcg">
+                <param key="rootSoftLimit">-1</param>
+                <param key="rootAppScore">300</param>
+                <param key="rootReclaimRatio">40</param>
+                <param key="rootSwapRatio">20</param>
+                <param key="rootReclaimRefault">100</param>
+            </module>
+            <module name="kill">
+                <param key="killThreshold">800</param>
+                <param key="killLimit">-1</param>
+                <param key="killParamRef">buffer size</param>
+                <param key="appThreshold">5</param>
+                <param key="bigKillMem">800</param>
+                <param key="appReqKillThreshold">600</param>
+                <param key="appReqKillMemMax">2500</param>
+                <param key="doBigMemKillWhenUnmet">true</param>
+            </module>
+            <module name="killOpt">
+                <param key="levelTwo">850</param>
+                <param key="levelThree">850</param>
+                <param key="bufferScreenOffChange">0</param>
+                <param key="screenOffQuickBuffer">800</param>
+            </module>
+            <module name="bufferSize">
+                <param key="defaultSize">1500</param>
+                <param key="warningSize">1600</param>
+                <param key="lowSize">1450</param>
+                <param key="upperSize">1530</param>
+                <param key="highSize">1550</param>
+                <param key="swapReserve">500</param>
+                <param key="minBuffer">900</param>
+                <param key="maxBuffer">1500</param>
+                <param key="appStartDelay">1</param>
+                <param key="reclaimDelay">3</param>
+                <param key="reclaimFailWindow">5</param>
+                <param key="reclaimFailCount">1</param>
+                <param key="raiseBufferTimeWidth">10</param>
+                <param key="raiseBufferMax">1500</param>
+                <param key="raiseBufferStep">10</param>
+            </module>
+            <module name="frontRatio">
+                <param key="reclaimRatio">0</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="activeRatio">
+                <param key="reclaimRatio">60</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="freezeRatio">
+                <param key="reclaimRatio">80</param>
+                <param key="swapRatio">100</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+            <module name="ak">
+                <param key="akEnable">false</param>
+                <param key="akEnableDebug">false</param>
+                <param key="akEnableDebugTime">false</param>
+            </module>
+            <module name="others">
+                <param key="logEnable">false</param>
+                <param key="scorePolicyEnable">false</param>
+                <param key="dailySwapOutQuotaMax">99</param>
+                <param key="zramCriticalThres">4608</param>
+                <param key="anonMinSize">500</param>
+                <param key="dynamicSwapSize">8</param>
+            </module>
+            <module name="batteryMonitor">
+                <param key="switch">false</param>
+                <param key="ram2ZramRatio">100,80,60,40,30</param>
+                <param key="zram2EswapRatio">100,80,60,40,30</param>
+                <param key="zswapdInterval">3,4,5,6,6</param>
+                <param key="batteryRefreshInterval">180</param>
+            </module>
+        </swapInOut>
+        <whiteList>
+            <module name="app">
+                <param key="pkg">com.hihonor.camera</param>
+                <param key="killThreshold">1100</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.meitu.myxj.selfie.merge.activity.SelfieCameraActivity</param>
+                <param key="killThreshold">900</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.scanner.ui.BaseScanUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.mmsight.ui.SightCaptureUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+        </whiteList>
+        <actList>
+            <module name="scoreRatio">
+                <param key="score">200</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="subProcessScoreRatio">
+                <param key="score">350</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">20</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="activeapplist">
+                <param key="pkgname0">com.android.phone</param>
+                <param key="pkgname1">com.hihonor.android.launcher</param>
+                <param key="pkgname2">com.hihonor.systemserver</param>
+                <param key="pkgname3">com.android.systemui</param>
+                <param key="pkgname4">com.hihonor.systemmanager</param>
+                <param key="pkgname5">system_server</param>
+                <param key="pkgname6">com.baidu.input_hihonor</param>
+            </module>
+        </actList>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">300</param>
+                <param key="maxRam">500</param>
+                <param key="swapRatio">80</param>
+                <param key="reclaimRatio">80</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">500</param>
+                <param key="maxRam">1000</param>
+                <param key="swapRatio">70</param>
+                <param key="reclaimRatio">70</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">1000</param>
+                <param key="maxRam">2147483647</param>
+                <param key="swapRatio">50</param>
+                <param key="reclaimRatio">50</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <specialGroup name="specialGroup1">
+            <module name="specialParam">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+            </module>
+            <module name="applist">
+                <param key="pkgname0">com.tencent.mm</param>
+                <param key="pkgname1">com.tencent.mobileqq</param>
+            </module>
+        </specialGroup>
+        <frequentUseSwapRatioList>
+            <module name="frequentUseRatio">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="freqUseThres">20</param>
+            </module>
+        </frequentUseSwapRatioList>
+        <backgroundActiveSwapRatioList>
+            <module name="backgroundActive">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="bgActiveThres">25</param>
+            </module>
+        </backgroundActiveSwapRatioList>
+        <SwapThreshold>
+            <module name="swapOutThreshold">
+                <param key="singleAppThres">100</param>
+                <param key="allThres">1000</param>
+            </module>
+        </SwapThreshold>
+    </memory>
+    <memory size="8">
+        <swapInOut>
+            <module name="psi">
+                <param key="psiOpen">false</param>
+                <param key="psiDelay">100</param>
+            </module>
+            <module name="psiEvent">
+                <param key="threshold">70</param>
+                <param key="window">1000</param>
+            </module>
+            <module name="rootMemcg">
+                <param key="rootSoftLimit">-1</param>
+                <param key="rootAppScore">300</param>
+                <param key="rootReclaimRatio">40</param>
+                <param key="rootSwapRatio">20</param>
+                <param key="rootReclaimRefault">100</param>
+            </module>
+            <module name="kill">
+                <param key="killThreshold">800</param>
+                <param key="killLimit">-1</param>
+                <param key="killParamRef">buffer size</param>
+                <param key="appThreshold">5</param>
+                <param key="bigKillMem">800</param>
+                <param key="appReqKillThreshold">600</param>
+                <param key="appReqKillMemMax">2500</param>
+                <param key="doBigMemKillWhenUnmet">true</param>
+            </module>
+            <module name="killOpt">
+                <param key="levelTwo">850</param>
+                <param key="levelThree">850</param>
+                <param key="bufferScreenOffChange">0</param>
+                <param key="screenOffQuickBuffer">800</param>
+            </module>
+            <module name="bufferSize">
+                <param key="defaultSize">1500</param>
+                <param key="warningSize">1600</param>
+                <param key="lowSize">1450</param>
+                <param key="upperSize">1580</param>
+                <param key="highSize">1550</param>
+                <param key="swapReserve">400</param>
+                <param key="minBuffer">1200</param>
+                <param key="maxBuffer">1500</param>
+                <param key="appStartDelay">1</param>
+                <param key="reclaimDelay">3</param>
+                <param key="reclaimFailWindow">5</param>
+                <param key="reclaimFailCount">1</param>
+                <param key="raiseBufferTimeWidth">10</param>
+                <param key="raiseBufferMax">1500</param>
+                <param key="raiseBufferStep">10</param>
+            </module>
+            <module name="frontRatio">
+                <param key="reclaimRatio">0</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="activeRatio">
+                <param key="reclaimRatio">60</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="freezeRatio">
+                <param key="reclaimRatio">80</param>
+                <param key="swapRatio">100</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+            <module name="ak">
+                <param key="akEnable">false</param>
+                <param key="akEnableDebug">false</param>
+                <param key="akEnableDebugTime">false</param>
+            </module>
+            <module name="others">
+                <param key="logEnable">false</param>
+                <param key="scorePolicyEnable">false</param>
+                <param key="dailySwapOutQuotaMax">99</param>
+                <param key="zramCriticalThres">4608</param>
+                <param key="anonMinSize">500</param>
+                <param key="dynamicSwapSize">8</param>
+            </module>
+            <module name="batteryMonitor">
+                <param key="switch">false</param>
+                <param key="ram2ZramRatio">100,80,60,40,30</param>
+                <param key="zram2EswapRatio">100,80,60,40,30</param>
+                <param key="zswapdInterval">3,4,5,6,6</param>
+                <param key="batteryRefreshInterval">180</param>
+            </module>
+        </swapInOut>
+        <whiteList>
+            <module name="app">
+                <param key="pkg">com.hihonor.camera</param>
+                <param key="killThreshold">1100</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.meitu.myxj.selfie.merge.activity.SelfieCameraActivity</param>
+                <param key="killThreshold">900</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.scanner.ui.BaseScanUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.mmsight.ui.SightCaptureUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+        </whiteList>
+        <actList>
+            <module name="scoreRatio">
+                <param key="score">200</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="subProcessScoreRatio">
+                <param key="score">350</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">20</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="activeapplist">
+                <param key="pkgname0">com.android.phone</param>
+                <param key="pkgname1">com.hihonor.android.launcher</param>
+                <param key="pkgname2">com.hihonor.systemserver</param>
+                <param key="pkgname3">com.android.systemui</param>
+                <param key="pkgname4">com.hihonor.systemmanager</param>
+                <param key="pkgname5">system_server</param>
+                <param key="pkgname6">com.baidu.input_hihonor</param>
+            </module>
+        </actList>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">300</param>
+                <param key="maxRam">500</param>
+                <param key="swapRatio">80</param>
+                <param key="reclaimRatio">80</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">500</param>
+                <param key="maxRam">1000</param>
+                <param key="swapRatio">70</param>
+                <param key="reclaimRatio">70</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">1000</param>
+                <param key="maxRam">2147483647</param>
+                <param key="swapRatio">50</param>
+                <param key="reclaimRatio">50</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <specialGroup name="specialGroup1">
+            <module name="specialParam">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+            </module>
+            <module name="applist">
+                <param key="pkgname0">com.tencent.mm</param>
+                <param key="pkgname1">com.tencent.mobileqq</param>
+            </module>
+        </specialGroup>
+        <frequentUseSwapRatioList>
+            <module name="frequentUseRatio">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="freqUseThres">20</param>
+            </module>
+        </frequentUseSwapRatioList>
+        <backgroundActiveSwapRatioList>
+            <module name="backgroundActive">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="bgActiveThres">25</param>
+            </module>
+        </backgroundActiveSwapRatioList>
+        <SwapThreshold>
+            <module name="swapOutThreshold">
+                <param key="singleAppThres">100</param>
+                <param key="allThres">1000</param>
+            </module>
+        </SwapThreshold>
+    </memory>
+    <memory size="6">
+        <swapInOut>
+            <module name="psi">
+                <param key="psiOpen">false</param>
+                <param key="psiDelay">100</param>
+            </module>
+            <module name="psiEvent">
+                <param key="threshold">70</param>
+                <param key="window">1000</param>
+            </module>
+            <module name="rootMemcg">
+                <param key="rootSoftLimit">-1</param>
+                <param key="rootAppScore">300</param>
+                <param key="rootReclaimRatio">40</param>
+                <param key="rootSwapRatio">20</param>
+                <param key="rootReclaimRefault">100</param>
+            </module>
+            <module name="kill">
+                <param key="killThreshold">450</param>
+                <param key="killLimit">-1</param>
+                <param key="killParamRef">buffer size</param>
+                <param key="appThreshold">5</param>
+                <param key="bigKillMem">900</param>
+                <param key="appReqKillThreshold">500</param>
+                <param key="appReqKillMemMax">2500</param>
+                <param key="doBigMemKillWhenUnmet">true</param>
+            </module>
+            <module name="killOpt">
+                <param key="levelTwo">450</param>
+                <param key="levelThree">450</param>
+                <param key="bufferScreenOffChange">0</param>
+                <param key="screenOffQuickBuffer">1100</param>
+            </module>
+            <module name="bufferSize">
+                <param key="defaultSize">1300</param>
+                <param key="warningSize">1400</param>
+                <param key="lowSize">1250</param>
+                <param key="upperSize">1330</param>
+                <param key="highSize">1350</param>
+                <param key="swapReserve">200</param>
+                <param key="minBuffer">900</param>
+                <param key="maxBuffer">1300</param>
+                <param key="appStartDelay">1</param>
+                <param key="reclaimDelay">3</param>
+                <param key="reclaimFailWindow">5</param>
+                <param key="reclaimFailCount">1</param>
+                <param key="raiseBufferTimeWidth">10</param>
+                <param key="raiseBufferMax">1300</param>
+                <param key="raiseBufferStep">10</param>
+            </module>
+            <module name="frontRatio">
+                <param key="reclaimRatio">0</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="activeRatio">
+                <param key="reclaimRatio">60</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="freezeRatio">
+                <param key="reclaimRatio">80</param>
+                <param key="swapRatio">100</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+            <module name="ak">
+                <param key="akEnable">false</param>
+                <param key="akEnableDebug">false</param>
+                <param key="akEnableDebugTime">false</param>
+            </module>
+            <module name="others">
+                <param key="logEnable">false</param>
+                <param key="scorePolicyEnable">false</param>
+                <param key="dailySwapOutQuotaMax">99</param>
+                <param key="zramCriticalThres">2048</param>
+                <param key="anonMinSize">500</param>
+                <param key="dynamicSwapSize">6</param>
+            </module>
+            <module name="batteryMonitor">
+                <param key="switch">false</param>
+                <param key="ram2ZramRatio">100,80,60,40,30</param>
+                <param key="zram2EswapRatio">100,80,60,40,30</param>
+                <param key="zswapdInterval">3,4,5,6,6</param>
+                <param key="batteryRefreshInterval">180</param>
+            </module>
+        </swapInOut>
+        <whiteList>
+            <module name="app">
+                <param key="pkg">com.hihonor.camera</param>
+                <param key="killThreshold">1100</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.meitu.myxj.selfie.merge.activity.SelfieCameraActivity</param>
+                <param key="killThreshold">900</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.scanner.ui.BaseScanUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.mmsight.ui.SightCaptureUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+        </whiteList>
+        <actList>
+            <module name="scoreRatio">
+                <param key="score">200</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="subProcessScoreRatio">
+                <param key="score">350</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">20</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="activeapplist">
+                <param key="pkgname0">com.android.phone</param>
+                <param key="pkgname1">com.hihonor.android.launcher</param>
+                <param key="pkgname2">com.hihonor.systemserver</param>
+                <param key="pkgname3">com.android.systemui</param>
+                <param key="pkgname4">com.hihonor.systemmanager</param>
+                <param key="pkgname5">system_server</param>
+                <param key="pkgname6">com.baidu.input_hihonor</param>
+            </module>
+        </actList>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">300</param>
+                <param key="maxRam">500</param>
+                <param key="swapRatio">80</param>
+                <param key="reclaimRatio">80</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">500</param>
+                <param key="maxRam">1000</param>
+                <param key="swapRatio">70</param>
+                <param key="reclaimRatio">70</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">1000</param>
+                <param key="maxRam">2147483647</param>
+                <param key="swapRatio">50</param>
+                <param key="reclaimRatio">50</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <specialGroup name="specialGroup1">
+            <module name="specialParam">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+            </module>
+            <module name="applist">
+                <param key="pkgname0">com.tencent.mm</param>
+                <param key="pkgname1">com.tencent.mobileqq</param>
+            </module>
+        </specialGroup>
+        <frequentUseSwapRatioList>
+            <module name="frequentUseRatio">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="freqUseThres">20</param>
+            </module>
+        </frequentUseSwapRatioList>
+        <backgroundActiveSwapRatioList>
+            <module name="backgroundActive">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="bgActiveThres">25</param>
+            </module>
+        </backgroundActiveSwapRatioList>
+        <SwapThreshold>
+            <module name="swapOutThreshold">
+                <param key="singleAppThres">100</param>
+                <param key="allThres">1000</param>
+            </module>
+        </SwapThreshold>
+    </memory>
+    <memory size="4">
+        <swapInOut>
+            <module name="psi">
+                <param key="psiOpen">false</param>
+                <param key="psiDelay">100</param>
+            </module>
+            <module name="psiEvent">
+                <param key="threshold">70</param>
+                <param key="window">1000</param>
+            </module>
+            <module name="rootMemcg">
+                <param key="rootSoftLimit">-1</param>
+                <param key="rootAppScore">300</param>
+                <param key="rootReclaimRatio">40</param>
+                <param key="rootSwapRatio">20</param>
+                <param key="rootReclaimRefault">100</param>
+            </module>
+            <module name="kill">
+                <param key="killThreshold">400</param>
+                <param key="killLimit">-1</param>
+                <param key="killParamRef">buffer size</param>
+                <param key="appThreshold">5</param>
+                <param key="bigKillMem">400</param>
+                <param key="appReqKillThreshold">400</param>
+                <param key="appReqKillMemMax">2000</param>
+                <param key="doBigMemKillWhenUnmet">false</param>
+            </module>
+            <module name="killOpt">
+                <param key="levelTwo">400</param>
+                <param key="levelThree">400</param>
+                <param key="bufferScreenOffChange">0</param>
+                <param key="screenOffQuickBuffer">400</param>
+            </module>
+            <module name="bufferSize">
+                <param key="defaultSize">1000</param>
+                <param key="warningSize">1100</param>
+                <param key="lowSize">950</param>
+                <param key="upperSize">1030</param>
+                <param key="highSize">1050</param>
+                <param key="swapReserve">200</param>
+                <param key="minBuffer">600</param>
+                <param key="maxBuffer">1000</param>
+                <param key="appStartDelay">1</param>
+                <param key="reclaimDelay">3</param>
+                <param key="reclaimFailWindow">5</param>
+                <param key="reclaimFailCount">1</param>
+                <param key="raiseBufferTimeWidth">10</param>
+                <param key="raiseBufferMax">1000</param>
+                <param key="raiseBufferStep">10</param>
+            </module>
+            <module name="frontRatio">
+                <param key="reclaimRatio">0</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="activeRatio">
+                <param key="reclaimRatio">60</param>
+                <param key="swapRatio">0</param>
+                <param key="reclaimRefault">50</param>
+            </module>
+            <module name="freezeRatio">
+                <param key="reclaimRatio">80</param>
+                <param key="swapRatio">100</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+            <module name="ak">
+                <param key="akEnable">false</param>
+                <param key="akEnableDebug">false</param>
+                <param key="akEnableDebugTime">false</param>
+            </module>
+            <module name="others">
+                <param key="logEnable">false</param>
+                <param key="scorePolicyEnable">false</param>
+                <param key="dailySwapOutQuotaMax">99</param>
+                <param key="zramCriticalThres">2048</param>
+                <param key="anonMinSize">500</param>
+                <param key="dynamicSwapSize">4</param>
+            </module>
+            <module name="batteryMonitor">
+                <param key="switch">false</param>
+                <param key="ram2ZramRatio">100,80,60,40,30</param>
+                <param key="zram2EswapRatio">100,80,60,40,30</param>
+                <param key="zswapdInterval">3,4,5,6,6</param>
+                <param key="batteryRefreshInterval">180</param>
+            </module>
+        </swapInOut>
+        <whiteList>
+            <module name="app">
+                <param key="pkg">com.hihonor.camera</param>
+                <param key="killThreshold">1100</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.meitu.myxj.selfie.merge.activity.SelfieCameraActivity</param>
+                <param key="killThreshold">900</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.scanner.ui.BaseScanUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+            <module name="app">
+                <param key="pkg">com.tencent.mm.plugin.mmsight.ui.SightCaptureUI</param>
+                <param key="killThreshold">800</param>
+                <param key="activity">True</param>
+            </module>
+        </whiteList>
+        <actList>
+            <module name="scoreRatio">
+                <param key="score">200</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="subProcessScoreRatio">
+                <param key="score">350</param>
+                <param key="activeReclaimRatio">40</param>
+                <param key="activeSwapRatio">20</param>
+                <param key="activeReclaimRefault">100</param>
+            </module>
+            <module name="activeapplist">
+                <param key="pkgname0">com.android.phone</param>
+                <param key="pkgname1">com.hihonor.android.launcher</param>
+                <param key="pkgname2">com.hihonor.systemserver</param>
+                <param key="pkgname3">com.android.systemui</param>
+                <param key="pkgname4">com.hihonor.systemmanager</param>
+                <param key="pkgname5">system_server</param>
+                <param key="pkgname6">com.baidu.input_hihonor</param>
+            </module>
+        </actList>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">300</param>
+                <param key="maxRam">500</param>
+                <param key="swapRatio">80</param>
+                <param key="reclaimRatio">80</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">500</param>
+                <param key="maxRam">1000</param>
+                <param key="swapRatio">70</param>
+                <param key="reclaimRatio">70</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <freezeRatio>
+            <module name="ratioGroup">
+                <param key="minRam">1000</param>
+                <param key="maxRam">2147483647</param>
+                <param key="swapRatio">50</param>
+                <param key="reclaimRatio">50</param>
+                <param key="reclaimRefault">100</param>
+            </module>
+        </freezeRatio>
+        <specialGroup name="specialGroup1">
+            <module name="specialParam">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+            </module>
+            <module name="applist">
+                <param key="pkgname0">com.tencent.mm</param>
+                <param key="pkgname1">com.tencent.mobileqq</param>
+            </module>
+        </specialGroup>
+        <frequentUseSwapRatioList>
+            <module name="frequentUseRatio">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="freqUseThres">20</param>
+            </module>
+        </frequentUseSwapRatioList>
+        <backgroundActiveSwapRatioList>
+            <module name="backgroundActive">
+                <param key="frontSwapRatio">0</param>
+                <param key="activeSwapRatio">0</param>
+                <param key="freezeSwapRatio">20</param>
+                <param key="bgActiveThres">25</param>
+            </module>
+        </backgroundActiveSwapRatioList>
+        <SwapThreshold>
+            <module name="swapOutThreshold">
+                <param key="singleAppThres">100</param>
+                <param key="allThres">1000</param>
+            </module>
+        </SwapThreshold>
+    </memory>
+</swap>

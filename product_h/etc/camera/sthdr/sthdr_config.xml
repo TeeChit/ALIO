@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<root>
+    <mem1>
+        <memvalue>32000000</memvalue>
+        <SthdrZoomRatio>1.99</SthdrZoomRatio>
+        <islock>0</islock>
+        <facesr>1</facesr>
+        <ZoomRatio1>
+            <ZoomRatioValue>8.0</ZoomRatioValue>
+            <FrameCount>8</FrameCount>
+        </ZoomRatio1>
+    </mem1>
+</root>

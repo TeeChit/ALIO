@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Config>
+    <Enable>false</Enable>
+
+    <Custom>
+        <NormallizeColorGamut>Super Gamut</NormallizeColorGamut>
+        <AlgoSkinBeauty>true</AlgoSkinBeauty>
+    </Custom>
+
+    <Thumbnail type="MICRO">
+    </Thumbnail>
+    <Thumbnail type="FAST">
+        <Algo image="SKIN_BEAUTY">ACM</Algo>
+    </Thumbnail>
+    <Thumbnail type="ANIMATION">
+        <Algo image="SKIN_BEAUTY">ACM</Algo>
+    </Thumbnail>
+    <Thumbnail type="FULLSCREEN">
+        <Algo>SR</Algo>
+        <Algo image="SKIN_BEAUTY">ACM</Algo>
+        <Algo image="SKIN_BEAUTY">SR</Algo>
+        <SaveCommonInfo>true</SaveCommonInfo>
+    </Thumbnail>
+    <Thumbnail type="HALFSCREEN">
+        <Algo image="SKIN_BEAUTY">ACM</Algo>
+        <SaveCommonInfo>true</SaveCommonInfo>
+    </Thumbnail>
+    <Thumbnail type="DEFAULT">
+        <Algo image="SKIN_BEAUTY">ACM</Algo>
+    </Thumbnail>
+
+    <Tile type="NON_SR">
+        <Algo image="SKIN_BEAUTY">ACM</Algo>
+    </Tile>
+    <Tile type="SR">
+        <Algo>SR</Algo>
+    </Tile>
+</Config>

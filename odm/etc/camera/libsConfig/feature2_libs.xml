@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<supportAppPackageName>
+	<appConfig>
+		<packageName>com.hihonor.camera</packageName>
+		<cameraInfo>
+			<sceneMode>0</sceneMode>   <!-- normal  -->
+			<feature2LibList>
+				<libName>com.qti.feature2.generic.so</libName>
+				<libName>com.qti.feature2.rt.so</libName>
+				<libName>com.qti.feature2.anchorsync.so</libName>
+				<libName>com.qti.feature2.mfsr.netrani.so</libName>
+				<libName>com.hihonor.feature2.honorraw.so</libName>
+				<libName>com.qti.feature2.derivedoffline.so</libName>
+			</feature2LibList>
+		</cameraInfo>
+		<cameraInfo>
+			<sceneMode>23</sceneMode>  <!-- portrait  -->
+			<cameraId>1</cameraId>
+			<feature2LibList>
+				<libName>com.qti.feature2.generic.so</libName>
+				<libName>com.qti.feature2.rt.so</libName>
+				<libName>com.qti.feature2.anchorsync.so</libName>
+				<libName>com.qti.feature2.mfsr.netrani.so</libName>
+				<libName>com.hihonor.feature2.honorraw.so</libName>
+			</feature2LibList>
+		</cameraInfo>
+	</appConfig>
+</supportAppPackageName>

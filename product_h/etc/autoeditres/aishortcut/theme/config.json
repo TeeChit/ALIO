@@ -1,0 +1,405 @@
+{
+  "themes": [
+    {
+      "id": "Sad_30_1",
+      "label":{
+        "Content Label for HONOR": ["Architecture", "Scenery", "leisur", "Soothing"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131012407473",
+      "localCategoryId" : "autoedit_local_category_id_travel",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Happy_25_1",
+      "label":{
+        "Content Label for HONOR": ["Party"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131016104175",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Happy_20_1",
+      "label":{
+        "Content Label for HONOR": ["Childlike interest", "Pet", "Party"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131016104175",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Sad_25_1",
+      "label":{
+        "Content Label for HONOR": ["Travel", "Architecture", "Scenery", "leisur", "Soothing"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131016104175",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Soothing_25_1",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Scenery", "leisur"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209131016104175",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Soothing_15_2",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Relaxed Cheerful", "Party"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221139328388",
+      "localCategoryId" : "autoedit_local_category_id_romantic",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Soothing_20_1",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Scenery", "Travel", "leisur"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209221139328388",
+      "localCategoryId" : "autoedit_local_category_id_romantic",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Sad_15_1",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221139328388",
+      "localCategoryId" : "autoedit_local_category_id_romantic",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Rhythm_25_2",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Travel", "Dynamic rhythm", "Sport"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209221146475219",
+      "localCategoryId" : "autoedit_local_category_id_rhythm",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Rhythm_25_1",
+      "label":{
+        "Content Label for HONOR": ["Travel", "Dynamic rhythm", "Sport"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221146475219",
+      "localCategoryId" : "autoedit_local_category_id_rhythm",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Rhythm_20_1",
+      "label":{
+        "Content Label for HONOR": ["Dynamic rhythm", "Sport"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221146475219",
+      "localCategoryId" : "autoedit_local_category_id_rhythm",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Fresh_25_1",
+      "label":{
+        "Content Label for HONOR": ["Travel", "Nightscape", "Scenery", "leisur", "Soothing"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221125231680",
+      "localCategoryId" : "autoedit_local_category_id_travel",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Fresh_15_1",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Scenery"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209221125231680",
+      "localCategoryId" : "autoedit_local_category_id_travel",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Happy_30_1",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131419051597",
+      "localCategoryId" : "autoedit_local_category_id_food",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Happy_15_2",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Food", "Relaxed Cheerful", "Party"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131419051597",
+      "localCategoryId" : "autoedit_local_category_id_food",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Fresh_30_1",
+      "label":{
+        "Content Label for HONOR": ["Characters", "Food", "Scenery", "leisur"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209131419051597",
+      "localCategoryId" : "autoedit_local_category_id_food",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Soothing_30_1",
+      "label":{
+        "Content Label for HONOR": ["Childlike interest"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131030581288",
+      "localCategoryId" : "autoedit_local_category_id_cute",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Happy_15_1",
+      "label":{
+        "Content Label for HONOR": ["Childlike interest", "Party"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131030581288",
+      "localCategoryId" : "autoedit_local_category_id_cute",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Soothing_15_1",
+      "label":{
+        "Content Label for HONOR": ["Childlike interest", "Pet"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131030581288",
+      "localCategoryId" : "autoedit_local_category_id_cute",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "Happy_25_2",
+      "label":{
+        "Content Label for HONOR": ["Childlike interest", "Pet"],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131013472576",
+      "localCategoryId" : "autoedit_local_category_id_cute",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "honor"
+    },
+    {
+      "id": "0x01000000000000FB",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131030581288",
+      "localCategoryId" : "autoedit_local_category_id_cute",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x010000000000027A",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221125231680",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x0100000000000120",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209131012407473",
+      "localCategoryId" : "autoedit_local_category_id_travel",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x0100000000000170",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221125231680",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x0100000000000228",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202202222055126747",
+      "localCategoryId" : "autoedit_local_category_id_travel",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x0100000000000257",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209131016104175",
+      "localCategoryId" : "autoedit_local_category_id_rhythm",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x0100000000000289",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": false
+      },
+      "categoryId" : "202209221125231680",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    },
+    {
+      "id": "0x0100030000000073",
+      "label":{
+        "Content Label for HONOR": [],
+        "Clip Count for HONOR":["unlimited"],
+        "Suitable Material":["Video", "Picture"],
+        "is common": true
+      },
+      "categoryId" : "202209131016104175",
+      "localCategoryId" : "autoedit_local_category_id_daily",
+      "orientation" : "all",
+      "scale" : "all",
+      "vendor" : "xy"
+    }
+  ],
+  "categories" : [
+    {"id" : "autoedit_local_category_id_daily"},
+    {"id" : "autoedit_local_category_id_travel"},
+    {"id" : "autoedit_local_category_id_rhythm"},
+    {"id" : "autoedit_local_category_id_cute"},
+    {"id" : "autoedit_local_category_id_food"},
+    {"id" : "autoedit_local_category_id_romantic"}
+  ],
+  "version" : 2
+}

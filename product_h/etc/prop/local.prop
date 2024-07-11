@@ -1,0 +1,456 @@
+# 2023-11-28 14:41:15.0
+hsdf.keyguard.support_uppertime_style=true
+# 2023-11-28 14:41:15.0
+msc.aod.support_display_style=2,5,5,0
+# 2023-11-28 14:41:15.0
+msc.boot.powerkey.restart_type=1
+# 2023-11-28 14:41:15.0
+msc.camera.BackSnapShotLimit=true
+# 2023-11-28 14:41:15.0
+msc.camera.back_video_default_value=1080P
+# 2023-11-28 14:41:15.0
+msc.camera.beauty_max_3x_zoom_dot=true
+# 2023-11-28 14:41:15.0
+msc.camera.capturedelay_config_enable=true
+# 2023-11-28 14:41:15.0
+msc.camera.documentrecognition=false
+# 2023-11-28 14:41:15.0
+msc.camera.dual.video_capbility_switch=720_30
+# 2023-11-28 14:41:15.0
+msc.camera.fastcapture=false
+# 2023-11-28 14:41:15.0
+msc.camera.front_touch_shot=off
+# 2023-11-28 14:41:15.0
+msc.camera.front_video_default_value=1080P
+# 2023-11-28 14:41:15.0
+msc.camera.horizonLevel_performancemode=true
+# 2023-11-28 14:41:15.0
+msc.camera.light_leak_mask=1
+# 2023-11-28 14:41:15.0
+msc.camera.lightpainting=false
+# 2023-11-28 14:41:15.0
+msc.camera.livephoto_enable=false
+# 2023-11-28 14:41:15.0
+msc.camera.multicamera_mode_main_page=true
+# 2023-11-28 14:41:15.0
+msc.camera.osgiframework=false
+# 2023-11-28 14:41:15.0
+msc.camera.provideo=false
+# 2023-11-28 14:41:15.0
+msc.camera.rawphoto.save=false
+# 2023-11-28 14:41:15.0
+msc.camera.slowmotion=true
+# 2023-11-28 14:41:15.0
+msc.camera.smartshoot_enable=true
+# 2023-11-28 14:41:15.0
+msc.camera.support_720p_21_9=true
+# 2023-11-28 14:41:15.0
+msc.camera.timelapse1_show_videotime=true
+# 2023-11-28 14:41:15.0
+msc.camera.vibrator_optimize_enable=true
+# 2023-11-28 14:41:15.0
+msc.camera.videostabilization=false
+# 2023-11-28 14:41:15.0
+msc.camera.vlog=true
+# 2023-11-28 14:41:15.0
+msc.cast.cast_config_parameter=RESOLUTION_CEA;7;30;PROFILE_CHP;LEVEL_32;VTP_UNSUPPORT;24;24;40;3;8
+# 2023-11-28 14:41:15.0
+msc.config.BatteryLevel_job_allowed=95
+# 2023-11-28 14:41:15.0
+msc.config.cast_mode=true
+# 2023-11-28 14:41:15.0
+msc.config.charge_frz=true
+# 2023-11-28 14:41:15.0
+msc.config.dts_settings=true
+# 2023-11-28 14:41:15.0
+msc.config.easywakeup=true
+# 2023-11-28 14:41:15.0
+msc.config.easywakeup_openface=true
+# 2023-11-28 14:41:15.0
+msc.config.fyuse_enable=false
+# 2023-11-28 14:41:15.0
+msc.config.globalEcc=true
+# 2023-11-28 14:41:15.0
+msc.config.hotswap_on=true
+# 2023-11-28 14:41:15.0
+msc.config.knucklegesture=Honor
+# 2023-11-28 14:41:15.0
+msc.config.light_enhance=true
+# 2023-11-28 14:41:15.0
+msc.config.lte_support=true
+# 2023-12-26 21:01:52.0
+msc.config.magic.version=8.0
+# 2023-11-28 14:41:15.0
+msc.config.media_flags=3
+# 2023-11-28 14:41:15.0
+msc.config.motion_reco_qcom=true
+# 2023-11-28 14:41:15.0
+msc.config.navi_extend=false
+# 2023-11-28 14:41:15.0
+msc.config.new_screen_aspect=2652:2525:1200
+# 2023-11-28 14:41:15.0
+msc.config.newsimple=true
+# 2023-11-28 14:41:15.0
+msc.config.notch_size=72,115,564,48
+# 2023-11-28 14:41:15.0
+msc.config.privacySpace=false
+# 2023-11-28 14:41:15.0
+msc.config.remove_touch_mode=false
+# 2023-11-28 14:41:15.0
+msc.config.security_volume=8
+# 2023-11-28 14:41:15.0
+msc.config.sensorhub=true
+# 2023-11-28 14:41:15.0
+msc.config.show_4G_Plus_icon=true
+# 2023-11-28 14:41:15.0
+msc.config.smallwindow=0
+# 2023-11-28 14:41:15.0
+msc.config.srlte=true
+# 2023-11-28 14:41:15.0
+msc.config.support_clone_app=true
+# 2023-11-28 14:41:15.0
+msc.config.support_geofence=true
+# 2023-11-28 14:41:15.0
+msc.config.support_hnpki=true
+# 2023-11-28 14:41:15.0
+msc.config.support_led=false
+# 2023-11-28 14:41:15.0
+msc.config.switchdata_4G=true
+# 2023-11-28 14:41:15.0
+msc.config.sws=true
+# 2023-11-28 14:41:15.0
+msc.config.triple_finger=true
+# 2023-11-28 14:41:15.0
+msc.config.volte_on=true
+# 2023-11-28 14:41:15.0
+msc.config.vtlte_on=true
+# 2023-11-28 14:41:15.0
+msc.config.wakeup_device=true
+# 2024-02-18 10:59:07.0
+msc.config.watermark=false
+# 2023-11-28 14:41:15.0
+msc.config.wifibridge=true
+# 2023-11-28 14:41:15.0
+msc.display.grayscale_app_conversion=1
+# 2023-11-28 14:41:15.0
+msc.display.health.healthbrightness_switch=1
+# 2023-11-28 14:41:15.0
+msc.display.health.healthtcp_switch=2
+# 2023-11-28 14:41:15.0
+msc.display.health.highfrequencypwm_switch=1
+# 2024-03-13 15:04:33.0
+msc.dynamic_display.capsule_support=1
+# 2023-11-28 14:41:15.0
+msc.fingerprint.powerfingerdestorydelay=1000
+# 2023-11-28 14:41:15.0
+msc.gallery.see_to_view_solution=1
+# 2023-11-28 14:41:15.0
+msc.hicall.skinbeauty=false
+# 2023-11-28 14:41:15.0
+msc.honorlens.magictext_capability=true
+# 2023-11-28 14:41:15.0
+msc.iConnect.BtScoRecord=true
+# 2023-11-28 14:41:15.0
+msc.inputmethod.support_touch_host_processing=true
+# 2023-11-28 14:41:15.0
+msc.irda_learning_support=false
+# 2023-11-28 14:41:15.0
+msc.launcher.g2_disable=true
+# 2023-11-28 14:41:15.0
+msc.launcher.unlock_animation_level=0
+# 2023-11-28 14:41:15.0
+msc.low_battery.power_off_control=1_0_60
+# 2023-11-28 14:41:15.0
+msc.media.audio.effectforfastmixer.type=1
+# 2023-11-28 14:41:15.0
+msc.media.audio.lowlatency.enable=true
+# 2023-11-28 14:41:15.0
+msc.multiscreen.collaboration.value=3
+# 2023-11-28 14:41:15.0
+msc.multiscreen.devicecollaboration.config=config:1280,0,0,0;lite_device:1
+# 2023-11-28 14:41:15.0
+msc.multiscreen.mdms.value=1
+# 2023-11-28 14:41:15.0
+msc.multiscreen.windowcast.value=0
+# 2023-11-28 14:41:15.0
+msc.power.smart_charge_turbo=0
+# 2023-11-28 14:41:15.0
+msc.pp.cmcc_cu_dsdx_enable=true
+# 2023-11-28 14:41:15.0
+msc.pp.fast_pref_net_reg=true
+# 2023-11-28 14:41:15.0
+msc.pp.network.type.comma=true
+# 2023-11-28 14:41:15.0
+msc.pp.qcril_cross_mapping=true
+# 2023-11-28 14:41:15.0
+msc.radio.defdualnrcap=0
+# 2023-11-28 14:41:15.0
+msc.sensor.psensor.full_ultrasonic=1
+# 2023-11-28 14:41:15.0
+msc.settings.hide_ges_indicator=false
+# 2023-11-28 14:41:15.0
+msc.settings.honorbeamdisabled=true
+# 2023-11-28 14:41:15.0
+msc.settings.use_dts_hnversion=true
+# 2023-11-28 14:41:15.0
+msc.snapshot_pixel_format_reduced=false
+# 2023-11-28 14:41:15.0
+msc.super_device.capability_level=1,2,3
+# 2023-11-28 14:41:15.0
+msc.sys.max_rdh_delay=2000
+# 2023-11-28 14:41:15.0
+msc.systemanimation.backexit_effects=0
+# 2023-12-22 17:30:26.0
+msc.systemserver.atom_service_interaction_support=true
+# 2023-11-28 14:41:15.0
+msc.systemui.notification_count=50
+# 2023-11-28 14:41:15.0
+msc.vm.start-dex2oat-threads=4
+# 2023-11-28 14:41:15.0
+msc.volte.check_qcom_call=true
+# 2023-11-28 14:41:15.0
+mscw.bluetooth.ranging.inloss=12
+# 2023-11-28 14:41:15.0
+mscw.power.saving.always.netconnect=false
+# 2023-11-28 14:41:15.0
+mscw.power.saving.autoquit=false
+# 2023-11-28 14:41:15.0
+mscw.product.network_scan_by_item=true
+# 2023-11-28 14:41:15.0
+mscw.recorder.setting.bitwidth=1
+# 2023-11-28 14:41:15.0
+persist.device_config.runtime_native.secondary_usap_pool_enabled=false
+# 2023-11-28 14:41:15.0
+persist.device_config.runtime_native.usap_pool_enabled=true
+# 2023-11-28 14:41:15.0
+persist.media.lowlatency.enable=true
+# 2023-11-28 14:41:15.0
+persist.radio.defdualltecap=1
+# 2023-11-28 14:41:15.0
+persist.radio.dualltecap=1
+# 2023-11-28 14:41:15.0
+persist.sys.dualcards=true
+# 2023-11-28 14:41:15.0
+persist.sys.fast_h_delay=5000
+# 2023-11-28 14:41:15.0
+persist.sys.fast_h_duration=2000
+# 2023-11-28 14:41:15.0
+persist.sys.fast_h_max=50
+# 2023-11-28 14:41:15.0
+persist.sys.hn.forcedark_policy=1
+# 2023-11-28 14:41:15.0
+persist.sys.hyperhold.swapout.enable.cfg=true
+# 2023-11-28 14:41:15.0
+persist.sys.iaware_fast_h_delay=3000
+# 2023-11-28 14:41:15.0
+ro.SignalStrength.ValidateInput=true
+# 2023-11-28 14:41:15.0
+ro.blight.exempt_app_type=-1,1,5,8,16,24
+# 2023-11-28 14:41:15.0
+ro.build.enhanced_gk_rule=true
+# 2023-12-26 21:01:52.0
+ro.build.hardware_expose=true
+# 2024-02-18 10:59:07.0
+ro.build.hide=false
+# 2023-12-26 21:01:52.0
+ro.build.hide.matchers=8.0.0
+# 2023-12-26 21:01:52.0
+ro.build.hide.replacements=7.2.1
+# 2023-12-26 21:01:52.0
+ro.build.hide.settings=8;1.8 GHz;2.0GB;11.00 GB;16.00 GB;1920 x 1080;13;3.10.30;7.2
+# 2023-11-28 14:41:15.0
+ro.build.product=ALIO
+# 2023-11-28 14:41:15.0
+ro.config.StkDisplayTexNoRes=true
+# 2023-11-28 14:41:15.0
+ro.config.SupportSdcard=false
+# 2023-11-28 14:41:15.0
+ro.config.ambient_position=2
+# 2023-11-28 14:41:15.0
+ro.config.amr_wb_show_hd=true
+# 2023-11-28 14:41:15.0
+ro.config.app_big_icon_size=204
+# 2023-11-28 14:41:15.0
+ro.config.attach_apn_enabled=true
+# 2023-11-28 14:41:15.0
+ro.config.audioEffectForRing=true
+# 2023-11-28 14:41:15.0
+ro.config.blight_power_curve=50,1;100,0.8;300,0.8;350,0.9;380,1
+# 2023-11-28 14:41:15.0
+ro.config.bt_a2dp_disabled_enc=5,6,7,8
+# 2023-11-28 14:41:15.0
+ro.config.cl_volte_autoswitch=true
+# 2023-11-28 14:41:15.0
+ro.config.colorTemperature_3d=true
+# 2023-11-28 14:41:15.0
+ro.config.colorTemperature_K3=true
+# 2023-11-28 14:41:15.0
+ro.config.color_aod_type=2047
+# 2023-11-28 14:41:15.0
+ro.config.cpu_info_display=Snapdragon 6 Gen 1
+# 2023-11-28 14:41:15.0
+ro.config.curved_screen=1
+# 2023-11-28 14:41:15.0
+ro.config.default_screensize=1200,2652
+# 2023-11-28 14:41:15.0
+ro.config.detect_sd_disable=true
+# 2023-11-28 14:41:15.0
+ro.config.disable_operator_name=true
+# 2023-11-28 14:41:15.0
+ro.config.empty.package=true
+# 2023-11-28 14:41:15.0
+ro.config.enable_backup_fc_2d=true
+# 2023-11-28 14:41:15.0
+ro.config.enable_thermal_bdata=true
+# 2023-11-28 14:41:15.0
+ro.config.enroll_vibrate_time=80
+# 2023-11-28 14:41:15.0
+ro.config.face_disable_cap=10
+# 2023-11-28 14:41:15.0
+ro.config.face_disable_temp=-100
+# 2023-11-28 14:41:15.0
+ro.config.face_recognition=true
+# 2023-11-28 14:41:15.0
+ro.config.face_rise_light=40
+# 2023-11-28 14:41:15.0
+ro.config.face_smart_keepon=false
+# 2023-11-28 14:41:15.0
+ro.config.face_smart_rotation=false
+# 2023-11-28 14:41:15.0
+ro.config.finger_joint=true
+# 2023-11-28 14:41:15.0
+ro.config.fp_auto_unlock_face=true
+# 2023-11-28 14:41:15.0
+ro.config.fp_notice_face=true
+# 2023-11-28 14:41:15.0
+ro.config.full_network_support=true
+# 2023-11-28 14:41:15.0
+ro.config.gameassist_soundtovibrate=0
+# 2023-11-28 14:41:15.0
+ro.config.gps_to_nlp=true
+# 2023-11-28 14:41:15.0
+ro.config.hiai.translation_engine.full_feature=0
+# 2023-11-28 14:41:15.0
+ro.config.linkplus.liveupdate=true
+# 2023-11-28 14:41:15.0
+ro.config.lock_noti_simplify=true
+# 2023-11-28 14:41:15.0
+ro.config.low_temp_tsh=0
+# 2023-11-28 14:41:15.0
+ro.config.marketing_name=HONOR X9b 5G
+# 2023-11-28 14:41:15.0
+ro.config.media_vol_steps=16
+# 2023-11-28 14:41:15.0
+ro.config.need_tailored=true
+# 2023-11-28 14:41:15.0
+ro.config.networkmode_hide_dyn=true
+# 2023-11-28 14:41:15.0
+ro.config.noti_list_simplify=true
+# 2023-11-28 14:41:15.0
+ro.config.privacycontact=false
+# 2023-11-28 14:41:15.0
+ro.config.proximity_top=false
+# 2023-11-28 14:41:15.0
+ro.config.ringtone=Go_Beyond_Traditional.ogg
+# 2023-11-28 14:41:15.0
+ro.config.ringtone2=Go_Beyond_Marimba.ogg
+# 2023-11-28 14:41:15.0
+ro.config.sn_main_page=true
+# 2023-11-28 14:41:15.0
+ro.config.streamEffect=28
+# 2023-11-28 14:41:15.0
+ro.config.support_aod=2
+# 2023-11-28 14:41:15.0
+ro.config.support_eid=false
+# 2023-11-28 14:41:15.0
+ro.config.support_face_mode=2
+# 2023-11-28 14:41:15.0
+ro.config.support_facepay_mode=0
+# 2023-11-28 14:41:15.0
+ro.config.swsAlwaysActiveForSPK=true
+# 2023-11-28 14:41:15.0
+ro.config.sws_version=0710
+# 2023-11-28 14:41:15.0
+ro.config.thermal_trigger_screenoff=33
+# 2023-11-28 14:41:15.0
+ro.config.thermal_trigger_screenon=35
+# 2023-11-28 14:41:15.0
+ro.config.use_passwd_length_rule=true
+# 2023-11-28 14:41:15.0
+ro.config.vc_call_vol_steps=10
+# 2023-11-28 14:41:15.0
+ro.config.videocalldistributedassist=true
+# 2023-11-28 14:41:15.0
+ro.config.vol_steps=15
+# 2023-11-28 14:41:15.0
+ro.config.wake_df_on=false
+# 2023-11-28 14:41:15.0
+ro.config.win_freeze_timeout_duration=3000
+# 2023-11-28 14:41:15.0
+ro.dual.sim.phone=true
+# 2023-11-28 14:41:15.0
+ro.feature.email.smime=true
+# 2023-11-28 14:41:15.0
+ro.feature.notification_badge_combine_switch=true
+# 2023-11-28 14:41:15.0
+ro.gpu_turbo=GPU Turbo
+# 2023-11-28 14:41:15.0
+ro.gsensor.calibrate=true
+# 2023-11-28 14:41:15.0
+ro.launcher.icon_size_narrow=188
+# 2023-11-28 14:41:15.0
+ro.lostnetwork.default_timer=50
+# 2023-11-28 14:41:15.0
+ro.mpen.default.support=false
+# 2023-11-28 14:41:15.0
+ro.odm.config.face_recognition=true
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_fusion_ver=0
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_map_matching=0
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_nw_pos_db=NA
+# 2023-11-28 14:41:15.0
+ro.odm.config.higeo_pdrsupport=false
+# 2023-11-28 14:41:15.0
+ro.odm.config.support_face_mode=2
+# 2023-11-28 14:41:15.0
+ro.powersavemode.backlight_ratio=80
+# 2023-11-28 14:41:15.0
+ro.product.board=ALIO
+# 2023-11-28 14:41:15.0
+ro.product.brand=HONOR
+# 2023-11-28 14:41:15.0
+ro.product.device=HNALI-Q
+# 2023-11-28 14:41:15.0
+ro.product.fingerprintName=HONOR-Z220
+# 2023-11-28 14:41:15.0
+ro.product.manufacturer=HONOR
+# 2023-11-28 14:41:15.0
+ro.product.perfmode=true
+# 2023-11-28 14:41:15.0
+ro.product.proximityenable=false
+# 2023-11-28 14:41:15.0
+ro.projectmenu.chargemaxlevel=60
+# 2023-11-28 14:41:15.0
+ro.projectmenu.chargeminlevel=50
+# 2023-11-28 14:41:15.0
+ro.qti.sensors.gravity=true
+# 2024-02-18 10:59:07.0
+ro.readfastboot=0
+# 2023-11-28 14:41:15.0
+ro.sf.lcd_density=520
+# 2023-11-28 14:41:15.0
+ro.sysui.renderthread_timeout=5000
+# 2023-11-28 14:41:15.0
+ro.telephony.ril_class=HwQualcommRIL
+# 2023-11-28 14:41:15.0
+vendor.msc.display.cwb_global_switch=true
+ro.comp.product_version=Product-ALI 8.0.0(0001)
+ro.build.display.id=no-need
+ro.config.beta_sec_ctrl=false
+ro.comp.hl.product_base_version=ALI-LGRP2-OVS 8.0.0.164
+msc.sys.base_all_groupversion=G2.0
+ro.product.imeisv=01
+
+msc.sys.hota.is_hninit_exists=false

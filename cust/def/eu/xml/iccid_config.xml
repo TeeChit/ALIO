@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters_config  version="1">
+  <simcardtype iccid="8934">
+    <string language="es" country="ES"/>
+  </simcardtype>
+  <simcardtype iccid="8949">
+    <string language="de" country="DE"/>
+  </simcardtype>
+  <simcardtype iccid="8944">
+    <string language="en" country="GB"/>
+  </simcardtype>
+  <simcardtype iccid="8933">
+    <string language="fr" country="FR"/>
+  </simcardtype>
+  <simcardtype iccid="8948">
+    <string language="pl" country="PL"/>
+  </simcardtype>
+  <simcardtype iccid="89420">
+    <string language="cs" country="CZ"/>
+  </simcardtype>
+</parameters_config>

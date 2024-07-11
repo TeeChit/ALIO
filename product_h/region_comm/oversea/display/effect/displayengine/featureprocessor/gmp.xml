@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DisplayEngineConfig>
+	<id>23</id>
+	<updated>2016-12-24</updated>
+	<feature name="GMP">
+		<mode name="FILTER">
+			<param name="DE_SCENE_ACTION_COLORMODE_ON">MODE_DISABLE</param>
+			<param name="DE_SCENE_ACTION_COLORMODE_OFF">MODE_COLOR_ENHANCE</param>
+			<param name="DE_SCENE_ACTION_UI_ENTER">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_SCREEN_ON">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_GAME_ENTER">MODE_GAME</param>
+			<param name="DE_SCENE_ACTION_SCREEN_OFF">MODE_SCREEN_OFF</param>
+			<param name="DE_SCENE_ACTION_QRCODE_ENTER">MODE_SHOP</param>
+			<param name="DE_SCENE_ACTION_QRCODE_EXIT">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_SDR2HDR_ON">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_SDR2HDR_EXIT">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_VIDEO_LAYER_FULLSCREEN_START">MODE_IMAGE</param>
+			<param name="DE_SCENE_ACTION_VIDEO_LAYER_FULLSCREEN_EXIT">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_ENHANCE_GAME_EXIT">MODE_UI</param>
+			<param name="DE_SCENE_ACTION_GAME_PUBG_ENTER">MODE_IM</param>
+			<param name="DE_SCENE_ACTION_GAME_MOVIE_ENTER">MODE_SMS</param>
+		</mode>
+		<mode name="FEATURE">
+			<param name="DE_SCENE_ACTION_SDR2HDR_ON" priority = "2">MODE_VIDEO</param>
+			<param name="DE_SCENE_ACTION_GAME_SDR2HDR_ON" priority = "1">MODE_BROWSER_DISABLE</param>
+		</mode>
+<!--COLOEMODE-CHANGE-FOR-PLATFORM-Q-->
+		<mode name="RENDERINTENT">
+			<param name="RenderIntentEnable">1</param>
+		</mode>
+		<mode name="COLORMODE_STD">
+			<param name="COLORMODE_TYPE">7</param>
+		</mode>
+		<mode name="COLORMODE_VIVID">
+			<param name="COLORMODE_TYPE">7</param>
+		</mode>
+		<mode name="FULLSCREEN">
+			<param name="FullscreenEnable">1</param>
+		</mode>
+		<mode name="QCOM">
+			<param name="QcomEnable">1</param>
+		</mode>
+	</feature>
+</DisplayEngineConfig>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HnEasyWakeUpMotion>
+  <EasyWakeUpMotion name="Double_Touch" support="1" value="0" flag="0" keycode="131"/>
+  <MaxKeyCode name="MaxKeyCode" value="131"/>
+  <MinKeyCode name="MinKeyCode" value="131"/>
+  <DriverFileLength name="DriverFileLength" value="16"/>
+  <DriverPostionPath name="DriverPostionPath" value="/sys/touchscreen/easy_wakeup_position"/>
+  <DriverGesturePath name="DriverGesturePath" value="/sys/touchscreen/easy_wakeup_gesture"/>
+  <DriverControlPath name="DriverControlPath" value="/sys/touchscreen/easy_wakeup_control"/>
+</HnEasyWakeUpMotion>

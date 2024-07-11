@@ -1,0 +1,8 @@
+{
+    "RSD":{
+        "front_day_threshold":0.180,
+        "front_night_threshold":0.199,
+        "back_main_day_threshold":0.201,
+        "back_main_night_threshold":0.202
+    }
+}

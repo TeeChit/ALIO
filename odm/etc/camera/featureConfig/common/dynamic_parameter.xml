@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="GB2312"?>
+<FEATURE_CONFIG>
+    <SensorName Value="c152ucf_m020">
+        <DarkNight Value="450"/>
+        <SuperNight Value="380"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c152hiv_m020">
+        <DarkNight Value="490"/>
+        <SuperNight Value="325"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c152hiv_m030">
+        <DarkNight Value="490"/>
+        <SuperNight Value="325"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c825yfw_m060">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="290"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c825wmr_m030">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="290"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c820utf_m060"> <!--front camera-->
+        <DarkNight Value="450"/>
+        <SuperNight Value="310"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c820utf_m020"> <!--front camera-->
+        <DarkNight Value="450"/>
+        <SuperNight Value="310"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c152ucf_m020_pro">
+        <DarkNight Value="450"/>
+        <SuperNight Value="380"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c152hiv_m020_pro">
+        <DarkNight Value="490"/>
+        <SuperNight Value="325"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c152hiv_m030_pro">
+        <DarkNight Value="490"/>
+        <SuperNight Value="325"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c826ucf_m030_pro">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="350"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c826ucf_m010_pro">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="350"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c825wmr_m030_pro">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="290"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c825yfw_m060_pro">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="290"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c819utf_m060_pro"> <!--front camera-->
+        <DarkNight Value="450"/>
+        <SuperNight Value="310"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c014muf_m060_pro">
+        <DarkNight Value="450"/>
+        <SuperNight Value="380"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="250"/>
+    </SensorName>
+    <SensorName Value="c009ucf_m010_plus">
+        <DarkNight Value="450"/>
+        <SuperNight Value="380"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+    <SensorName Value="c009fuc_m010_plus">
+        <DarkNight Value="450"/>
+        <SuperNight Value="285"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+    <SensorName Value="c826ucf_m010_plus">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="350"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+    <SensorName Value="c826ucf_m030_plus">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="350"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+    <SensorName Value="c832ucf_m060_plus">
+        <DarkNight Value="10000"/>
+        <SuperNight Value="260"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+    <SensorName Value="c819utf_m060_plus"> <!--front camera-->
+        <DarkNight Value="450"/>
+        <SuperNight Value="310"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+    <SensorName Value="c014muf_m060_plus">
+        <DarkNight Value="450"/>
+        <SuperNight Value="380"/>
+        <BWCFuison Value="100"/>
+        <NotMiddleBrightness Value="100"/>
+        <MCF Value="200"/>
+    </SensorName>
+</FEATURE_CONFIG>

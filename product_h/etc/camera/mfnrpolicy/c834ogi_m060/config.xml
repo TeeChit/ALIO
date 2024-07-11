@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="gb2312"?>
+<MfnrConfig>
+    <!--QCOM HardWare MFNR-->
+    <QCOM_MFNR_PRIOR value="1"/>
+    <QCOM_MFNR_PRIOR_ISO_LOW value="1400"/>
+    <QCOM_MFNR_PRIOR_ISO_HIGH value="64000"/>
+</MfnrConfig>

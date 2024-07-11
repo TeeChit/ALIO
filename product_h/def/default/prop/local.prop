@@ -1,0 +1,8 @@
+# 2023-11-28 14:41:15.0
+msc.config.globalEcc=true
+# 2023-11-28 14:41:15.0
+ro.config.empty.package=true
+# 2023-11-28 14:41:15.0
+ro.gsensor.calibrate=true
+# 2023-11-28 14:41:15.0
+ro.qti.sensors.gravity=true

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ALGO_CHECK>
+    <NormalVideo>
+        <IPPEISWARP> !VIDEO_MODE </IPPEISWARP>
+        <PreEISWARP> !FOURK_VIDEO_MODE</PreEISWARP>
+        <PreEISGPU> FOURK_VIDEO_MODE</PreEISGPU>
+        <RecEISWARP> !FOURK_VIDEO_MODE</RecEISWARP>
+        <RecEISGPU> FOURK_VIDEO_MODE</RecEISGPU>
+    </NormalVideo>
+    <frontBeautyNightRawhdr>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </frontBeautyNightRawhdr>
+    <FrontBeautyAiRawHdrp>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </FrontBeautyAiRawHdrp>
+    <frontbeautyHdrplite>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </frontbeautyHdrplite>
+    <fairlight_front>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </fairlight_front>
+    <ellipMode>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </ellipMode>
+    <aiRawHdrpLiteNoFacePortrait>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </aiRawHdrpLiteNoFacePortrait>
+    <aiRawHdrpNoFacePortrait>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </aiRawHdrpNoFacePortrait>
+    <fullzoomAiRawNoFacePortrait>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </fullzoomAiRawNoFacePortrait>
+    <fullzoomAiRawPortrait>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </fullzoomAiRawPortrait>
+    <aiRawHdrpPortrait>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </aiRawHdrpPortrait>
+    <aiRawHdrpLitePortrait>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </aiRawHdrpLitePortrait>
+    <NormalBeautyShot>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </NormalBeautyShot>
+    <HDFlashBeauty>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </HDFlashBeauty>
+    <FlashMultidenoiseBeauty>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </FlashMultidenoiseBeauty>
+    <FlashsingleBeauty>
+        <PreIppFairLight> FAIRLIGHT_MODE </PreIppFairLight>
+    </FlashsingleBeauty>
+    <ApertureVideo>
+    </ApertureVideo>
+    <BeautyVideo>
+    </BeautyVideo>
+    <ProfessionalVideo>
+    </ProfessionalVideo>
+    <MovieVideo>
+    </MovieVideo>
+    <DualVideo>
+    </DualVideo>
+</ALGO_CHECK>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config hashvalue="026bc6f56cc483d8754e90ca6297a942">
+  <dict>
+    <!--2024-03-13 16:57:22.000-->
+    <int key="carrier_ussd_ime_type_class_phone">0</int>
+    <!--2023-01-31 11:43:55.000-->
+    <bool key="hn_hide_lte">false</bool>
+  </dict>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<LUXIDX_CONFIG>
+        <Luxidx Lux = "260">
+        <LEDCurrents LEDSetting = "80 0"/>
+    </Luxidx>
+        <Luxidx Lux = "360">
+        <LEDCurrents LEDSetting = "90 0"/>
+    </Luxidx>
+        <Luxidx Lux = "410">
+        <LEDCurrents LEDSetting = "260 0"/>
+    </Luxidx>
+        <Luxidx Lux = "500">
+        <LEDCurrents LEDSetting = "350 0"/>
+    </Luxidx>
+</LUXIDX_CONFIG>

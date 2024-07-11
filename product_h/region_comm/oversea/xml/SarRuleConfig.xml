@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SarRuleConfig>
+	<!-- restore sar value when condition not match, for wifi and cell sar value -->
+	<restore>
+		<sar_cell_restore value="15" />
+		<sar_wifi_24GHz_restore value="9"/>
+		<sar_wifi_5GHz_restore value="9"/>
+	</restore>
+	<configs is_use_precondition="1">
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="1"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="1"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="9"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="9"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="0"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="0"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="2"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="2"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="9"/>
+			<sar_wifi_24GHz_reduce value="15"/>
+			<sar_wifi_5GHz_reduce value="15"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="9"/>
+			<sar_wifi_24GHz_reduce value="15"/>
+			<sar_wifi_5GHz_reduce value="15"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="2"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="4"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="2"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="4"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="2"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="2"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="2"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="9"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="2"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="9"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="2"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="2"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="3"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="3"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="10"/>
+			<sar_wifi_24GHz_reduce value="15"/>
+			<sar_wifi_5GHz_reduce value="15"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="10"/>
+			<sar_wifi_24GHz_reduce value="15"/>
+			<sar_wifi_5GHz_reduce value="15"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="0"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_speaker_phoneon value="1"/>
+			<is_bluetooth_sco_connected value="0"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_headset_insert value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_headset_insert value="0"/>
+			<is_bluetooth_sco_connected value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="15"/>
+			<sar_wifi_5GHz_reduce value="15"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_voip_voice value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="9"/>
+			<sar_wifi_5GHz_reduce value="9"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_sub0_big_power value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_sub1_big_power value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<is_usb_ac_charge value="0"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="6"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_usb_ac_charge value="1"/>
+			<sim_type value="3"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_usb_ac_charge value="0"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="5"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_usb_ac_charge value="1"/>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="0"/>
+			<sar_cell_reduce value="16"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="1"/>
+			<is_wifi_ap_opened value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<sim_type value="3"/>
+			<is_wifi_connected value="1"/>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="0"/>
+			<wifi_p2p_band value="1"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="1"/>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="0"/>
+			<wifi_p2p_band value="1"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<sim_type value="3"/>
+			<is_wifi_connected value="1"/>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="1"/>
+			<wifi_p2p_band value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="1"/>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="1"/>
+			<wifi_p2p_band value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<sim_type value="3"/>
+			<is_wifi_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<sim_type value="3"/>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_p2p_band value="0"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_p2p_band value="0"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="1"/>
+			<wifi_band value="0"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+		<config>
+			<sim_type value="3"/>
+			<is_wifi_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="1"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_band value="1"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<sim_type value="3"/>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_p2p_band value="1"/>
+			<sar_cell_reduce value="14"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_p2p_connected value="1"/>
+			<is_wifi_ap_opened value="0"/>
+			<wifi_p2p_band value="1"/>
+			<sar_cell_reduce value="13"/>
+			<sar_wifi_24GHz_reduce value="18"/>
+			<sar_wifi_5GHz_reduce value="18"/>
+		</config>
+		<config>
+			<is_wifi_connected value="0"/>
+			<is_wifi_p2p_connected value="0"/>
+			<is_wifi_ap_opened value="1"/>
+			<wifi_band value="1"/>
+			<sar_cell_reduce value="15"/>
+			<sar_wifi_24GHz_reduce value="12"/>
+			<sar_wifi_5GHz_reduce value="12"/>
+		</config>
+	</configs>
+</SarRuleConfig>

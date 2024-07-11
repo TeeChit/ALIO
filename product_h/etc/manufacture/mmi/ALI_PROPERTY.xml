@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TEST_PROPERTY>
+    <!-- 通用 -->
+    <Property support="ALL" value="MM2S" key="ro.mmi.start_mode" description="MMI2自启动测试"/>
+    <!-- 闪光灯/OTG测试 -->
+    <Property support="ALL" value="false" key="ro.mmi.support_double_flash" description="支持双闪光灯测试"/>
+    <Property support="ALL" value="true" key="ro.mmi.check_otg_orientation_enable" description="是否支持OTG正反插，默认为false"/>
+    <Property support="ALL" value="true" key="ro.mmi.ctt_support_compass_customize" description="双色温闪光灯测试支持指南针防呆状态，true表示支持"/>
+    <!-- WIFI测试 -->
+    <Property support="ALL" value="true" key="ro.mmi.support_wifi_5g" description="是否支持5GWIFI"/>
+    <!-- sensor -->
+    <Property support="ALL" value="1" key="ro.mmi.hall_sensor_poles" description="Hall测试的极值"/>
+    <Property support="ALL" value="both" key="ro.mmi.hall_sensor_poles_value" description="Hall测试的测试状态定制(near,far,both)"/>
+    <Property support="ALL" value="false" key="ro.mmi.support_light_calib_ux_customize" description="环境光校准(耦合指南针)屏幕方向true代表反向，默认为false"/>
+    <Property support="ALL" value="1" key="ro.mmi.light_sensor_calibrate_start_type" description="环境光校准（耦合USB防呆方案）启动方式定制，1表示通过button启动"/>
+    <Property support="ALL" value="1" key="ro.mmi.sar_sensor_start_type" description="SAR Sensor测试方式:1表示通过屏幕按钮执行操作, 2表示通过侧键执行操作，默认0"/>
+    <Property support="ALL" value="1" key="ro.mmi.sar_sensor_channel_num" description="SAR的通道数"/>
+    <Property support="ALL" value="false" key="ro.mmi.support_sar_sensor_ux_customize" description="SAR Sensor测试是否支持UX定制(true横屏显示字体)，默认false竖屏显示"/>
+    <Property support="ALL" value="5.0f" key="ro.mmi.approach_threshold" description="接近光测试门限"/>
+    <!-- TPLCD -->
+    <Property support="ALL" value="24" key="ro.mmi.touch_screen_rows" description="触屏画圈行数(多媒体器件提供的通道数)"/>
+    <Property support="ALL" value="11" key="ro.mmi.touch_screen_columns" description="触屏画圈列数(多媒体器件提供的通道数)"/>
+    <Property support="ALL" value="false" key="ro.mmi.touch_screen_displaycutout" description="触屏画圈是否展示为挖孔屏（水滴屏/刘海屏配置为true）"/>
+    <Property support="ALL" value="true" key="ro.mmi.show_pointer_location" description="触摸屏测试显示点坐标"/>
+    <!-- audio -->
+    <Property support="MMI2" value="false" key="ro.mmi.light_fool_support_test" description="MMI2超声测试支持环境光防呆，true表示支持"/>
+    <Property support="MM2S" value="false" key="ro.mmi.light_fool_support_test" description="MM2S超声测试支持环境光防呆，true表示支持"/>
+    <!-- camera算法 -->
+    <Property support="ALL" value="2" key="ro.mmi.pdaf_calib_start_type" description="PDAF校准的测试方式：2表示通过按音量下键启动"/>
+    <Property support="ALL" value="false" key="ro.mmi.enable_start_button" description="后置Camera特性测试中开始按钮是否可用（后置摄像头关键特性测试(PDAF/AFC/DepthAF)）"/>
+    <!-- 指纹通用 -->
+    <Property support="ALL" value="0" key="ro.mmi.fingerprint_start_type" description="指纹的启动方式,2代表通过按压音量下键启动,0默认"/>
+    <!-- 屏下指纹 -->
+    <Property support="ALL" value="bubble,calibrate,snr" key="ro.mmi.slave_fingerprint_test_type" description="屏下指纹测试子项"/>
+    <Property support="ALL" value="2" key="ro.mmi.slave_fingerprint_start_type" description="屏下光学指纹的启动方式,2代表通过按压音量下键启动"/>
+    <Property support="MMI2" value="interrupt" key="ro.mmi.slave_fingerprint_test_type" description="屏下指纹测试子项"/>
+    <Property support="MMI2" value="0" key="ro.mmi.slave_fingerprint_start_type" description="屏下光学指纹的启动方式,2代表通过按压音量下键启动"/>
+    <Property support="MM2S" value="interrupt" key="ro.mmi.slave_fingerprint_test_type" description="屏下指纹测试子项"/>
+    <Property support="MM2S" value="0" key="ro.mmi.slave_fingerprint_start_type" description="屏下光学指纹的启动方式,2代表通过按压音量下键启动"/>
+    <Property support="MMIBB" value="interrupt" key="ro.mmi.slave_fingerprint_test_type" description="屏下指纹测试子项"/>
+    <Property support="MMIBB" value="0" key="ro.mmi.slave_fingerprint_start_type" description="屏下光学指纹的启动方式,2代表通过按压音量下键启动"/>
+    <!-- 指纹测试 -->
+    <Property support="ALL" value="snr" key="ro.mmi.fingerprint_test_type" description="默认指纹测试类型,snr包含autotest，默认interrupt（interrupt包含autotest）"/>
+    <Property support="MMI2" value="interrupt" key="ro.mmi.fingerprint_test_type" description="MMI2测试中指纹测试类型"/>
+    <Property support="MM2S" value="interrupt" key="ro.mmi.fingerprint_test_type" description="MM2S测试中指纹测试类型"/>
+    <Property support="MMIBB" value="interrupt" key="ro.mmi.fingerprint_test_type" description="MMIBB测试中指纹测试类型"/>
+    <!-- SIM卡测试 -->
+    <Property support="ALL" value="2" key="ro.mmi.test_sim_number" description="默认sim卡测试个数"/>
+</TEST_PROPERTY>
