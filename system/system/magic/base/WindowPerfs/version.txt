@@ -1,0 +1,4 @@
+version=1.10.23.100
+type=WindowPerfs
+subtype=generic
+compatibleVersion=1
