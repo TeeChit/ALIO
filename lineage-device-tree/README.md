@@ -7,7 +7,8 @@
 Device                 | Honor X9b 5G
 -----------------------:|:-------------------------
 SoC                     | Qualcomm Snapdragon 6 Gen 1 (SM6450)
-CPU                     | Octa-core 4× ARM Cortex-A55 @ 1804 MHz | 4× ARM Cortex-A78 @ 2208MHz
+CPU                     | Octa-core 4× ARM Cortex-A55 @ 1804 MHz 
+                        | 4× ARM Cortex-A78 @ 2208MHz
 GPU                     | Adreno (TM) 710
 Memory                  | 8/12/12 GB RAM ( Honor RAM Turbo )
 Shipped Android Version | 13.0
